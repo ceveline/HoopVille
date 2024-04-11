@@ -1,9 +1,9 @@
-Feature: delete user accounts
+Feature: delete user account
   In order to remove unauthorized user accounts
-  As an administrator
+  As a logged-in administrator
   I need to have the ability to delete user accounts
 
-  Scenario: administrator deletes a user account
+  Scenario: delete a user account
 	Given I am on "/Admin/dashboard"
 	And I navigate to "/Admin/viewUsers"
 	When I see user "joe123"
@@ -12,7 +12,7 @@ Feature: delete user accounts
 	When I click the "Delete" button
 	Then I will see a message "joe123 has been deleted"
 
-  Scenario: administrator clicks delete by accident
+  Scenario: accidentally select delete
 	Given I am on "/Admin/dashboard"
 	And I navigate to "/Admin/viewUsers"
 	When I see user "joe123"
