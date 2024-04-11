@@ -1,6 +1,6 @@
 Feature: add time slot
   In order to accommodate special cases
-  As an administrator
+  As a logged in administrator
   I need to be able to add new time slots
 
   Scenario: Adding new time slots for exceptional bookings 
