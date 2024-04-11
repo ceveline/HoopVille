@@ -1,10 +1,12 @@
 Feature: Create bookings
-As a customer
-I want to be able to modify bookings
-I can reschedule.
+In order to create a booking
+As a logged-in user
+I want to be able to make bookings
 
-Scenario: Customer modifies a booking
-Given the customer has an existing booking for “2 PM, April 15th” for a “basket”
-When the customer selects the option to modify the “basket” booking
-And makes the necessary changes to the date to “April 22nd”
-Then the booking should be successfully modified to “2PM, April 22nd” for a “basket”
+Scenario: Create a booking
+  Given I am on /User/Bookings/create
+  When I select "2 PM" as the time, "April 15th" as the date for a "basket"
+  And input "Joe" as the first name, "Doe" as the last name, and "514-658-9874" as the phone number
+  And click the "Reserve" button
+  Then I see "Booking reserved"
+
