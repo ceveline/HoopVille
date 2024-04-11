@@ -4,7 +4,7 @@ Feature: Edit a review
   I need to be able to edit a review
 
   Scenario: Edit a review
-	Given I am on /User/myAccount/
+	Given I am on /User/Reviews/
     	And I have an existing review that says "Amazing Experience!"
 	When I click the "edit" button
  	Then I will be navigated to "/User/Reviews/edit/1"
