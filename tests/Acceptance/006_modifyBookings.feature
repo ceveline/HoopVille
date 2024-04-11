@@ -4,7 +4,7 @@ As a logged-in user
 I want to be able to modify bookings
 
   Scenario: User modifies a booking 
-    Given I am on /User/Bookings/modify
+    Given I am on /User/Bookings/
     And I have an existing booking for “2 PM, April 15th” for a “basket”
     When the customer selects the "modify" button
     Then the customer will be navigated to "/User/Bookings/modify/1"
