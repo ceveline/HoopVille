@@ -5,8 +5,8 @@ I want to be able to view my membership
 
 Scenario: View booking history
 Given I am on "/User/myAccount/"
-When I navigate to "/User/booking/"
-Then I will see my booking history and status
+When I navigate to "/User/membership/"
+Then I will see my membership details 
 
 
 
