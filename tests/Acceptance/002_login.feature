@@ -5,7 +5,7 @@ Feature: Login
 
   Scenario: Successful login with correct credentials
     Given I am on "http://localhost/User/login"
-    When I enter "test@test.com" as the email and "pass123" as the password
+    When I enter "test@test.com" as the email and "testPass123$" as the password
     And I click the Login button
     Then I see "Scan the above QR-code"
 
