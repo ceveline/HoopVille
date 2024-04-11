@@ -5,9 +5,9 @@ Feature: Edit a review
 
   Scenario: Edit a review
 	Given I am on /User/myAccount/
-    	And I have an existing publication titled "Recent Visit!"
+    	And I have an existing review that says "Amazing Experience!"
 	When I click the "edit" button
- 	Then I will be navigated to "/Admin/Publications/edit/1"
-	When I edit the title to "New Visitor!" and the publication text to "Jane Doe recently Visited!"
+ 	Then I will be navigated to "/User/review/edit/1"
+	When I edit the text to "Horrible Experience!"
  	And I click the "save" button
-	Then the publication should be successfully edited and visible on the website
+	Then the review should be successfully edited and visible on the website
