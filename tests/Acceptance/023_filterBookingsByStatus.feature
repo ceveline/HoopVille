@@ -4,14 +4,14 @@ Feature: filter bookings based on status
   I need to be able to filter the view based on the status of all bookings
 
   Scenario: view pending bookings
-	Given I am on "/Admin/booking"
+	Given I am on "/Admin/booking/list"
 	Then I will see a dropdown menu to filter
 	When I click the dropdown menu
 	And I choose the "pending" option 
 	Then I will only see bookings with the status "pending"
 
   Scenario: view confirmed bookings
-	Given I am on "/Admin/booking"
+	Given I am on "/Admin/booking/list"
 	Then I will see a dropdown menu to filter
 	When I click the dropdown menu
 	And I choose the "accepted" option
@@ -19,14 +19,14 @@ Feature: filter bookings based on status
 
 
   Scenario: view refused bookings
-	Given I am on "/Admin/booking"
+	Given I am on "/Admin/booking/list"
 	Then I will see a dropdown menu to filter
 	When I click the dropdown menu
 	And I choose the "refused" option
 	Then I will only see bookings with the status "refused"
 
   Scenario: view cancelled bookings
-	Given I am on "/Admin/booking"
+	Given I am on "/Admin/booking/list"
 	Then I will see a dropdown menu to filter
 	When I click the dropdown menu
 	And I choose the "cancelled" option
