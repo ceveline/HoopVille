@@ -4,10 +4,11 @@ Feature: Deleting a review
   I want to be able to delete reviews
 
 Scenario: Delete a review
-	Given I am on /User/myAccount/
+  Given I am on /User/myAccount/
   And I have an existing review that says "Amazing Experience!"
   When I click the "delete" the option to delete this review
-  Then the review should be successfully deleted
-  And the review should disappear from the review list
+  Then I will be navigated to "/User/Reviews/deleteReview/1"
+  And I click "I am sure I want to delete this review"
+  Then the review should be successfully deleted from the platform
 
 
