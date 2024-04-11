@@ -5,13 +5,19 @@ Feature: createProfile
 
   Scenario: Successful profile creation
     Given I am on "/Profile/create"
-    When I enter "John" as the first name, "Doe" as the last name, and "514-123-1234" as the phone number
+    When I enter "514-123-1234" as the phone number
     And click the Save button
     Then I see "Saved"
 
+  Scenario: Successful profile creation without the first name and last name
+    Given I am on "/Profile/create"
+    When I enter "John" as the first name, "Doe" as the last name, and "514-123-1234" as the phone number
+    And click the Save button
+    Then I see "Saved"
+    
   Scenario: Wrong input data
     Given I am on "/Profile/create"
-    When I enter "John" as the first name, "Doe" as the last name, and "123" as the phone number
+    When I enter "123" as the phone number
     And click the Save button
     Then I see "Invalid phone number"
 
