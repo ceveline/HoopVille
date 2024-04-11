@@ -3,7 +3,7 @@ Feature: list user bookings
   As a logged-in administrator
   I need to view a list of all user bookings
 
-  Scenario: view list of all user accounts
+  Scenario: view list of all user bookings
   Given I am on "/Admin/dashboard"
 	When I navigate to "/Admin/booking"
 	Then I should be able to access the list of all user bookings
