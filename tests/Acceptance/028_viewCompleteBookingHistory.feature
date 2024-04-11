@@ -5,6 +5,6 @@ I want to be able to view my booking history
 
 Scenario: View booking history
 Given I am on "/User/myAccount/"
-When I navigate to "/User/booking/"
+When I navigate to "/User/booking/list/"
 Then I will see my booking history and status
 
