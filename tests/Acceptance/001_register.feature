@@ -11,9 +11,19 @@ Feature: register
 
   Scenario: Successful registration
     Given I am on "/User/register"
-    When I enter "test@test.com" as the email, "John" as the first name, "Doe" as the last name, and "testPass123$" as the password
+    When I enter "test@test.com" as the email
+    And "John" as the first name
+    And "Doe" as the last name
+    And "testPass123$" as the password
     And I click the Register button
     Then I see "Welcome, John"
+
+   Scenario: Successful registration without first and last name
+    Given I am on "/User/register"
+    When I enter "test@test.com" as the email
+    And "testPass123$" as the password
+    And I click the Register button
+    Then I see "Welcome, User"
 
   Scenario: Registration with weak password
     Given I am on "/User/register"
