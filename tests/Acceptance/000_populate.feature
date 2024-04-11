@@ -1,0 +1,9 @@
+Feature: to perform tests...
+
+
+Scenario:
+ When I add.... 
+
+
+ Then I see "Winter camp" in the database camps
+ ...
