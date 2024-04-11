@@ -7,6 +7,6 @@ Scenario: Cancelling a Membership
   Given I am on "/User/myAccount/"
   Given the user has an existing membership that isn't basic
   When the customer selects the "unsubscribe" button
-  Then the user will be navigated to "/User/myAccount/cancelMembership/1"
+  Then the user will be navigated to "/User/myAccount/cancel/1"
   And the user clicks on "I am sure I want to unsubscribe"
   Then the membership should be successfully cancelled
