@@ -5,10 +5,21 @@ Feature: remove user reviews
 
   Scenario: Remove a User Review Containing Inappropriate Words
 	Given I am on "/Admin/dashboard"
- 	And I navigate to "/Admin/userReviews/"
+ 	And I navigate to "/Admin/reviews/"
 	And I see a user review with inappropriate content
 	And I select the option to remove the review
 	Then the user review should be removed from the platform
+
+
+Feature: list user bookings
+  In order to manage users efficiently
+  As a logged-in administrator
+  I need to view a list of all user bookings
+
+  Scenario: view list of all user bookings
+  Given I am on "/Admin/dashboard"
+	When I navigate to "/Admin/booking"
+	Then I should be able to access the list of all user bookings
 
 
 Feature: Create a review
