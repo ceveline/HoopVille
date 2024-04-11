@@ -5,13 +5,13 @@ Feature: register
 
   Scenario: Registration with existing email
     Given I am on "http://localhost/User/register"
-    When I enter "test@test.com" as the email
+    When I enter "existing@test.com" as the email
     And I click the Register button
     Then I see "Email is already in use"
 
   Scenario: Successful registration
     Given I am on "http://localhost/User/register"
-    When I enter "validemail123@gmail.com" as the email, "John" as the first name, "Doe" as the last name, and "testPass123$" as the password
+    When I enter "test@test.com" as the email, "John" as the first name, "Doe" as the last name, and "testPass123$" as the password
     And I click the Register button
     Then I see "Welcome, John"
 
