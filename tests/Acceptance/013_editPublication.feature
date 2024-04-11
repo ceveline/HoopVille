@@ -4,7 +4,7 @@ Feature: Edit a publication
   I need to be able to edit a publication
 
   Scenario: Edit a publication
-	Given I am on /Admin/Publications/
+	Given I am on /Admin/Publications/list
     	And I have an existing publication titled "Recent Visit!"
 	When I click the "edit" button
  	Then I will be navigated to "/Admin/Publications/edit/1"
