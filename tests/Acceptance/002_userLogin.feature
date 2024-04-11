@@ -1,4 +1,4 @@
-Feature: Login
+Feature: user login
   In order to access my account
   As a user
   I need to input correct credentials and get access to my account
