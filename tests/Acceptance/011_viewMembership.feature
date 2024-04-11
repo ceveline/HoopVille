@@ -5,7 +5,7 @@ I want to be able to view my membership
 
 Scenario: View booking history
 Given I am on "/User/myAccount/"
-When I navigate to "/User/membership/"
+When I navigate to "/User/membership/list"
 Then I will see my membership details 
 
 
