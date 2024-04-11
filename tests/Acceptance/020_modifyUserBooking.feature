@@ -4,7 +4,7 @@ Feature: Modify User Booking
   I need to be able to modify user bookings
 
   Scenario: Modify User Booking
-        Given I am on "/Admin/Users/booking/list"
+        Given I am on "/Admin/booking/list"
 	Then I should be able to access the list of all user bookings
  	And I should have the option to search for a specific booking based on username
    	And I should have the option to filter if a booking status is "confirmed","declined", or "pending" 
