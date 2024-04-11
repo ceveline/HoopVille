@@ -313,4 +313,125 @@ class AcceptanceTester extends \Codeception\Actor
 		 $this->view('Summer camp 2023 was amazing');
      }
 
+	/**
+	 * @When I navigate to the :arg1 page
+	 */
+	public function iNavigateToThePage($arg1)
+	{
+		$this->amOnPage($arg1);
+	}
+
+
+	/**
+	 * @When I navigate to the publication to be edited
+	 */
+	public function iNavigateToThePublicationToBeEdited()
+	{
+		$this->iNavigateToThePage('/publications/edit/1'); // Adjust the URL accordingly
+	}
+
+	/**
+	 * @When I select the option to edit the publication
+	 */
+	public function iSelectTheOptionToEditThePublication()
+	{
+		$this->click('Edit Publication');
+	}
+
+	/**
+	 * @When I update the publication's title
+	 */
+	public function iUpdateThePublicationsTitle()
+	{
+		$this->fillField('.publication-title', 'New Publication Title');
+	}
+
+	/**
+	 * @Then the publication should be successfully updated with the new title
+	 */
+	public function thePublicationShouldBeSuccessfullyUpdatedWithTheNewTitle()
+	{
+		$this->see('New Publication Title');
+	}
+
+	/**
+	 * @When I update the publication's content
+	 */
+	public function iUpdateThePublicationsContent()
+	{
+		$this->fillField('.publication-content', 'Updated publication content');
+	}
+
+	/**
+	 * @Then the publication should be successfully updated with the new content
+	 */
+	public function thePublicationShouldBeSuccessfullyUpdatedWithTheNewContent()
+	{
+		$this->see('Updated publication content');
+	}
+
+	/**
+	 * @When I navigate to the publication to be deleted
+	 */
+	public function iNavigateToThePublicationToBeDeleted()
+	{
+		$this->amOnPage('/publication/1');
+	}
+
+	/**
+	 * @When I select the option to delete the publication
+	 */
+	public function iSelectTheOptionToDeleteThePublication()
+	{
+		$this->click('Delete');
+	}
+
+	/**
+	 * @Then the publication should be successfully deleted from the platform
+	 */
+	public function thePublicationShouldBeSuccessfullyDeletedFromThePlatform()
+	{
+		$this->dontSee('Publication Title');
+		$this->dontSee('Publication Content');
+	}
+
+	/**
+	 * @When I navigate to the user booking page
+	 */
+	public function iNavigateToTheUserBookingPage()
+	{
+		$this->amOnPage('/Admin/booking'); // Replace '/admin/user-bookings' with the actual URL of the user booking page
+	}
+
+	/**
+	 * @When I see the option to filter my search
+	 */
+	public function iSeeTheOptionToFilterMySearch()
+	{
+	}
+
+	/**
+	 * @When I select the :arg1 field
+	 */
+	public function iSelectTheField($arg1)
+	{
+		
+	}
+
+	/**
+	 * @When I enter the username :arg1
+	 */
+	public function iEnterTheUsername($arg1)
+	{
+		$this->fillField('Username', $arg1); // Assuming there's an input field with name or id 'Username'
+	}
+
+	/**
+	 * @Then I should only see the :arg1 booking history
+	 */
+	public function iShouldOnlySeeTheBookingHistory($arg1)
+	{
+		$this->see($arg1);
+	}
+
 }
