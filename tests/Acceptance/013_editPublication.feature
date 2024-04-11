@@ -5,6 +5,11 @@ Feature: Edit a publication
 
   Scenario: Edit a publication
 	Given I am on /Admin/Publications/
-	When I fill in "Recent Visit!" as the publication title and "John Doe recently visited Hoopville" as the publication text
-	And I click the "Publish" button
-	Then the publication should be successfully created and visible on the website
+    	And I have an existing publication titled "Recent Visit!"
+	When I click the "edit" button
+ 	Then I will be navigated to "/Admin/Publications/edit/1"
+	When I edit the title to "New Visitor!" and the publication text to "Jane Doe recently Visited!"
+ 	And I click the "save" button
+	Then the publication should be successfully edited and visible on the website
+
+
