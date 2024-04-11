@@ -1,5 +1,4 @@
 Feature: camp enrolment
-
   In order to enrol in a camp
   As a logged-in user
   I need to access the camp page to view details of each camp
