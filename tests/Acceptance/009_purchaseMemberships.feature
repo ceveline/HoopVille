@@ -24,4 +24,11 @@ Feature: purchase memberships
     And click the "Subscribe now" button
     Then I see "Premium membership registered"
 
+ Scenario: Empty fields
+    Given I am on "/Membership/Buy/3"
+    When I select the "Premium" membership option
+    And I leave the text fields empty
+    And click the "Subscribe now" button
+    Then I see "Please fill out the fields"
+
  
