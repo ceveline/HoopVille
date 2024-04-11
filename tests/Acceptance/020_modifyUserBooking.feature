@@ -8,6 +8,7 @@ Feature: Modify User Booking
 	When I navigate to "/Admin/booking"
 	Then I should be able to access the list of all user bookings
  	And I should have the option to search for a specific booking based on username
+   	And I should have the option to filter if a booking status is "confirmed","declined", or "pending" 
  	When I click the "edit" button on a booking
  	Then I will be navigated to "/Admin/booking/edit/1"
 	When I select a booking to modify
