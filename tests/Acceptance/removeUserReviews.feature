@@ -4,7 +4,7 @@ Feature: remove user reviews
   I need to be able to remove user reviews if it contains inappropriate content
 
   Scenario: Remove a User Review Containing Inappropriate Words
-	Given I am on "/Admin/dashboard"
+	Given I am on "/Admin/reviews/"
  	And I navigate to "/Admin/reviews/"
 	And I see a user review with inappropriate content
 	And I select the option to remove the review
