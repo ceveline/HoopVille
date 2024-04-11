@@ -1,4 +1,4 @@
-Feature: list user accounts
+Feature: list user bookings
   In order to manage users efficiently
   As an administrator
   I need to view a list of all user accounts
