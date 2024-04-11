@@ -1,11 +1,10 @@
 Feature: searchBookingsByUsername
   In order to find a certain user booking history
-  As an administrator
-  I need to be able to filter my search
+  As a logged-in administrator
+  I need to be search for a username
 
   Scenario: Administrator searches for all user "john123" bookings
-	Given I am logged in as an administrator
-	When I navigate to the user booking page
+	Given I am in "admin/booking/list"
 	And I see the option to filter my search
 	When I select the "search" field
 	And I enter the username "john123"
