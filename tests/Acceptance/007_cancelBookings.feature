@@ -1,5 +1,4 @@
 Feature: Cancelling a reservation
-
 In order to free up reserved slots for others
 As a customer
 I want to be able to cancel bookings
@@ -11,4 +10,3 @@ Scenario: Cancelling a reservation
   Then the user will be navigated to "/User/myAccount/deleteBooking/1"
   And the user clicks on "confirm booking deletion"
   Then the reservation should be successfully cancelled
-
