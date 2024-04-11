@@ -4,7 +4,7 @@ As a User
 I want to be able to cancel my membership
 
 Scenario: Cancelling a Membership
-  Given I am on "/User/Membership/"
+  Given I am on "/User/myAccount/"
   Given the user has an existing membership that isn't basic
   When the customer selects the "unsubscribe" button
   Then the user will be navigated to "/User/Membership/cancel/1"
