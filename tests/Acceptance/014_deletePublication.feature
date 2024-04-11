@@ -7,7 +7,7 @@ Feature: Delete publication
     Given I am on /Admin/Publications/
     And I have an existing publication titled "Recent Visit!"
     When I click the "delete" button
-    Then I will be navigated to "/Admin/Publications/deletePublication/1"
+    Then I will be navigated to "/Admin/Publications/delete/1"
     Then the publication should be successfully deleted from the platform
 
 
