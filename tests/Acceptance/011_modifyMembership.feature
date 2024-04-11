@@ -4,7 +4,7 @@ As a User
 I want to be able to modify my membership
 
 Scenario: Upgrading a Membership
-  Given I am on "/User/membership/"
+  Given I am on "/User/myAccount/"
   And I have an existing "VIP" membership
   When the customer selects the "modify" button
   Then the user will be navigated to "/User/membership/modify/1"
@@ -12,7 +12,7 @@ Scenario: Upgrading a Membership
   Then the membership should be change levels
 
 Scenario: Downgrading a Membership
-  Given I am on "/User/membership/"
+  Given I am on "/User/myAccount/"
   And I have an existing "VIP" membership
   When I selects the "modify" button
   Then I will be navigated to "/User/membership/modify/1"
