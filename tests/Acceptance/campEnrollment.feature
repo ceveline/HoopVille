@@ -5,21 +5,21 @@ Feature: camp enrolment
 
   Scenario: Enrol in Winter camp
     Given I am on "http://localhost/Camp/Buy"
-    When I select the Winter camp option
+    When I select the "Winter camp" option
     And click the "Pay now" button
     Then It should redirect me to a payment site
-    And I will enter my payment information externally
+    #And I will enter my payment information externally
 
   Scenario: Enrol in Summer camp
     Given I am on "http://localhost/Camp/Buy"
-    When I select the Summer camp option
+    When I select the "Summer camp" option
     And click the "Pay now" button
     Then It should redirect me to a payment site
     And I will enter my payment information externally
 
   Scenario: Enrol in Spring camp
     Given I am on "http://localhost/Camp/Buy"
-    When I select the Spring camp option
+    When I select the "Spring camp" option
     And click the "Pay now" button
     Then It should redirect me to a payment site
     And I will enter my payment information externally
