@@ -5,7 +5,7 @@ Feature: list user bookings
 
   Scenario: view list of all user bookings
   Given I am on "/Admin/dashboard"
-	When I navigate to "/Admin/booking"
+	When I navigate to "/Admin/Users/booking"
 	Then I should be able to access the list of all user bookings
 
 
