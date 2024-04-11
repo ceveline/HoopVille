@@ -24,4 +24,11 @@ Feature: camp enrolment
     And click the "Enrol now" button
     Then I see "Player exceeds the age limit"
 
+  Scenario: Empty fields
+    Given I am on "/Camp/Buy/3"
+    When I select the "Spring camp" option
+    And I leave the text fields empty
+    And click the "Enrol now" button
+    Then I see "Please fill out the fields"
+
  
