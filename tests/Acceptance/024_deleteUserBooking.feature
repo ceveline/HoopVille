@@ -4,12 +4,12 @@ Feature: Delete User Booking
   I need to be able to remove user Bookings
 
   Scenario: Delete User Booking
-	Given I am on "/Admin/dashboard"
- 	And I navigate to "/Admin/reviews/list"
+	Given I am on "/Admin/booking/list"
+	Then I should be able to access the list of all user bookings
   	When I see review text "324234324"
 	And I click the "Delete" button
-	Then I will see a message "Would you like to delete this review?"
+	Then I will see a message "Would you like to delete this booking?"
 	When I click the "Delete" button
-	Then I will see a message "Review has been deleted"
+	Then I will see a message "booking has been deleted"
 
 
