@@ -4,7 +4,7 @@ As a logged-in user
 I want to be able to view the list of options and their benefit
 
 Scenario: View Camp Types
-Given I am on "/User/Camp/"
-Then I will see my "" membership
-And my "winter" camps 
-And my "Basket" booking
+Given I am on "/User/Home/"
+And I navigate to  "/User/Camp/"
+Then I should see a list of all user accounts and their emails
+
