@@ -1,9 +1,9 @@
-Feature: remove user reviews
-  In order to maintain the integrity of the platform
+Feature: Delete User Booking
+  In order to remove reservations due to unforseen circumstances
   As a logged-in administrator
-  I need to be able to remove user reviews if it contains inappropriate content
+  I need to be able to remove user Bookings
 
-  Scenario: Remove a User Review Containing Inappropriate Words
+  Scenario: Delete User Booking
 	Given I am on "/Admin/dashboard"
  	And I navigate to "/Admin/reviews/list"
   	When I see review text "324234324"
