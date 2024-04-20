@@ -9,8 +9,8 @@ class User extends \app\core\Controller {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             
             $user = new \app\models\User();
-            $username = $_POST['username'];
-            $user = $user->getByUsername($username);
+            $email = $_POST['email'];
+            $user = $user->getByEmail($email);
 
             $password = $_POST['password'];
             if($user && password_verify($password, $user->password_hash)) {
@@ -32,7 +32,7 @@ class User extends \app\core\Controller {
         if($_SERVER['REQUEST_METHOD'] === 'POST') {
             $user = new \app\models\User();
 
-            $user->username = $_POST['username'];
+            $user->email = $_POST['email'];
             $user->password_hash = password_hash($_POST['password'], PASSWORD_DEFAULT);
         
             //insert to database
