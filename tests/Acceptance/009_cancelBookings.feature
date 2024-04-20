@@ -8,5 +8,5 @@ Scenario: Cancelling a booking
   Given I have an existing reservation for a “basket” at “2PM on April 11th”
   When I select "cancel" button
   Then I will be navigated to "/User/Bookings/delete/1"
-  And I click on "confirm booking deletion"
+  And I click on "confirm booking cancellation"
   Then the reservation should be successfully cancelled

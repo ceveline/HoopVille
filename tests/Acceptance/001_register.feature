@@ -11,7 +11,10 @@ Feature: register
 
   Scenario: Successful registration
     Given I am on "/User/register"
-    When I enter "test@test.com" as the email, "John" as the first name, "Doe" as the last name, and "testPass123$" as the password
+    When I enter "test@test.com" as the email
+    And "John" as the first name
+    And "Doe" as the last name
+    And "testPass123$" as the password
     And I click the Register button
     Then I see "Welcome, John"
 

@@ -4,7 +4,7 @@ Feature: Deleting a review
   I want to be able to delete reviews
 
 Scenario: Delete a review
-  Given I am on /User/Reviews/list
+  Given I am on "/User/Reviews/list"
   And I have an existing review that says "Amazing Experience!"
   When I click the "delete" the option to delete this review
   Then I will be navigated to "/User/Reviews/delete/1"
