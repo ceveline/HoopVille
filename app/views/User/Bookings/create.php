@@ -159,10 +159,11 @@
       gap: 15px;
       justify-content: center;
       align-items: center;
+
     }
 
     .slot {
-      width: 210px;
+      width: 215px;
       padding: 20px;
       border-radius: 10px;
       background-color: ghostwhite;
@@ -173,6 +174,7 @@
 
     .slot:hover {
       background-color: #F2F2F2;
+      font-weight: bold;
     }
 
     /* // ****************************************************************** */
@@ -185,6 +187,33 @@
       height: 40px;
       opacity: 0;
       color: green;
+    }
+
+    .slot.disabled {
+      display: none;
+    }
+
+    @keyframes spinner {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .spinner:before {
+      content: '';
+      box-sizing: border-box;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 30px;
+      height: 30px;
+      margin-top: -15px;
+      margin-left: -15px;
+      border-radius: 50%;
+      border: 1px solid #ccc;
+      border-top-color: #07d;
+      animation: spinner .6s linear infinite;
+      margin-top: 100px;
     }
   </style>
 
@@ -253,16 +282,17 @@
         <br>
         <p class="courtChoice"></p>
         <div class="timeSlots">
-          <div class="slot" id="10">
+          <div class="spinner"></div>
+          <div class="slot slot10 disabled" onclick="slotChosen(10)">
             <p>10:00 a.m. - 12:00 p.m.</p>
           </div>
-          <div class="slot" id="12">
-            <p>12:00 - 2:00 p.m.</p>
+          <div class="slot slot12 disabled" onclick="slotChosen(12)">
+            <p>12:00 p.m. - 2:00 p.m.</p>
           </div>
-          <div class="slot" id="14">
+          <div class="slot slot14 disabled" onclick="slotChosen(14)">
             <p>2:00 p.m. - 4:00 p.m.</p>
           </div>
-          <div class="slot" id="16">
+          <div class="slot slot16 disabled" onclick="slotChosen(16)">
             <p>4:00 p.m. - 6:00 p.m.</p>
           </div>
         </div>
@@ -291,24 +321,38 @@
 
     let selectedDate = null;
 
+    let selectedTimeSlot = null;
+
+    // -------------------
+    let disabledDates = [];
+
     function nextSlide() {
 
       $(".prev").attr("disabled", false);
 
-      if (currentSlide + 1 == 3) {
+      // (before changing slides)
+      if (currentSlide == 2) {
         $(".next").attr("disabled", true);
       }
-
-
 
       $(`.slide${currentSlide}`).hide();
       currentSlide++;
 
       $(`.slide${currentSlide}`).show();
       if (currentSlide == 2) {
+        // get disabled dates
+        $.get(`/User/booking/disabledDates?booking_type=${selectedCourt == 1 ? "full" : "half"}`, function (data) {
+          disabledDates = JSON.parse(data);
+          updateCalendar();
+        })
+
+
         $(".next").attr("disabled", selectedDay == null);
       }
 
+      if (currentSlide == 3) {
+        setAvailableTimeSlots();
+      }
     }
 
     function prevSlide() {
@@ -325,7 +369,13 @@
     }
 
     function courtClick(courtNum) {
+      if (selectedCourt !== courtNum) {
+        selectedDay = null;
+        selectedDate = null;
+      }
+
       selectedCourt = courtNum;
+
       $(".next").attr("disabled", false);
       $(".court1").css("background-color", "");
       $(".court2").css("background-color", "");
@@ -352,9 +402,6 @@
     const nextMonthBtn = document.getElementById("nextMonthBtn");
     const currentMonthElement = document.getElementById("currentMonth");
     const calendarGrid = document.getElementById("calendarGrid");
-
-    // -------------------
-    const disabledDates = ["2024-05-05", "2024-05-12", "2024-05-19"];
 
     function updateCalendar() {
       const firstDayOfMonth = new Date(currentYear, currentMonthIndex, 1);
@@ -383,8 +430,14 @@
 
         // disabled dates
         const d = new Date(`${currentYear}-${currentMonthIndex + 1}-${i}`);
+
         if (d < new Date() || disabledDates.includes(d.toISOString().split("T")[0])) {
           dayElement.classList.add("disabled");
+        }
+
+        if (selectedDay?.innerHTML == i) {
+          selectedDay = dayElement;
+          selectedDay.classList.add("selected");
         }
 
         dayElement.textContent = i;
@@ -397,6 +450,8 @@
 
             selectedDay = dayElement;
             selectedDay.classList.add("selected");
+
+            // not for calendar
             selectedDate = d.toISOString().split("T")[0];
 
             $(".dateAvailabilities").html(`Availabilities for ${d.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' })}`);
@@ -428,6 +483,54 @@
     });
 
     updateCalendar();
+
+    function setAvailableTimeSlots() {
+      let court = selectedCourt == 1 ? "full" : "half";
+
+      resetSlots();
+      for (let i = 10; i <= 16; i += 2) {
+        $(`.slot${i}`).addClass("disabled");
+      }
+      $(".spinner").css("display", "block");
+
+      setTimeout(function () {
+        $.get(`/User/booking/getTimeSlotsByDate?booking_type=${court}&date=${selectedDate}`, function (data) {
+          console.log(JSON.parse(data));
+          data = JSON.parse(data);
+          if (data['10:00:00'] === "enabled") {
+            $(".slot10").removeClass("disabled");
+          }
+          if (data['12:00:00'] === "enabled") {
+            $(".slot12").removeClass("disabled");
+          }
+          if (data['02:00:00'] === "enabled") {
+            $(".slot14").removeClass("disabled");
+          }
+          if (data['04:00:00'] === "enabled") {
+            $(".slot16").removeClass("disabled");
+          }
+          $(".spinner").css("display", "none");
+        })
+      }, 100);
+
+
+    }
+
+    function slotChosen(slotNum) {
+      resetSlots();
+
+      $(`.slot${slotNum}`).css("border", "2px solid #FFDE59");
+      $(`.slot${slotNum}`).css("font-weight", "bold");
+    }
+
+    function resetSlots() {
+      for (let i = 10; i <= 16; i += 2) {
+        $(`.slot${i}`).css("background-color", "ghostwhite");
+        $(`.slot${i}`).css("font-weight", "");
+        $(`.slot${i}`).css("border", "");
+      }
+    }
+
   </script>
 
 </body>
