@@ -1,32 +1,26 @@
 <?php
 namespace app\core;
 
-class App
-{
+class App {
     private $routes = [];
 
-    public function addRoute($url, $handler)
-    {
+    public function addRoute($url,$handler){
         $url = preg_replace('/{([^\/]+)}/', '(?<$1>[^\/]+)', $url);
         $this->routes[$url] = $handler;
     }
 
-    public function resolve($url)
-    {
+    public function resolve($url){
         $matches = [];
         //one by one compare the url to resolve the route
         foreach ($this->routes as $routePattern => $controllerMethod) {
-            if (preg_match("#^$routePattern$#", $url, $matches)) {//match the route
+            if(preg_match("#^$routePattern$#", $url, $matches)){//match the route
 
                 // Filter named parameters
-                $namedParams = array_filter(
-                    $matches,
-                    function ($key) {
+                $namedParams = array_filter($matches,
+                    function($key) {
                         return !is_numeric($key);
                     }
-                    ,
-                    ARRAY_FILTER_USE_KEY
-                );
+                    , ARRAY_FILTER_USE_KEY);
 
                 return [$controllerMethod, $namedParams];
             }
@@ -34,8 +28,7 @@ class App
         return false;
     }
 
-    function filtered($controllerInstance, $method)
-    {
+    function filtered($controllerInstance, $method){
 
         //create an object that can get information about the controller
         $reflection = new \ReflectionClass($controllerInstance);
@@ -43,13 +36,13 @@ class App
         $classAttributes = $reflection->getAttributes();
         $methodAttributes = $reflection->getMethod($method)->getAttributes();
 
-        $attributes = array_merge($classAttributes, $methodAttributes);
+        $attributes = array_merge($classAttributes,$methodAttributes);
 
         foreach ($attributes as $attribute) {
             //instantiate the filter
             $filter = $attribute->newInstance();
             //run the filter and test if redirected
-            if ($filter->redirected()) {
+            if($filter->redirected()){
                 return true;
             }
         }
@@ -57,27 +50,24 @@ class App
     }
 
 
-    function __construct()
-    {
-        //call the appropriate controller class and method to handle the HTTP Request
+    function __construct(){
+    	//call the appropriate controller class and method to handle the HTTP Request
         //Routing version 1.0
 
         $url = $_GET['url'];
 
-        include ('app/routes.php');
+        include('app/routes.php');
 
         [$controllerMethod, $namedParams] = $this->resolve($url);
 
-        if (!$controllerMethod) {
-            return;
-        }
+        if(!$controllerMethod){ return;  }
 
-        [$controller, $method] = explode(',', $controllerMethod);
+        [$controller,$method] = explode(',', $controllerMethod);
 
         $controller = '\app\controllers\\' . $controller;
         $controllerInstance = new $controller();
 
-        if ($this->filtered($controllerInstance, $method)) {
+        if($this->filtered($controllerInstance, $method)){
             return;
         }
 
