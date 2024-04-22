@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="/assets/styles/login.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="/assets/styles/login.css">
 
 </head>
 <body>
@@ -27,7 +27,7 @@
                 </div>
                 <button type="submit" class="btn btn-primary" name="action" value="Login">Login</button>
                 <div class="register-now">
-                    <p>Don't have an account?</p><a href="/User/register">Register now!</a>
+                    <p>Don't have an account? <a href="/User/register">Register now!</a></p>
                 </div>
             </form>
         </div>

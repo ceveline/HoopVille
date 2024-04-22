@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="/assets/styles/login.css">
+    <link rel="stylesheet" href="/assets/styles/register.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
 </head>
@@ -16,12 +16,12 @@
     <div class="background">
         <div class="content">
             <h1>Registration</h1>
-            <form class='login-form' method="post" action="">
+            <form class='register-form' method="post" action="">
                 <div class="inputs">
                     <label for="first_name" class="form-label">First name:</label>
                     <input type="text" class="form-control" id="first_name" name="first_name" placeholder="Jon">
                 </div>
-                <div class="inputs">
+                <div class="inputs last-name">
                     <label for="last_name" class="form-label">Last name:</label>
                     <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Doe">
                 </div>
@@ -43,10 +43,10 @@
                 </div>
                 <div class="inputs">
                     <label for="retype-password" class="form-label">Re-type password:</label>
-                    <input type="retype-password" class="form-control" id="retype-password" name="retype-password" placeholder="•••••">
+                    <input type="password" class="form-control" id="retype-password" name="retype-password" placeholder="•••••">
                 </div>
-                <button type="submit" class="btn btn-primary" name="action" value="Login">Login</button>
-                <div class="register-now">
+                <button type="submit" class="btn btn-primary" name="action" value="Register">Register</button>
+                <div class="login-now">
                     <p>Already have an account? <a href="/User/login">Login now!</a></p>
                 </div>
             </form>
