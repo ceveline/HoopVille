@@ -1,5 +1,6 @@
 <?php
 //defined a few routes "url"=>"controller,method" -> connected to the App.php file in the core folder
+<<<<<<< HEAD
 $this->addRoute('User/login', 'User,login');
 
 
@@ -11,3 +12,6 @@ $this->addRoute('User/login', 'User,login');
 $this->addRoute('User/booking/create', 'Booking,create');
 $this->addRoute('User/booking/disabledDates', 'Booking,getDisabledDates');
 $this->addRoute('User/booking/getTimeSlotsByDate', 'Booking,getTimeSlotsByDate');
+=======
+$this->addRoute('User/login','User,login');
+>>>>>>> parent of ed149ba (merged)
