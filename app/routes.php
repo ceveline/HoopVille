@@ -15,3 +15,7 @@ $this->addRoute('User/booking/getTimeSlotsByDate', 'Booking,getTimeSlotsByDate')
 
 //REVIEWS
 $this->addRoute('User/review/create', 'Review,create');
+
+//CAMPS
+$this->addRoute('User/camp/list', 'Camp,list');
+$this->addRoute('User/camp/create', 'Camp,create');
