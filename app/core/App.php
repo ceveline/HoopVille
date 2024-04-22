@@ -1,12 +1,6 @@
 <?php
 namespace app\core;
 
-<<<<<<< HEAD
-class App {
-    private $routes = [];
-
-    public function addRoute($url,$handler){
-=======
 class App
 {
     private $routes = [];

@@ -78,6 +78,11 @@ class Review extends \app\core\Model
     );
   }
 
+  public function getReviewById()
+  {
+    
+  }
+
   //Deleting a review by the ID
   public function delete()
   {
