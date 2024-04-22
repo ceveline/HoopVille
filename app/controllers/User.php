@@ -26,21 +26,33 @@ class User extends \app\core\Controller {
         }
     }
 
-    //register
-    #[\app\filters\Logout]
     function register() {
         if($_SERVER['REQUEST_METHOD'] === 'POST') {
             $user = new \app\models\User();
+            $profile = new \app\models\Profile();
 
+            //for user table
             $user->email = $_POST['email'];
-            $user->password_hash = password_hash($_POST['password'], PASSWORD_DEFAULT);
+            $user->password_hash = password_hash($_POST['password_hash'], PASSWORD_DEFAULT);
+
+            $user->insert();
+            $user_model = $user->getByEmail($_POST['email']);
+            //for profile table
+            $profile->user_id = $user_model->user_id;
+            $profile->first_name = $_POST['first_name'];
+            $profile->last_name = $_POST['last_name'];
+            $profile->phone = $_POST['phone'];
+            $profile->date_of_birth = $_POST['date_of_birth'];
         
             //insert to database
-            $user->insert();
+            $profile->insert();
+
             header('location:/User/login');
         }
+
+
         else {
-            $this->view('User/registration', null, true);
+            $this->view('User/register', null, true);
         }
         
     }

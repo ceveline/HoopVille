@@ -1,6 +1,6 @@
 <?php
 
-namespace app\models\User;
+namespace app\models;
 
 use PDO;
 
@@ -11,10 +11,9 @@ class User extends \app\core\Model
     public $email;
     public $password_hash;
 
-    //insert -> Create
     public function insert() {
         //statement
-        $SQL = 'INSERT INTO user (email, password_hash) VALUES (:email, :password_hash)';
+        $SQL = 'INSERT INTO User (email, password_hash) VALUES (:email, :password_hash)';
 
         //prepare statement
         $STMT = self::$_conn->prepare($SQL);
@@ -29,7 +28,7 @@ class User extends \app\core\Model
     //getById -> Read
     public function getById($user_id) {
         //statement
-        $SQL = 'SELECT * FROM user WHERE user_id = :user_id';
+        $SQL = 'SELECT * FROM User WHERE user_id = :user_id';
 
         //prepare statement
         $STMT = self::$_conn->prepare($SQL);
@@ -47,7 +46,7 @@ class User extends \app\core\Model
 
     public function getByEmail($email) {
         //statement
-        $SQL = 'SELECT * FROM user WHERE email = :email';
+        $SQL = 'SELECT * FROM User WHERE email = :email';
 
         //prepare statement
         $STMT = self::$_conn->prepare($SQL);
@@ -65,7 +64,7 @@ class User extends \app\core\Model
 
     //update password for forget password
     public function updatePassword($email) {
-        $SQL = 'UPDATE user SET password_hash=:password_hash
+        $SQL = 'UPDATE User SET password_hash=:password_hash
                     WHERE email = :email';
         $STMT = self::$_conn->prepare($SQL);
         $STMT->execute([
