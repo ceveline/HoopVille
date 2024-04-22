@@ -1,19 +1,19 @@
 <?php
 
-namespace app\models\User;
+namespace app\models;
 
 use PDO;
 
 
-class Review extends \app\core\Model
+class Camp extends \app\core\Model
 {
 
     //Declaring variables from review table
 
-  public $review_id;
+  public $camp_id;
+  public $camp_type;
   public $user_id;
-  public $rating;
-  public $review_text;
+  public $guest_id; //can be null
   public $timestamp;
   
 
@@ -40,7 +40,7 @@ class Review extends \app\core\Model
     ORDER BY p.timestamp DESC;';
     $STMT = self::$_conn->prepare($SQL);
     $STMT->execute(['user_id' => $user_id]);
-    $STMT->setFetchMode(PDO::FETCH_CLASS, 'app\models\User\Review');
+    $STMT->setFetchMode(PDO::FETCH_CLASS, 'app\models\Review');
     return $STMT->fetchAll();
   }
 
@@ -58,7 +58,7 @@ class Review extends \app\core\Model
 
     $STMT = self::$_conn->prepare($SQL);
     $STMT->execute();
-    $STMT->setFetchMode(PDO::FETCH_CLASS, 'app\models\User\Review');
+    $STMT->setFetchMode(PDO::FETCH_CLASS, 'app\models\Review');
     return $STMT->fetchAll();
   }
 
@@ -76,6 +76,20 @@ class Review extends \app\core\Model
         'review_id' => $this->review_id,
       ]
     );
+  }
+
+  //Getting a review by the id
+  public function getReviewById(int $id)
+  {
+    $SQL = 'SELECT Review.*, User.first_name, User.last_name
+    FROM Review
+    JOIN User ON Review.user_id = User.user_id
+    WHERE review_id = :review_id';
+
+    $STMT = self::$_conn->prepare($SQL);
+    $STMT->execute(['review_id' => $id]);
+    $STMT->setFetchMode(PDO::FETCH_CLASS, 'app\models\Review');
+    return $STMT->fetch();
   }
 
   //Deleting a review by the ID
