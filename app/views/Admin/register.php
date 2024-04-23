@@ -18,22 +18,6 @@
             <h1>Registration</h1>
             <form class='register-form' method="post" action="">
                 <div class="inputs">
-                    <label for="first_name" class="form-label">First name:</label>
-                    <input type="text" class="form-control" id="first_name" name="first_name" placeholder="Jon">
-                </div>
-                <div class="inputs last-name">
-                    <label for="last_name" class="form-label">Last name:</label>
-                    <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Doe">
-                </div>
-                <div class="inputs">
-                    <label for="phone" class="form-label">Phone number:</label>
-                    <input type="text" class="form-control" id="phone" name="phone" placeholder="5144312314">
-                </div>
-                <div class="inputs">
-                    <label for="date_of_birth" class="form-label">Date of birth:</label>
-                    <input type="date" id="date_of_birth" name="date_of_birth">
-                </div>
-                <div class="inputs">
                     <label for="email" class="form-label">Email:</label>
                     <input type="text" class="form-control" id="email" name="email" placeholder="Jon123@gmail.com">
                 </div>
@@ -48,23 +32,17 @@
                 <button type="submit" class="btn" name="action" value="Register" onclick="validateInput(event)">Register</button>
 
                 <div class="login-now">
-                    <p>Already have an account? <a href="/User/login">Login now!</a></p>
+                    <p>Already have an account? <a href="/Admin/login">Login now!</a></p>
                 </div>
 
                 <script>
                     function validateInput(event) {
                         event.preventDefault(); // Prevent the form from submitting
-                        
-                        var first_name = document.getElementById("first_name").value.trim();
-                        var last_name = document.getElementById("last_name").value.trim();
-                        var phone = document.getElementById("phone").value.trim();
-                        var dob = document.getElementById("date_of_birth").value.trim();
                         var email = document.getElementById("email").value.trim();
                         var password = document.getElementById("password_hash").value.trim();
                         var retype_password = document.getElementById("retype-password").value.trim();
 
-                        if (first_name === "" || last_name === "" || phone === "" || 
-                        dob === "" || email === "" || password === "" || retype_password === "") {
+                        if (email === "" || password === "" || retype_password === "") {
                             alert("Please fill in all fields");
                             return;
                         }

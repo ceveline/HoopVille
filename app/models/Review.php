@@ -1,6 +1,6 @@
 <?php
 
-namespace app\models\User;
+namespace app\models;
 
 use PDO;
 

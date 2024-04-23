@@ -18,13 +18,12 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: fixed;
     z-index: 99;
     box-shadow: 0 0 10px #000;
     background-color: rgba(0, 0, 0, 0, 10);
 }
 
-img {
+.hoopville-logo {
     flex: 1;
     color: white;
     margin-left: 50px;
