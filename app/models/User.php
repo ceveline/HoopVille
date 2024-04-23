@@ -64,14 +64,14 @@ class User extends \app\core\Model
     }
 
     //update password for forget password
-    public function updatePassword($email) {
-        $SQL = 'UPDATE user SET password_hash=:password_hash
-                    WHERE email = :email';
-        $STMT = self::$_conn->prepare($SQL);
-        $STMT->execute([
-            'user_id'=>$user_id,
-            'password_hash'=>$this->password_hash,
-        ]);
-    }
+    // public function updatePassword($email) {
+    //     $SQL = 'UPDATE user SET password_hash=:password_hash
+    //                 WHERE email = :email';
+    //     $STMT = self::$_conn->prepare($SQL);
+    //     $STMT->execute([
+    //         'user_id'=>$user_id,
+    //         'password_hash'=>$this->password_hash,
+    //     ]);
+    // }
 
 }

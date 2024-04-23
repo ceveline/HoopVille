@@ -25,7 +25,7 @@
                 <a class="nav-link" href="#">About</a>
             </li>
             <li>
-                <a class="nav-link" href="#">Contact</a>
+                <a class="nav-link" href="/User/contact">Contact</a>
             </li>
             <li>
                 <a class="nav-link" href="#">FAQ</a>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 20, 2024 at 09:58 PM
+-- Generation Time: Apr 23, 2024 at 06:05 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `Administrator` (
   `admin_id` int(11) NOT NULL,
   `email` varchar(50) NOT NULL,
-  `password_hash` varchar(50) NOT NULL
+  `password_hash` varchar(60) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -143,10 +143,16 @@ CREATE TABLE `Profile` (
   `user_id` int(11) NOT NULL,
   `first_name` varchar(50) NOT NULL,
   `last_name` varchar(50) NOT NULL,
-  `phone` int(20) NOT NULL,
-  `email` varchar(50) NOT NULL,
+  `phone` varchar(60) NOT NULL,
   `date_of_birth` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `Profile`
+--
+
+INSERT INTO `Profile` (`profile_id`, `user_id`, `first_name`, `last_name`, `phone`, `date_of_birth`) VALUES
+(1, 1, 'John', 'Clayton', '5146543345', '2024-04-01');
 
 -- --------------------------------------------------------
 
@@ -157,7 +163,7 @@ CREATE TABLE `Profile` (
 CREATE TABLE `Publication` (
   `publication_id` int(11) NOT NULL,
   `admin_id` int(11) NOT NULL,
-  `text` varchar(255) NOT NULL,
+  `text` text NOT NULL,
   `title` varchar(255) NOT NULL,
   `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -185,8 +191,17 @@ CREATE TABLE `Review` (
 CREATE TABLE `User` (
   `user_id` int(11) NOT NULL,
   `email` varchar(50) NOT NULL,
-  `password_hash` varchar(50) NOT NULL
+  `password_hash` varchar(60) NOT NULL,
+  `active` tinyint(4) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `User`
+--
+
+INSERT INTO `User` (`user_id`, `email`, `password_hash`, `active`) VALUES
+(1, 'hussain@gmail.com', '123', 0),
+(2, 'test@gmail.com', '123', 0);
 
 --
 -- Indexes for dumped tables
@@ -311,7 +326,7 @@ ALTER TABLE `Membership`
 -- AUTO_INCREMENT for table `Profile`
 --
 ALTER TABLE `Profile`
-  MODIFY `profile_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `profile_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `Publication`
@@ -329,7 +344,7 @@ ALTER TABLE `Review`
 -- AUTO_INCREMENT for table `User`
 --
 ALTER TABLE `User`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Constraints for dumped tables
