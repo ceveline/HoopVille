@@ -17,6 +17,7 @@
         <div class="content">
             <h1>Create A Post</h1>
             <form class='main' method="post" action="">
+                <!-- for image https://www.youtube.com/watch?v=xXrs4j-p3yE -->
                 <div class="inputs">
                     <label for="title" class="form-label">Title:</label>
                     <input type="text" class="form-control" id="title" name="title" placeholder="Title goes here">
