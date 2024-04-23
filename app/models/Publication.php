@@ -1,6 +1,6 @@
 <?php
 
-namespace app\models\Publication;
+namespace app\models;
 
 use PDO;
 
