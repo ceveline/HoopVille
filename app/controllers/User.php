@@ -12,7 +12,7 @@ class User extends \app\core\Controller {
             $email = $_POST['email'];
             $user = $user->getByEmail($email);
 
-            $password = $_POST['password'];
+            $password = $_POST['password_hash'];
             if($user && password_verify($password, $user->password_hash)) {
                 $_SESSION['user_id'] = $user->user_id;
                 header('location:/Profile/index'); 
