@@ -10,6 +10,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <link rel="stylesheet" href="/assets/styles/create_publication.css">
+
 </head>
 <body>
 <body>
@@ -26,10 +27,6 @@
                     <label for="text" class="form-label">Text:</label>
                     <textarea form="main" id="text" class="text" name="text" rows="6" maxlength="500" placeholder="Type your content here"></textarea>
                 </div>
-                <!-- <div class="inputs">
-                    <label for="text" class="form-label">Text:</label>
-                    <input type="text" id="text" class="text" name="text" placeholder="Type your content here"></input>
-                </div> -->
                 <div class="button-post">
                     <button type="submit" class="btn" name="action" value="Post" onclick="">Post</button>
                 </div>

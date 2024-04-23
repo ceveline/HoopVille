@@ -38,12 +38,14 @@
 h1 {
     display: flex;
     justify-content: center;
+    margin-bottom: 36px;
 }
 
 .inputs {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
+    margin-bottom: 16px;
 }
 
 .main label, .main input{
@@ -55,6 +57,7 @@ h1 {
     height: 32px;
     width: 248px;
     padding-left: 10px;
+    margin-left: 10px;
 }
 
 .main input[type="text"],
@@ -71,6 +74,8 @@ h1 {
     padding: 10px;
     resize: none;
     overflow-y: scroll;
+    margin-left: 10px;
+    border-radius: 10px;
 }
 
 button {
