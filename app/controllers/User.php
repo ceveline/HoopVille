@@ -16,7 +16,7 @@ class User extends \app\core\Controller {
 
                 if($admin && password_verify($password, $admin->password_hash)) {
                     $_SESSION['admin_id'] = $admin->admin_id;
-                    header('location:/Main'); 
+                    header('location:/Home'); 
                 }
                 else {
                     header('location:/User/login');
@@ -31,7 +31,7 @@ class User extends \app\core\Controller {
             
             if($user && password_verify($password, $user->password_hash)) {
                 $_SESSION['user_id'] = $user->user_id;
-                header('location:/Main'); 
+                header('location:/Home'); 
             }
             else {
                 header('location:/User/login');
@@ -82,5 +82,9 @@ class User extends \app\core\Controller {
 
     function forgetPassword($email) {
         
+    }
+
+    function home() {
+        $this->view('home', null, true);
     }
 }

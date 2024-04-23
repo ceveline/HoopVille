@@ -19,8 +19,8 @@ class Publication extends \app\core\Controller {
             $publication = new \app\models\Publication();
 
             $publication->admin_id = $_SESSION['admin_id'];
-            $publication->title = $_POST['title'];
             $publication->text = $_POST['text'];
+            $publication->title = $_POST['title'];
             $publication->timestamp = date('Y-m-d H:i:s');
 
             $publication->insert();

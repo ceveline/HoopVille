@@ -13,16 +13,16 @@ class Publication extends \app\core\Model
     public $title;
     public $timestamp;
 
-    //creat
+    //create
     public function insert() {
         //statement 
-        $SQL = 'INSERT INTO Publication (admin_id,title,text,timestamp) 
-            VALUE (:admin_id,:title,:text,:timestamp,)';
+        $SQL = 'INSERT INTO Publication (admin_id,text,title,timestamp) 
+            VALUES (:admin_id,:text,:title,:timestamp)';
         $STMT = self::$_conn->prepare($SQL);
         $STMT->execute(
             ['admin_id'=>$this->admin_id,
-            'title'=>$this->title,
             'text'=>$this->text,
+            'title'=>$this->title,
             'timestamp'=>$this->timestamp
             ]
         );

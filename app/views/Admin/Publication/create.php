@@ -16,16 +16,20 @@
     <div class="background">
         <div class="content">
             <h1>Create A Post</h1>
-            <form class='main' method="post" action="">
+            <form id='main' method="post" action="">
                 <!-- for image https://www.youtube.com/watch?v=xXrs4j-p3yE -->
                 <div class="inputs">
-                    <label for="title" class="form-label">Title:</label>
-                    <input type="text" class="form-control" id="title" name="title" placeholder="Title goes here">
+                    <label for="title">Title:</label>
+                    <input type="text" id="title" name="title" placeholder="Title goes here">
                 </div>
                 <div class="inputs">
                     <label for="text" class="form-label">Text:</label>
-                    <textarea id="text" form="main" class="form-control" name="text" rows="6" maxlength="500" placeholder="Type your content here"></textarea>
+                    <textarea form="main" id="text" class="text" name="text" rows="6" maxlength="500" placeholder="Type your content here"></textarea>
                 </div>
+                <!-- <div class="inputs">
+                    <label for="text" class="form-label">Text:</label>
+                    <input type="text" id="text" class="text" name="text" placeholder="Type your content here"></input>
+                </div> -->
                 <div class="button-post">
                     <button type="submit" class="btn" name="action" value="Post" onclick="">Post</button>
                 </div>
