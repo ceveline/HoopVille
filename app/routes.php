@@ -8,8 +8,8 @@ $this->addRoute('User/logout', 'User,logout');
 $this->addRoute('Publication/create', 'Publication,create');
 
 //ADMINS
-$this->addRoute('Admin/login', 'Administrator,login');
-$this->addRoute('Admin/register', 'Administrator,register');
+// $this->addRoute('Admin/login', 'Administrator,login'); -> can use /User/login to login as an admin
+// $this->addRoute('Admin/register', 'Administrator,register'); -> to create an Admin but we only need one admin so dont need the view
 $this->addRoute('Admin/logout', 'Administrator,logout');
 
 
