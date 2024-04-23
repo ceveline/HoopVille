@@ -37,6 +37,9 @@
             <li>
                 <a class="nav-link" href="#">News & Updates</a>
             </li>
+            <li>
+                <a class="nav-link" href="#">Reviews</a>
+            </li>
             <?php
             if (!isset($_SESSION['user_id'])) {
                 echo '<li><a class="nav-link" href="/User/login">Login</a></li>';
