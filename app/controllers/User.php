@@ -7,15 +7,31 @@ class User extends \app\core\Controller {
 
     function login() {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $admin = new \app\models\Administrator();
+            $email = $_POST['email'];
+            $password = $_POST['password_hash'];
+
+            if ($email === "admin@gmail.com") {
+                $admin = $admin->getByEmail($email);
+
+                if($admin && password_verify($password, $admin->password_hash)) {
+                    $_SESSION['admin_id'] = $admin->admin_id;
+                    header('location:/Main'); 
+                }
+                else {
+                    header('location:/User/login');
+                }
+                return;
+            }
             
             $user = new \app\models\User();
-            $email = $_POST['email'];
+            
             $user = $user->getByEmail($email);
 
-            $password = $_POST['password'];
+            
             if($user && password_verify($password, $user->password_hash)) {
                 $_SESSION['user_id'] = $user->user_id;
-                header('location:/Profile/index'); 
+                header('location:/Main'); 
             }
             else {
                 header('location:/User/login');
@@ -26,21 +42,33 @@ class User extends \app\core\Controller {
         }
     }
 
-    //register
-    #[\app\filters\Logout]
     function register() {
         if($_SERVER['REQUEST_METHOD'] === 'POST') {
             $user = new \app\models\User();
+            $profile = new \app\models\Profile();
 
+            //for user table
             $user->email = $_POST['email'];
-            $user->password_hash = password_hash($_POST['password'], PASSWORD_DEFAULT);
+            $user->password_hash = password_hash($_POST['password_hash'], PASSWORD_DEFAULT);
+
+            $user->insert();
+            $user_model = $user->getByEmail($_POST['email']);
+            //for profile table
+            $profile->user_id = $user_model->user_id;
+            $profile->first_name = $_POST['first_name'];
+            $profile->last_name = $_POST['last_name'];
+            $profile->phone = $_POST['phone'];
+            $profile->date_of_birth = $_POST['date_of_birth'];
         
             //insert to database
-            $user->insert();
+            $profile->insert();
+
             header('location:/User/login');
         }
+
+
         else {
-            $this->view('User/registration', null, true);
+            $this->view('User/register', null, true);
         }
         
     }
