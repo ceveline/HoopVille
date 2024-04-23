@@ -91,6 +91,8 @@ button:hover{
 #date_of_birth,
 #phone {
     border-radius: 10px;
+    border: solid;
+    border-width: 2.3px;
     height: 32px;
     width: 248px;
     padding-left: 10px;

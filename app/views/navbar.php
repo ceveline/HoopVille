@@ -39,7 +39,7 @@
             </li>
             <?php
             if (!isset($_SESSION['user_id'])) {
-                echo '<li><a class="nav-link" href="#">Login</a></li>';
+                echo '<li><a class="nav-link" href="/User/login">Login</a></li>';
             } else {
                 echo '<li><a class="nav-link" href="#">My Account</a></li>';
                 echo '<li><a class="nav-link" href="/User/logout">Logout</a></li>';

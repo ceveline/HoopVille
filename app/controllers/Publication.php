@@ -25,7 +25,7 @@ class Publication extends \app\core\Controller {
 
             $publication->insert();
 
-            header('location:/Profile/index'); //change to the admin dashboard
+            header('location:/Publication'); //change to the admin dashboard
         }
         else {
             $this->view('Publication/create', null, true);

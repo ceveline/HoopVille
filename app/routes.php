@@ -4,9 +4,13 @@ $this->addRoute('User/login', 'User,login');
 $this->addRoute('User/register', 'User,register');
 $this->addRoute('User/logout', 'User,logout');
 
+//PUBLICATIONS
+$this->addRoute('Publication/create', 'Publication,create');
 
-
-
+//ADMINS
+$this->addRoute('Admin/login', 'Administrator,login');
+$this->addRoute('Admin/register', 'Administrator,register');
+$this->addRoute('Admin/logout', 'Administrator,logout');
 
 
 // BOOKINGS
