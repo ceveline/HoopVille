@@ -24,107 +24,13 @@ class AcceptanceTester extends \Codeception\Actor
     use _generated\AcceptanceTesterActions;
 
     /**
-<<<<<<< HEAD
-     * @Given I am on page :arg1
-     */
-     public function iAmOnPage($arg1)
-     {
-		 $this->amOnPage($arg1);
-     }
-
-    /**
-     * @When I navigate to :arg1
-     */
-     public function iNavigateTo($arg1)
-     {
-		 $this->amOnPage($arg1);
-     }
-
-    /**
-     * @When I click the button :arg1
-     */
-     public function iClickTheButton($arg1)
-     {
-		 $this->click($arg1);
-     }
-
-    /**
-     * @Then I will see :arg1 form
-     */
-     public function iWillSeeForm($arg1)
-     {
-		 $this->see($arg1);
-     }
-
-    /**
-     * @When I specify the service as :arg1
-     */
-     public function iSpecifyTheServiceAs($arg1)
-     {
-		 $this->fillField('Service', $arg1);
-     }
-
-    /**
-     * @When I specify the date as :arg1
-     */
-     public function iSpecifyTheDateAs($arg1)
-     {
-		 $this->fillField('Date', $arg1);
-     }
-
-    /**
-     * @When I specify the start time as :arg1
-     */
-     public function iSpecifyTheStartTimeAs($arg1)
-     {
-         $this->fillField('Start time', $arg1);
-     }
-
-    /**
-     * @When I specify the end time as :arg1
-     */
-     public function iSpecifyTheEndTimeAs($arg1)
-     {
-         $this->fillField('End time', $arg1);
-     }
-
-    /**
-     * @Then I will see a message :arg1
-     */
-     public function iWillSeeAMessage($arg1)
-     {
-         $this->see($arg1);
-     }
-
-    /**
-     * @When I click :arg1
-     */
-     public function iClick($arg1)
-     {
-         $this->click($arg1);
-     }
-	 
-	 //Delete User Accounts
-	 
-	 /**
-=======
      * Define custom actions here
      */
      /**
->>>>>>> DenisBranch
      * @Given I am on :arg1
      */
      public function iAmOn($arg1)
      {
-<<<<<<< HEAD
-         $this->amOnPage($arg1);
-     }
-
-    /**
-     * @When I see user :arg1
-     */
-     public function iSeeUser($arg1)
-=======
          $this->amOnPage($url);
      }
 
@@ -152,7 +58,6 @@ class AcceptanceTester extends \Codeception\Actor
      * @Then I see :arg1
      */
      public function iSee($arg1)
->>>>>>> DenisBranch
      {
          $this->see($arg1);
      }
