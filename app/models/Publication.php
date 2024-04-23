@@ -16,7 +16,7 @@ class Publication extends \app\core\Model
     //creat
     public function insert() {
         //statement 
-        $SQL = 'INSERT INTO publication(admin_id,title,text,timestamp) 
+        $SQL = 'INSERT INTO Publication (admin_id,title,text,timestamp) 
             VALUE (:admin_id,:title,:text,:timestamp,)';
         $STMT = self::$_conn->prepare($SQL);
         $STMT->execute(
@@ -29,7 +29,7 @@ class Publication extends \app\core\Model
     }
 
     public function getAll() {
-        $SQL = 'SELECT * FROM publication';
+        $SQL = 'SELECT * FROM Publication';
         $STMT = self::$_conn->prepare($SQL);
         $STMT->execute();
 
@@ -38,7 +38,7 @@ class Publication extends \app\core\Model
     }
 
     public function getById($publication_id) {
-        $SQL = 'SELECT * FROM publication WHERE publication_id = :publication_id';
+        $SQL = 'SELECT * FROM Publication WHERE publication_id = :publication_id';
         $STMT = self::$_conn->prepare($SQL);
         $STMT->execute(['publication_id'=>$publication_id]);
         
@@ -49,7 +49,7 @@ class Publication extends \app\core\Model
     //search by title
     public function getByTitle($title) {
         $SQL = 'SELECT *
-                FROM publication
+                FROM Publication
                 WHERE title LIKE :title';
         $STMT = self::$_conn->prepare($SQL);
         $STMT->execute(['title' => '%' . $title . '%']);
@@ -61,7 +61,7 @@ class Publication extends \app\core\Model
     //search by keyword
     public function getByContent($text) {
         $SQL = 'SELECT *
-                FROM publication
+                FROM Publication
                 WHERE text LIKE :text';
         $STMT = self::$_conn->prepare($SQL);
         $STMT->execute(['text' => '%' . $text . '%']);
@@ -72,7 +72,7 @@ class Publication extends \app\core\Model
     
     //update
     public function update($publication_id) {
-        $SQL = 'UPDATE publication SET title=:title, text=:text WHERE publication_id = :publication_id';
+        $SQL = 'UPDATE Publication SET title=:title, text=:text WHERE publication_id = :publication_id';
         $STMT = self::$_conn->prepare($SQL);
         $STMT->execute([
             'publication_id'=>$publication_id,
@@ -83,7 +83,7 @@ class Publication extends \app\core\Model
     
     //delete
     public function delete($publication_id) {
-        $SQL = 'DELETE FROM publication WHERE publication_id = :publication_id';
+        $SQL = 'DELETE FROM Publication WHERE publication_id = :publication_id';
 		$STMT = self::$_conn->prepare($SQL);
 		$STMT->execute(
 			['publication_id'=> $publication_id] //no
