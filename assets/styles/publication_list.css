@@ -10,12 +10,16 @@
 .content {
     min-height: 100%;
     background-color: white;
-    margin: 10px;
+    margin: 30px 240px;
     padding: 12px;
 }
 
 a {
     margin-right: 10px;
+}
+
+p {
+    margin-right: 23%;
 }
 
 .column-name {
@@ -25,7 +29,11 @@ a {
 }
 
 #column-title{
-    margin-right: 50%;
+    margin-right: 30%;
+}
+
+#column-text{
+    margin-right: 24%;
 }
 
 .list{
@@ -35,10 +43,15 @@ a {
 }
 
 #pub-title{
-    margin-right: 50%;
+    margin-right: 30%;
     font-size: 1.3rem;
     text-decoration: none;
     color: black;
+}
+
+#pub-title:hover{
+    color: purple;
+    text-decoration: underline;
 }
 
 #view-button, #edit-button, #delete-button{
