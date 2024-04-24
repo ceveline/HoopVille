@@ -9,7 +9,7 @@ class Publication extends \app\core\Controller {
         $publication = new \app\models\Publication();
         $publications = $publication->getAll();
         
-        $this->view('Publication/index', ['publications' => $publications], true);
+        $this->view('Admin/Publication/index', ['publications' => $publications], true);
     }
     
     function create() {

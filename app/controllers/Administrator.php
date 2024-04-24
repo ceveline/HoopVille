@@ -18,11 +18,11 @@ class Administrator extends \app\core\Controller {
                 header('location:/Main'); //change to dashboard
             }
             else {
-                header('location:/Admin/login');
+                header('location:/User/login');
             }
         }
         else {
-            $this->view('Admin/login', null, true); //show the login view if user's input is incorrect/doesn't match
+            $this->view('User/login', null, true); //show the login view if user's input is incorrect/doesn't match
         }
     }
 
@@ -35,7 +35,7 @@ class Administrator extends \app\core\Controller {
 
             $admin->insert();
 
-            header('location:/Admin/login');
+            header('location:/User/login');
         }
 
 
