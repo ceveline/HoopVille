@@ -19,16 +19,16 @@ class Publication extends \app\core\Controller {
             $publication = new \app\models\Publication();
 
             $publication->admin_id = $_SESSION['admin_id'];
-            $publication->title = $_POST['title'];
             $publication->text = $_POST['text'];
+            $publication->title = $_POST['title'];
             $publication->timestamp = date('Y-m-d H:i:s');
 
             $publication->insert();
 
-            header('location:/Profile/index'); //change to the admin dashboard
+            header('location:/Publication'); //change to the admin dashboard
         }
         else {
-            $this->view('Publication/create', null, true);
+            $this->view('Admin/Publication/create', null, true);
         }
     }
 

@@ -51,4 +51,23 @@ class Profile extends \app\core\Model
         $STMT = self::$_conn->prepare($SQL);
         return $STMT->execute(['active' => $active, 'id' => $id]);
     }
+    //insert -> Create
+    public function insert() {
+        //statement
+        $SQL = 'INSERT INTO Profile (user_id, first_name, last_name, phone, date_of_birth) 
+            VALUES (:user_id, :first_name, :last_name, :phone, :date_of_birth)';
+
+        //prepare statement
+        $STMT = self::$_conn->prepare($SQL);
+
+        //execute the statement
+        $data = ['user_id'=> $this->user_id,
+                'first_name'=> $this->first_name, 
+                'last_name'=> $this->last_name, 
+                'phone'=> $this->phone, 
+                'date_of_birth'=> $this->date_of_birth
+            ];
+        
+        $STMT->execute($data);
+    }
 }

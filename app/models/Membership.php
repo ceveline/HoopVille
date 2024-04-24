@@ -1,6 +1,6 @@
 <?php
 
-namespace app\models\Membership;
+namespace app\models;
 
 use PDO;
 

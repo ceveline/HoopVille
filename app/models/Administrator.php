@@ -5,15 +5,15 @@ namespace app\models;
 use PDO;
 
 
-class User extends \app\core\Model
+class Administrator extends \app\core\Model
 {
-    public $user_id;
+    public $admin_id;
     public $email;
     public $password_hash;
 
     public function insert() {
         //statement
-        $SQL = 'INSERT INTO User (email, password_hash) VALUES (:email, :password_hash)';
+        $SQL = 'INSERT INTO Administrator (email, password_hash) VALUES (:email, :password_hash)';
 
         //prepare statement
         $STMT = self::$_conn->prepare($SQL);
@@ -26,27 +26,27 @@ class User extends \app\core\Model
     }
 
     //getById -> Read
-    public function getById($user_id) {
+    public function getById($admin_id) {
         //statement
-        $SQL = 'SELECT * FROM User WHERE user_id = :user_id';
+        $SQL = 'SELECT * FROM Administrator WHERE admin_id = :admin_id';
 
         //prepare statement
         $STMT = self::$_conn->prepare($SQL);
 
         //execute the statement
-        $data = ['user_id'=> $user_id];
+        $data = ['admin_id'=> $admin_id];
         
         $STMT->execute($data);
 
         //fetch the data
-        $STMT->setFetchMode(PDO::FETCH_CLASS, 'app\models\User');
+        $STMT->setFetchMode(PDO::FETCH_CLASS, 'app\models\Administrator');
         
         return $STMT->fetch();
     }
 
     public function getByEmail($email) {
         //statement
-        $SQL = 'SELECT * FROM User WHERE email = :email';
+        $SQL = 'SELECT * FROM Administrator WHERE email = :email';
 
         //prepare statement
         $STMT = self::$_conn->prepare($SQL);
@@ -57,20 +57,9 @@ class User extends \app\core\Model
         $STMT->execute($data);
 
         //fetch the data
-        $STMT->setFetchMode(PDO::FETCH_CLASS, 'app\models\User');
+        $STMT->setFetchMode(PDO::FETCH_CLASS, 'app\models\Administrator');
         
         return $STMT->fetch();
     }
-
-    //update password for forget password
-    // public function updatePassword($email) {
-    //     $SQL = 'UPDATE user SET password_hash=:password_hash
-    //                 WHERE email = :email';
-    //     $STMT = self::$_conn->prepare($SQL);
-    //     $STMT->execute([
-    //         'user_id'=>$user_id,
-    //         'password_hash'=>$this->password_hash,
-    //     ]);
-    // }
 
 }
