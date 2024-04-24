@@ -8,10 +8,13 @@ $this->addRoute('User/logout', 'User,logout');
 
 //PUBLICATIONS
 $this->addRoute('Admin/Publication/create', 'Publication,create');
+$this->addRoute('Admin/Publication/index', 'Publication,index'); //list publications
+$this->addRoute('Publication/view/{id}', 'Publication,viewPublication'); //list publications
 
 //ADMIN
 // $this->addRoute('Admin/login', 'Administrator,login'); -> can use /User/login to login as an admin
-// $this->addRoute('Admin/register', 'Administrator,register'); -> to create an Admin but we only need one admin so dont need the view
+$this->addRoute('Admin/register', 'Administrator,register'); 
+// -> to create an Admin but we only need one admin so dont need the view
 $this->addRoute('Admin/logout', 'Administrator,logout');
 
 // BOOKINGS

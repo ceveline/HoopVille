@@ -9,7 +9,7 @@ class Publication extends \app\core\Controller {
         $publication = new \app\models\Publication();
         $publications = $publication->getAll();
         
-        $this->view('Publication/index', ['publications' => $publications], true);
+        $this->view('Admin/Publication/list', ['publications' => $publications], true);
     }
     
     function create() {
@@ -25,7 +25,7 @@ class Publication extends \app\core\Controller {
 
             $publication->insert();
 
-            header('location:/Publication'); //change to the admin dashboard
+            header('location:/Admin/Publication/index'); //change to the admin dashboard
         }
         else {
             $this->view('Admin/Publication/create', null, true);
@@ -64,10 +64,9 @@ class Publication extends \app\core\Controller {
 
     function viewPublication($id) {
         $publication = new \app\models\Publication();
-        $publicationData = $publication->getById($id); 
-        $comments = $publication->getComments($id); 
+        $publicationData = $publication->getById($id);
 
-        $this->view('Publication/individual', ['publication' => $publicationData, 'comments' => $comments], true);
+        $this->view("Admin/Publication/view", ['publication' => $publicationData], true);
     }
 
     function search() {

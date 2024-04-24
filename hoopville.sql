@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 23, 2024 at 02:07 AM
+-- Generation Time: Apr 24, 2024 at 05:07 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `Administrator` (
   `admin_id` int(11) NOT NULL,
   `email` varchar(50) NOT NULL,
-  `password_hash` varchar(50) NOT NULL
+  `password_hash` varchar(60) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -156,7 +156,7 @@ CREATE TABLE `Profile` (
 CREATE TABLE `Publication` (
   `publication_id` int(11) NOT NULL,
   `admin_id` int(11) NOT NULL,
-  `text` varchar(255) NOT NULL,
+  `text` text NOT NULL,
   `title` varchar(255) NOT NULL,
   `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
