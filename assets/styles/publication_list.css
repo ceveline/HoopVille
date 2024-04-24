@@ -17,3 +17,7 @@
 a {
     margin-right: 10px;
 }
+
+.column-name {
+    display:flex;
+}

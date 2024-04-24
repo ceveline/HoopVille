@@ -17,12 +17,10 @@
     <div class="background">
         <div class="content">
             <div class="column-name">
-                <tr>
-                    <td>Title</td>
-                    <td>Actions</td>
-                </tr>
-                <hr class="solid">
+                <h4 id=''>Title</h4>
+                <h4 id='column-text'>Text</h4>
             </div>
+            <hr class="solid">
             <div class="list">
                 <?php foreach ($publications as $pub) : ?>
                     <tr class='table-rows'>
