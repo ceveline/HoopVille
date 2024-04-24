@@ -20,4 +20,13 @@ a {
 
 .column-name {
     display:flex;
+    padding: 10px;
+}
+
+#column-title{
+    margin-right: 50%;
+}
+
+.list{
+    margin: 10px;
 }
