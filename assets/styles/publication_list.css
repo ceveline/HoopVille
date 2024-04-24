@@ -11,7 +11,7 @@
     min-height: 100%;
     background-color: white;
     margin: 10px;
-    padding: 15px;
+    padding: 12px;
 }
 
 a {
@@ -31,10 +31,11 @@ a {
 .list{
     margin: 15px;
     display: flex;
+    margin-top: 20px;
 }
 
 #pub-title{
-    margin-right: 50.4%;
+    margin-right: 50%;
     font-size: 1.3rem;
     text-decoration: none;
     color: black;
@@ -46,6 +47,7 @@ a {
     border-radius: 0.5rem;
     text-decoration: none;
     color: black;
+    font-weight: 600;
 }
 
 #view-button {

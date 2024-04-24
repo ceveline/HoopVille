@@ -64,10 +64,9 @@ class Publication extends \app\core\Controller {
 
     function viewPublication($id) {
         $publication = new \app\models\Publication();
-        $publicationData = $publication->getById($id); 
-        $comments = $publication->getComments($id); 
+        $publicationData = $publication->getById($id);
 
-        $this->view('Publication/individual', ['publication' => $publicationData, 'comments' => $comments], true);
+        $this->view("Admin/Publication/view", ['publication' => $publicationData], true);
     }
 
     function search() {
