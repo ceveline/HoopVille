@@ -4,3 +4,7 @@ $this->addRoute('User/login','User,login');
 $this->addRoute('Admin/User/view', 'Profile,viewAll');
 
 $this->addRoute('User/contact', 'Contact,send');
+$this->addRoute('Profile/search', 'Profile,search');
+$this->addRoute('Profile/delete/{id}', 'Profile,delete');
+
+

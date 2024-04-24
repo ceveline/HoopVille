@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 23, 2024 at 06:05 AM
+-- Generation Time: Apr 24, 2024 at 04:07 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -152,7 +152,9 @@ CREATE TABLE `Profile` (
 --
 
 INSERT INTO `Profile` (`profile_id`, `user_id`, `first_name`, `last_name`, `phone`, `date_of_birth`) VALUES
-(1, 1, 'John', 'Clayton', '5146543345', '2024-04-01');
+(1, 1, 'John', 'Clayton', '5146543345', '2024-04-01'),
+(2, 2, 'Test', 'Second', '5143233454', '2024-04-25'),
+(3, 3, 'dgbd', 'dbdb', '5455455454', '2024-04-25');
 
 -- --------------------------------------------------------
 
@@ -200,8 +202,9 @@ CREATE TABLE `User` (
 --
 
 INSERT INTO `User` (`user_id`, `email`, `password_hash`, `active`) VALUES
-(1, 'hussain@gmail.com', '123', 0),
-(2, 'test@gmail.com', '123', 0);
+(1, 'hussain@gmail.com', '123', 1),
+(2, 'test@gmail.com', '123', 1),
+(3, 'test1@gmail.com', '345', 1);
 
 --
 -- Indexes for dumped tables
@@ -326,7 +329,7 @@ ALTER TABLE `Membership`
 -- AUTO_INCREMENT for table `Profile`
 --
 ALTER TABLE `Profile`
-  MODIFY `profile_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `profile_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `Publication`
@@ -344,7 +347,7 @@ ALTER TABLE `Review`
 -- AUTO_INCREMENT for table `User`
 --
 ALTER TABLE `User`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Constraints for dumped tables
