@@ -14,3 +14,6 @@ $this->addRoute('User/booking/getTimeSlotsByDate', 'Booking,getTimeSlotsByDate')
 
 $this->addRoute('Admin/booking/list', 'Booking,listAdmin');
 $this->addRoute('Admin/booking/delete', 'Booking,delete');
+$this->addRoute('Admin/booking/filterByStatus', 'Booking,filterByStatus');
+$this->addRoute('Admin/booking/bookingsList', 'Booking,bookingsList');
+$this->addRoute('Admin/booking/searchBookings', 'Booking,searchBookings');

@@ -60,16 +60,6 @@ class Booking extends \app\core\Model
     $STMT->execute(['booking_id' => $this->booking_id]);
   }
 
-  public function getBookingsByDate($date) // passed in as '2024-04-21'
-  {
-    $SQL = 'SELECT * FROM Booking WHERE date = :date';
-
-    $STMT = self::$_conn->prepare($SQL);
-    $STMT->execute(['date' => $date]);
-    $STMT->setFetchMode(PDO::FETCH_CLASS, 'app\models\Booking');
-    return $STMT->fetchAll();
-  }
-
   public function getBookingsByUserId(int $user_id)
   {
     $SQL = 'SELECT * FROM Booking WHERE user_id = :user_id';
@@ -103,6 +93,8 @@ class Booking extends \app\core\Model
 
   public function getBookingsByStatus($status)
   {
+
+    // JOIN WITH USER AND PROFILE
     $SQL = 'SELECT * FROM Booking WHERE status = :status ORDER BY date DESC';
     $STMT = self::$_conn->prepare($SQL);
     $STMT->execute(['status' => $status]);
@@ -111,15 +103,15 @@ class Booking extends \app\core\Model
     return $STMT->fetchAll();
   }
 
-  public function getBookingsByEmail($email)
+
+  // TODO: FIX 
+  public function searchBookings($text)
   {
-    $SQL = 'SELECT b.* FROM booking b JOIN user u ON b.user_id = u.user_id WHERE u.email = :email';
+    $SQL = 'SELECT * FROM Booking b JOIN User u ON b.user_id = u.user_id JOIN Profile p ON p.user_id = b.user_id WHERE u.email like :text or b.booking_type like :text or CONCAT(p.first_name, p.last_name) like :text or b.timestamp like :text';
     $STMT = self::$_conn->prepare($SQL);
-    $STMT->execute(['email' => $email]);
+    $STMT->execute(['text' => "%$text%"]);
     $STMT->setFetchMode(PDO::FETCH_CLASS, 'app\models\Booking');
     return $STMT->fetchAll();
   }
-
-
 
 }

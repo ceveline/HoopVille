@@ -101,17 +101,6 @@ class Booking extends \app\core\Controller
     }
 
     return $timeSlotAvailabilities;
-
-    // foreach ($timeSlotAvailabilities as $availability) {
-    //   if ($availability == "enabled") {
-    //     // false, date not disabled
-    //     return false;
-    //   }
-    // }
-
-    // // true, date disabled.
-    // return true;
-
   }
 
   function getDisabledDates()
@@ -155,5 +144,25 @@ class Booking extends \app\core\Controller
     echo json_encode($this->getTimeSlotAvailabilities($booking_type, $bookings));
   }
 
+
+  function filterByStatus() {
+    $status = $_GET['status'];
+    $booking = new \app\models\Booking();
+    $bookings = $booking->getBookingsByStatus($status);
+    echo json_encode($bookings);
+  }
+
+  function bookingsList() {
+    $booking = new \app\models\Booking();
+    $bookings = $booking->getBookings();
+    echo json_encode($bookings);
+  }
+
+  function searchBookings() {
+    $text = $_GET['text'];
+    $booking = new \app\models\Booking();
+    $bookings = $booking->searchBookings($text);
+    echo json_encode($bookings);
+  }
 
 }

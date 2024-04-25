@@ -2,9 +2,6 @@
 <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 <html lang="en">
 
-
-
-
 <head>
   <title>Rent a gym</title>
 
@@ -210,22 +207,23 @@
 
 
         <p>Search by: </p>
-        <select name="filter" id="filter">
-          <option value="pending">email</option>
-          <option value="approved">full name</option>
-          <option value="declined">date</option>
+        <select name="filter" class="searchBy">
+          <option value="email">email</option>
+          <option value="full name">full name</option>
+          <option value="date">date</option>
         </select>
-        <input type="text" placeholder="Search.."></input>
-        <button>Search</button>
+        <input type="text" class="searchBar" placeholder="Search.."></input>
+        <button class="searchBtn">Search</button>
       </div>
 
 
       <div class="filter">
         <p>Filter by status: </p>
-        <select name="filter" id="filter">
-          <option value="pending">pending</option>
-          <option value="approved">approved</option>
-          <option value="declined">declined</option>
+        <select name="filter" class="filter">
+          <option value="all">all</option>
+          <option value="0">pending</option>
+          <option value="1">approved</option>
+          <option value="2">declined</option>
         </select>
       </div>
 
@@ -282,14 +280,66 @@
 
   </div>
 
+  <script>
+
+    let boookings = [];
+    let searchBy = "email";
+
+    $('.filter').on('change', function () {
+
+      if (this.value === "all") {
+        $.get("/Admin/booking/bookingsList", function(data) {
+          bookings = JSON.parse(data);
+          console.log(bookings);
+          displayBookings();
+        }) 
+      } else {
+        $.get(`/Admin/booking/filterByStatus?status=${this.value}`, function(data) {
+          bookings = JSON.parse(data);
+          console.log(bookings);
+          displayBookings();
+        })
+      }
+
+    });
+
+    $('.searchBy').on('change', function() {
+      searchBy = this.value;
+    })
+
+    $(".searchBtn").on('click', function() {
+      // search current bookings by field
+      const text = $(".searchBar").val();
+      
+    })
+
+    function displayBookings() {
+  
+     $(".bookings").html("");
+     
+      bookings.forEach((b) => {
+        const status = b.status == "0" ? "pending" : (b.status == "1" ? "approved" : "declined");
+        date = b.date.split(" ")[0];
+        $(".bookings").append(`
+        <div class='booking'>
+          <p>${b.booking_type}</p>
+          <p>test@test.com</p>
+          <p>John  Doe</p>
+          <p>${date}</p>
+          <p>${status}</p>
+          <div class='icons'>
+          <i class='fas'>&#xf044;</i>
+          <a href='/Admin/booking/delete?id=${b.booking_id}'><i  class='fas del'>&#xf2ed;</i></a>
+          </div>
+      </div>
+        
+        `);
+      })
+
+    }
+
+  </script>
 
 </body>
-
-
-
-
-
-
-
 
 </html>
