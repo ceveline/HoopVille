@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Membership</title>
+    <title>My Profile</title>
     <style>
         * {
             margin: 0;
@@ -168,25 +168,25 @@
 </head>
 <body>
     <div style='height: 200px'></div>
-    <h1>Memberships</h1>
+    <h1>CAMPS</h1>
     <div class='container'>
         <div class="form-container">
-            <h3>Basic Membership</h3> 
-            <img src="/assets/images/spring.png" alt="Basic Membership" class="camp-image">
+            <h3>Winter Camp</h3> 
+            <img src="/assets/images/spring.png" alt="Spring Camp" class="camp-image">
             <p>Lorem ipsum dolor sit amet, sed do eiusmod tempor laboris nisi ut aliquip ex ea commodo consequat.</p>
-            <div class="btn"> <button type="button">Subscribe Now!</button></div>
+            <div class="btn"> <button type="button">Join Now!</button></div>
         </div>
         <div class="form-container">
-            <h3>VIP Membership</h3> 
-            <img src="/assets/images/spring.png" alt="VIP Membership" class="camp-image">
+            <h3>Spring Camp</h3> 
+            <img src="/assets/images/spring.png" alt="Spring Camp" class="camp-image">
             <p>Lorem ipsum dolor sit amet, sed do eiusmod tempor laboris nisi ut aliquip ex ea commodo consequat.</p>
-            <div class="btn"> <button type="button">Subscribe Now!</button></div>
+            <div class="btn"> <button type="button">Join Now!</button></div>
         </div>
         <div class="form-container">
-            <h3>Premium Membership</h3> 
-            <img src="/assets/images/spring.png" alt="Premium Membership" class="camp-image">
+            <h3>Summer Camp</h3> 
+            <img src="/assets/images/spring.png" alt="Spring Camp" class="camp-image">
             <p>Lorem ipsum dolor sit amet, sed do eiusmod tempor laboris nisi ut aliquip ex ea commodo consequat.</p>
-            <div class="btn"> <button type="button">Subscribe Now!</button></div>
+            <div class="btn"> <button type="button">Join Now!</button></div>
         </div>
     </div>
 </body>

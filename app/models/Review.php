@@ -14,6 +14,8 @@ class Review extends \app\core\Model
   public $user_id;
   public $rating;
   public $review_text;
+
+  public $type;
   public $timestamp;
   
 
@@ -29,6 +31,7 @@ class Review extends \app\core\Model
         'user_id' => $this->user_id,
         'rating' => $this->rating,
         'review_text' => $this->review_text,
+        
       ];
       $STMT->execute($data);
     }
@@ -50,10 +53,8 @@ class Review extends \app\core\Model
   public function getAll()
   {
     
-    $SQL = 'SELECT Review.*, Profile.first_name, Profile.last_name
+    $SQL = 'SELECT Review.*
     FROM Review
-    JOIN User ON Review.user_id = User.user_id
-    JOIN Profile ON User.user_id = Profile.user_id
     ORDER BY Review.timestamp DESC;';
 
     $STMT = self::$_conn->prepare($SQL);
@@ -66,7 +67,7 @@ class Review extends \app\core\Model
   //Update Method to update a review text
   public function update()
   {
-    $SQL = 'UPDATE Review SET review_text = :review_text
+    $SQL = 'UPDATE Review SET review_text = :review_text, rating = :rating
         WHERE review_id = :review_id';
 
     $STMT = self::$_conn->prepare($SQL);
@@ -74,6 +75,7 @@ class Review extends \app\core\Model
       [
         'review_text' => $this->review_text,
         'review_id' => $this->review_id,
+        'rating' => $this->rating
       ]
     );
   }
@@ -81,9 +83,8 @@ class Review extends \app\core\Model
   //Getting a review by the id
   public function getReviewById(int $id)
   {
-    $SQL = 'SELECT Review.*, User.first_name, User.last_name
+    $SQL = 'SELECT Review.*
     FROM Review
-    JOIN User ON Review.user_id = User.user_id
     WHERE review_id = :review_id';
 
     $STMT = self::$_conn->prepare($SQL);

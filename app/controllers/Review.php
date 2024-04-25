@@ -13,13 +13,16 @@ class Review extends \app\core\Controller
 
       $review = new \app\models\Review(); //instance of review class
 
-      $review->user_id = $_SESSION['user_id']; //user_id in the instace
+      //!!!!!!! change to session id when branches are merged
+      $review->user_id = 1; //user_id in the instace
       $review->review_text = $_POST['review_text']; //post to grab text and rating
       $review->rating = $_POST['rating'];
+      $review->type = $_POST['type'];
 
       $review->insert(); //inserting into db
 
-      header('location:/User/Review/list'); //redirecting user to the general review page
+
+    //  header('location:/User/review/list'); //redirecting user to the general review page
     } else {
       $this->view('User/review/create', null, true); 
       
@@ -42,6 +45,7 @@ class Review extends \app\core\Controller
   {
     $review = new \app\models\Review();
     $review = $review->getReviewById($_GET['id']);
+   
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
@@ -50,10 +54,11 @@ class Review extends \app\core\Controller
       
       $review->update();
 
-      header('location:/User/Review/list');
+      header('location:/User/review/list');
     } else {
-      $this->view('User/Review/edit', $review);
+      $this->view('User/review/edit', $review, true);
     }
+
 
   }
   public function delete()
@@ -72,14 +77,13 @@ class Review extends \app\core\Controller
   }
 
   //Shows all Reviews that belong to one user
-  public function listUsersReviews(){
+  public function list(){
     $review = new \app\models\Review(); //instance of review class
-    $review->user_id = $_GET['id'];
-    $reviews = $review->getUserReviews(); //getting all the reviews
+    $reviews = $review->getAll(); //getting all the reviews
 
    //TBD to add logic to show username information
 
-    $this->view('User/Review/list', $reviews);
+    $this->view('User/review/list', $reviews,true);
   }
   
 }

@@ -96,6 +96,8 @@ input[type="radio"]:checked ~ label {
   background-image: url('/assets/images/star_icon_full.png');
 }
 
+
+
 input[type="text"]{
     color: black;
 }
@@ -130,10 +132,10 @@ textarea{
     <div class="form-section">
       <h2>Select Purchase for your review</h2>
       <select id="purchaseType">
-        <option value="fullCourt">Full Court</option>
-        <option value="halfCourt">Half Court</option>
-        <option value="Camp">Camp</option>
-        <option value="Membership">Membership</option>
+        <option value="fullCourt" name="type">Full Court</option>
+        <option value="halfCourt" name="type">Half Court</option>
+        <option value="Camp" name="type">Camp</option>
+        <option value="Membership" name="type">Membership</option>
       </select>
     </div>
 
