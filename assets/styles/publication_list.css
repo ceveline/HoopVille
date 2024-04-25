@@ -14,6 +14,26 @@
     padding: 12px;
 }
 
+#left, #column-title {
+    width: 33%;
+    word-wrap: break-word;
+}
+
+#middle, #column-text{
+    width: 33%;
+    text-align: center;
+}
+
+#right{
+    width: 33%;
+    text-align: right;
+}
+
+#column-action {
+    width: 33%;
+    text-align: center;
+}
+
 .list{
     display: flex;
     flex-direction: column;
@@ -23,6 +43,9 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 23px;
 }
 
 .column-name {

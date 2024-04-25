@@ -11,34 +11,34 @@
 <body>
     <div class="background">
         <div class="content">
-        <div class="container">
+            <div class="container">
 
-            <h1><?php echo $publication->title; ?></h1>
+                <h1><?php echo $publication->title; ?></h1>
 
-            <?php if (isset($_SESSION['admin_id'])): ?>
-                <div class="edit-delete-buttons">
-                    <a href="Publication/edit/<?php echo $publication->publication_id; ?>">Edit</a>
-                    <a href="Publication/delete/<?php echo $publication->publication_id; ?>">Delete</a>
+                <?php if (isset($_SESSION['admin_id'])): ?>
+                    <div class="edit-delete-buttons">
+                        <a href="/Publication/edit/<?php echo $publication->publication_id; ?>">Edit</a>
+                        <a href="/Publication/delete/<?php echo $publication->publication_id; ?>">Delete</a>
+                    </div>
+                <?php endif; ?>
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="card">
+                                    <div class="text">
+                                        <p><?= $publication->text ?></p>
+                                    </div>
+                                    <div class="timestamp">
+                                        <p>Created on <?= $publication->timestamp ?></p>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
                 </div>
-            <?php endif; ?>
-            <table class="table">
-                <tbody>
-                    <tr>
-                        <td>
-                            <div class="card">
-                                <div class="text">
-                                    <p><?= $publication->text ?></p>
-                                </div>
-                                <div class="timestamp">
-                                    <p>Created on <?= $publication->timestamp ?></p>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
             </div>
-        </div>
     </div>
 </body>
 
