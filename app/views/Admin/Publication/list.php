@@ -18,23 +18,29 @@
         <div class="content">
             <div class="column-name">
                 <h4 id='column-title'>Title</h4>
-                <h4 id='column-text'>Actions</h4>
+                <h4 id='column-text'>Date Posted</h4>
+                <h4 id='column-action'>Actions</h4>
             </div>
             <hr class="solid">
             <div class="list">
-                <?php foreach ($publications as $pub) : ?>
-                    <tr class='table-rows'>
-                        <td> <a id='pub-title' href="/Publication/view/<?php echo $pub->publication_id; ?>"><?php echo $pub->title; ?></a>
-                        </td>
-                        <div class="buttons">
-                            <td>
-                                <a id='view-button' href="/Publication/view/<?php echo $pub->publication_id; ?>" class="btn btn-primary">View</a>
-                                <a id='edit-button' href="/Publication/edit/<?php echo $pub->publication_id; ?>" class="btn btn-primary">Edit</a>
-                                <a id='delete-button' href="/Publication/delete/<?php echo $pub->publication_id; ?>" class="btn btn-danger">Delete</a>
-                            </td>
-                        </div>
-                    </tr>
-                <?php endforeach; ?>
+                <table>
+                    <?php foreach ($publications as $pub) : ?>
+                        <div class="pub-item">
+                            <tr class='table-rows'>
+                                <td id='left'> <a id='pub-title' href="/Publication/view/<?php echo $pub->publication_id; ?>"><?php echo $pub->title; ?></a>
+                                </td>
+                                <td id='middle'><?php echo $pub->timestamp ?></td>
+                                <div class="buttons">
+                                    <td id='right'>
+                                        <a id='view-button' href="/Publication/view/<?php echo $pub->publication_id; ?>" class="btn btn-primary">View</a>
+                                        <a id='edit-button' href="/Publication/edit/<?php echo $pub->publication_id; ?>" class="btn btn-primary">Edit</a>
+                                        <a id='delete-button' href="/Publication/delete/<?php echo $pub->publication_id; ?>" class="btn btn-danger">Delete</a>
+                                    </td>
+                                </div>
+                            </tr>
+                    <?php endforeach; ?>
+                    
+                </table>
             </div>
         </div>
     </div>

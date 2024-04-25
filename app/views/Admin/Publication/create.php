@@ -21,7 +21,7 @@
                 <!-- for image https://www.youtube.com/watch?v=xXrs4j-p3yE -->
                 <div class="inputs">
                     <label for="title">Title:</label>
-                    <input type="text" id="title" name="title" placeholder="Title goes here">
+                    <input type="text" id="title" name="title" maxlength="60" placeholder="Title goes here">
                 </div>
                 <div class="inputs">
                     <label for="text" class="form-label">Text:</label>
