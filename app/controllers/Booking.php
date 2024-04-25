@@ -12,7 +12,15 @@ class Booking extends \app\core\Controller
     $booking = new \app\models\Booking();
     $bookings = $booking->getBookings();
 
-    $this->view('User/Bookings/list', $bookings, true);
+    // $user = new \app\models\User();
+    // $profile = new \app\models\Profile();
+
+    // foreach($bookings as $booking) {
+    // $booking->user = $user->getUserById($booking->user_id);
+    // $booking->profile = $profile->getProfileByUserId($booking->user_id);      
+    // }
+
+    $this->view('Admin/Booking/list', $bookings, true);
   }
 
   function listUser()
@@ -21,7 +29,7 @@ class Booking extends \app\core\Controller
     $user_id = $_GET['id'];
     $booking = new \app\models\Booking();
     $userBookings = $booking->getBookingsByUserId($user_id);
-    $this->view('User/Bookings/list', $userBookings, true);
+    $this->view('User/Booking/list', $userBookings, true);
   }
 
   // must be admin or your publication
@@ -33,7 +41,7 @@ class Booking extends \app\core\Controller
 
   function create()
   {
-    $this->view('User/Bookings/create', null, true);
+    $this->view('User/Booking/create', null, true);
   }
 
   function update()
@@ -43,7 +51,11 @@ class Booking extends \app\core\Controller
 
   function delete()
   {
-
+    $booking_id = $_GET['id'];
+    $booking = new \app\models\Booking();
+    $booking = $booking->getBookingById($booking_id);
+    $booking->delete();
+    header("location: /Admin/booking/list");
   }
 
   function getTimeSlotAvailabilities($booking_type, $bookings)
@@ -128,6 +140,11 @@ class Booking extends \app\core\Controller
 
     echo json_encode($disabledDates);
   }
+
+  //////////////////////////
+
+
+  //////////////////////////
 
   function getTimeSlotsByDate()
   {

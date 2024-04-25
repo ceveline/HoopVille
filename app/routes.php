@@ -11,3 +11,6 @@ $this->addRoute('User/login', 'User,login');
 $this->addRoute('User/booking/create', 'Booking,create');
 $this->addRoute('User/booking/disabledDates', 'Booking,getDisabledDates');
 $this->addRoute('User/booking/getTimeSlotsByDate', 'Booking,getTimeSlotsByDate');
+
+$this->addRoute('Admin/booking/list', 'Booking,listAdmin');
+$this->addRoute('Admin/booking/delete', 'Booking,delete');

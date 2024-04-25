@@ -4,7 +4,6 @@ namespace app\models;
 
 use PDO;
 
-
 class Booking extends \app\core\Model
 {
 
@@ -15,6 +14,12 @@ class Booking extends \app\core\Model
   public $start_time; // HH:MM:SS
   public $end_time; // HH:MM:SS
   public $status; // 1 app, 0 pending, 2 declined
+  public $timestamp;
+
+  // not from db 
+  public $user;
+
+  public $profile;
 
 
   public function insert()
@@ -85,6 +90,15 @@ class Booking extends \app\core\Model
 
     $STMT->setFetchMode(PDO::FETCH_CLASS, 'app\models\Booking');
     return $STMT->fetchAll();
+  }
+
+  public function getBookingById($booking_id)
+  {
+    $SQL = 'SELECT * FROM Booking WHERE booking_id = :booking_id';
+    $STMT = self::$_conn->prepare($SQL);
+    $STMT->execute(['booking_id' => $booking_id]);
+    $STMT->setFetchMode(PDO::FETCH_CLASS, 'app\models\Booking');
+    return $STMT->fetch();
   }
 
   public function getBookingsByStatus($status)
