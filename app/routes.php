@@ -10,6 +10,8 @@ $this->addRoute('User/logout', 'User,logout');
 $this->addRoute('Admin/Publication/create', 'Publication,create');
 $this->addRoute('Admin/Publication/index', 'Publication,index'); //list publications
 $this->addRoute('Publication/view/{id}', 'Publication,viewPublication'); //list publications
+$this->addRoute('Publication/delete/{id}', 'Publication,delete'); 
+$this->addRoute('Publication/edit/{id}', 'Publication,edit'); 
 
 //ADMIN
 // $this->addRoute('Admin/login', 'Administrator,login'); -> can use /User/login to login as an admin

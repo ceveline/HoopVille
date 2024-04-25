@@ -23,20 +23,24 @@
             </div>
             <hr class="solid">
             <div class="list">
-                <?php foreach ($publications as $pub) : ?>
-                    <tr class='table-rows'>
-                        <td> <a id='pub-title' href="/Publication/view/<?php echo $pub->publication_id; ?>"><?php echo $pub->title; ?></a>
-                        </td>
-                        <p><?php echo $pub->timestamp ?></p>
-                        <div class="buttons">
-                            <td>
-                                <a id='view-button' href="/Publication/view/<?php echo $pub->publication_id; ?>" class="btn btn-primary">View</a>
-                                <a id='edit-button' href="/Publication/edit/<?php echo $pub->publication_id; ?>" class="btn btn-primary">Edit</a>
-                                <a id='delete-button' href="/Publication/delete/<?php echo $pub->publication_id; ?>" class="btn btn-danger">Delete</a>
-                            </td>
+                <table>
+                    <?php foreach ($publications as $pub) : ?>
+                        <div class="pub-item">
+                            <tr class='table-rows'>
+                                <td> <a id='pub-title' href="/Publication/view/<?php echo $pub->publication_id; ?>"><?php echo $pub->title; ?></a>
+                                </td>
+                                <td><?php echo $pub->timestamp ?></td>
+                                <div class="buttons">
+                                    <td>
+                                        <a id='view-button' href="/Publication/view/<?php echo $pub->publication_id; ?>" class="btn btn-primary">View</a>
+                                        <a id='edit-button' href="/Publication/edit/<?php echo $pub->publication_id; ?>" class="btn btn-primary">Edit</a>
+                                        <a id='delete-button' href="/Publication/delete/<?php echo $pub->publication_id; ?>" class="btn btn-danger">Delete</a>
+                                    </td>
+                                </div>
+                            </tr>
                         </div>
-                    </tr>
-                <?php endforeach; ?>
+                    <?php endforeach; ?>
+                </table>
             </div>
         </div>
     </div>

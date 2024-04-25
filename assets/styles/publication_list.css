@@ -14,26 +14,22 @@
     padding: 12px;
 }
 
-a {
-    margin-right: 10px;
+.list{
+    display: flex;
+    flex-direction: column;
 }
 
-p {
-    margin-right: 23%;
+.table-rows{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .column-name {
-    display:flex;
+    display: flex;
     padding: 10px;
     font-size: 1.5rem;
-}
-
-#column-title{
-    margin-right: 30%;
-}
-
-#column-text{
-    margin-right: 24%;
+    justify-content: space-between;
 }
 
 .list{
@@ -43,10 +39,11 @@ p {
 }
 
 #pub-title{
-    margin-right: 30%;
+    /* margin-right: 30%; */
     font-size: 1.3rem;
     text-decoration: none;
     color: black;
+    width: 250px;
 }
 
 #pub-title:hover{

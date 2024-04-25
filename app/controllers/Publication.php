@@ -32,12 +32,14 @@ class Publication extends \app\core\Controller {
         }
     }
 
-    function edit() { //when clicking the "edit" button
+    //works
+    function edit($id) { //when clicking the "edit" button
         date_default_timezone_set('America/New_York'); //to make sure the timestamp is EST time
 
-        $publication_id = $_GET['id']; //get id of the publication from the URL
+        // $publication_id = $_GET['id']; 
+        //get id of the publication from the URL
         $publication = new \app\models\Publication();
-        $publication = $publication->getById($publication_id); //get the data of the publication by id
+        $publication = $publication->getById($id); //get the data of the publication by id
 
         if($_SERVER['REQUEST_METHOD'] === 'POST') {
             $publication->title = $_POST['title'];
@@ -46,20 +48,19 @@ class Publication extends \app\core\Controller {
 
             $publication->update($publication_id);
 
-            header('location:/Profile/index');
+            header("location:/Admin/Publication/view/$id");
         }
         else {
-            $this->view('Publication/edit', $publication, true);
+            $this->view('Admin/Publication/edit', $publication, true);
         }
     
     }
 
-    function delete() {
-        $id = $_GET['id'];
+    function delete($id) {
         $publication = new \app\models\Publication();
 		$publication->delete($id);
 
-        header('location:/Profile/index'); //change this
+        header('location:/Admin/Publication/index'); //change this
     }
 
     function viewPublication($id) {
