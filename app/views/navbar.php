@@ -40,14 +40,13 @@
             <li>
                 <a class="nav-link" href="#">Reviews</a>
             </li>
-            <?php
-            if (!isset($_SESSION['user_id']) || !isset($_SESSION['admin_id'])) {
-                echo '<li><a class="nav-link" href="/User/login">Login</a></li>';
-            } else {
-                echo '<li><a class="nav-link" href="#">My Account</a></li>';
-                echo '<li><a class="nav-link" href="/User/logout">Logout</a></li>';
-            }
-            ?>
+
+            <?php if (isset($_SESSION['user_id']) || isset($_SESSION['admin_id'])) : ?>
+                <li><a class="nav-link" href="#">My Account</a></li>
+                <li><a class="nav-link" href="/User/logout">Logout</a></li>      
+            <?php else : ?>
+                <li><a class="nav-link" href="/User/login">Login</a></li>
+            <?php endif; ?>
         </ul>
     </header>
 </body>
