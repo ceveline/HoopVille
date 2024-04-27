@@ -39,9 +39,9 @@
 }
 
 .join-now-btn button, .more-info-btn button {
-    background-color: #ffd257; /* Green */
+    background-color: #ffd257;
     border: none;
-    color: #fff; /* White text */
+    color: #fff;
     padding: 14px 64px;
     text-align: center;
     text-decoration: none;

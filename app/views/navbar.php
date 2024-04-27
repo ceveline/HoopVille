@@ -35,7 +35,7 @@
                 <a class="nav-link" href="#">FAQ</a>
             </li>
             <li>
-                <a class="nav-link" href="#">News & Updates</a>
+                <a class="nav-link" href="/Publication">News & Updates</a>
             </li>
             <li>
                 <a class="nav-link" href="#">Reviews</a>

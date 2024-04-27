@@ -29,7 +29,7 @@ class Publication extends \app\core\Model
     }
 
     public function getAll() {
-        $SQL = 'SELECT * FROM Publication';
+        $SQL = 'SELECT * FROM Publication ORDER BY timestamp desc';
         $STMT = self::$_conn->prepare($SQL);
         $STMT->execute();
 

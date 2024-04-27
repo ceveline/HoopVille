@@ -11,6 +11,13 @@ class Publication extends \app\core\Controller {
         
         $this->view('Admin/Publication/list', ['publications' => $publications], true);
     }
+
+    function list() {
+        $publication = new \app\models\Publication();
+        $publications = $publication->getAll();
+        
+        $this->view('User/Publication/list', ['publications' => $publications], true);
+    }
     
     function create() {
         date_default_timezone_set('America/New_York'); //to make sure the timestamp is EST time
@@ -83,10 +90,10 @@ class Publication extends \app\core\Controller {
             $searchResults = array_unique($searchResults, SORT_REGULAR);
             
             // Pass the search results to the view
-            $this->view('Publication/index', ['publications' => $searchResults], true);
+            $this->view('User/Publication/list', ['publications' => $searchResults], true);
         } else {
             // If not a POST request, redirect to the main page
-            header('location:/Publication/index');
+            header('location:/Publication');
         }
     }
 }

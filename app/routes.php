@@ -12,6 +12,8 @@ $this->addRoute('Admin/Publication/index', 'Publication,index'); //list publicat
 $this->addRoute('Publication/view/{id}', 'Publication,viewPublication'); //list publications
 $this->addRoute('Publication/delete/{id}', 'Publication,delete'); 
 $this->addRoute('Publication/edit/{id}', 'Publication,edit'); 
+$this->addRoute('Publication', 'Publication,list'); //for user not admin
+$this->addRoute('Publication/search','Publication,search');
 
 //ADMIN
 // $this->addRoute('Admin/login', 'Administrator,login'); -> can use /User/login to login as an admin
