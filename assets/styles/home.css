@@ -50,8 +50,10 @@
     cursor: pointer;
     border-radius: 20px; /* Rounded corners */
     transition: background-color 0.3s ease; /* Smooth transition on hover */
+    text-transform: uppercase;
+    font-weight: bold;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
-
 .join-now-btn button:hover, .more-info-btn button:hover {
     background-color: #f9c80e; /* Darker green on hover */
 }
