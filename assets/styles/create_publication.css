@@ -6,7 +6,7 @@
 }
 
 .content {
-    height: 566px;
+    min-height: 566px;
     width: 910px;
     background-color: white;
     display: flex;
