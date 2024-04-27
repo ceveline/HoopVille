@@ -2,9 +2,9 @@
 $this->addRoute('Home', 'User,home');
 
 //defined a few routes "url"=>"controller,method" -> connected to the App.php file in the core folder
-$this->addRoute('User/login', 'User,login');
+$this->addRoute('login', 'User,login');
 $this->addRoute('User/register', 'User,register');
-$this->addRoute('User/logout', 'User,logout');
+$this->addRoute('logout', 'User,logout');
 
 //PUBLICATIONS
 $this->addRoute('Admin/Publication/create', 'Publication,create');
