@@ -16,7 +16,7 @@ class User extends \app\core\Controller {
 
                 if($admin && password_verify($password, $admin->password_hash)) {
                     $_SESSION['admin_id'] = $admin->admin_id;
-                    header('location:/Home'); 
+                    header('location:/Home');
                 }
                 else {
                     header('location:/User/login');
