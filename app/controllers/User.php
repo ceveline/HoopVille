@@ -29,7 +29,7 @@ class User extends \app\core\Controller {
             $user = $user->getByEmail($email);
 
             
-            if($user && password_verify($password, $user->password_hash)) {
+            if($user && password_verify($password, $user->password_hash) && $user->active == 1) {
                 $_SESSION['user_id'] = $user->user_id;
                 header('location:/Home'); 
             }
