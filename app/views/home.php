@@ -19,8 +19,14 @@
                 </div>
             </div>
             <div class="buttons">
-                <div class="more-info-btn"><button>More info</button></div>
-                <div class="join-now-btn"><button>Join now</button></div>
+                <div class="more-info-btn">
+                    <form action="/Services">
+                        <button type='submit'>More info</button>
+                    </form>                 
+                </div>
+                    <form action="/User/register">
+                        <div class="join-now-btn"><button>Join now</button></div>
+                    </form>
             </div>
         </div>
     </div>
