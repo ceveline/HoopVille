@@ -1,3 +1,6 @@
+.content{
+    padding: 20px;
+}
 .card {
     border: 1px solid #ccc;
     border-radius: 8px;
@@ -11,12 +14,6 @@
 .card:hover{
     background-color: #f0f0f0;
 
-}
-
-/* Add styles for selected card */
-.card.selected {
-    background-color: #ffd257; /* Change color as needed */
-    border-color: #ccc;
 }
 
 
@@ -69,4 +66,24 @@
 
 .price, .desc{
     margin-top: 15px;
+}
+
+.next-btn-div{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.nextButton{
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    width: 96px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1rem;
+}
+
+.nextButton:hover{
+    background-color: #f0f0f0;
 }
