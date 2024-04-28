@@ -48,7 +48,7 @@
                 <button type="submit" class="btn" name="action" value="Register" onclick="validateInput(event)">Register</button>
 
                 <div class="login-now">
-                    <p>Already have an account? <a href="/User/login">Login now!</a></p>
+                    <p>Already have an account? <a href="/login">Login now!</a></p>
                 </div>
 
                 <script>

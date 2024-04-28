@@ -3,7 +3,7 @@ $this->addRoute('Home', 'User,home');
 
 //defined a few routes "url"=>"controller,method" -> connected to the App.php file in the core folder
 $this->addRoute('login', 'User,login');
-$this->addRoute('User/register', 'User,register');
+$this->addRoute('register', 'User,register');
 $this->addRoute('logout', 'User,logout');
 
 //PUBLICATIONS
@@ -25,3 +25,7 @@ $this->addRoute('Admin/logout', 'Administrator,logout');
 $this->addRoute('User/booking/create', 'Booking,create');
 $this->addRoute('User/booking/disabledDates', 'Booking,getDisabledDates');
 $this->addRoute('User/booking/getTimeSlotsByDate', 'Booking,getTimeSlotsByDate');
+
+//MEMBERSHIP
+$this->addRoute('User/membership', 'Membership,list');
+

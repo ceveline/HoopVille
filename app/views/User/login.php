@@ -27,7 +27,7 @@
                 </div>
                 <button type="submit" class="btn btn-primary" name="action" value="Login">Login</button>
                 <div class="register-now">
-                    <p>Don't have an account? <a href="/User/register">Register now!</a></p>
+                    <p>Don't have an account? <a href="/register">Register now!</a></p>
                 </div>
             </form>
         </div>

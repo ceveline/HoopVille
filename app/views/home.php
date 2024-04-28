@@ -24,7 +24,7 @@
                         <button type='submit'>More info</button>
                     </form>                 
                 </div>
-                    <form action="/User/register">
+                    <form action="/register">
                         <div class="join-now-btn"><button>Join now</button></div>
                     </form>
             </div>

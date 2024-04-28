@@ -1,0 +1,72 @@
+.card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 200px;
+}
+
+.card:hover{
+    background-color: #f0f0f0;
+
+}
+
+/* Add styles for selected card */
+.card.selected {
+    background-color: #ffd257; /* Change color as needed */
+    border-color: #ccc;
+}
+
+
+.subtitle {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.price {
+    font-weight: bold;
+    text-align: center;
+}
+
+.desc {
+    color: #666;
+    text-align: center;
+}
+
+.background {
+    min-height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+}
+
+.content {
+    height: auto; /* Changed to auto */
+    width: 850px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    padding-top: 38px;
+    margin: auto;
+    margin-top: 74px;
+    border-radius: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+}
+
+.membership-types {
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap; 
+}
+
+.price, .desc{
+    margin-top: 15px;
+}
