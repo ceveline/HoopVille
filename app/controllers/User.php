@@ -63,7 +63,7 @@ class User extends \app\core\Controller {
             //insert to database
             $profile->insert();
 
-            header('location:/User/login');
+            header('location:/login');
         }
 
 
@@ -77,7 +77,7 @@ class User extends \app\core\Controller {
     function logout() {
         session_destroy();
 
-		header('location:/User/login');
+		header('location:/login');
     }
 
     function forgetPassword($email) {
