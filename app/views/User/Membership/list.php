@@ -20,7 +20,7 @@
                                 <h3><?= $mb->membership_type; ?></h3>
                             </div>
                             <div class="price">
-                                <p>Price: <?= $mb->monthly_price?></p>
+                                <p><?= $mb->monthly_price?>/month</p>
                             </div>
                             <div class="desc">
                                 <p><?= $mb->description?></p>
@@ -28,6 +28,27 @@
                         </div>
                     <?php endforeach; ?>
                 </div>
+            </div>
+            <div class="page2"> <!-- Show the time -->
+                <div class="title"><h1>Review Your Order</h1></div>
+                <form method="post" action="/User/membership/create">
+                    <div class="confirmation">
+                        <div class="subtitle">
+                        </div>
+                        <div class="price">
+                        </div>
+                        <div class="desc2">
+                        </div>
+                    </div>
+                    <div class="p2-buttons">
+                        <div class="back-btn">
+                            <input class='btn2' type="button" value="Back"></input>
+                        </div>
+                    </div>
+                    <div class="confirm-btn">
+                        <input class='btn' type="submit" value="Confirm"></input>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

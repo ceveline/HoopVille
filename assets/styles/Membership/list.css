@@ -16,6 +16,10 @@
 
 }
 
+.title{
+    font-size: 1.1rem;
+    text-transform: uppercase;
+}
 
 .subtitle {
     margin-bottom: 10px;
@@ -29,6 +33,11 @@
 
 .desc {
     color: #666;
+    text-align: center;
+}
+
+.desc2 {
+    color: rgb(0, 0, 0);
     text-align: center;
 }
 
@@ -64,7 +73,7 @@
     flex-wrap: wrap; 
 }
 
-.price, .desc{
+.price, .desc, .desc2{
     margin-top: 15px;
 }
 
@@ -82,8 +91,67 @@
     align-items: center;
     justify-content: center;
     border-radius: 1rem;
+    margin-top: 2%;
 }
 
 .nextButton:hover{
     background-color: #f0f0f0;
+}
+
+.page2 .title{
+    margin-bottom: 5%;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+}
+
+.confirmation{
+    background-color: #ffda76;
+    border-radius: 1rem;
+    width: 500px;
+    padding: 3%;
+    margin: auto;
+    word-wrap: break-word;
+}
+
+.page2 .price {
+    font-weight: normal; /* Reset font-weight to normal */
+}
+
+.page2 .subtitle, .page2 .price, .page2 .desc2 {
+    line-height: 1.5;
+}
+
+input.membership_type{
+    text-align: center;
+    background-color: transparent;
+    border: none;
+    font-size: 1rem;
+}
+
+.back-btn, .confirm-btn{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.confirm-btn .btn, .back-btn .btn2{
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    width: 96px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1rem;
+    margin-top: 2%;
+    border: none;
+    font-size: 1rem;
+}
+
+.confirm-btn .btn:hover, .back-btn .btn2:hover{
+    background-color: #f0f0f0;
+}
+
+.p2-buttons{
+    display: flex;
+    justify-content: space-between;
 }
