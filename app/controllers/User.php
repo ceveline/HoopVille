@@ -19,7 +19,7 @@ class User extends \app\core\Controller {
                     header('location:/Home');
                 }
                 else {
-                    header('location:/User/login');
+                    header('location:/login');
                 }
                 return;
             }
@@ -34,7 +34,7 @@ class User extends \app\core\Controller {
                 header('location:/Home'); 
             }
             else {
-                header('location:/User/login');
+                header('location:/login');
             }
         }
         else {

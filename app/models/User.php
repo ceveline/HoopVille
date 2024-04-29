@@ -10,20 +10,27 @@ class User extends \app\core\Model
     public $user_id;
     public $email;
     public $password_hash;
+    public $active;
 
     public function insert() {
-        //statement
-        $SQL = 'INSERT INTO User (email, password_hash) VALUES (:email, :password_hash)';
-
-        //prepare statement
+        $SQL = 'INSERT INTO User (email, password_hash, active) VALUES (:email, :password_hash, :active)';
+    
+        // prepare statement
         $STMT = self::$_conn->prepare($SQL);
-
-        //execute the statement
-        $data = ['email'=> $this->email, 
-                'password_hash'=> $this->password_hash];
-        
+    
+        // set the value of active to 1
+        $active = 1;
+    
+        // execute the statement
+        $data = [
+            'email' => $this->email,
+            'password_hash' => $this->password_hash,
+            'active' => $active
+        ];
+    
         $STMT->execute($data);
     }
+    
 
     //getById -> Read
     public function getById($user_id) {

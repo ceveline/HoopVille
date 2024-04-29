@@ -29,7 +29,7 @@
                     <?php endforeach; ?>
                 </div>
             </div>
-            <div class="page2"> <!-- Show the time -->
+            <div class="page2">
                 <div class="title"><h1>Review Your Order</h1></div>
                 <form method="post" action="/User/membership/create">
                     <div class="confirmation">
@@ -40,15 +40,16 @@
                         <div class="desc2">
                         </div>
                     </div>
+                    <div class="confirm-btn">
+                        <input class='btn' type="submit" value="Confirm"></input>
+                    </div>
                     <div class="p2-buttons">
                         <div class="back-btn">
                             <input class='btn2' type="button" value="Back"></input>
                         </div>
                     </div>
-                    <div class="confirm-btn">
-                        <input class='btn' type="submit" value="Confirm"></input>
-                    </div>
                 </form>
+
             </div>
         </div>
     </div>
