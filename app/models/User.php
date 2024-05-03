@@ -75,7 +75,7 @@ class User extends \app\core\Model
                     WHERE email = :email';
         $STMT = self::$_conn->prepare($SQL);
         $STMT->execute([
-            'user_id'=>$user_id,
+            'email'=>$email,
             'password_hash'=>$this->password_hash,
         ]);
     }
