@@ -170,6 +170,14 @@
     <div style='height: 200px'></div>
     <h1>CAMPS</h1>
     <div class='container'>
+    <?php foreach($data as $camp): ?>
+        <div class="form-container">
+            <h3><?php echo $camp->camp_type; ?></h3> 
+            <img src="/assets/images/spring.png" alt="<?php echo $camp['camp_type']; ?>" class="camp-image">
+            <p><?php echo $camp['description']; ?></p>
+            <div class="btn"> <button type="button">Join Now!</button></div>
+        </div>
+        <?php endforeach; ?>
         <div class="form-container">
             <h3>Winter Camp</h3> 
             <img src="/assets/images/spring.png" alt="Spring Camp" class="camp-image">
