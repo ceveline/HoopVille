@@ -18,8 +18,8 @@
         }
 
         .form-container {
-          height: 400px;
-    width: 300px;
+          height:500px;
+    width: 400px;
     background-color: ghostwhite;
     border-radius: 20px;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
@@ -65,16 +65,8 @@
             margin-bottom: 10px;
         }
 
-        header {
-            background-color: black;
-        }
+        
 
-        body {
-            background: lightgray;
-            text-align: center;
-            color: black;
-            align-items: center;
-        }
 
         .purchaseType {
             color: black;
@@ -173,29 +165,20 @@
     <?php foreach($data as $camp): ?>
         <div class="form-container">
             <h3><?php echo $camp->camp_type; ?></h3> 
-            <img src="/assets/images/spring.png" alt="<?php echo $camp['camp_type']; ?>" class="camp-image">
-            <p><?php echo $camp['description']; ?></p>
-            <div class="btn"> <button type="button">Join Now!</button></div>
+            <img src="/assets/images/spring.png" alt="<?php echo $camp->camp_type; ?>" class="camp-image">
+            <p><?php echo $camp->description; ?></p>
+            <p><?php echo "$camp->price$"; ?></p>
+            <p><?php echo "Start Date: $camp->start_date"; ?></p>
+            <p><?php echo "End Date: $camp->end_date"; ?></p>
+            <p><?php echo "Registration Period: $camp->registration_start-$camp->registration_end"; ?></p>
+            <form action="camp_page.php" method="post">
+                <input type="hidden" name="camp_type" value="<?php echo $camp->camp_type; ?>">
+                <input type="hidden" name="price" value="<?php echo $camp->price; ?>">
+                <div class="btn"> <button type="submit">Join Now!</button></div>
+            </form>
         </div>
         <?php endforeach; ?>
-        <div class="form-container">
-            <h3>Winter Camp</h3> 
-            <img src="/assets/images/spring.png" alt="Spring Camp" class="camp-image">
-            <p>Lorem ipsum dolor sit amet, sed do eiusmod tempor laboris nisi ut aliquip ex ea commodo consequat.</p>
-            <div class="btn"> <button type="button">Join Now!</button></div>
-        </div>
-        <div class="form-container">
-            <h3>Spring Camp</h3> 
-            <img src="/assets/images/spring.png" alt="Spring Camp" class="camp-image">
-            <p>Lorem ipsum dolor sit amet, sed do eiusmod tempor laboris nisi ut aliquip ex ea commodo consequat.</p>
-            <div class="btn"> <button type="button">Join Now!</button></div>
-        </div>
-        <div class="form-container">
-            <h3>Summer Camp</h3> 
-            <img src="/assets/images/spring.png" alt="Spring Camp" class="camp-image">
-            <p>Lorem ipsum dolor sit amet, sed do eiusmod tempor laboris nisi ut aliquip ex ea commodo consequat.</p>
-            <div class="btn"> <button type="button">Join Now!</button></div>
-        </div>
+       
     </div>
 </body>
 </html>

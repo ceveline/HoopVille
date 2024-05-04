@@ -51,35 +51,6 @@
                     <p>Already have an account? <a href="/login">Login now!</a></p>
                 </div>
 
-                <script>
-                    function validateInput(event) {
-                        event.preventDefault(); // Prevent the form from submitting
-                        
-                        var first_name = document.getElementById("first_name").value.trim();
-                        var last_name = document.getElementById("last_name").value.trim();
-                        var phone = document.getElementById("phone").value.trim();
-                        var dob = document.getElementById("date_of_birth").value.trim();
-                        var email = document.getElementById("email").value.trim();
-                        var password = document.getElementById("password_hash").value.trim();
-                        var retype_password = document.getElementById("retype-password").value.trim();
-
-                        if (first_name === "" || last_name === "" || phone === "" || 
-                        dob === "" || email === "" || password === "" || retype_password === "") {
-                            alert("Please fill in all fields");
-                            return;
-                        }
-                        if (password != retype_password) {
-                            alert("Please make sure the passwords are the same");
-                            document.getElementById("password_hash").style.borderColor = "red";
-                            document.getElementById("retype_password").style.borderColor = "red";
-                            return;
-                        }
-
-                        // If all fields are filled, submit the form
-                        document.querySelector('.register-form').submit();
-                    }
-                </script>
-
             </form>
         </div>
     </div>

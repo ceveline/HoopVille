@@ -3,14 +3,22 @@
 namespace app\controllers;
 
 
-class Camp extends \app\core\Controller {
-    
+class MembershipType extends \app\core\Controller {
+    function list()
+    {
+      $membership = new \app\models\MembershipType(); 
+      $membershipTypes = $membership->getAll(); 
+      
+  
+      $this->view('User/membership/list', $membershipTypes, true);
+      
+    }
 
 
-    function enrol(){
+    function buy(){
       if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-        $guest = new \app\models\Guest();
+        $guest = new \app\models\Membership();
         $guest->first_name = $_POST['first_name'];
         $guest->last_name = $_POST['last_name'];
         $guest->date_of_birth = $_POST['dob'];

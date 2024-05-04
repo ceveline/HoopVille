@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Membership</title>
+    <title>Membership options</title>
     <style>
         * {
             margin: 0;
@@ -18,8 +18,8 @@
         }
 
         .form-container {
-          height: 400px;
-    width: 300px;
+          height:500px;
+    width: 400px;
     background-color: ghostwhite;
     border-radius: 20px;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
@@ -65,16 +65,8 @@
             margin-bottom: 10px;
         }
 
-        header {
-            background-color: black;
-        }
+        
 
-        body {
-            background: lightgray;
-            text-align: center;
-            color: black;
-            align-items: center;
-        }
 
         .purchaseType {
             color: black;
@@ -125,26 +117,25 @@
     margin-right: 45px;
     border-radius: 20px;
     margin-bottom: 10px;
-    object-fit: cover; /* Changed from 'contain' to 'cover' for a better fit */
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 8px 0px; /* Added a subtle shadow */
-    transition: transform 0.3s ease; /* Added a transition for a hover effect */
+    object-fit: cover; 
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 8px 0px; 
+    transition: transform 0.3s ease; 
 }
 
         .form-container:hover {
-    background-color: #F4F4F4; /* Light gray background on hover */
-    transform: scale(1.03); /* Scale up by 5% */
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for background color and scale */
+    background-color: #F4F4F4; 
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 .form-container h3 {
-            margin-top: -20px; /* Adjust to position the heading above the container */
+            margin-top: -20px; 
             padding: 5px;
             border-radius: 10px;
-            background-color: black; /* Yellow background color */
+            background-color: black; 
             text-align: center;
             width: 100%;
             color: white;
             margin-bottom: 10px;
-            font-size: 18px; /* Adjust font size as needed */
+            font-size: 18px; 
         }
 
         .btn{
@@ -170,24 +161,20 @@
     <div style='height: 200px'></div>
     <h1>Memberships</h1>
     <div class='container'>
+    <?php foreach($data as $membership): ?>
         <div class="form-container">
-            <h3>Basic Membership</h3> 
-            <img src="/assets/images/spring.png" alt="Basic Membership" class="camp-image">
-            <p>Lorem ipsum dolor sit amet, sed do eiusmod tempor laboris nisi ut aliquip ex ea commodo consequat.</p>
-            <div class="btn"> <button type="button">Subscribe Now!</button></div>
+            <h3><?php echo $membership->membership_type; ?></h3> 
+            <img src="/assets/images/spring.png" alt="<?php echo $membership->membership_type; ?>" class="camp-image">
+            <p><?php echo $membership->description; ?></p>
+            <p><?php echo "Monthly Price: $membership->monthly_price$" ?></p>
+            <form action="registration_page.php" method="post">
+                <input type="hidden" name="membership_type" value="<?php echo $membership->membership_type; ?>">
+                <input type="hidden" name="monthly_price" value="<?php echo $membership->monthly_price; ?>">
+                <div class="btn"> <button type="submit">Join Now!</button></div>
+            </form>
         </div>
-        <div class="form-container">
-            <h3>VIP Membership</h3> 
-            <img src="/assets/images/spring.png" alt="VIP Membership" class="camp-image">
-            <p>Lorem ipsum dolor sit amet, sed do eiusmod tempor laboris nisi ut aliquip ex ea commodo consequat.</p>
-            <div class="btn"> <button type="button">Subscribe Now!</button></div>
-        </div>
-        <div class="form-container">
-            <h3>Premium Membership</h3> 
-            <img src="/assets/images/spring.png" alt="Premium Membership" class="camp-image">
-            <p>Lorem ipsum dolor sit amet, sed do eiusmod tempor laboris nisi ut aliquip ex ea commodo consequat.</p>
-            <div class="btn"> <button type="button">Subscribe Now!</button></div>
-        </div>
+        <?php endforeach; ?>
+       
     </div>
 </body>
 </html>
