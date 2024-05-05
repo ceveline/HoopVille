@@ -32,6 +32,14 @@ class Membership extends \app\core\Model
         
         $STMT->execute($data);
     }
+    public function getAll(){
+        $SQL = 'SELECT * FROM Membership';
+        $STMT = self::$_conn->prepare($SQL);
+        $STMT->execute();
+
+        $STMT->setFetchMode(PDO::FETCH_CLASS,'app\models\Membership');//set the type of data returned by fetches
+		return $STMT->fetchAll();
+    }
     //get by user id
     public function getMembershipByUserId($user_id){
         $SQL = 'SELECT * FROM Membership WHERE user_id = :user_id';
@@ -57,12 +65,13 @@ class Membership extends \app\core\Model
     //cancel => change status to cancelled => 48 hours before
 
     //delete => admin
-    public function delete($membership_id) {
+    public function deleteById($membership_id) {
         $SQL = 'DELETE FROM Membership WHERE membership_id = :membership_id';
 		$STMT = self::$_conn->prepare($SQL);
 		$STMT->execute(
 			['membership_id'=> $membership_id] //no
 		);
     }
+    
 
 }

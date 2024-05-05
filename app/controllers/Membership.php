@@ -27,6 +27,18 @@ class Membership extends \app\core\Controller
         $this->view('User/Membership/individual', ['membership' => $membership_model, 'type' => $membership_type, 'types' => $membership_types], true);
     }
 
+    //list all user memberships
+    function list_admin() {
+        $membership_model = new \app\models\Membership();
+        $membership_model = $membership_model->getAll();
+
+        //get user profile to display email
+        $profile_model = new \app\models\Profile();
+        $profile_model = $profile_model->getAll();
+
+        $this->view('Admin/Membership/list', ['memberships' => $membership_model, 'profiles' => $profile_model], true);
+    }
+
     function create() {
         date_default_timezone_set('America/New_York'); // Set the timezone
 
@@ -89,6 +101,13 @@ class Membership extends \app\core\Controller
 
         $membership_model->delete($membership->membership_id);
         header('location:/Home'); 
+    }
+
+    function deleteById($membership_id) {
+        $membership_model = new \app\models\Membership();
+
+        $membership_model->deleteById($membership_id);
+        header('location:/Admin/membership/list'); 
     }
 
 }
