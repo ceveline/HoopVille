@@ -43,15 +43,14 @@ class Membership extends \app\core\Model
     }
 
     public function update($membership_id) {
-        $SQL = 'UPDATE Membership SET membership_type=:membership_type, 
-                start_date=:start_date, end_date=:end_date,
+        $SQL = 'UPDATE Membership 
+                SET membership_type=:membership_type, start_date=:start_date
                 WHERE membership_id = :membership_id';
         $STMT = self::$_conn->prepare($SQL);
         $STMT->execute([
             'membership_id'=>$membership_id,
             'membership_type'=>$this->membership_type,
             'start_date'=>$this->start_date,
-            'end_date'=>$this->end_date,
         ]);
     }
 

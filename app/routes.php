@@ -30,4 +30,6 @@ $this->addRoute('User/booking/getTimeSlotsByDate', 'Booking,getTimeSlotsByDate')
 $this->addRoute('Membership', 'Membership,list');
 $this->addRoute('User/membership', 'Membership,list_user');
 $this->addRoute('User/membership/create', 'Membership,create');
+$this->addRoute('User/membership/edit', 'Membership,edit');
+$this->addRoute('User/membership/delete', 'Membership,delete');
 

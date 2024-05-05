@@ -24,7 +24,7 @@ class Membership extends \app\core\Controller
 
         $membership_type = $membership_types_mdl->getByType($membership_model->membership_type);
 
-        $this->view('User/Membership/individual', ['membership' => $membership_model, 'type' => $membership_type], true);
+        $this->view('User/Membership/individual', ['membership' => $membership_model, 'type' => $membership_type, 'types' => $membership_types], true);
     }
 
     function create() {
@@ -60,5 +60,35 @@ class Membership extends \app\core\Controller
         }
     }
     
+    function edit() {
+        $membership_model = new \app\models\Membership();
+        $membership_model = $membership_model->getMembershipByUserId($_SESSION['user_id']);
+        $membership_id = $membership_model->membership_id;
+
+        // Get the current timestamp
+        $current_timestamp = time();
+
+        // Calculate the future timestamp (1 year from now)
+        $future_timestamp = strtotime('+1 year', $current_timestamp);
+        
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $membership_model->membership_type = $_POST['membership_type'];
+            $membership_model->start_date = date('Y-m-d H:i:s', $current_timestamp);
+
+            $membership_model->update($membership_id);
+
+            header("location:/User/membership");
+        } else {
+            $this->view('User/Membership', ['membership' => $membership_model], true);
+        }
+    }
+
+    function delete() {
+        $membership_model = new \app\models\Membership();
+		$membership = $membership_model->getMembershipByUserId($_SESSION['user_id']);
+
+        $membership_model->delete($membership->membership_id);
+        header('location:/Home'); 
+    }
 
 }
