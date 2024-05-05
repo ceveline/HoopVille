@@ -27,6 +27,7 @@ $this->addRoute('User/booking/disabledDates', 'Booking,getDisabledDates');
 $this->addRoute('User/booking/getTimeSlotsByDate', 'Booking,getTimeSlotsByDate');
 
 //MEMBERSHIP
-$this->addRoute('User/membership', 'Membership,list');
+$this->addRoute('Membership', 'Membership,list');
+$this->addRoute('User/membership', 'Membership,list_user');
 $this->addRoute('User/membership/create', 'Membership,create');
 
