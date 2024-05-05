@@ -11,7 +11,7 @@ class Membership extends \app\core\Controller
         $membership_types = new \app\models\Membership_type();
         $membership_types = $membership_types->getAll();
 
-        $this->view('User/Membership/list', ['memberships' => $membership_types], true);
+        $this->view('User/membership/list', ['memberships' => $membership_types], true);
     }
 
     function list_for_user($user_id) { //to show on profile
@@ -24,7 +24,7 @@ class Membership extends \app\core\Controller
       $membership_type = $membership_type_model->getByType($membership_model->membership_type);
 
 
-      $this->view('User/Membership/individual', ['membership' => $membership_model, 'type' => $membership_type, 'types'=> $membership_types], true);
+      $this->view('User/membership/individual', ['membership' => $membership_model, 'type' => $membership_type, 'types'=> $membership_types], true);
     }
 
 //can only create 1 membership at a time
@@ -57,7 +57,7 @@ class Membership extends \app\core\Controller
           header('location:/Home');
       } else {
           // If it's not a POST request, display the membership list page
-          $this->view('User/Membership/list', null, true);
+          $this->view('User/membership/list', null, true);
       }
   }
 
@@ -111,10 +111,10 @@ class Membership extends \app\core\Controller
 
             header('location:/Home'); //change it to go back to the profile page
         } else {
-            $this->view("User/Membership/edit", ['membership' => $membership_model], true);
+            $this->view("User/membership/edit", ['membership' => $membership_model], true);
         }
     } else {
-        $this->view("User/Membership/edit", ['membership' => $membership_model], true);
+        $this->view("User/membership/edit", ['membership' => $membership_model], true);
     }
 }
 
