@@ -37,7 +37,7 @@
                                 <td id='middle'><?php echo $mb->end_date ?></td>
                                 <div class="buttons">
                                     <td id='right'>
-                                        <a id='edit-button' class="btn btn-primary">Edit</a>
+                                        <!-- <a id='edit-button' class="btn btn-primary">Edit</a> -->
                                         <a id='delete-button' class="btn btn-danger" href="/Admin/membership/delete/<?= $mb->membership_id?>">Delete</a>
                                     </td>
                                 </div>
