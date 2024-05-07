@@ -86,6 +86,7 @@ class Membership extends \app\core\Controller
         }
     }
     
+    #[\app\filters\Login]
     function edit() {
         
         $membership_model = new \app\models\Membership();
@@ -115,6 +116,7 @@ class Membership extends \app\core\Controller
     }
 
     //for admin
+    #[\app\filters\Admin\IsAdmin]
     function editById($membership_id) {
         $membership_model = new \app\models\Membership();
         $membership_model = $membership_model->getMembershipById($membership_id);
@@ -130,6 +132,7 @@ class Membership extends \app\core\Controller
         }
     }
 
+    #[\app\filters\Login]
     function delete() {
         $membership_model = new \app\models\Membership();
 		$membership = $membership_model->getMembershipByUserId($_SESSION['user_id']);
@@ -138,6 +141,7 @@ class Membership extends \app\core\Controller
         header('location:/Home'); 
     }
 
+    #[\app\filters\Admin\IsAdmin]
     function deleteById($membership_id) {
         $membership_model = new \app\models\Membership();
 

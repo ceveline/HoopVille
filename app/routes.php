@@ -17,9 +17,9 @@ $this->addRoute('Publication/search','Publication,search');
 
 //ADMIN
 // $this->addRoute('Admin/login', 'Administrator,login'); -> can use /User/login to login as an admin
-$this->addRoute('Admin/register', 'Administrator,register'); 
+// $this->addRoute('Admin/register', 'Administrator,register'); 
 // -> to create an Admin but we only need one admin so dont need the view
-$this->addRoute('Admin/logout', 'Administrator,logout');
+// $this->addRoute('Admin/logout', 'Administrator,logout');
 
 // BOOKINGS
 $this->addRoute('User/booking/create', 'Booking,create');
