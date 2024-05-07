@@ -32,7 +32,7 @@
                 <a class="nav-link" href="#">Contact</a>
             </li>
             <li>
-                <a class="nav-link" href="#">FAQ</a>
+                <a class="nav-link" href="/FAQ">FAQ</a>
             </li>
             <li>
                 <a class="nav-link" href="/Publication">News & Updates</a>

@@ -89,4 +89,8 @@ class User extends \app\core\Controller {
     function home() {
         $this->view('home', null, true);
     }
+
+    function faq(){
+        $this->view('faq', null, true);
+    }
 }

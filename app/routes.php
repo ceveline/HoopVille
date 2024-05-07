@@ -1,5 +1,6 @@
 <?php
 $this->addRoute('Home', 'User,home');
+$this->addRoute('FAQ', 'User,faq');
 
 //defined a few routes "url"=>"controller,method" -> connected to the App.php file in the core folder
 $this->addRoute('login', 'User,login');
