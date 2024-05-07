@@ -19,7 +19,7 @@ class Guest extends \app\core\Model
   public function insert()
   {
     
-    $SQL = 'INSERT INTO Guest(first_name, last_name, date_of_birth) VALUES (:first_name, :last_name, :date_of_birth,)';
+    $SQL = 'INSERT INTO Guest(first_name, last_name, date_of_birth) VALUES (:first_name, :last_name, :date_of_birth)';
     $STMT = self::$_conn->prepare($SQL);
     $data = [
       'first_name' => $this->first_name,
@@ -27,6 +27,16 @@ class Guest extends \app\core\Model
       'date_of_birth' => $this->date_of_birth,
     ];
     $STMT->execute($data);
+
+    
+  }
+
+  public function getRecent(){
+    $SQL = 'SELECT LAST_INSERT_ID() AS last_inserted_id;';
+    $STMT = self::$_conn->prepare($SQL);
+   
+    $STMT->execute();
+    return $STMT->fetch(PDO::FETCH_ASSOC)['last_inserted_id'];
   }
 
   public function getById(int $id)

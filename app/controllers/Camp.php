@@ -7,29 +7,48 @@ class Camp extends \app\core\Controller {
     
 
 
-    function enrol(){
+    function buy(){
       if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
+        //$user_id = $_SESSION['user_id'];
+
+        date_default_timezone_set('America/New_York');
+
+        $type = $_GET['camp_type'];
+
+        $campType = new \app\models\CampType();
+        $campType = $campType->getByType($type);
+
         $guest = new \app\models\Guest();
-        $guest->first_name = $_POST['first_name'];
-        $guest->last_name = $_POST['last_name'];
-        $guest->date_of_birth = $_POST['dob'];
+        $guest->first_name = $_POST['guest_fname'];
+        $guest->last_name = $_POST['guest_lname'];
+        $guest->date_of_birth = $_POST['guest_dob'];
 
         $guest->insert();
 
-        $camp = new \app\models\Camp(); //instance of review class
-  
-        //!!!!!!! change to session id when branches are merged
-        $camp->user_id = 1; //user_id in the instace
-        $camp->camp_type =  $_POST['camp_type'];
-        $camp->guest_id = $guest->guest_id;
+        $guest->guest_id = $guest->getRecent();
 
-        $camp->insert(); //inserting into db
+        echo var_dump($guest);
+
+        echo var_dump($guest->getById(1));
+
+        $camp = new \app\models\Camp(); 
+  
+      
+        $camp->user_id = 1; 
+        $camp->camp_type =  $type;
+        $camp->guest_id = $guest->guest_id;
+        $camp->timestamp = date('Y-m-d H:i:s');
+
+        $camp->insert(); 
   
   
-      //  header('location:/User/review/list'); //redirecting user to the general review page
       } else {
-        $this->view('User/review/create', null, true); 
+        $type = $_GET['camp_type'];
+
+        $campType = new \app\models\CampType();
+        $campType = $campType->getByType($type);
+        $this->view('User/camp/buy', $campType, true); 
         
       }
 

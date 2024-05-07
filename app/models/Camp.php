@@ -25,12 +25,13 @@ class Camp extends \app\core\Model
    public function insert()
    {
      //Timestamp and Review id in db automatically
-     $SQL = 'INSERT INTO Camp(camp_type, user_id, guest_id, timestamp) VALUES (:camp_type, :user_id, :guest_id,)';
+     $SQL = 'INSERT INTO Camp(camp_type, user_id, guest_id, timestamp) VALUES (:camp_type, :user_id, :guest_id, :timestamp)';
      $STMT = self::$_conn->prepare($SQL);
      $data = [
        'camp_type' => $this->camp_type,
        'user_id' => $this->user_id,
        'guest_id' => $this->guest_id,
+       'timestamp'=>$this->timestamp
      ];
      $STMT->execute($data);
    }
@@ -46,21 +47,22 @@ class Camp extends \app\core\Model
        'user_id' => $user_id,
        
      ];
-     $STMT->execute($data);
+     $STMT->setFetchMode(PDO::FETCH_CLASS, 'app\models\Camps');
+     return $STMT->fetch();
+    
    }
 
-   public function deleteGuest()
-   {
-     //Timestamp and Review id in db automatically
-     $SQL = 'INSERT INTO Camp(camp_type, user_id, guest_id, timestamp) VALUES (:camp_type, :user_id, :guest_id,)';
+
+
+   //list all camps
+   public function listAllCamps(){
+    $SQL = 'SELECT * FROM Camp';
      $STMT = self::$_conn->prepare($SQL);
-     $data = [
-       'camp_type' => $this->camp_type,
-       'user_id' => $this->user_id,
-       'guest_id' => $this->guest_id,
-     ];
-     $STMT->execute($data);
+     
+     $STMT->setFetchMode(PDO::FETCH_CLASS, 'app\models\Camps');
+     return $STMT->fetch();
    }
+
 
 
 

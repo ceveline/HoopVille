@@ -4,55 +4,137 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Purchase Camp</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="/assets/styles/register.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <title>Enrol in a camp</title>
+   <style>
+    .background {
+    min-height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+}
+
+.content {
+    height: 550px;
+    width: 850px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    padding-top: 38px;
+    margin: auto;
+    margin-top: 204px;
+    border-radius: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.register-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 34px;
+}
+
+.last-name {
+    display: flex;
+}
+
+h1 {
+    text-align: center;
+}
+
+.register-form label {
+    margin-bottom: 5px; 
+    width: 140px; 
+}
+
+.inputs {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.cost{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 25px;
+    font-weight: bolder;
+}
+
+.register-form input[type="text"],
+
+.register-form input[type="date"] {
+    width: 248px;
+    height: 32px;
+    border-radius: 10px;
+    padding-left: 10px;
+}
+
+button {
+    height: 34px;
+    width: 124px;
+    font-size: 0.93rem;
+    margin-top: 18px;
+    margin-bottom: 45px;
+    border-radius: 0.6rem;
+    border: none;
+    background-color: #ffda76;
+}
+
+button:hover{
+    background-color: #fbd467;
+}
+
+
+
+    </style>
 
 </head>
 <body>
     <div class="background">
         <div class="content">
-            <h1>Purchase</h1>
-            <form class='purchase-form' method="post" action="">
+            <h1>Enrol in <?php echo "$data->camp_type!"?></h1>
+            <form class='register-form' method="post" action="">
+                <!-- Existing input fields -->
                 <div class="inputs">
-                    <label for="first_name" class="form-label">First name:</label>
-                    <input type="text" class="form-control" id="first_name" name="first_name" placeholder="Jon">
+                    <label for="self">Registering for:</label>
+                    <input type="radio" id="self" name="register_for" value="self" checked>
+                    <label for="self">Myself</label>
+                    <input type="radio" id="someone_else" name="register_for" value="someone_else">
+                    <label for="someone_else">A guest</label>
                 </div>
-                <div class="inputs last-name">
-                    <label for="last_name" class="form-label">Last name:</label>
-                    <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Doe">
-                </div>
-                <div class="inputs">
-                    <label for="phone" class="form-label">Phone number:</label>
-                    <input type="text" class="form-control" id="phone" name="phone" placeholder="5144312314">
-                </div>
-                <div class="inputs">
-                    <label for="date_of_birth" class="form-label">Date of birth:</label>
-                    <input type="date" id="date_of_birth" name="date_of_birth">
+                <div class="inputs" id="someone_else_fields" style="display:none;">
+                    
+                    <div class="inputs">
+                    <label for="guest_fname" class="form-label">Guest's First Name</label>
+                    <input type="text" class="form-control" id="guest_fname" name="guest_fname" placeholder="Jon">
                 </div>
                 <div class="inputs">
-                    <label for="email" class="form-label">Email:</label>
-                    <input type="text" class="form-control" id="email" name="email" placeholder="Jon123@gmail.com">
+                    <label for="guest_lname" class="form-label">Guest's Last Name</label>
+                    <input type="text" class="form-control" id="guest_lname" name="guest_lname" placeholder="Doe">
                 </div>
                 <div class="inputs">
-                    <label for="password" class="form-label">Password:</label>
-                    <input type="password" class="form-control" id="password_hash" name="password_hash" placeholder="•••••">
+                    <label for="guest_dob" class="form-label">Guest's Date of Birth</label>
+                    <input type="date" class="form-control" id="guest_dob" name="guest_dob" placeholder="">
                 </div>
-                <div class="inputs">
-                    <label for="retype-password" class="form-label">Re-type password:</label>
-                    <input type="password" class="form-control" id="retype-password" name="retype-password" placeholder="•••••">
                 </div>
-                <button type="submit" class="btn" name="action" value="Enrol In Camp" onclick="validateInput(event)">Register</button>
-
-                <div class="login-now">
-                    <p>Already have an account? <a href="/login">Login now!</a></p>
+                <div class="cost">
+                <label for="self">Total cost: <?php echo "$data->price"?></label>
                 </div>
-
+                <button type="submit" class="btn" name="action" value="Register">Register</button>
             </form>
         </div>
     </div>
+
+    <script>
+      
+
+        document.getElementById('self').addEventListener('change', function() {
+            document.getElementById('someone_else_fields').style.display = 'none';
+        });
+        document.getElementById('someone_else').addEventListener('change', function() {
+            document.getElementById('someone_else_fields').style.display = 'block';
+        });
+    </script>
 </body>
 </html>

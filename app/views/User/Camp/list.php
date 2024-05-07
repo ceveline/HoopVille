@@ -138,6 +138,9 @@
             margin-bottom: 10px;
             font-size: 18px; /* Adjust font size as needed */
         }
+.campDays{
+    font-weight: bolder;
+}
 
         .btn{
           margin-top: 45px;
@@ -156,6 +159,49 @@
             width: 100%;
         }
 
+        .camp-details p {
+    margin-bottom: 10px;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.description {
+    font-weight: bold;
+}
+
+.price {
+    color: #FF5722; /* Orange color for price */
+}
+
+.date {
+    font-style: italic;
+}
+
+.registration-period {
+    font-size: 14px;
+    color: #777; /* Light gray color for registration period */
+}
+
+/* Button styles */
+.btn {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.btn a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #FFDE59; /* Orange background color */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn a:hover {
+    background-color: #F44336; /* Darker orange on hover */
+}
+
     </style>
 </head>
 <body>
@@ -165,19 +211,24 @@
     <?php foreach($data as $camp): ?>
         <div class="form-container">
             <h3><?php echo $camp->camp_type; ?></h3> 
-            <img src="/assets/images/spring.png" alt="<?php echo $camp->camp_type; ?>" class="camp-image">
+            <img src="/assets/images/<?php echo $camp->price; ?>.png" alt="<?php echo $camp->camp_type; ?>" class="camp-image">
             <p><?php echo $camp->description; ?></p>
-            <p><?php echo "$camp->price$"; ?></p>
-            <p><?php echo "Start Date: $camp->start_date"; ?></p>
-            <p><?php echo "End Date: $camp->end_date"; ?></p>
-            <p><?php echo "Registration Period: $camp->registration_start-$camp->registration_end"; ?></p>
-            <form action="camp_page.php" method="post">
-                <input type="hidden" name="camp_type" value="<?php echo $camp->camp_type; ?>">
-                <input type="hidden" name="price" value="<?php echo $camp->price; ?>">
-                <div class="btn"> <button type="submit">Join Now!</button></div>
+            <div class="campDays">
+            <p>Camp Days</p>
+    </div>
+            <p><?php echo "$camp->start_date to $camp->end_date"?></p>
+            <div class="campDays">
+                <p>Registration period:</p>
+    </div>
+            <p><?php echo "$camp->registration_start to $camp->registration_end"; ?></p>
+            <form action="" method="post">
+                <div class="btn">
+                    <a href="/User/camp/buy?camp_type=<?php echo $camp->camp_type; ?>">Join Now for <?php echo "$camp->price$"; ?>!</a>
+                </div>
             </form>
         </div>
         <?php endforeach; ?>
+        
        
     </div>
 </body>

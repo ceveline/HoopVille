@@ -42,4 +42,4 @@ $this->addRoute('User/review/list', 'Review,list');
 
 //CAMPS
 $this->addRoute('User/camp/list', 'CampType,list');
-$this->addRoute('User/camp/create', 'Camp,create');
+$this->addRoute('User/camp/buy', 'Camp,buy');
