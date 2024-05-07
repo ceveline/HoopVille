@@ -28,6 +28,8 @@
                             <option value="camp">Camp</option>
                             <option value="booking">Booking</option>
                             <option value="membership">Membership</option>
+                            <option value="other">Other</option>
+
                         </select>
                     </div>
                 </div>

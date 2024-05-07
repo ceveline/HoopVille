@@ -5,12 +5,19 @@ $this->addRoute('Home', 'User,home');
 $this->addRoute('User/login','User,login');
 $this->addRoute('Admin/User/view', 'Profile,viewAll');
 
-$this->addRoute('User/contact', 'Contact,send');
+$this->addRoute('User/contact', 'User,contact');
 $this->addRoute('Profile/search', 'Profile,search');
 $this->addRoute('Profile/delete/{id}', 'Profile,delete');
 
 
 $this->addRoute('User/login', 'User,login');
+$this->addRoute('User/forgotPassword', 'User,forgotPassword');
+$this->addRoute('User/sendPasswordReset', 'User,sendPasswordReset');
+$this->addRoute('User/aboutUs', 'User,aboutUs');
+$this->addRoute('User/contactChoice', 'User,contactChoice');
+
+
+
 $this->addRoute('User/register', 'User,register');
 $this->addRoute('User/logout', 'User,logout');
 

@@ -1,4 +1,7 @@
 {
+    "require": {
+        "phpmailer/phpmailer": "^6.9"
+    },    
     "require-dev": {
         "codeception/codeception": "^5.1",
         "codeception/module-phpbrowser": "*",

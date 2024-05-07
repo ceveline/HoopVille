@@ -26,10 +26,10 @@
                 <a class="nav-link" href="#">Services</a>
             </li>
             <li>
-                <a class="nav-link" href="#">About</a>
+                <a class="nav-link" href="/User/aboutUs">About</a>
             </li>
             <li>
-                <a class="nav-link" href="/User/contact">Contact</a>
+                <a class="nav-link" href="/User/contactChoice">Contact</a>
             </li>
             <li>
                 <a class="nav-link" href="#">FAQ</a>

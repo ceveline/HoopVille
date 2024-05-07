@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 24, 2024 at 04:07 AM
+-- Generation Time: May 05, 2024 at 04:04 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -154,7 +154,12 @@ CREATE TABLE `Profile` (
 INSERT INTO `Profile` (`profile_id`, `user_id`, `first_name`, `last_name`, `phone`, `date_of_birth`) VALUES
 (1, 1, 'John', 'Clayton', '5146543345', '2024-04-01'),
 (2, 2, 'Test', 'Second', '5143233454', '2024-04-25'),
-(3, 3, 'dgbd', 'dbdb', '5455455454', '2024-04-25');
+(3, 3, 'dgbd', 'dbdb', '5455455454', '2024-04-25'),
+(4, 4, 'Michel', 'Paquette', '5311233234', '2024-05-21'),
+(5, 5, 'Jack', 'Daniel', '4334554321', '2024-05-30'),
+(6, 6, 'Kevin', 'Mark', '5445455656', '2024-06-06'),
+(7, 7, 'Kebvin', 'Von', '4334432321', '2024-05-01'),
+(8, 8, 'sfgs', 'svsv', '43433443434', '2024-05-21');
 
 -- --------------------------------------------------------
 
@@ -194,17 +199,24 @@ CREATE TABLE `User` (
   `user_id` int(11) NOT NULL,
   `email` varchar(50) NOT NULL,
   `password_hash` varchar(60) NOT NULL,
-  `active` tinyint(4) NOT NULL DEFAULT 1
+  `active` tinyint(4) NOT NULL DEFAULT 1,
+  `reset_token_hash` varchar(64) DEFAULT NULL,
+  `reset_token_expires_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `User`
 --
 
-INSERT INTO `User` (`user_id`, `email`, `password_hash`, `active`) VALUES
-(1, 'hussain@gmail.com', '123', 1),
-(2, 'test@gmail.com', '123', 1),
-(3, 'test1@gmail.com', '345', 1);
+INSERT INTO `User` (`user_id`, `email`, `password_hash`, `active`, `reset_token_hash`, `reset_token_expires_at`) VALUES
+(1, 'hussain@gmail.com', '123', 0, '818dc2d58d4cb8ed221147009cfd49c9b79732c2b258364476004cceaa6d5ba5', '2024-05-02 05:27:37'),
+(2, 'test@gmail.com', '123', 0, NULL, NULL),
+(3, 'test1@gmail.com', '345', 1, NULL, NULL),
+(4, 'michelle.paquette@gmail.com', 'svsvsv', 1, NULL, NULL),
+(5, 'jack@gmail.com', 'swvdsdsbdbd', 1, NULL, NULL),
+(6, 'kevin@gmail.com', 'dvdvdsvs', 1, NULL, NULL),
+(7, 'kevin1@gmail.com', 'sgvfsgs', 1, NULL, NULL),
+(8, 'michelle.paquette@gmail.com', 'svsvsv', 1, NULL, NULL);
 
 --
 -- Indexes for dumped tables
@@ -289,7 +301,8 @@ ALTER TABLE `Review`
 -- Indexes for table `User`
 --
 ALTER TABLE `User`
-  ADD PRIMARY KEY (`user_id`);
+  ADD PRIMARY KEY (`user_id`),
+  ADD UNIQUE KEY `reset_token_hash` (`reset_token_hash`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -329,7 +342,7 @@ ALTER TABLE `Membership`
 -- AUTO_INCREMENT for table `Profile`
 --
 ALTER TABLE `Profile`
-  MODIFY `profile_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `profile_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `Publication`
@@ -347,7 +360,7 @@ ALTER TABLE `Review`
 -- AUTO_INCREMENT for table `User`
 --
 ALTER TABLE `User`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Constraints for dumped tables

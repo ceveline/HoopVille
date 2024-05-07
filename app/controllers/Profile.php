@@ -9,7 +9,7 @@ class Profile extends \app\core\Controller {
         $profile = $profileModel->getall();
         
         $data = ['profiles' => $profile];
-        $this->view('Admin/User/view', $data);
+        $this->view('Admin/User/view', $data, true);
         
     }
 
@@ -22,7 +22,7 @@ class Profile extends \app\core\Controller {
             $profiles = $profileModel->searchProfiles($query);
 
             $data = ['profiles' => $profiles];
-            $this->view('Admin/User/view', $data);
+            $this->view('Admin/User/view', $data, true);
         } else {
             // If no search query provided, redirect to viewAll method
             header('Location: /Admin/User/view');
