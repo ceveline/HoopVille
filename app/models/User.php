@@ -62,7 +62,6 @@ class User extends \app\core\Model
         return $STMT->fetch();
     }
 
-    // Add a method to the User model to update reset token and expiry
 // Add a method to the User model to update reset token and expiry
 public function updateResetToken($email, $tokenHash, $expiry) {
     $sql = "UPDATE User
@@ -77,9 +76,9 @@ public function updateResetToken($email, $tokenHash, $expiry) {
     $STMT->bindParam(":email", $email, PDO::PARAM_STR);
     
     if ($STMT->execute()) {
-        return true; // Return true on success
+        return true; 
     } else {
-        return false; // Return false on failure
+        return false;
     }
 }
 

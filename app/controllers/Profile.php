@@ -44,7 +44,6 @@ class Profile extends \app\core\Controller {
 
         // Check if profile exists
         if (!$profile) {
-            // Redirect to viewAll method if profile doesn't exist
             header('Location: /Admin/User/view');
             return;
         }
@@ -53,7 +52,6 @@ class Profile extends \app\core\Controller {
         $success = $profileModel->updateActiveStatus($id, 0);
 
         if ($success) {
-            // Redirect to viewAll method after successful update
             header('Location: /Admin/User/view');
         } else {
             header('Location: /Admin/User/view');
