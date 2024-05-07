@@ -1,0 +1,147 @@
+.container {
+  width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  background-color: ghostwhite;
+  border-radius: 10px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+h1 {
+  padding: 10px;
+  color: black;
+  background-color: #ffde59;
+}
+
+button {
+  background-color: #ffde59;
+  height: 30px;
+  width: 80px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+}
+
+.slide {
+  height: 360px;
+  /* border: 1px solid red; */
+}
+
+.slide1 {
+  display: block;
+}
+
+.slide2,
+.slide3,
+.slide4 {
+  display: none;
+}
+
+header {
+  background-color: black;
+}
+
+body {
+  background: lightgray;
+  /* text-align: center; */
+}
+
+.calendar {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.calendar-header h2 {
+  flex-grow: 1;
+  text-align: center;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+}
+
+.calendar-day {
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.calendar-day.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  text-decoration: line-through;
+  text-decoration-color: gray;
+}
+
+.calendar-day.selected {
+  background-color: #ffde59;
+  /* color: b; */
+}
+
+.timeSlots {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+}
+
+.slot {
+  width: 215px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: ghostwhite;
+  /* border: 1px solid lightgray; */
+  cursor: pointer;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.slot:hover {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+/* // ****************************************************************** */
+.slot.selected {
+  background-color: whitesmoke;
+  border: 1px solid black;
+}
+
+.slot.disabled {
+  display: none;
+}
+
+@keyframes spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner:before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 30px;
+  height: 30px;
+  margin-top: -15px;
+  margin-left: -15px;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  border-top-color: #07d;
+  animation: spinner 0.6s linear infinite;
+  margin-top: 100px;
+}

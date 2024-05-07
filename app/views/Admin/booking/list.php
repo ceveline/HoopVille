@@ -98,7 +98,7 @@
     }
 
 
-    .filter {
+    .filterBox {
       display: flex;
       align-items: center;
       gap: 8px;
@@ -206,20 +206,19 @@
       <div class="search">
 
 
-        <p>Search by: </p>
-        <select name="filter" class="searchBy">
-          <option value="email">email</option>
-          <option value="full name">full name</option>
-          <option value="date">date</option>
+        <p>Sort by date: </p>
+        <select class="sortBy">
+          <option value="DESC">Recent first</option>
+          <option value="ASC">Oldest first</option>
         </select>
-        <input type="text" class="searchBar" placeholder="Search.."></input>
+        <input type="text" class="searchBar" placeholder="Search by email"></input>
         <button class="searchBtn">Search</button>
       </div>
 
 
-      <div class="filter">
+      <div class="filterBox">
         <p>Filter by status: </p>
-        <select name="filter" class="filter">
+        <select class="filter">
           <option value="all">all</option>
           <option value="0">pending</option>
           <option value="1">approved</option>
@@ -245,30 +244,31 @@
       <?php
 
 
+
       foreach ($data as $booking) {
         $date = $booking->timestamp;
         $date = explode(" ", $date)[0];
 
         $status = $booking->status == "0" ? "pending" : ($booking->status == "1" ? "approved" : "declined");
+        $user = $booking->user;
+        $profile = $booking->profile;
 
         echo " <div class='booking'>
                 <p>$booking->booking_type</p>
-                <p>test@test.com</p>
-                <p>John  Doe</p>
+                <p>$user->email</p>
+                <p>$profile->first_name $profile->last_name</p>
                 <p>$date</p>
                 <p>$status</p>
                 <div class='icons'>
-                <i class='fas'>&#xf044;</i>
+                
+                
+                <a href='/Admin/booking/edit?id=$booking->booking_id'><i class='fas'>&#xf044;</i></a>
                 <a href='/Admin/booking/delete?id=$booking->booking_id'><i  class='fas del'>&#xf2ed;</i></a>
                 </div>
             </div>";
       }
 
-
       ?>
-
-
-
 
     </div>
 
@@ -283,52 +283,65 @@
   <script>
 
     let boookings = [];
-    let searchBy = "email";
+    let sortBy = "ASC";
+
+    function initBookings() {
+      $.get("/Admin/booking/bookingsList", function (data) {
+        bookings = JSON.parse(data);
+      });
+    }
+
+    initBookings();
+
 
     $('.filter').on('change', function () {
+      console.log("test");
+      bookings = [];
+      $(".bookings").html("");
 
-      if (this.value === "all") {
-        $.get("/Admin/booking/bookingsList", function(data) {
-          bookings = JSON.parse(data);
-          console.log(bookings);
-          displayBookings();
-        }) 
-      } else {
-        $.get(`/Admin/booking/filterByStatus?status=${this.value}`, function(data) {
-          bookings = JSON.parse(data);
-          console.log(bookings);
-          displayBookings();
-        })
-      }
+      let url = this.value === "all" ? "/Admin/booking/bookingsList" : `/Admin/booking/filterByStatus?status=${this.value}`;
 
+      $.get(url, function (data) {
+        bookings = JSON.parse(data);
+        displayBookings();
+      })
     });
 
-    $('.searchBy').on('change', function() {
-      searchBy = this.value;
+    $('.sortBy').on('change', function () {
+      sortBy = this.value;
+      bookings.sort(compareDates);
+      displayBookings();
     })
 
-    $(".searchBtn").on('click', function() {
+    function compareDates(a, b) {
+      return new Date(sortBy === "ASC" ? a.date : b.date) - new Date(sortBy === "ASC" ? b.date : a.date);
+    }
+
+    $(".searchBtn").on('click', function () {
       // search current bookings by field
-      const text = $(".searchBar").val();
-      
+      const email = $(".searchBar").val();
+      $.get(`/Admin/booking/searchBookingsByEmail?email=${email}`, function (data) {
+        bookings = JSON.parse(data);
+        displayBookings();
+      })
     })
 
     function displayBookings() {
-  
-     $(".bookings").html("");
-     
+
+      $(".bookings").html("");
+
       bookings.forEach((b) => {
         const status = b.status == "0" ? "pending" : (b.status == "1" ? "approved" : "declined");
         date = b.date.split(" ")[0];
         $(".bookings").append(`
         <div class='booking'>
           <p>${b.booking_type}</p>
-          <p>test@test.com</p>
-          <p>John  Doe</p>
+          <p>${b.user.email}</p>
+          <p>${b.profile.first_name} ${b.profile.last_name}</p>
           <p>${date}</p>
           <p>${status}</p>
           <div class='icons'>
-          <i class='fas'>&#xf044;</i>
+          <a href='/Admin/booking/edit?id=${b.booking_id}'><i class='fas'>&#xf044;</i></a>
           <a href='/Admin/booking/delete?id=${b.booking_id}'><i  class='fas del'>&#xf2ed;</i></a>
           </div>
       </div>

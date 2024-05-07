@@ -20,6 +20,9 @@ class Booking extends \app\core\Model
   public $user;
 
   public $profile;
+  public $first_name;
+  public $last_name;
+  public $email;
 
 
   public function insert()
@@ -44,6 +47,7 @@ class Booking extends \app\core\Model
     $STMT->execute(
       [
         'booking_type' => $this->booking_type,
+        'booking_id' => $this->booking_id,
         'date' => $this->date,
         'start_time' => $this->start_time,
         'end_time' => $this->end_time,
@@ -103,13 +107,29 @@ class Booking extends \app\core\Model
     return $STMT->fetchAll();
   }
 
-
-  // TODO: FIX 
-  public function searchBookings($text)
+  public function getBookingsByDate($date) // passed in as '2024-04-21'
   {
-    $SQL = 'SELECT * FROM Booking b JOIN User u ON b.user_id = u.user_id JOIN Profile p ON p.user_id = b.user_id WHERE u.email like :text or b.booking_type like :text or CONCAT(p.first_name, p.last_name) like :text or b.timestamp like :text';
+    $SQL = 'SELECT * FROM Booking WHERE date = :date';
+
     $STMT = self::$_conn->prepare($SQL);
-    $STMT->execute(['text' => "%$text%"]);
+    $STMT->execute(['date' => $date]);
+    $STMT->setFetchMode(PDO::FETCH_CLASS, 'app\models\Booking');
+    return $STMT->fetchAll();
+  }
+
+
+  public function searchBookingsByEmail($email)
+  {
+    $SQL = 'SELECT 
+      *
+    FROM Booking 
+    JOIN Profile ON Booking.user_id = Profile.user_id
+    JOIN User ON Profile.user_id = User.user_id
+    WHERE 
+       User.email LIKE :textSearch';
+
+    $STMT = self::$_conn->prepare($SQL);
+    $STMT->execute(['textSearch' => "%" . $email . "%"]);
     $STMT->setFetchMode(PDO::FETCH_CLASS, 'app\models\Booking');
     return $STMT->fetchAll();
   }
