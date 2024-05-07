@@ -52,13 +52,5 @@
                 </div>
             </div>
     </div>
-    <script>
-        //change it into select and admin can change it to one of the options
-        //update the database
-        $(document).ready(function() {
-            
-        });
-
-    </script>
 </body>
 </html>

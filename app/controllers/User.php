@@ -5,6 +5,7 @@ namespace app\controllers;
 
 class User extends \app\core\Controller {
 
+    #[\app\filters\Logout]
     function login() {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $admin = new \app\models\Administrator();
@@ -42,6 +43,7 @@ class User extends \app\core\Controller {
         }
     }
 
+    #[\app\filters\Logout]
     function register() {
         if($_SERVER['REQUEST_METHOD'] === 'POST') {
             $user = new \app\models\User();

@@ -15,6 +15,7 @@ class Membership extends \app\core\Controller
     }
 
     //show client's membership on their profile
+    #[\app\filters\Login]
     function list_user(){
         $membership_model = new \app\models\Membership();
         $membership_model = $membership_model->getMembershipByUserId($_SESSION['user_id']);
@@ -28,6 +29,7 @@ class Membership extends \app\core\Controller
     }
 
     //list all user memberships
+    #[\app\filters\Admin\IsAdmin]
     function list_admin() {
         $membership_model = new \app\models\Membership();
         $membership_model = $membership_model->getAll();
@@ -39,6 +41,8 @@ class Membership extends \app\core\Controller
         $this->view('Admin/Membership/list', ['memberships' => $membership_model, 'profiles' => $profile_model], true);
     }
 
+    #[\app\filters\User\HasProfile]
+    //user has to register first before creating a membership
     function create() {
         date_default_timezone_set('America/New_York'); // Set the timezone
 
