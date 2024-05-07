@@ -96,9 +96,12 @@ class User extends \app\core\Controller {
 
     function myAccount(){
         $user = new \app\models\User();
-        $user = $user
+        $userid = 1;
+        $user = $user->getById(1);
         $booking = new \app\models\Booking();
-        $booking = $booking->getBookingsByUserId($userid);
+        $bookings = $booking->getBookingsByUserId($userid);
+        $profile = new \app\models\Profile();
+        $profile = $profile->getByUserId($userid);
         $this->view('User/myAccount', null, true);
 
     }

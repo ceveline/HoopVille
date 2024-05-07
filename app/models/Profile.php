@@ -1,0 +1,56 @@
+<?php
+
+namespace app\models;
+
+use PDO;
+
+
+class Profile extends \app\core\Model
+{
+    public $profile_id;
+    public $user_id;
+    public $password_hash;
+    public $first_name;
+    public $last_name;
+    public $phone;
+    public $date_of_birth;
+
+
+    //insert -> Create
+    public function insert() {
+        //statement
+        $SQL = 'INSERT INTO Profile (user_id, first_name, last_name, phone, date_of_birth) 
+            VALUES (:user_id, :first_name, :last_name, :phone, :date_of_birth)';
+
+        //prepare statement
+        $STMT = self::$_conn->prepare($SQL);
+
+        //execute the statement
+        $data = ['user_id'=> $this->user_id,
+                'first_name'=> $this->first_name, 
+                'last_name'=> $this->last_name, 
+                'phone'=> $this->phone, 
+                'date_of_birth'=> $this->date_of_birth
+            ];
+        
+        $STMT->execute($data);
+    }
+
+    public function getAll() {
+        $SQL = 'SELECT * FROM Profile';
+        $STMT = self::$_conn->prepare($SQL);
+        $STMT->execute();
+
+        $STMT->setFetchMode(PDO::FETCH_CLASS,'app\models\Profile');//set the type of data returned by fetches
+		return $STMT->fetchAll();
+    }
+
+    public function getByUserId($user_id) {
+        $SQL = 'SELECT * FROM Profile WHERE user_id = :user_id';
+        $STMT = self::$_conn->prepare($SQL);
+        $STMT->execute(['user_id'=>$user_id]);
+        
+        $STMT->setFetchMode(PDO::FETCH_CLASS,'app\models\Profile');
+        return $STMT->fetch();
+    }
+}
