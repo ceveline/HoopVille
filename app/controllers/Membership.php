@@ -95,6 +95,22 @@ class Membership extends \app\core\Controller
         }
     }
 
+    //for admin
+    function editById($membership_id) {
+        $membership_model = new \app\models\Membership();
+        $membership_model = $membership_model->getMembershipById($membership_id);
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $membership_model->membership_type = $_POST['membership_type'];
+
+            $membership_model->updateAdmin($membership_id);
+
+            header("location:/Admin/membership/list");
+        } else {
+            $this->view('Admin/Membership/edit', ['membership' => $membership_model], true);
+        }
+    }
+
     function delete() {
         $membership_model = new \app\models\Membership();
 		$membership = $membership_model->getMembershipByUserId($_SESSION['user_id']);

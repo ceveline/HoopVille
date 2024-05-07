@@ -34,4 +34,5 @@ $this->addRoute('User/membership/edit', 'Membership,edit');
 $this->addRoute('User/membership/delete', 'Membership,delete');
 $this->addRoute('Admin/membership/list', 'Membership,list_admin');
 $this->addRoute('Admin/membership/delete/{membership_id}', 'Membership,deleteById');
+$this->addRoute('Admin/membership/edit/{membership_id}', 'Membership,editById');
 

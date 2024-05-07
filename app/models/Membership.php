@@ -50,6 +50,15 @@ class Membership extends \app\core\Model
         return $STMT->fetch();
     }
 
+    public function getMembershipById($membership_id){
+        $SQL = 'SELECT * FROM Membership WHERE membership_id = :membership_id';
+        $STMT = self::$_conn->prepare($SQL);
+        $STMT->execute(['membership_id'=>$membership_id]);
+        
+        $STMT->setFetchMode(PDO::FETCH_CLASS,'app\models\Membership');
+        return $STMT->fetch();
+    }
+
     public function update($membership_id) {
         $SQL = 'UPDATE Membership 
                 SET membership_type=:membership_type, start_date=:start_date
@@ -59,6 +68,17 @@ class Membership extends \app\core\Model
             'membership_id'=>$membership_id,
             'membership_type'=>$this->membership_type,
             'start_date'=>$this->start_date,
+        ]);
+    }
+
+    public function updateAdmin($membership_id) {
+        $SQL = 'UPDATE Membership 
+                SET membership_type=:membership_type
+                WHERE membership_id = :membership_id';
+        $STMT = self::$_conn->prepare($SQL);
+        $STMT->execute([
+            'membership_id'=>$membership_id,
+            'membership_type'=>$this->membership_type
         ]);
     }
 
