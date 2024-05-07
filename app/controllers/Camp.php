@@ -28,10 +28,6 @@ class Camp extends \app\core\Controller {
 
         $guest->guest_id = $guest->getRecent();
 
-        echo var_dump($guest);
-
-        echo var_dump($guest->getById(1));
-
         $camp = new \app\models\Camp(); 
   
       
@@ -41,6 +37,8 @@ class Camp extends \app\core\Controller {
         $camp->timestamp = date('Y-m-d H:i:s');
 
         $camp->insert(); 
+        $this->view('User/payment', null, true); 
+
   
   
       } else {
@@ -51,6 +49,19 @@ class Camp extends \app\core\Controller {
         $this->view('User/camp/buy', $campType, true); 
         
       }
+
+    }
+
+
+    //admin side
+    function listAll(){
+      $camp = new \app\models\Camp();
+      $camp = $camp->listAllCamps();
+
+    }
+
+    //user side
+    function listCamps(){
 
     }
     

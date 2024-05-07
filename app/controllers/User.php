@@ -84,7 +84,22 @@ class User extends \app\core\Controller {
         
     }
 
+
     function home() {
         $this->view('home', null, true);
+    }
+
+    function payment(){
+        $this->view('User/payment', null, true);
+
+    }
+
+    function myAccount(){
+        $user = new \app\models\User();
+        $user = $user
+        $booking = new \app\models\Booking();
+        $booking = $booking->getBookingsByUserId($userid);
+        $this->view('User/myAccount', null, true);
+
     }
 }

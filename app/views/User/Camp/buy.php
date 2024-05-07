@@ -121,7 +121,9 @@ button:hover{
                 <div class="cost">
                 <label for="self">Total cost: <?php echo "$data->price"?></label>
                 </div>
+                <form class='register-form' method="post" action="/User/payment">
                 <button type="submit" class="btn" name="action" value="Register">Register</button>
+                </form>
             </form>
         </div>
     </div>
