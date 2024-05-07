@@ -1,0 +1,96 @@
+.background {
+    min-height: 100%;
+    min-width: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    /* margin: 0; */
+    /* padding: 0; */
+    position: absolute;
+}
+
+.content {
+    min-height: 100%;
+    background-color: white;
+    margin: 30px 240px;
+    padding: 12px;
+}
+
+#left, #column-title {
+    width: 33%;
+    word-wrap: break-word;
+}
+
+#middle, #column-text{
+    width: 33%;
+    text-align: center;
+}
+
+#right{
+    width: 33%;
+    text-align: right;
+}
+
+#column-action {
+    width: 33%;
+    text-align: center;
+}
+
+.list{
+    display: flex;
+    flex-direction: column;
+}
+
+.table-rows{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 23px;
+}
+
+.column-name {
+    display: flex;
+    padding: 10px;
+    font-size: 1.5rem;
+    justify-content: space-between;
+}
+
+.list{
+    margin: 15px;
+    display: flex;
+    margin-top: 20px;
+}
+
+#pub-title{
+    /* margin-right: 30%; */
+    font-size: 1.3rem;
+    text-decoration: none;
+    color: black;
+    width: 250px;
+}
+
+#pub-title:hover{
+    color: purple;
+    text-decoration: underline;
+}
+
+#view-button, #edit-button, #delete-button{
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    padding: 5px 12px;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+}
+
+#view-button {
+    background-color: white;
+}
+
+#edit-button {
+    background-color: #dbdada;;
+}
+
+#delete-button {
+    background-color: #e53a3a;
+}

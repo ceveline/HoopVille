@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 25, 2024 at 03:14 AM
+-- Generation Time: Apr 25, 2024 at 05:05 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -20,8 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `hoopville`
 --
-CREATE DATABASE IF NOT EXISTS `hoopville` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `hoopville`;
 
 -- --------------------------------------------------------
 
@@ -29,11 +27,10 @@ USE `hoopville`;
 -- Table structure for table `Administrator`
 --
 
-DROP TABLE IF EXISTS `Administrator`;
 CREATE TABLE `Administrator` (
   `admin_id` int(11) NOT NULL,
   `email` varchar(50) NOT NULL,
-  `password_hash` varchar(50) NOT NULL
+  `password_hash` varchar(60) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -42,7 +39,6 @@ CREATE TABLE `Administrator` (
 -- Table structure for table `Booking`
 --
 
-DROP TABLE IF EXISTS `Booking`;
 CREATE TABLE `Booking` (
   `booking_id` int(11) NOT NULL,
   `booking_type` varchar(50) NOT NULL,
@@ -54,39 +50,17 @@ CREATE TABLE `Booking` (
   `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `Booking`
---
-
-INSERT INTO `Booking` (`booking_id`, `booking_type`, `user_id`, `date`, `start_time`, `end_time`, `status`, `timestamp`) VALUES
-(1, 'full', 1, '2024-04-24', '10:00:00', '12:00:00', 0, '2024-04-21 16:01:21'),
-(3, 'half', 1, '2024-04-24', '12:00:00', '02:00:00', 0, '2024-04-21 16:04:03'),
-(4, 'full', 1, '2024-04-25', '10:00:00', '12:00:00', 0, '2024-04-21 18:01:12'),
-(5, 'full', 1, '2024-04-25', '12:00:00', '02:00:00', 1, '2024-04-25 00:28:47'),
-(6, 'full', 1, '2024-04-25', '02:00:00', '04:00:00', 2, '2024-04-25 00:28:49'),
-(7, 'full', 1, '2024-04-25', '04:00:00', '06:00:00', 0, '2024-04-21 16:05:24'),
-(8, 'full', 1, '2024-04-24', '02:00:00', '04:00:00', 0, '2024-04-21 18:10:03');
-
 -- --------------------------------------------------------
 
 --
 -- Table structure for table `Booking_Type`
 --
 
-DROP TABLE IF EXISTS `Booking_Type`;
 CREATE TABLE `Booking_Type` (
   `booking_type` varchar(50) NOT NULL,
   `price` decimal(10,2) NOT NULL,
   `description` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `Booking_Type`
---
-
-INSERT INTO `Booking_Type` (`booking_type`, `price`, `description`) VALUES
-('full', 20.00, 'lorem ipsum'),
-('half', 10.00, 'lorem ipsum');
 
 -- --------------------------------------------------------
 
@@ -94,7 +68,6 @@ INSERT INTO `Booking_Type` (`booking_type`, `price`, `description`) VALUES
 -- Table structure for table `Camp`
 --
 
-DROP TABLE IF EXISTS `Camp`;
 CREATE TABLE `Camp` (
   `camp_id` int(11) NOT NULL,
   `camp_type` varchar(50) NOT NULL,
@@ -109,7 +82,6 @@ CREATE TABLE `Camp` (
 -- Table structure for table `Camp_Type`
 --
 
-DROP TABLE IF EXISTS `Camp_Type`;
 CREATE TABLE `Camp_Type` (
   `camp_type` varchar(50) NOT NULL,
   `price` decimal(10,2) NOT NULL,
@@ -126,7 +98,6 @@ CREATE TABLE `Camp_Type` (
 -- Table structure for table `Guest`
 --
 
-DROP TABLE IF EXISTS `Guest`;
 CREATE TABLE `Guest` (
   `guest_id` int(11) NOT NULL,
   `first_name` varchar(50) NOT NULL,
@@ -140,7 +111,6 @@ CREATE TABLE `Guest` (
 -- Table structure for table `Membership`
 --
 
-DROP TABLE IF EXISTS `Membership`;
 CREATE TABLE `Membership` (
   `membership_id` int(11) NOT NULL,
   `membership_type` varchar(50) NOT NULL,
@@ -156,7 +126,6 @@ CREATE TABLE `Membership` (
 -- Table structure for table `Membership_Type`
 --
 
-DROP TABLE IF EXISTS `Membership_Type`;
 CREATE TABLE `Membership_Type` (
   `membership_type` varchar(50) NOT NULL,
   `monthly_price` decimal(10,2) NOT NULL,
@@ -169,16 +138,23 @@ CREATE TABLE `Membership_Type` (
 -- Table structure for table `Profile`
 --
 
-DROP TABLE IF EXISTS `Profile`;
 CREATE TABLE `Profile` (
   `profile_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `first_name` varchar(50) NOT NULL,
   `last_name` varchar(50) NOT NULL,
-  `phone` int(20) NOT NULL,
-  `email` varchar(50) NOT NULL,
+  `phone` varchar(60) NOT NULL,
   `date_of_birth` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `Profile`
+--
+
+INSERT INTO `Profile` (`profile_id`, `user_id`, `first_name`, `last_name`, `phone`, `date_of_birth`) VALUES
+(1, 1, 'John', 'Clayton', '5146543345', '2024-04-01'),
+(2, 2, 'Test', 'Second', '5143233454', '2024-04-25'),
+(3, 3, 'dgbd', 'dbdb', '5455455454', '2024-04-25');
 
 -- --------------------------------------------------------
 
@@ -186,11 +162,10 @@ CREATE TABLE `Profile` (
 -- Table structure for table `Publication`
 --
 
-DROP TABLE IF EXISTS `Publication`;
 CREATE TABLE `Publication` (
   `publication_id` int(11) NOT NULL,
   `admin_id` int(11) NOT NULL,
-  `text` varchar(255) NOT NULL,
+  `text` text NOT NULL,
   `title` varchar(255) NOT NULL,
   `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -201,13 +176,13 @@ CREATE TABLE `Publication` (
 -- Table structure for table `Review`
 --
 
-DROP TABLE IF EXISTS `Review`;
 CREATE TABLE `Review` (
   `review_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `rating` int(5) NOT NULL,
   `review_text` varchar(255) NOT NULL,
-  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `type` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -216,19 +191,21 @@ CREATE TABLE `Review` (
 -- Table structure for table `User`
 --
 
-DROP TABLE IF EXISTS `User`;
 CREATE TABLE `User` (
   `user_id` int(11) NOT NULL,
   `email` varchar(50) NOT NULL,
-  `password_hash` varchar(50) NOT NULL
+  `password_hash` varchar(60) NOT NULL,
+  `active` tinyint(4) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `User`
 --
 
-INSERT INTO `User` (`user_id`, `email`, `password_hash`) VALUES
-(1, 'test@test.com', 'test');
+INSERT INTO `User` (`user_id`, `email`, `password_hash`, `active`) VALUES
+(1, 'hussain@gmail.com', '123', 1),
+(2, 'test@gmail.com', '123', 1),
+(3, 'test1@gmail.com', '345', 1);
 
 --
 -- Indexes for dumped tables
@@ -329,7 +306,7 @@ ALTER TABLE `Administrator`
 -- AUTO_INCREMENT for table `Booking`
 --
 ALTER TABLE `Booking`
-  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `Camp`
@@ -353,7 +330,7 @@ ALTER TABLE `Membership`
 -- AUTO_INCREMENT for table `Profile`
 --
 ALTER TABLE `Profile`
-  MODIFY `profile_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `profile_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `Publication`
@@ -371,7 +348,7 @@ ALTER TABLE `Review`
 -- AUTO_INCREMENT for table `User`
 --
 ALTER TABLE `User`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Constraints for dumped tables

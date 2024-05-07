@@ -6,24 +6,85 @@ namespace app\controllers;
 class User extends \app\core\Controller {
 
     function login() {
-        // if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            
-        //     $user = new \app\models\User();
-        //     $username = $_POST['username'];
-        //     $user = $user->getByUsername($username);
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $admin = new \app\models\Administrator();
+            $email = $_POST['email'];
+            $password = $_POST['password_hash'];
 
-        //     $password = $_POST['password'];
-        //     if($user && password_verify($password, $user->password_hash)) {
-        //         $_SESSION['user_id'] = $user->user_id;
-        //         header('location:/Profile/index'); 
-        //     }
-        //     else {
-        //         header('location:/User/login');
-        //     }
-        // }
-        // else {
-        //     $this->view('User/login', null, true); //show the login view if user's input is incorrect/doesn't match
-        // }
-        $this->view('User/login', null, true); 
+            if ($email === "admin@gmail.com") {
+                $admin = $admin->getByEmail($email);
+
+                if($admin && password_verify($password, $admin->password_hash)) {
+                    $_SESSION['admin_id'] = $admin->admin_id;
+                    header('location:/Home'); 
+                }
+                else {
+                    header('location:/User/login');
+                }
+                return;
+            }
+            
+            $user = new \app\models\User();
+            
+            $user = $user->getByEmail($email);
+
+            
+            if($user && password_verify($password, $user->password_hash)) {
+                $_SESSION['user_id'] = $user->user_id;
+                header('location:/Home'); 
+            }
+            else {
+                header('location:/User/login');
+            }
+        }
+        else {
+            $this->view('User/login', null, true); //show the login view if user's input is incorrect/doesn't match
+        }
+    }
+
+    function register() {
+        if($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $user = new \app\models\User();
+            $profile = new \app\models\Profile();
+
+            //for user table
+            $user->email = $_POST['email'];
+            $user->password_hash = password_hash($_POST['password_hash'], PASSWORD_DEFAULT);
+
+            $user->insert();
+            $user_model = $user->getByEmail($_POST['email']);
+            //for profile table
+            $profile->user_id = $user_model->user_id;
+            $profile->first_name = $_POST['first_name'];
+            $profile->last_name = $_POST['last_name'];
+            $profile->phone = $_POST['phone'];
+            $profile->date_of_birth = $_POST['date_of_birth'];
+        
+            //insert to database
+            $profile->insert();
+
+            header('location:/User/login');
+        }
+
+
+        else {
+            $this->view('User/register', null, true);
+        }
+        
+    }
+
+    //logout
+    function logout() {
+        session_destroy();
+
+		header('location:/User/login');
+    }
+
+    function forgetPassword($email) {
+        
+    }
+
+    function home() {
+        $this->view('home', null, true);
     }
 }
