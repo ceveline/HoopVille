@@ -1,5 +1,5 @@
 <?php
-namespace app\filters;
+namespace app\filters\Admin;
 
 #[\Attribute]
 class IsAdmin implements \app\core\AccessFilter{

@@ -43,6 +43,7 @@ class Membership extends \app\core\Controller
 
     #[\app\filters\User\HasProfile]
     //user has to register first before creating a membership
+    #[\app\filters\User\HasMembership]
     function create() {
         date_default_timezone_set('America/New_York'); // Set the timezone
 
@@ -57,6 +58,15 @@ class Membership extends \app\core\Controller
 
         // Calculate the future timestamp (1 year from now)
         $future_timestamp = strtotime('+1 year', $current_timestamp);
+
+        // Check if the user already has a membership
+        $existing_membership = $membership_model->getMembershipByUserId($user_id);
+
+        if ($existing_membership) {
+            // If the user already has a membership, redirect to the home page
+            header("location:/User/membership");
+            return;
+        }
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // Set the membership details
@@ -77,9 +87,14 @@ class Membership extends \app\core\Controller
     }
     
     function edit() {
+        
         $membership_model = new \app\models\Membership();
         $membership_model = $membership_model->getMembershipByUserId($_SESSION['user_id']);
         $membership_id = $membership_model->membership_id;
+
+        if (!$membership_model) {
+            return false;
+        }
 
         // Get the current timestamp
         $current_timestamp = time();

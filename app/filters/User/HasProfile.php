@@ -1,5 +1,5 @@
 <?php
-namespace app\filters;
+namespace app\filters\User;
 
 #[\Attribute]
 class HasProfile implements \app\core\AccessFilter{
