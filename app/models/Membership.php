@@ -1,6 +1,6 @@
 <?php
 
-namespace app\models\Membership;
+namespace app\models;
 
 use PDO;
 
@@ -32,8 +32,16 @@ class Membership extends \app\core\Model
         
         $STMT->execute($data);
     }
+    public function getAll(){
+        $SQL = 'SELECT * FROM Membership';
+        $STMT = self::$_conn->prepare($SQL);
+        $STMT->execute();
+
+        $STMT->setFetchMode(PDO::FETCH_CLASS,'app\models\Membership');//set the type of data returned by fetches
+		return $STMT->fetchAll();
+    }
     //get by user id
-    public function getByUserId($user_id) {
+    public function getMembershipByUserId($user_id){
         $SQL = 'SELECT * FROM Membership WHERE user_id = :user_id';
         $STMT = self::$_conn->prepare($SQL);
         $STMT->execute(['user_id'=>$user_id]);
@@ -42,28 +50,50 @@ class Membership extends \app\core\Model
         return $STMT->fetch();
     }
 
+    public function getMembershipById($membership_id){
+        $SQL = 'SELECT * FROM Membership WHERE membership_id = :membership_id';
+        $STMT = self::$_conn->prepare($SQL);
+        $STMT->execute(['membership_id'=>$membership_id]);
+        
+        $STMT->setFetchMode(PDO::FETCH_CLASS,'app\models\Membership');
+        return $STMT->fetch();
+    }
+
     public function update($membership_id) {
-        $SQL = 'UPDATE Membership  
-            SET membership_type=:membership_type, start_date=:start_date, end_date=:end_date 
-            WHERE membership_id = :membership_id';
+        $SQL = 'UPDATE Membership 
+                SET membership_type=:membership_type, start_date=:start_date
+                WHERE membership_id = :membership_id';
         $STMT = self::$_conn->prepare($SQL);
         $STMT->execute([
-            'membership_id' => $membership_id,
-            'membership_type' => $this->membership_type,
-            'start_date' => $this->start_date,
-            'end_date' => $this->end_date,
+            'membership_id'=>$membership_id,
+            'membership_type'=>$this->membership_type,
+            'start_date'=>$this->start_date,
+        ]);
+    }
+
+    public function updateAdmin($membership_id) {
+        $SQL = 'UPDATE Membership 
+                SET membership_type=:membership_type
+                WHERE membership_id = :membership_id';
+        $STMT = self::$_conn->prepare($SQL);
+        $STMT->execute([
+            'membership_id'=>$membership_id,
+            'membership_type'=>$this->membership_type
         ]);
     }
 
     //cancel => change status to cancelled => 48 hours before
 
     //delete => admin
-    public function delete($membership_id){
+    public function deleteById($membership_id) {
         $SQL = 'DELETE FROM Membership WHERE membership_id = :membership_id';
 		$STMT = self::$_conn->prepare($SQL);
 		$STMT->execute(
-			['membership_id'=> $membership_id]
+			['membership_id'=> $membership_id] //no
 		);
     }
+
+    
+    
 
 }

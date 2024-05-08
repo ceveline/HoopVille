@@ -1,6 +1,7 @@
 <?php
 $this->addRoute('Home', 'User,home');
 $this->addRoute('User/payment', 'User,payment');
+$this->addRoute('User/myAccount', 'User,myAccount');
 
 
 //defined a few routes "url"=>"controller,method" -> connected to the App.php file in the core folder
@@ -30,10 +31,15 @@ $this->addRoute('User/booking/disabledDates', 'Booking,getDisabledDates');
 $this->addRoute('User/booking/getTimeSlotsByDate', 'Booking,getTimeSlotsByDate');
 
 //MEMBERSHIP
-$this->addRoute('User/membership/list', 'MembershipType,list');
-$this->addRoute('User/membership/{user_id}', 'Membership,list_for_user');
+$this->addRoute('Membership', 'Membership,list');
+$this->addRoute('User/membership', 'Membership,list_user');
 $this->addRoute('User/membership/create', 'Membership,create');
-// $this->addRoute('User/membership/edit/{membership_id}', 'Membership,edit');
+$this->addRoute('User/membership/edit', 'Membership,edit');
+$this->addRoute('User/membership/delete', 'Membership,delete');
+$this->addRoute('Admin/membership/list', 'Membership,list_admin');
+$this->addRoute('Admin/membership/delete/{membership_id}', 'Membership,deleteById');
+$this->addRoute('Admin/membership/edit/{membership_id}', 'Membership,editById');
+
 
 
 //REVIEWS

@@ -47,7 +47,8 @@ class Camp extends \app\core\Model
        'user_id' => $user_id,
        
      ];
-     $STMT->setFetchMode(PDO::FETCH_CLASS, 'app\models\Camps');
+     $STMT->execute();
+     $STMT->setFetchMode(PDO::FETCH_CLASS, 'app\models\Camp');
      return $STMT->fetch();
     
    }
@@ -58,9 +59,9 @@ class Camp extends \app\core\Model
    public function listAllCamps(){
     $SQL = 'SELECT * FROM Camp';
      $STMT = self::$_conn->prepare($SQL);
-     
-     $STMT->setFetchMode(PDO::FETCH_CLASS, 'app\models\Camps');
-     return $STMT->fetch();
+     $STMT->execute();
+     $STMT->setFetchMode(PDO::FETCH_CLASS, 'app\models\Camp');
+     return $STMT->fetchAll();
    }
 
 

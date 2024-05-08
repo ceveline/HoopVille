@@ -50,6 +50,21 @@ class Guest extends \app\core\Model
     $STMT->setFetchMode(PDO::FETCH_CLASS, 'app\models\Guest');
     return $STMT->fetch();
   }
+
+  public function getForUser(int $id)
+  {
+    $SQL = 'SELECT Guest.*
+    FROM Guest
+    JOIN Camp
+    ON Camp.guest_id
+    WHERE guest_id = :guest_id';
+
+    $STMT = self::$_conn->prepare($SQL);
+    $STMT->execute(['guest_id' => $id]);
+    $STMT->setFetchMode(PDO::FETCH_CLASS, 'app\models\Guest');
+    return $STMT->fetch();
+  }
+  
   
 
   

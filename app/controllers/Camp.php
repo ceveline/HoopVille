@@ -53,7 +53,7 @@ class Camp extends \app\core\Controller {
     }
 
 
-    //admin side
+  
     function listAll(){
       $camp = new \app\models\Camp();
       $camp = $camp->listAllCamps();
@@ -63,6 +63,11 @@ class Camp extends \app\core\Controller {
     //user side
     function listCamps(){
 
+
+      $userid = 1;
+      //$userid = $_SESSION['user_id'];
+      $camp = new \app\models\Camp();
+      $camp = $camp->listUserCamps($userid);
     }
     
 

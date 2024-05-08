@@ -102,7 +102,22 @@ class User extends \app\core\Controller {
         $bookings = $booking->getBookingsByUserId($userid);
         $profile = new \app\models\Profile();
         $profile = $profile->getByUserId($userid);
-        $this->view('User/myAccount', null, true);
+        $camp = new \app\models\Camp();
+        $camps = $camp->listAllCamps();
+
+        echo var_dump($camps);
+        $membership = new \app\models\Membership();
+        $membership->getMembershipByUserId($userid);
+
+        $data = [
+            'user' => $user,
+            'bookings' => $bookings,
+            'profile' => $profile,
+            'camps' => $camps,
+            'membership' => $membership
+        ];
+
+        $this->view('User/myAccount', $data, true);
 
     }
 }

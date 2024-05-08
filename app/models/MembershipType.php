@@ -5,7 +5,7 @@ namespace app\models;
 use PDO;
 
 
-class MembershipType extends \app\core\Model
+class Membership_Type extends \app\core\Model
 {
 
     public $membership_type;
