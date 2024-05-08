@@ -93,6 +93,14 @@ class Membership extends \app\core\Model
 		);
     }
 
+    public function delete($userid){
+        $SQL = 'DELETE FROM Membership WHERE user_id = :user_id';
+		$STMT = self::$_conn->prepare($SQL);
+		$STMT->execute(
+			['user_id'=> $userid]
+		);
+    }
+
     
     
 
