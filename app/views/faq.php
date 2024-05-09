@@ -20,6 +20,7 @@
             background-color: white;
             margin: 30px 240px;
             padding: 12px;
+            border-radius: 1rem;
         }
 
         .title{
@@ -27,7 +28,7 @@
             justify-content: center;
             margin-bottom: 15px;
         }
-        .question1, .question2, .question3, .question4{
+        .question1, .question2, .question3, .question4, .question5{
             /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
             border-radius: 1rem;
             display: flex;
@@ -37,7 +38,7 @@
             
         }
 
-        .q1, .q2, .q3, .q4 {
+        .q1, .q2, .q3, .q4, .q5 {
             background-color: #ffda76;
             min-height: 30px; /* Set a minimum height */
             display: flex;
@@ -48,7 +49,7 @@
             border-radius: 1rem;
         }
 
-        .a1, .a2, .a3, .a4 {
+        .a1, .a2, .a3, .a4, .a5 {
             background-color: #fdf6e3;
             height: 30px;
             display: flex;
@@ -58,8 +59,9 @@
         }
 
         /* Adjust padding for the anchor element */
-        .q1 a, .q2 a, .q3 a, .q4 a {
+        .q1 a, .q2 a, .q3 a, .q4 a, .q5 a {
             padding-left: 5px; /* Add left padding to the anchor element */
+            text-decoration: none;
         }
 
 
@@ -68,29 +70,7 @@
         }
 
     </style>
-    <script>
-            $(document).ready(function() {
-                var a1 = $('.a1');
-                var a2 = $('.a2');
-                var a3 = $('.a3');
-                var a4 = $('.a4');
-                $('.a1, .a2, .a3, .a4').hide();
 
-                $('.q1 a').click(function() {
-                    $('.a1').toggle(); // Toggle visibility of answer when the question is clicked
-                });
-                $('.q2 a').click(function() {
-                    $('.a2').toggle(); // Toggle visibility of answer when the question is clicked
-                });
-                $('.q3 a').click(function() {
-                    $('.a3').toggle(); // Toggle visibility of answer when the question is clicked
-                });
-                $('.q4 a').click(function() {
-                    $('.a4').toggle(); // Toggle visibility of answer when the question is clicked
-                });
-            });
-
-    </script>
 </head>
 <body>
     <div class="background">
@@ -133,9 +113,46 @@
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum malesuada nunc vel quam dignissim, ac ullamcorper turpis dictum.</p>
                     </div>
                 </div>
+                <div class="question5">
+                    <div class="q5">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum malesuada nunc vel quam dignissim, ac ullamcorper turpis dictum? <a href="#">+</a></p>
+                        
+                    </div>
+                    <div class="a5">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum malesuada nunc vel quam dignissim, ac ullamcorper turpis dictum.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+
+    <script>
+            $(document).ready(function() {
+                var a1 = $('.a1');
+                var a2 = $('.a2');
+                var a3 = $('.a3');
+                var a4 = $('.a4');
+                var a4 = $('.a5');
+                $('.a1, .a2, .a3, .a4, .a5').hide();
+
+                $('.q1 a').click(function() {
+                    $('.a1').toggle(); // Toggle visibility of answer when the question is clicked
+                });
+                $('.q2 a').click(function() {
+                    $('.a2').toggle(); // Toggle visibility of answer when the question is clicked
+                });
+                $('.q3 a').click(function() {
+                    $('.a3').toggle(); // Toggle visibility of answer when the question is clicked
+                });
+                $('.q4 a').click(function() {
+                    $('.a4').toggle(); // Toggle visibility of answer when the question is clicked
+                });
+                $('.q5 a').click(function() {
+                    $('.a5').toggle(); // Toggle visibility of answer when the question is clicked
+                });
+            });
+
+    </script>
     
 </body>
 </html>
