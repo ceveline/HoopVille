@@ -40,13 +40,15 @@
                         <div class="desc2">
                         </div>
                     </div>
-                    <div class="p2-buttons">
-                        <div class="back-btn">
-                            <input class='btn2' type="button" value="<?= __('Back') ?>"></input>
+                    <div class="buttons-p2">
+                        <div class="p2-buttons">
+                            <div class="back-btn">
+                                <input class='btn2' type="button" value="<?= __('Back') ?>"></input>
+                            </div>
                         </div>
-                    </div>
-                    <div class="confirm-btn">
-                        <input class='btn' type="submit" value="<?= __('Confirm') ?>"></input>
+                        <div class="confirm-btn">
+                            <input class='btn' type="submit" value="<?= __('Confirm') ?>"></input>
+                        </div>
                     </div>
                 </form>
             </div>
