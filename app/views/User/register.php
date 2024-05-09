@@ -63,11 +63,26 @@
                         var password = document.getElementById("password_hash").value.trim();
                         var retype_password = document.getElementById("retype-password").value.trim();
 
+                        var today = new Date();
+                        var birthDate = new Date(dob);
+                        var age = today.getFullYear() - birthDate.getFullYear();
+                        var month = today.getMonth() - birthDate.getMonth();
+                        if (month < 0 || (month === 0 && today.getDate() < birthDate.getDate())) {
+                            age--;
+                        }
+
                         if (first_name === "" || last_name === "" || phone === "" || 
                         dob === "" || email === "" || password === "" || retype_password === "") {
                             alert("Please fill in all fields");
                             return;
                         }
+
+                        // Check if age is below 17
+                        if (age < 17) {
+                            alert("You must be at least 17 years old to register");
+                            return;
+                        }
+                        
                         if (password != retype_password) {
                             alert("Please make sure the passwords are the same");
                             document.getElementById("password_hash").style.borderColor = "red";
