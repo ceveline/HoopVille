@@ -1,9 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <title>FAQ</title>
     <style>
@@ -82,44 +79,44 @@
             <div class="questions">
                 <div class="question1">
                     <div class="q1">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum malesuada nunc vel quam dignissim, ac ullamcorper turpis dictum? <a href="#">+</a></p>
+                        <p><?= __('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum malesuada nunc vel quam dignissim, ac ullamcorper turpis dictum?') ?> <a href="#">+</a></p>
                     </div>
                     <div class="a1">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum malesuada nunc vel quam dignissim, ac ullamcorper turpis dictum.</p>
+                    <p><?= __('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum malesuada nunc vel quam dignissim, ac ullamcorper turpis dictum.')?></p>
                     </div>
                 </div>
                 <div class="question2">
                     <div class="q2">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum malesuada nunc vel quam dignissim, ac ullamcorper turpis dictum? <a href="#">+</a></p>
+                        <p><?= __('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum malesuada nunc vel quam dignissim, ac ullamcorper turpis dictum?') ?> <a href="#">+</a></p>
                     </div>
                     <div class="a2">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum malesuada nunc vel quam dignissim, ac ullamcorper turpis dictum.</p>
+                    <p><?= __('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum malesuada nunc vel quam dignissim, ac ullamcorper turpis dictum.') ?></p>
                     </div>
                 </div>
                 <div class="question3">
                     <div class="q3">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum malesuada nunc vel quam dignissim, ac ullamcorper turpis dictum? <a href="#">+</a></p>
+                        <p><?= __('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum malesuada nunc vel quam dignissim, ac ullamcorper turpis dictum?') ?> <a href="#">+</a></p>
                     </div>
                     <div class="a3">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum malesuada nunc vel quam dignissim, ac ullamcorper turpis dictum.</p>
+                    <p><?= __('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum malesuada nunc vel quam dignissim, ac ullamcorper turpis dictum.') ?></p>
                     </div>
                 </div>
                 <div class="question4">
                     <div class="q4">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum malesuada nunc vel quam dignissim, ac ullamcorper turpis dictum? <a href="#">+</a></p>
+                        <p><?= __('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum malesuada nunc vel quam dignissim, ac ullamcorper turpis dictum?') ?> <a href="#">+</a></p>
                         
                     </div>
                     <div class="a4">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum malesuada nunc vel quam dignissim, ac ullamcorper turpis dictum.</p>
+                    <p><?= __('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum malesuada nunc vel quam dignissim, ac ullamcorper turpis dictum.') ?></p>
                     </div>
                 </div>
                 <div class="question5">
                     <div class="q5">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum malesuada nunc vel quam dignissim, ac ullamcorper turpis dictum? <a href="#">+</a></p>
+                        <p><?= __('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum malesuada nunc vel quam dignissim, ac ullamcorper turpis dictum?') ?> <a href="#">+</a></p>
                         
                     </div>
                     <div class="a5">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum malesuada nunc vel quam dignissim, ac ullamcorper turpis dictum.</p>
+                    <p><?= __('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum malesuada nunc vel quam dignissim, ac ullamcorper turpis dictum.') ?></p>
                     </div>
                 </div>
             </div>

@@ -30,7 +30,7 @@ class Publication extends \app\core\Controller {
             $publication->admin_id = $_SESSION['admin_id'];
             $publication->text = $_POST['text'];
             $publication->title = $_POST['title'];
-            $publication->timestamp = date('Y-m-d H:i:s');
+            $publication->timestamp = date(__('Y-m-d H:i:s'));
 
             $publication->insert();
 
@@ -52,7 +52,7 @@ class Publication extends \app\core\Controller {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $publication->title = $_POST['title'];
             $publication->text = $_POST['text'];
-            $publication->timestamp = date('Y-m-d H:i:s');
+            $publication->timestamp = date(__('Y-m-d H:i:s'));
 
             $publication->update($id);
 

@@ -1,10 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -20,32 +16,32 @@
         <div class="logo"><img class='hoopville-logo' src="/assets/images/hoopvilleLogo.png"></img></div>
         <ul>
             <li>
-                <a class="nav-link" href="/Home">Home</a>
+                <a class="nav-link" href="/Home"><?= __('Home') ?></a>
             </li>
             <li>
-                <a class="nav-link" href="#">Services</a>
+                <a class="nav-link" href="#"><?= __('Services') ?></a>
             </li>
             <li>
-                <a class="nav-link" href="#">About</a>
+                <a class="nav-link" href="#"><?= __('About') ?></a>
             </li>
             <li>
-                <a class="nav-link" href="#">Contact</a>
+                <a class="nav-link" href="#"><?= __('Contact') ?></a>
             </li>
             <li>
                 <a class="nav-link" href="/FAQ">FAQ</a>
             </li>
             <li>
-                <a class="nav-link" href="/Publication">News & Updates</a>
+                <a class="nav-link" href="/Publication"><?= __('News & Updates') ?></a>
             </li>
             <li>
-                <a class="nav-link" href="#">Reviews</a>
+                <a class="nav-link" href="#"><?= __('Reviews') ?></a>
             </li>
 
             <?php if (isset($_SESSION['user_id']) || isset($_SESSION['admin_id'])) : ?>
-                <li><a class="nav-link" href="#">My Account</a></li>
-                <li><a class="nav-link" href="/logout">Logout</a></li>      
+                <li><a class="nav-link" href="#"><?= __('My Account') ?></a></li>
+                <li><a class="nav-link" href="/logout"><?= __('Logout') ?></a></li>      
             <?php else : ?>
-                <li><a class="nav-link" href="/login">Login</a></li>
+                <li><a class="nav-link" href="/login"><?= __('Login') ?></a></li>
             <?php endif; ?>
         </ul>
     </header>

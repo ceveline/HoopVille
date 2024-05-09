@@ -18,37 +18,37 @@
             <h1>Registration</h1>
             <form class='register-form' method="post" action="">
                 <div class="inputs">
-                    <label for="first_name" class="form-label">First name:</label>
+                    <label for="first_name" class="form-label"><?= __('First name:') ?></label>
                     <input type="text" class="form-control" id="first_name" name="first_name" placeholder="Jon">
                 </div>
                 <div class="inputs last-name">
-                    <label for="last_name" class="form-label">Last name:</label>
+                    <label for="last_name" class="form-label"><?= __('Last name:') ?></label>
                     <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Doe">
                 </div>
                 <div class="inputs">
-                    <label for="phone" class="form-label">Phone number:</label>
+                    <label for="phone" class="form-label"><?= __('Phone number:') ?></label>
                     <input type="text" class="form-control" id="phone" name="phone" placeholder="5144312314">
                 </div>
                 <div class="inputs">
-                    <label for="date_of_birth" class="form-label">Date of birth:</label>
+                    <label for="date_of_birth" class="form-label"><?= __('Date of birth:') ?></label>
                     <input type="date" id="date_of_birth" name="date_of_birth">
                 </div>
                 <div class="inputs">
-                    <label for="email" class="form-label">Email:</label>
+                    <label for="email" class="form-label"><?= __('Email:') ?></label>
                     <input type="text" class="form-control" id="email" name="email" placeholder="Jon123@gmail.com">
                 </div>
                 <div class="inputs">
-                    <label for="password" class="form-label">Password:</label>
+                    <label for="password" class="form-label"><?= __('Password:') ?></label>
                     <input type="password" class="form-control" id="password_hash" name="password_hash" placeholder="•••••">
                 </div>
                 <div class="inputs">
-                    <label for="retype-password" class="form-label">Re-type password:</label>
+                    <label for="retype-password" class="form-label"><?= __('Re-type password:') ?></label>
                     <input type="password" class="form-control" id="retype-password" name="retype-password" placeholder="•••••">
                 </div>
                 <button type="submit" class="btn" name="action" value="Register" onclick="validateInput(event)">Register</button>
 
                 <div class="login-now">
-                    <p>Already have an account? <a href="/login">Login now!</a></p>
+                    <p><?= __('Already have an account?') ?> <a href="/login"><?= __('Login now!') ?></a></p>
                 </div>
 
                 <script>

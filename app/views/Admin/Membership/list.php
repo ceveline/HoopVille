@@ -1,10 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>News & Updates</title>
+    <title><?= __('News & Updates') ?></title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -18,12 +15,12 @@
         <div class="content">
             <div class="page1">
                 <div class="column-name">
-                    <h4 id='column-title'>Membership ID</h4>
-                    <h4 id='column-text'>User ID</h4>
-                    <h4 id='column-text'>Membership Type</h4>
-                    <h4 id='column-action'>Start Date</h4>
-                    <h4 id='column-action'>End Date</h4>
-                    <h4 id='column-action'>Actions</h4>
+                    <h4 id='column-title'><?= __('Membership ID') ?></h4>
+                    <h4 id='column-text'><?= __('User ID') ?></h4>
+                    <h4 id='column-text'><?= __('Membership Type') ?></h4>
+                    <h4 id='column-action'><?= __('Start Date') ?></h4>
+                    <h4 id='column-action'><?= __('End Date') ?></h4>
+                    <h4 id='column-action'><?= __('Actions') ?></h4>
                     </div> 
                     <hr class="solid">
                     <div class="list">
@@ -40,8 +37,8 @@
                                         <td id='middle'><?php echo $mb->end_date ?></td>
                                         <div class="buttons">
                                             <td id='right'>
-                                                <a id='edit-button' class="btn btn-primary" href="/Admin/membership/edit/<?= $mb->membership_id?>">Edit</a> 
-                                                <a id='delete-button' class="btn btn-danger" href="/Admin/membership/delete/<?= $mb->membership_id?>">Delete</a>
+                                                <a id='edit-button' class="btn btn-primary" href="/Admin/membership/edit/<?= $mb->membership_id?>"><?= __('Edit') ?></a> 
+                                                <a id='delete-button' class="btn btn-danger" href="/Admin/membership/delete/<?= $mb->membership_id?>"><?= __('Delete') ?></a>
                                             </td>
                                         </div>
                                     </tr>

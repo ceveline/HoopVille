@@ -11,7 +11,7 @@
         <div class="content">
             <div class="page1">
                 <div class="title">
-                    <h1>Memberships</h1>
+                    <h1><?= __('Memberships') ?></h1>
                 </div>
                 <div class="membership-types">
                     <?php foreach($memberships as $mb): ?>
@@ -20,7 +20,7 @@
                                 <h3><?= $mb->membership_type; ?></h3>
                             </div>
                             <div class="price">
-                                <p><?= $mb->monthly_price?>/month</p>
+                                <p><?= $mb->monthly_price?><?= __('/month') ?></p>
                             </div>
                             <div class="desc">
                                 <p><?= $mb->description?></p>
@@ -30,7 +30,7 @@
                 </div>
             </div>
             <div class="page2"> <!-- Show the time -->
-                <div class="title"><h1>Review Your Order</h1></div>
+                <div class="title"><h1><?= __('Review Your Order') ?></h1></div>
                 <form method="post" action="/User/membership/create">
                     <div class="confirmation">
                         <div class="subtitle">

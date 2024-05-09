@@ -1,9 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modify Membership</title>
 
     <style>
@@ -76,17 +74,17 @@
         <div class="content">
             <form method='POST'>
                 <div class="title">
-                    <h1>Modify User Membership</h1>
+                    <h1><?= __('Modify User Membership') ?></h1>
                 </div>
                 <hr class="solid">
                 <div class="data mem-id">
-                    <p id="mem-id">Membership ID: </p><p><?=$membership->membership_id?></p>
+                    <p id="mem-id"><?= __('Membership ID:') ?> </p><p><?=$membership->membership_id?></p>
                 </div>
                 <div class="data user-id">
-                    <p id="user-id">User ID: </p><p><?=$membership->user_id?></p>
+                    <p id="user-id"><?= __('User ID:') ?> </p><p><?=$membership->user_id?></p>
                 </div>
                 <div class="data mem-type">
-                    <p id="mem-type">Membership Type: </p>
+                    <p id="mem-type"><?= __('Membership Type:') ?> </p>
                     <select id="mem-type-select" name="membership_type">
                         <option name="membership_type" value="Base Training" <?php echo $membership->membership_type == 'Base Training' ? 'selected' : '' ?>>Base Training</option>
                         <option name="membership_type" value="Premium Training" <?php echo $membership->membership_type == 'Premium Training' ? 'selected' : '' ?>>Premium Training</option>
@@ -94,10 +92,10 @@
                     </select>
                 </div>
                 <div class="data start-id">
-                    <p id="start-id">Start Date: </p><p><?=$membership->start_date?></p>
+                    <p id="start-id"><?= __('Start Date:') ?> </p><p><?=$membership->start_date?></p>
                 </div>
                 <div class="data end-id">
-                    <p id="end-id">End Date: </p><p><?=$membership->end_date?></p>
+                    <p id="end-id"><?= __('End Date:') ?> </p><p><?=$membership->end_date?></p>
                 </div>
                 <div class="button">
                     <input class="data save-btn"type='submit' value='Save Changes'></input>
