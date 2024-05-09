@@ -155,6 +155,10 @@ msgstr "Sauvegarder"
 msgid "Title"
 msgstr "Titre"
 
+#: app/views/User/Membership/list.php:49
+msgid "Confirm"
+msgstr "Confirmer"
+
 #: app/views/Admin/Publication/list.php:19
 msgid "Date Posted"
 msgstr "Date postee"
@@ -290,10 +294,12 @@ msgid "Cancel membership"
 msgstr "Annuler"
 
 #: app/views/User/Membership/individual.php:208
+#: app/views/User/Membership/list.php:45
 msgid "Back"
 msgstr "Retourner"
 
 #: app/views/User/Membership/list.php:14
+#: app/views/User/Membership/list.php:7
 msgid "Memberships"
 msgstr "Adhesions"
 
@@ -332,3 +338,19 @@ msgstr "Numero de telephone:"
 #: app/views/User/register.php:33
 msgid "Date of birth:"
 msgstr "Date de naissance:"
+
+#: app/views/User/Membership/list.php:68
+msgid "Next"
+msgstr "Suivant"
+
+#: app/views/User/Membership/list.php:160
+msgid "Membership type: "
+msgstr "Type d'adhesion: "
+
+#: app/views/User/Membership/list.php:163
+msgid "Price: "
+msgstr "Prix: "
+
+#: app/views/User/Membership/list.php:166
+msgid "What's included: "
+msgstr "Ce qui est inclu: "
