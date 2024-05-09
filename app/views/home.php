@@ -2,7 +2,7 @@
 <html>
 <head>
     <link rel="stylesheet" href="/assets/styles/home.css">
-    <title>Document</title>
+    <title>HoopVille</title>
 </head>
 <body>
     <div class="background">

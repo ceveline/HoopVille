@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Registration</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -73,18 +73,18 @@
 
                         if (first_name === "" || last_name === "" || phone === "" || 
                         dob === "" || email === "" || password === "" || retype_password === "") {
-                            alert("Please fill in all fields");
+                            alert("<?= __('Please fill in all fields') ?>");
                             return;
                         }
 
                         // Check if age is below 17
                         if (age < 17) {
-                            alert("You must be at least 17 years old to register");
+                            alert("<?= __('You must be at least 17 years old to register') ?>");
                             return;
                         }
                         
                         if (password != retype_password) {
-                            alert("Please make sure the passwords are the same");
+                            alert("<?= __('Please make sure the passwords are the same') ?>");
                             document.getElementById("password_hash").style.borderColor = "red";
                             document.getElementById("retype_password").style.borderColor = "red";
                             return;
