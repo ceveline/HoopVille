@@ -4,17 +4,12 @@ namespace app\controllers;
 
 class Profile extends \app\core\Controller
 {
-
-    //creating a profile on the user end
-  public function create()
-    {
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        public function viewAll(){
-            $profileModel = new \app\models\Profile();
-            $profile = $profileModel->getall();
-            
-            $data = ['profiles' => $profile];
-            $this->view('Admin/User/view', $data, true);
+    public function viewAll(){
+        $profileModel = new \app\models\Profile();
+        $profile = $profileModel->getall();
+        
+        $data = ['profiles' => $profile];
+        $this->view('Admin/User/view', $data, true);
             
     }
 
@@ -78,8 +73,6 @@ class Profile extends \app\core\Controller
 
 
       $profile->insert(); //inserting into db
-
-
 
     } else {
       $this->view('User/profile/create', null, true); 
