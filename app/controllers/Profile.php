@@ -28,5 +28,6 @@ class Profile extends \app\core\Controller
       $this->view('User/profile/create', null, true); 
       
     }
-  }
+
+
 }

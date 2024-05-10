@@ -5,6 +5,7 @@ namespace app\controllers;
 class Publication extends \app\core\Controller {
 
     //show all the public publications on the main menu
+    #[\app\filters\Admin\IsAdmin]
     function index() {
         $publication = new \app\models\Publication();
         $publications = $publication->getAll();
@@ -19,6 +20,7 @@ class Publication extends \app\core\Controller {
         $this->view('User/Publication/list', ['publications' => $publications], true);
     }
     
+    #[\app\filters\Admin\IsAdmin]
     function create() {
         date_default_timezone_set('America/New_York'); //to make sure the timestamp is EST time
 
@@ -28,7 +30,7 @@ class Publication extends \app\core\Controller {
             $publication->admin_id = $_SESSION['admin_id'];
             $publication->text = $_POST['text'];
             $publication->title = $_POST['title'];
-            $publication->timestamp = date('Y-m-d H:i:s');
+            $publication->timestamp = date(__('Y-m-d H:i:s'));
 
             $publication->insert();
 
@@ -40,6 +42,7 @@ class Publication extends \app\core\Controller {
     }
 
     //works
+    #[\app\filters\Admin\IsAdmin]
     function edit($id) {
         date_default_timezone_set('America/New_York');
 
@@ -49,7 +52,7 @@ class Publication extends \app\core\Controller {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $publication->title = $_POST['title'];
             $publication->text = $_POST['text'];
-            $publication->timestamp = date('Y-m-d H:i:s');
+            $publication->timestamp = date(__('Y-m-d H:i:s'));
 
             $publication->update($id);
 
@@ -59,7 +62,7 @@ class Publication extends \app\core\Controller {
         }
     }
 
-
+    #[\app\filters\Admin\IsAdmin]
     function delete($id) {
         $publication = new \app\models\Publication();
 		$publication->delete($id);
@@ -67,6 +70,7 @@ class Publication extends \app\core\Controller {
         header('location:/Admin/Publication/index'); //change this
     }
 
+    #[\app\filters\Admin\IsAdmin]
     function viewPublication($id) {
         $publication = new \app\models\Publication();
         $publicationData = $publication->getById($id);
