@@ -1,15 +1,15 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: arial;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: arial;
 }
 
 body {
-  background: url("/assets/images/basketball.jpg");
-  background-size: cover;
-  height: 100vh;
-  background-position: center;
+    background: url("/assets/images/basketball.jpg");
+    background-size: cover;
+    height: 100vh;
+    background-position: center;
 }
 
 header {
@@ -22,18 +22,18 @@ header {
     justify-content: space-between;
 }
 
-img {
-  flex: 1;
-  color: white;
-  margin-left: 50px;
-  text-transform: uppercase;
-  height: 120px;
+.hoopville-logo {
+    flex: 1;
+    color: white;
+    margin-left: 50px;
+    text-transform: uppercase;
+    height: 120px;
 }
 
 header ul {
-  flex: 2;
-  display: flex;
-  justify-content: space-evenly;
+    flex: 2;
+    display: flex;
+    justify-content: space-evenly;
 }
 
 header ul li {
@@ -52,8 +52,8 @@ header ul li a {
     text-align: center; /* Center-align the text */
 }
 
-header ul li a:hover {
-  border-bottom: 2px solid cadetblue;
+header ul li a:hover{
+    border-bottom: 2px solid cadetblue;
 }
 
 .main {
