@@ -23,13 +23,13 @@
                     <a class="nav-link" href="/Home"><?= __('Home') ?></a>
                 </li>
                 <li>
-                    <a class="nav-link" href="#"><?= __('Services') ?></a>
+                    <a class="nav-link" href="/User/services"><?= __('Services') ?></a>
                 </li>
                 <li>
-                    <a class="nav-link" href="#"><?= __('About') ?></a>
+                    <a class="nav-link" href="/User/aboutUs"><?= __('About') ?></a>
                 </li>
                 <li>
-                    <a class="nav-link" href="#"><?= __('Contact') ?></a>
+                    <a class="nav-link" href="/User/contact"><?= __('Contact') ?></a>
                 </li>
                 <li>
                     <a class="nav-link" href="/FAQ">FAQ</a>
@@ -38,7 +38,7 @@
                     <a class="nav-link" href="/Publication"><?= __('News & Updates') ?></a>
                 </li>
                 <li>
-                    <a class="nav-link" href="#"><?= __('Reviews') ?></a>
+                    <a class="nav-link" href="/User/review/list"><?= __('Reviews') ?></a>
                 </li>
 
                 <?php if (isset($_SESSION['user_id']) || isset($_SESSION['admin_id'])) : ?>
