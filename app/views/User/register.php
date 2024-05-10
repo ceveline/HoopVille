@@ -73,18 +73,18 @@
 
                         if (first_name === "" || last_name === "" || phone === "" || 
                         dob === "" || email === "" || password === "" || retype_password === "") {
-                            alert("<?= __('Please fill in all fields') ?>");
+                            alert("<?= __('Please fill in all fields') ?>"); //add to i18n
                             return;
                         }
 
                         // Check if age is below 17
                         if (age < 17) {
-                            alert("<?= __('You must be at least 17 years old to register') ?>");
+                            alert("<?= __('You must be at least 17 years old to register') ?>"); //add to i18n
                             return;
                         }
                         
                         if (password != retype_password) {
-                            alert("<?= __('Please make sure the passwords are the same') ?>");
+                            alert("<?= __('Please make sure the passwords are the same') ?>"); //add to i18n
                             document.getElementById("password_hash").style.borderColor = "red";
                             document.getElementById("retype_password").style.borderColor = "red";
                             return;
