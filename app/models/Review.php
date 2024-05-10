@@ -25,22 +25,25 @@ class Review extends \app\core\Model
     public function insert()
     {
       //Timestamp and Review id in db automatically
-      $SQL = 'INSERT INTO Review(user_id, rating, review_text) VALUES (:user_id, :rating, :review_text)';
+      $SQL = 'INSERT INTO Review(user_id, rating, review_text, type) VALUES (:user_id, :rating, :review_text, :type)';
       $STMT = self::$_conn->prepare($SQL);
       $data = [
         'user_id' => $this->user_id,
         'rating' => $this->rating,
         'review_text' => $this->review_text,
+        'type'=>$this->type
         
       ];
       $STMT->execute($data);
+
+      
     }
 
   //getUserReviews: Allows a user to list all the reviews they have created
   public function getUserReviews(int $user_id)
   {
     $SQL = 'SELECT * FROM Review WHERE user_id = :user_id
-    ORDER BY p.timestamp DESC;';
+    ORDER BY timestamp DESC;';
     $STMT = self::$_conn->prepare($SQL);
     $STMT->execute(['user_id' => $user_id]);
     $STMT->setFetchMode(PDO::FETCH_CLASS, 'app\models\Review');

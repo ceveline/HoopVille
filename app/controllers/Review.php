@@ -17,9 +17,11 @@ class Review extends \app\core\Controller
       $review->user_id = 1; //user_id in the instace
       $review->review_text = $_POST['review_text']; //post to grab text and rating
       $review->rating = $_POST['rating'];
-      $review->type = $_POST['type'];
+      $review->type = $_POST['purchase_type'];
+
 
       $review->insert(); //inserting into db
+
 
 
     //  header('location:/User/review/list'); //redirecting user to the general review page
@@ -34,6 +36,8 @@ class Review extends \app\core\Controller
   {
     $review = new \app\models\Review(); //instance of review class
     $reviews = $review->getAll(); //getting all the reviews
+
+    
 
    //TBD to add logic to show username information
 
@@ -82,6 +86,7 @@ class Review extends \app\core\Controller
     $reviews = $review->getAll(); //getting all the reviews
 
    //TBD to add logic to show username information
+   echo var_dump($reviews);
 
     $this->view('User/review/list', $reviews,true);
   }

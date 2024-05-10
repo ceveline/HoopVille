@@ -2,6 +2,8 @@
 $this->addRoute('Home', 'User,home');
 $this->addRoute('User/payment', 'User,payment');
 $this->addRoute('User/myAccount', 'User,myAccount');
+$this->addRoute('User/services', 'User,services');
+
 
 
 //defined a few routes "url"=>"controller,method" -> connected to the App.php file in the core folder
@@ -51,3 +53,7 @@ $this->addRoute('User/review/list', 'Review,list');
 //CAMPS
 $this->addRoute('User/camp/list', 'CampType,list');
 $this->addRoute('User/camp/buy', 'Camp,buy');
+
+//PROFILE
+$this->addRoute('User/Profile/create', 'Profile,create');
+$this->addRoute('User/profile/edit','Profile,edit');

@@ -45,7 +45,6 @@ class Membership extends \app\core\Model
         $SQL = 'SELECT * FROM Membership WHERE user_id = :user_id';
         $STMT = self::$_conn->prepare($SQL);
         $STMT->execute(['user_id'=>$user_id]);
-        
         $STMT->setFetchMode(PDO::FETCH_CLASS,'app\models\Membership');
         return $STMT->fetch();
     }
@@ -54,7 +53,6 @@ class Membership extends \app\core\Model
         $SQL = 'SELECT * FROM Membership WHERE membership_id = :membership_id';
         $STMT = self::$_conn->prepare($SQL);
         $STMT->execute(['membership_id'=>$membership_id]);
-        
         $STMT->setFetchMode(PDO::FETCH_CLASS,'app\models\Membership');
         return $STMT->fetch();
     }

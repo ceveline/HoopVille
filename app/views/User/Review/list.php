@@ -6,42 +6,173 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Reviews</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+       .background {
+    min-height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+}
 
-        
-     header {
-      background-color: black;
-    }
+.content {
+    height: 550px;
+    width: 850px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    padding-top: 38px;
+    margin: auto;
+    margin-top: 204px;
+    border-radius: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
 
-    body {
-      background: lightgray;
-      text-align: center;
-      color: black;
-     
-  align-items: center;
-    }
+.register-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 34px;
+}
 
-        .container {
-            max-width: 1200px;
-            margin: 30px auto;
+.last-name {
+    display: flex;
+}
+
+h1 {
+    text-align: center;
+}
+
+.register-form label {
+    margin-bottom: 5px; 
+    width: 140px; 
+}
+
+.inputs {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.cost{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 25px;
+    font-weight: bolder;
+}
+
+.register-form input[type="text"],
+
+.register-form input[type="date"] {
+    width: 248px;
+    height: 32px;
+    border-radius: 10px;
+    padding-left: 10px;
+}
+
+button {
+    height: 34px;
+    width: 124px;
+    font-size: 0.93rem;
+    margin-top: 18px;
+    margin-bottom: 45px;
+    border-radius: 0.6rem;
+    border: none;
+    background-color: #ffda76;
+}
+
+button:hover{
+    background-color: #fbd467;
+}
+
+.form-container{
+  width: 1000px;
+            height: auto;
+            background-color: white;
+            margin-top: 20px;
             padding: 20px;
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-        }
+            border-radius: 1rem;
+            margin-left: 250px;
+            text-align: center;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
 
-        h1 {
+    .purchaseType{
+        color:black;
+       
+    }
+
+    h1 {
             padding: 10px;
-            color: #333;
+            color: black;
             background-color: #FFDE59;
             text-align: center;
-            border-radius: 5px;
-            margin-bottom: 20px;
         }
+
+    .rating {
+  display: inline-flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+label {
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  background-image: url('/assets/images/star-empty-icon.webp');
+  background-size: cover;
+}
+
+input[type="radio"]:checked ~ label {
+  background-image: url('/assets/images/star_icon_full.png');
+}
+
+
+
+input[type="text"]{
+    color: black;
+}
+
+option,select{
+    color:black;
+}
+
+textarea{
+    color:black;
+    margin:
+}
+
+button {
+    margin-top: 20px;
+    text-align: center;
+}
+
+button{
+    display: inline-block;
+    padding: 10px 20px;
+    width: 200px;
+    background-color: #FFDE59; /* Orange background color */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #F44336; /* Darker orange on hover */
+}
+
+
+
+.form-section {
+  margin-bottom: 50px;
+}
+    
+
 
         table {
             width: 100%;
@@ -90,6 +221,8 @@
         input[type="radio"]:checked ~ label {
             background-image: url('/assets/images/star_icon_full.png');
         }
+
+        
 
     </style>
 </head>

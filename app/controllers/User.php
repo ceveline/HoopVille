@@ -94,9 +94,15 @@ class User extends \app\core\Controller {
 
     }
 
+    function services(){
+        $this->view('User/services',null,true);
+    }
+
+
+    //to replace by user id
     function myAccount(){
         $user = new \app\models\User();
-        $userid = 1;
+        $userid = 1; //set to session
         $user = $user->getById(1);
         $booking = new \app\models\Booking();
         $bookings = $booking->getBookingsByUserId($userid);
@@ -104,17 +110,22 @@ class User extends \app\core\Controller {
         $profile = $profile->getByUserId($userid);
         $camp = new \app\models\Camp();
         $camps = $camp->listAllCamps();
+        $review = new \app\models\Review();
+        $reviews = $review->getUserReviews($userid);
 
-        echo var_dump($camps);
         $membership = new \app\models\Membership();
-        $membership->getMembershipByUserId($userid);
+        $memberships =$membership->getMembershipById($userid);
+
+
+
 
         $data = [
             'user' => $user,
             'bookings' => $bookings,
             'profile' => $profile,
             'camps' => $camps,
-            'membership' => $membership
+            'membership' => $memberships,
+            'reviews' =>  $reviews
         ];
 
         $this->view('User/myAccount', $data, true);

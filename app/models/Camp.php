@@ -56,13 +56,26 @@ class Camp extends \app\core\Model
 
 
    //list all camps
-   public function listAllCamps(){
-    $SQL = 'SELECT * FROM Camp';
-     $STMT = self::$_conn->prepare($SQL);
-     $STMT->execute();
-     $STMT->setFetchMode(PDO::FETCH_CLASS, 'app\models\Camp');
-     return $STMT->fetchAll();
-   }
+   public function listAllCamps()
+{
+    // Assuming you have a database connection stored in $_conn
+    $SQL = "SELECT Camp.*, Guest.*
+            FROM Camp
+            INNER JOIN Guest ON Camp.guest_id = Guest.guest_id"; // Assuming 'guest_id' is the foreign key in the camps table
+
+    $STMT = self::$_conn->prepare($SQL);
+    $STMT->execute();
+    
+    // Set the fetch mode to fetch associative arrays
+    $STMT->setFetchMode(PDO::FETCH_ASSOC);
+    
+    // Fetch all camp registrations with their associated guests
+    $campsWithGuests = $STMT->fetchAll();
+
+    return $campsWithGuests;
+}
+
+   
 
 
 

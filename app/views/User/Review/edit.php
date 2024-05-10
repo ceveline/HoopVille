@@ -6,73 +6,103 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Update Review</title>
     <style>
-         *      * {
-            margin: 0;
-            color: white;
-        }
+     .background {
+    min-height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+}
 
-        .container {
-      height: 500px;
-      width: 1000px;
-      margin-left: auto;
-      margin-right: auto;
-      margin-top: 30px;
-      background-color: ghostwhite;
-      border-radius: 10px;
-      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    }
+.content {
+    height: 550px;
+    width: 850px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    padding-top: 38px;
+    margin: auto;
+    margin-top: 204px;
+    border-radius: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
 
-    h1 {
-      padding: 10px;
-      color: black;
-      background-color: #FFDE59;
-      text-align: center;
-    }
+.register-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 34px;
+}
 
+.last-name {
+    display: flex;
+}
 
-    button {
-      margin: 0 20px;
-      background-color: #FFDE59;
-      height: 30px;
-      width: 80px;
-      cursor: pointer;
-      border: none;
-      border-radius: 5px;
-    }
+h1 {
+    text-align: center;
+}
 
-    button:hover {
-      transition: 0.2s;
-      background-color: #FFCE00;
-    }
+.register-form label {
+    margin-bottom: 5px; 
+    width: 140px; 
+}
 
-    
+.inputs {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 25px;
+}
 
-    h1{
-        text-align: center;
-    }
+.cost{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 25px;
+    font-weight: bolder;
+}
 
-    h2{
-        color: black;
-        text-align: center;
-        margin-bottom: 10px;
-    }
+.register-form input[type="text"],
 
-     header {
-      background-color: black;
-    }
+.register-form input[type="date"] {
+    width: 248px;
+    height: 32px;
+    border-radius: 10px;
+    padding-left: 10px;
+}
 
-    body {
-      background: lightgray;
-      text-align: center;
-      color: black;
-     
-  align-items: center;
-    }
+button {
+    height: 34px;
+    width: 124px;
+    font-size: 0.93rem;
+    margin-top: 18px;
+    margin-bottom: 45px;
+    border-radius: 0.6rem;
+    border: none;
+    background-color: #ffda76;
+}
+
+button:hover{
+    background-color: #fbd467;
+}
+
+.form-container{
+  width: 1000px;
+            height: auto;
+            background-color: white;
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 1rem;
+            margin-left: 250px;
+            text-align: center;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
 
     .purchaseType{
         color:black;
        
     }
+
+    
 
     .rating {
   display: inline-flex;
@@ -96,6 +126,8 @@ input[type="radio"]:checked ~ label {
   background-image: url('/assets/images/star_icon_full.png');
 }
 
+
+
 input[type="text"]{
     color: black;
 }
@@ -109,22 +141,39 @@ textarea{
     margin:
 }
 
-.form-container {
-  display: flex;
-  flex-direction: column;
+button {
+    margin-top: 20px;
+    text-align: center;
 }
+
+button{
+    display: inline-block;
+    padding: 10px 20px;
+    width: 200px;
+    background-color: #FFDE59; /* Orange background color */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #F44336; /* Darker orange on hover */
+}
+
+
 
 .form-section {
   margin-bottom: 50px;
 }
     
-    
+
 
     </style>
 </head>
 <body>
     <div style='height: 200px'></div>
-    <h1>UPDATE REVIEW</h1>
+    
     <div class='container'> 
         <form class="form-container" method="post" action="">
             

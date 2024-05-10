@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Camps</title>
+    <title>New Review</title>
     <style>
         * {
             margin: 0;
@@ -18,18 +18,56 @@
         }
 
         .form-container {
-          height:500px;
-    width: 400px;
+          height:400px;
+    width: 350px;
     background-color: ghostwhite;
     border-radius: 20px;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     padding: 10px;
+    margin-left: 8cap0px;
+    margin-top: 50px;
     align-items: center;
     display: flex; /* Added */
     flex-direction: column; /* Added */
     justify-content: center; /* Added */
         }
 
+        p{
+            text-align: center;
+        }
+
+        .form-container2 {
+          height:400px;
+    width: 350px;
+    background-color: ghostwhite;
+    border-radius: 20px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    padding: 10px;
+    margin-left: 8cap0px;
+    margin-top: 25px;
+    align-items: center;
+    display: flex; /* Added */
+    flex-direction: column; /* Added */
+    justify-content: center; /* Added */
+        }
+
+        
+        .form-container2:hover {
+    background-color: #F4F4F4; /* Light gray background on hover */
+    transform: scale(1.03); /* Scale up by 5% */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for background color and scale */
+}
+.form-container2 h3 {
+            margin-top: -20px; /* Adjust to position the heading above the container */
+            padding: 5px;
+            border-radius: 10px;
+            background-color: black; /* Yellow background color */
+            text-align: center;
+            width: 100%;
+            color: white;
+            margin-bottom: 10px;
+            font-size: 18px; /* Adjust font size as needed */
+        }
         h1 {
             padding: 10px;
             color: black;
@@ -111,7 +149,7 @@
             margin-bottom: 20px;
         }
 
-        .camp-image {
+        .images {
     width: 250px;
     height: 150px;
     margin-right: 45px;
@@ -138,7 +176,7 @@
             margin-bottom: 10px;
             font-size: 18px; /* Adjust font size as needed */
         }
-.campDays{
+.subtitle{
     font-weight: bolder;
 }
 
@@ -206,30 +244,59 @@
 </head>
 <body>
     <div style='height: 200px'></div>
-    <h1>CAMPS</h1>
+    <h1>Services</h1>
     <div class='container'>
-    <?php foreach($data as $camp): ?>
-        <div class="form-container">
-            <h3><?php echo $camp->camp_type; ?></h3> 
-            <img src="/assets/images/<?php echo $camp->price; ?>.png" alt="<?php echo $camp->camp_type; ?>" class="camp-image">
-            <p><?php echo $camp->description; ?></p>
-            <div class="campDays">
-            <p>Camp Days</p>
+
+    <div class="form-container">
+            <h3>Camp</h3> 
+            <img src="/assets/images/servicescamp.jpg" alt="camp" class="images">
+            
+            <div class="subtitle">
+            <p>Ultimate Training Camp</p>
     </div>
-            <p><?php echo "$camp->start_date to $camp->end_date"?></p>
-            <div class="campDays">
-                <p>Registration period:</p>
-    </div>
-            <p><?php echo "$camp->registration_start to $camp->registration_end"; ?></p>
+            <p>Exclusive Camp league to achieve better basketball skills!</p>
+            
             <form action="" method="post">
                 <div class="btn">
-                    <a href="/User/camp/buy?camp_type=<?php echo $camp->camp_type; ?>">Join Now for <?php echo "$camp->price$"; ?>!</a>
+                    <a href="/User/camp/list">Learn more!</a>
                 </div>
             </form>
         </div>
-        <?php endforeach; ?>
+        <div class="form-container2">
+            <h3>Booking</h3> 
+            <img src="/assets/images/servicesbooking.jpg" alt="booking" class="images">
+            
+            <div class="subtitle">
+            <p>Booking system</p>
+    </div>
+            <p>Flexible booking system to have an open court for you and your friends!</p>
+            
+            <form action="" method="post">
+                <div class="btn">
+                    <a href="/User/booking/list">Learn more!</a>
+                </div>
+            </form>
+        </div>
+        <div class="form-container">
+            <h3>Membership</h3> 
+            <img src="/assets/images/servicesmembership.jpg" alt="membership" class="images">
+            
+            <div class="subtitle">
+            <p>Innovative membership plan!</p>
+    </div>
+            <p>Register for an effective membership plan to help you achieve your athletic goals!</p>
+            
+            <form action="" method="post">
+                <div class="btn">
+                    <a href="/User/membership/list">Learn more!</a>
+                </div>
+            </form>
+        </div>
+    
+    
         
        
     </div>
+</div>
 </body>
 </html>
