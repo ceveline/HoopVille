@@ -83,6 +83,28 @@ class Profile extends \app\core\Controller
       $this->view('User/profile/create', null, true); 
       
     }
+  }
+
+  public function edit()
+  {
+    $profile = new \app\models\Profile();
+    $profile = $profile->getByUserId($_GET['id']);
+   
+
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+      $profile->first_name = $_POST['fname'];
+      $profile->last_name = $_POST['lname'];
+      $profile->phoneNumber = $_POST['phoneNumber'];
+
+      
+      $profile->update();
+
+      header('location:/User/profile/create');
+    } else {
+      $this->view('User/profile/edit', $profile, true);
+    }
+}
 
     public function infoDetails($id)
     {
@@ -117,5 +139,10 @@ class Profile extends \app\core\Controller
     }
     
 
+<<<<<<< HEAD
+  }
+}
+=======
 
 }
+>>>>>>> cdbb74db4273e17b23e1b104661130879420772c
