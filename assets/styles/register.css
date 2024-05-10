@@ -1,4 +1,4 @@
-.background{
+.background {
     min-height: 100%;
     background-color: rgba(0, 0, 0, 0.3);
     display: flex;
@@ -6,7 +6,7 @@
 }
 
 .content {
-    height: 421px;
+    height: 650px;
     width: 850px;
     background-color: white;
     display: flex;
@@ -18,62 +18,36 @@
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
-.login-form {
+.register-form {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 42px;
+    padding-top: 34px;
+}
+
+.last-name {
+    display: flex;
 }
 
 h1 {
-    text-align: center; 
+    text-align: center;
 }
 
-.login-form input {
-    margin-bottom: 26px;
-    margin-left: 10px;
-}
-
-.login-form label {
+.register-form label {
     margin-bottom: 5px; 
-    width: 100px; 
+    width: 140px; 
 }
 
 .inputs {
     display: flex;
     flex-direction: row;
     align-items: center;
-}
-
-.register-now{
-    margin-top: 5%;
-    text-align: center;
-    display: flex;
-}
-
-.register-now {
-    text-align: center;
-    display: flex;
-}
-
-.register-now a {
-    font-style: italic;
-}
-
-.login-form label, .login-form input{
     margin-bottom: 25px;
 }
 
-
-#password_hash, #email {
-    border-radius: 10px;
-    height: 32px;
-    width: 248px;
-    padding-left: 10px;
-}
-
-.login-form input[type="text"],
-.login-form input[type="password"] {
+.register-form input[type="text"],
+.register-form input[type="password"],
+.register-form input[type="date"] {
     width: 248px;
     height: 32px;
     border-radius: 10px;
@@ -84,8 +58,8 @@ button {
     height: 34px;
     width: 124px;
     font-size: 0.93rem;
-    margin-top: 25px;
-    margin-bottom: 19px;
+    margin-top: 18px;
+    margin-bottom: 45px;
     border-radius: 0.6rem;
     border: none;
     background-color: #ffda76;
@@ -95,19 +69,31 @@ button:hover{
     background-color: #fbd467;
 }
 
-.inputs {
-    position: relative;
-}
-
-.forgot-password {
-    /* position: absolute; */
-    bottom: -10px;
+.login-now{
+    text-align: center;
     display: flex;
-    justify-content: flex-end;
-    width: 360px;
 }
 
-.forgot-password a {
+.login-now a {
     font-style: italic;
-    font-size: 15px;
+}
+
+.login-now label,
+.login-now input {
+    margin-bottom: 25px;
+}
+
+#first_name,
+#last_name,
+#password_hash,
+#retype-password,
+#email,
+#date_of_birth,
+#phone {
+    border-radius: 10px;
+    border: solid;
+    border-width: 2.3px;
+    height: 32px;
+    width: 248px;
+    padding-left: 10px;
 }

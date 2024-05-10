@@ -1,0 +1,356 @@
+# French translations for PACKAGE package.
+# Copyright (C) 2024 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# root <EMAIL@ADDRESS>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-05-09 15:59+0000\n"
+"PO-Revision-Date: 2024-05-09 16:09+0000\n"
+"Last-Translator: root <EMAIL@ADDRESS>\n"
+"Language-Team: French\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ASCII\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: app/views/Admin/login.php:3 app/views/Admin/login.php:24
+#: app/views/navbar.php:44 app/views/User/login.php:18
+#: app/views/User/login.php:28
+msgid "Login"
+msgstr "Se connecter"
+
+#: app/views/Admin/login.php:17 app/views/Admin/register.php:18
+#: app/views/User/login.php:21 app/views/User/register.php:37
+msgid "Email:"
+msgstr "Courriel"
+
+#: app/views/Admin/login.php:21 app/views/Admin/register.php:22
+#: app/views/User/login.php:25 app/views/User/register.php:41
+msgid "Password:"
+msgstr "Mot de passe"
+
+#: app/views/Admin/login.php:26 app/views/User/login.php:30
+msgid "Don't have an account?"
+msgstr "Vous n'avez pas de compte?"
+
+#: app/views/Admin/login.php:26 app/views/User/login.php:30
+msgid "Register now!"
+msgstr "S'inscrire maintenant!"
+
+#: app/views/Admin/Membership/edit.php:77
+msgid "Modify User Membership"
+msgstr "Modifier l'adhesion d'un utilisateur"
+
+#: app/views/Admin/Membership/edit.php:81
+msgid "Membership ID:"
+msgstr "Identifiant de membre:"
+
+#: app/views/Admin/Membership/edit.php:84
+msgid "User ID:"
+msgstr "ID de l'utilisateur:"
+
+#: app/views/Admin/Membership/edit.php:87
+msgid "Membership Type:"
+msgstr "Type d'adhesion:"
+
+#: app/views/Admin/Membership/edit.php:95
+msgid "Start Date:"
+msgstr "Date de debut:"
+
+#: app/views/Admin/Membership/edit.php:98
+msgid "End Date:"
+msgstr "Date de fin:"
+
+#: app/views/Admin/Membership/list.php:4 app/views/Admin/Publication/list.php:5
+#: app/views/Admin/Publication/view.php:8 app/views/navbar.php:34
+msgid "News & Updates"
+msgstr "Nouvelles mise a jour"
+
+#: app/views/Admin/Membership/list.php:18
+msgid "Membership ID"
+msgstr "Identifiant de membre"
+
+#: app/views/Admin/Membership/list.php:19
+msgid "User ID"
+msgstr "ID de l'utilisateur"
+
+#: app/views/Admin/Membership/list.php:20
+msgid "Membership Type"
+msgstr "Type"
+
+#: app/views/Admin/Membership/list.php:21
+msgid "Start Date"
+msgstr "Date de debut"
+
+#: app/views/Admin/Membership/list.php:22
+msgid "End Date"
+msgstr "Date de fin"
+
+#: app/views/Admin/Membership/list.php:23
+#: app/views/Admin/Publication/list.php:20
+msgid "Actions"
+msgstr "Actions"
+
+#: app/views/Admin/Membership/list.php:40
+#: app/views/Admin/Publication/list.php:34
+#: app/views/Admin/Publication/view.php:37
+msgid "Edit"
+msgstr "Modifier"
+
+#: app/views/Admin/Membership/list.php:41
+#: app/views/Admin/Publication/list.php:35
+#: app/views/Admin/Publication/view.php:38
+msgid "Delete"
+msgstr "Supprimer"
+
+#: app/views/Admin/Publication/create.php:5
+msgid "Create Publication"
+msgstr "Creer une publication"
+
+#: app/views/Admin/Publication/create.php:17
+msgid "Create A Post"
+msgstr "Creer un message"
+
+#: app/views/Admin/Publication/create.php:21
+#: app/views/Admin/Publication/edit.php:20
+msgid "Title:"
+msgstr "Titre:"
+
+#: app/views/Admin/Publication/create.php:22
+#: app/views/Admin/Publication/edit.php:21
+msgid "Title goes here"
+msgstr "Le titre"
+
+#: app/views/Admin/Publication/create.php:25
+#: app/views/Admin/Publication/edit.php:24
+msgid "Text:"
+msgstr "Texte:"
+
+#: app/views/Admin/Publication/create.php:26
+#: app/views/Admin/Publication/edit.php:26
+msgid "Type your content here"
+msgstr "Le texte"
+
+#: app/views/Admin/Publication/create.php:29
+msgid "Post"
+msgstr "Publier"
+
+#: app/views/Admin/Publication/edit.php:4
+msgid "Edit Publication"
+msgstr "Modifier la publication"
+
+#: app/views/Admin/Publication/edit.php:16
+msgid "Edit Post"
+msgstr "Modifier le texte"
+
+#: app/views/Admin/Publication/edit.php:29
+msgid "Save Changes"
+msgstr "Sauvegarder"
+
+#: app/views/Admin/Publication/list.php:18
+msgid "Title"
+msgstr "Titre"
+
+#: app/views/User/Membership/list.php:49
+msgid "Confirm"
+msgstr "Confirmer"
+
+#: app/views/Admin/Publication/list.php:19
+msgid "Date Posted"
+msgstr "Date postee"
+
+#: app/views/Admin/Publication/list.php:33
+msgid "View"
+msgstr "Voir"
+
+#: app/views/Admin/Publication/view.php:27
+msgid "Posted on"
+msgstr "Poste sur"
+
+#: app/views/Admin/register.php:4 app/views/Admin/register.php:15
+msgid "Registration"
+msgstr "Registration"
+
+#: app/views/Admin/register.php:26 app/views/User/register.php:45
+msgid "Re-type password:"
+msgstr "Retaper le mot de passe"
+
+#: app/views/Admin/register.php:29
+msgid "Register"
+msgstr "Inscrivez-Vous"
+
+#: app/views/Admin/register.php:32 app/views/User/register.php:51
+msgid "Already have an account?"
+msgstr "Vous avez deja un compte?"
+
+#: app/views/Admin/register.php:32 app/views/User/register.php:51
+msgid "Login now!"
+msgstr "Se connectez-vous maintenant!"
+
+#: app/views/Admin/register.php:43
+msgid "Please fill in all fields"
+msgstr "Veuillez remplir tout les champs"
+
+#: app/views/Admin/register.php:57
+msgid "You must be at least 17 years old to register"
+msgstr "Vous devez avoir au moins 17 ans pour vous inscrire"
+
+#: app/views/Admin/register.php:61
+msgid "Please make sure the passwords are the same"
+msgstr "Veuillez vous assurer que les mots de passe sont les memes"
+
+#: app/views/faq.php:82 app/views/faq.php:90 app/views/faq.php:98
+#: app/views/faq.php:106 app/views/faq.php:115
+msgid ""
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum "
+"malesuada nunc vel quam dignissim, ac ullamcorper turpis dictum?"
+msgstr ""
+
+#: app/views/faq.php:85 app/views/faq.php:93 app/views/faq.php:101
+#: app/views/faq.php:110 app/views/faq.php:119
+msgid ""
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum "
+"malesuada nunc vel quam dignissim, ac ullamcorper turpis dictum."
+msgstr ""
+
+#: app/views/home.php:12
+msgid "HoopVille Performance Centre"
+msgstr "Centre de performances HoopVille"
+
+#: app/views/home.php:15
+msgid "Take your game to the next level"
+msgstr "Faites passer votre jeu au niveau superieur"
+
+#: app/views/home.php:21
+msgid "More info"
+msgstr "Plus d'informations"
+
+#: app/views/home.php:25
+msgid "Join now"
+msgstr "Adherer maintenant!"
+
+#: app/views/navbar.php:19
+msgid "Home"
+msgstr "Menu principal"
+
+#: app/views/navbar.php:22
+msgid "Services"
+msgstr "Services"
+
+#: app/views/navbar.php:25
+msgid "About"
+msgstr "A propos de nous"
+
+#: app/views/navbar.php:28
+msgid "Contact"
+msgstr "Contact"
+
+#: app/views/navbar.php:37
+msgid "Reviews"
+msgstr "Commentaires"
+
+#: app/views/navbar.php:41
+msgid "My Account"
+msgstr "Mon compte"
+
+#: app/views/navbar.php:42
+msgid "Logout"
+msgstr "Se deconnecter"
+
+#: app/views/User/Membership/individual.php:167
+msgid "Modify Membership"
+msgstr "Modifier l'adhesion"
+
+#: app/views/User/Membership/individual.php:169
+msgid "Current membership plan:"
+msgstr "Mon plan d'adhesion"
+
+#: app/views/User/Membership/individual.php:175
+msgid "Select a new membership:"
+msgstr "Selectionner un nouvel abonnement"
+
+#: app/views/User/Membership/individual.php:180
+msgid "Base Training"
+msgstr "Formation de base"
+
+#: app/views/User/Membership/individual.php:202
+msgid "Confirm Membership Cancellation"
+msgstr "Confirmer l'annulation de l'adhesion"
+
+#: app/views/User/Membership/individual.php:203
+msgid "Type"
+msgstr "Type"
+
+#: app/views/User/Membership/individual.php:203
+msgid "in the box below to cancel your membership:"
+msgstr "dans la casse ci-dessous pour annuler votre adhesion"
+
+#: app/views/User/Membership/individual.php:207
+msgid "Cancel membership"
+msgstr "Annuler"
+
+#: app/views/User/Membership/individual.php:208
+#: app/views/User/Membership/list.php:45
+msgid "Back"
+msgstr "Retourner"
+
+#: app/views/User/Membership/list.php:14
+#: app/views/User/Membership/list.php:7
+msgid "Memberships"
+msgstr "Adhesions"
+
+#: app/views/User/Membership/list.php:23
+msgid "/month"
+msgstr "/mois"
+
+#: app/views/User/Membership/list.php:33
+msgid "Review Your Order"
+msgstr "Verifiez votre commande"
+
+#: app/views/User/Publication/list.php:27
+msgid "Search"
+msgstr "Chercher"
+
+#: app/views/User/Publication/list.php:32
+msgid "View all"
+msgstr "Voir tour"
+
+#: app/views/User/Publication/list.php:56
+msgid "Created on"
+msgstr "Cree sur"
+
+#: app/views/User/register.php:21
+msgid "First name:"
+msgstr "Prenom:"
+
+#: app/views/User/register.php:25
+msgid "Last name:"
+msgstr "Nom de famille:"
+
+#: app/views/User/register.php:29
+msgid "Phone number:"
+msgstr "Numero de telephone:"
+
+#: app/views/User/register.php:33
+msgid "Date of birth:"
+msgstr "Date de naissance:"
+
+#: app/views/User/Membership/list.php:68
+msgid "Next"
+msgstr "Suivant"
+
+#: app/views/User/Membership/list.php:160
+msgid "Membership type: "
+msgstr "Type d'adhesion: "
+
+#: app/views/User/Membership/list.php:163
+msgid "Price: "
+msgstr "Prix: "
+
+#: app/views/User/Membership/list.php:166
+msgid "What's included: "
+msgstr "Ce qui est inclu: "

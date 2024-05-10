@@ -1,0 +1,338 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-05-09 15:59+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: app/views/Admin/login.php:3 app/views/Admin/login.php:24
+#: app/views/navbar.php:44 app/views/User/login.php:18
+#: app/views/User/login.php:28
+msgid "Login"
+msgstr ""
+
+#: app/views/Admin/login.php:17 app/views/Admin/register.php:18
+#: app/views/User/login.php:21 app/views/User/register.php:37
+msgid "Email:"
+msgstr ""
+
+#: app/views/Admin/login.php:21 app/views/Admin/register.php:22
+#: app/views/User/login.php:25 app/views/User/register.php:41
+msgid "Password:"
+msgstr ""
+
+#: app/views/Admin/login.php:26 app/views/User/login.php:30
+msgid "Don't have an account?"
+msgstr ""
+
+#: app/views/Admin/login.php:26 app/views/User/login.php:30
+msgid "Register now!"
+msgstr ""
+
+#: app/views/Admin/Membership/edit.php:77
+msgid "Modify User Membership"
+msgstr ""
+
+#: app/views/Admin/Membership/edit.php:81
+msgid "Membership ID:"
+msgstr ""
+
+#: app/views/Admin/Membership/edit.php:84
+msgid "User ID:"
+msgstr ""
+
+#: app/views/Admin/Membership/edit.php:87
+msgid "Membership Type:"
+msgstr ""
+
+#: app/views/Admin/Membership/edit.php:95
+msgid "Start Date:"
+msgstr ""
+
+#: app/views/Admin/Membership/edit.php:98
+msgid "End Date:"
+msgstr ""
+
+#: app/views/Admin/Membership/list.php:4 app/views/Admin/Publication/list.php:5
+#: app/views/Admin/Publication/view.php:8 app/views/navbar.php:34
+msgid "News & Updates"
+msgstr ""
+
+#: app/views/Admin/Membership/list.php:18
+msgid "Membership ID"
+msgstr ""
+
+#: app/views/Admin/Membership/list.php:19
+msgid "User ID"
+msgstr ""
+
+#: app/views/Admin/Membership/list.php:20
+msgid "Membership Type"
+msgstr ""
+
+#: app/views/Admin/Membership/list.php:21
+msgid "Start Date"
+msgstr ""
+
+#: app/views/Admin/Membership/list.php:22
+msgid "End Date"
+msgstr ""
+
+#: app/views/Admin/Membership/list.php:23
+#: app/views/Admin/Publication/list.php:20
+msgid "Actions"
+msgstr ""
+
+#: app/views/Admin/Membership/list.php:40
+#: app/views/Admin/Publication/list.php:34
+#: app/views/Admin/Publication/view.php:37
+msgid "Edit"
+msgstr ""
+
+#: app/views/Admin/Membership/list.php:41
+#: app/views/Admin/Publication/list.php:35
+#: app/views/Admin/Publication/view.php:38
+msgid "Delete"
+msgstr ""
+
+#: app/views/Admin/Publication/create.php:5
+msgid "Create Publication"
+msgstr ""
+
+#: app/views/Admin/Publication/create.php:17
+msgid "Create A Post"
+msgstr ""
+
+#: app/views/Admin/Publication/create.php:21
+#: app/views/Admin/Publication/edit.php:20
+msgid "Title:"
+msgstr ""
+
+#: app/views/Admin/Publication/create.php:22
+#: app/views/Admin/Publication/edit.php:21
+msgid "Title goes here"
+msgstr ""
+
+#: app/views/Admin/Publication/create.php:25
+#: app/views/Admin/Publication/edit.php:24
+msgid "Text:"
+msgstr ""
+
+#: app/views/Admin/Publication/create.php:26
+#: app/views/Admin/Publication/edit.php:26
+msgid "Type your content here"
+msgstr ""
+
+#: app/views/Admin/Publication/create.php:29
+msgid "Post"
+msgstr ""
+
+#: app/views/Admin/Publication/edit.php:4
+msgid "Edit Publication"
+msgstr ""
+
+#: app/views/Admin/Publication/edit.php:16
+msgid "Edit Post"
+msgstr ""
+
+#: app/views/Admin/Publication/edit.php:29
+msgid "Save Changes"
+msgstr ""
+
+#: app/views/Admin/Publication/list.php:18
+msgid "Title"
+msgstr ""
+
+#: app/views/Admin/Publication/list.php:19
+msgid "Date Posted"
+msgstr ""
+
+#: app/views/Admin/Publication/list.php:33
+msgid "View"
+msgstr ""
+
+#: app/views/Admin/Publication/view.php:27
+msgid "Posted on"
+msgstr ""
+
+#: app/views/Admin/register.php:4 app/views/Admin/register.php:15
+msgid "Registration"
+msgstr ""
+
+#: app/views/Admin/register.php:26 app/views/User/register.php:45
+msgid "Re-type password:"
+msgstr ""
+
+#: app/views/Admin/register.php:29
+msgid "Register"
+msgstr ""
+
+#: app/views/Admin/register.php:32 app/views/User/register.php:51
+msgid "Already have an account?"
+msgstr ""
+
+#: app/views/Admin/register.php:32 app/views/User/register.php:51
+msgid "Login now!"
+msgstr ""
+
+#: app/views/Admin/register.php:43
+msgid "Please fill in all fields"
+msgstr ""
+
+#: app/views/Admin/register.php:57
+msgid "You must be at least 17 years old to register"
+msgstr ""
+
+#: app/views/Admin/register.php:61
+msgid "Please make sure the passwords are the same"
+msgstr ""
+
+#: app/views/faq.php:82 app/views/faq.php:90 app/views/faq.php:98
+#: app/views/faq.php:106 app/views/faq.php:115
+msgid ""
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum "
+"malesuada nunc vel quam dignissim, ac ullamcorper turpis dictum?"
+msgstr ""
+
+#: app/views/faq.php:85 app/views/faq.php:93 app/views/faq.php:101
+#: app/views/faq.php:110 app/views/faq.php:119
+msgid ""
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum "
+"malesuada nunc vel quam dignissim, ac ullamcorper turpis dictum."
+msgstr ""
+
+#: app/views/home.php:12
+msgid "HoopVille Performance Centre"
+msgstr ""
+
+#: app/views/home.php:15
+msgid "Take your game to the next level"
+msgstr ""
+
+#: app/views/home.php:21
+msgid "More info"
+msgstr ""
+
+#: app/views/home.php:25
+msgid "Join now"
+msgstr ""
+
+#: app/views/navbar.php:19
+msgid "Home"
+msgstr ""
+
+#: app/views/navbar.php:22
+msgid "Services"
+msgstr ""
+
+#: app/views/navbar.php:25
+msgid "About"
+msgstr ""
+
+#: app/views/navbar.php:28
+msgid "Contact"
+msgstr ""
+
+#: app/views/navbar.php:37
+msgid "Reviews"
+msgstr ""
+
+#: app/views/navbar.php:41
+msgid "My Account"
+msgstr ""
+
+#: app/views/navbar.php:42
+msgid "Logout"
+msgstr ""
+
+#: app/views/User/Membership/individual.php:167
+msgid "Modify Membership"
+msgstr ""
+
+#: app/views/User/Membership/individual.php:169
+msgid "Current membership plan:"
+msgstr ""
+
+#: app/views/User/Membership/individual.php:169
+msgid "$membership->membership_type"
+msgstr ""
+
+#: app/views/User/Membership/individual.php:175
+msgid "Select a new membership:"
+msgstr ""
+
+#: app/views/User/Membership/individual.php:180
+msgid "Base Training"
+msgstr ""
+
+#: app/views/User/Membership/individual.php:202
+msgid "Confirm Membership Cancellation"
+msgstr ""
+
+#: app/views/User/Membership/individual.php:203
+msgid "Type"
+msgstr ""
+
+#: app/views/User/Membership/individual.php:203
+msgid "in the box below to cancel your membership:"
+msgstr ""
+
+#: app/views/User/Membership/individual.php:207
+msgid "Cancel membership"
+msgstr ""
+
+#: app/views/User/Membership/individual.php:208
+msgid "Back"
+msgstr ""
+
+#: app/views/User/Membership/list.php:14
+msgid "Memberships"
+msgstr ""
+
+#: app/views/User/Membership/list.php:23
+msgid "/month"
+msgstr ""
+
+#: app/views/User/Membership/list.php:33
+msgid "Review Your Order"
+msgstr ""
+
+#: app/views/User/Publication/list.php:27
+msgid "Search"
+msgstr ""
+
+#: app/views/User/Publication/list.php:32
+msgid "View all"
+msgstr ""
+
+#: app/views/User/Publication/list.php:56
+msgid "Created on"
+msgstr ""
+
+#: app/views/User/register.php:21
+msgid "First name:"
+msgstr ""
+
+#: app/views/User/register.php:25
+msgid "Last name:"
+msgstr ""
+
+#: app/views/User/register.php:29
+msgid "Phone number:"
+msgstr ""
+
+#: app/views/User/register.php:33
+msgid "Date of birth:"
+msgstr ""
