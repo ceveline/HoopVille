@@ -5,7 +5,6 @@ $this->addRoute('User/myAccount', 'User,myAccount');
 $this->addRoute('User/services', 'User,services');
 
 
-$this->addRoute('FAQ', 'User,faq');
 
 //defined a few routes "url"=>"controller,method" -> connected to the App.php file in the core folder
 $this->addRoute('login', 'User,login');
@@ -47,9 +46,9 @@ $this->addRoute('Publication/search','Publication,search');
 
 //ADMINS
 // $this->addRoute('Admin/login', 'Administrator,login'); -> can use /User/login to login as an admin
-// $this->addRoute('Admin/register', 'Administrator,register'); 
+$this->addRoute('Admin/register', 'Administrator,register'); 
 // -> to create an Admin but we only need one admin so dont need the view
-// $this->addRoute('Admin/logout', 'Administrator,logout');
+$this->addRoute('Admin/logout', 'Administrator,logout');
 
 
 // BOOKINGS

@@ -15,20 +15,20 @@
 <body>
     <div class="background">
         <div class="content">
-            <h1><?= __('Login') ?></h1>
+            <h1>Login</h1>
             <form class='login-form' method="post" action="">
                 <div class="inputs">
-                    <label for="email" class="form-label"><?= __('Email:') ?></label>
+                    <label for="email" class="form-label">Email:</label>
                     <input type="text" class="form-control" id="email" name="email" placeholder="Jon123@gmail.com">
                 </div>
                 <div class="inputs">
-                    <label for="password" class="form-label"><?= __('Password:') ?></label>
+                    <label for="password" class="form-label">Password:</label>
                     <input type="password" class="form-control" id="password_hash" name="password_hash" placeholder="•••••">
                     <p class="forgot-password"><a href="/User/forgotPassword">Forgot password?</a></p>
                 </div>
-                <button type="submit" class="btn btn-primary" name="action" value="Login"><?= __('Login') ?></button>
+                <button type="submit" class="btn btn-primary" name="action" value="Login">Login</button>
                 <div class="register-now">
-                    <p><?= __('Don\'t have an account?') ?> <a href="/register"><?= __('Register now!') ?></a></p>
+                    <p>Don't have an account? <a href="/register">Register now!</a></p>
                 </div>
             </form>
         </div>

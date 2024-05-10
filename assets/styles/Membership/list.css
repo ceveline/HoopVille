@@ -128,10 +128,9 @@ input.membership_type{
     font-size: 1rem;
 }
 
-.buttons-p2{
+.back-btn, .confirm-btn{
     display: flex;
-    justify-content: space-between;
-    margin-top: 37px;
+    justify-content: flex-end;
 }
 
 .confirm-btn .btn, .back-btn .btn2{

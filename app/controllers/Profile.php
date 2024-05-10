@@ -83,6 +83,7 @@ class Profile extends \app\core\Controller
       $this->view('User/profile/create', null, true); 
       
     }
+
   }
 
   public function edit()
@@ -105,6 +106,7 @@ class Profile extends \app\core\Controller
       $this->view('User/profile/edit', $profile, true);
     }
 }
+
 
     public function infoDetails($id)
     {
@@ -138,11 +140,4 @@ class Profile extends \app\core\Controller
         $this->view('Admin/User/infoDetails', $data, true);
     }
     
-
-<<<<<<< HEAD
-  }
 }
-=======
-
-}
->>>>>>> cdbb74db4273e17b23e1b104661130879420772c
