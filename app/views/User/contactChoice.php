@@ -20,7 +20,10 @@
                     <div class="info">
                         <p>Feras Saaida</p>
                         <p>123-456-7890</p>
-                        <p><a href="/User/contact">john@example.com</a></p>
+                        <p><a href="/User/contact/john@example.com">john@example.com</a></p>
+                        <p><a href="/User/contact/hussainamin285@gmail.com"> hussainamin285@gmail.com</a></p>
+
+                       
                     </div>
                 </div>
                 <div class="image-column">
@@ -28,7 +31,7 @@
                     <div class="info">
                         <p>Mikee Dosado</p>
                         <p>987-654-3210</p>
-                        <p><a href="/User/contact">jane@example.com</a></p>
+                        <p><a href="/User/contact/jane@example.com">jane@example.com</a></p>
                     </div>
                 </div>
             </div>

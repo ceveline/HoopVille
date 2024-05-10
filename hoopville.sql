@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: May 05, 2024 at 04:04 AM
+-- Generation Time: May 07, 2024 at 02:48 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -50,6 +50,14 @@ CREATE TABLE `Booking` (
   `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `Booking`
+--
+
+INSERT INTO `Booking` (`booking_id`, `booking_type`, `user_id`, `date`, `start_time`, `end_time`, `status`, `timestamp`) VALUES
+(1, 'Court', 7, '2024-05-04', '12:42:54', '16:42:54', 1, '2024-05-07 00:47:08'),
+(2, 'Fitness', 8, '2024-05-09', '09:47:11', '12:47:11', 1, '2024-05-07 00:47:47');
+
 -- --------------------------------------------------------
 
 --
@@ -61,6 +69,14 @@ CREATE TABLE `Booking_Type` (
   `price` decimal(10,2) NOT NULL,
   `description` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `Booking_Type`
+--
+
+INSERT INTO `Booking_Type` (`booking_type`, `price`, `description`) VALUES
+('Court', 45.00, '\"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...\"\r\n\"There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain...\"'),
+('Fitness', 30.00, '\"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...\"\r\n\"There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain...\"');
 
 -- --------------------------------------------------------
 
@@ -75,6 +91,15 @@ CREATE TABLE `Camp` (
   `guest_id` int(11) DEFAULT NULL,
   `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `Camp`
+--
+
+INSERT INTO `Camp` (`camp_id`, `camp_type`, `user_id`, `guest_id`, `timestamp`) VALUES
+(1, 'Fall', 4, NULL, '2024-05-07 00:38:46'),
+(2, 'Summer', 5, NULL, '2024-05-07 00:38:46'),
+(3, 'Winter', 6, NULL, '2024-05-07 00:40:08');
 
 -- --------------------------------------------------------
 
@@ -91,6 +116,15 @@ CREATE TABLE `Camp_Type` (
   `registration_start` date NOT NULL,
   `registration_end` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `Camp_Type`
+--
+
+INSERT INTO `Camp_Type` (`camp_type`, `price`, `description`, `start_date`, `end_date`, `registration_start`, `registration_end`) VALUES
+('Fall', 69.99, '\"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...\"\r\n\"There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain...\"', '2024-06-01', '2025-06-18', '2024-07-03', '2024-08-20'),
+('Summer', 49.99, '\"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...\"\r\n\"There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain...\"', '2024-05-01', '2024-07-05', '2024-04-04', '2024-07-01'),
+('Winter', 49.99, '\"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...\"\r\n\"There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain...\"', '2024-05-01', '2024-08-01', '2024-05-01', '2024-07-01');
 
 -- --------------------------------------------------------
 
@@ -120,6 +154,15 @@ CREATE TABLE `Membership` (
   `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `Membership`
+--
+
+INSERT INTO `Membership` (`membership_id`, `membership_type`, `user_id`, `start_date`, `end_date`, `timestamp`) VALUES
+(1, 'Basic', 1, '2024-05-01', '2025-05-01', '2024-05-07 00:32:16'),
+(2, 'VIP', 2, '2024-05-29', '2025-05-29', '2024-05-07 00:33:22'),
+(3, 'PREMIUM', 3, '2024-06-01', '2025-06-01', '2024-05-07 00:33:22');
+
 -- --------------------------------------------------------
 
 --
@@ -131,6 +174,15 @@ CREATE TABLE `Membership_Type` (
   `monthly_price` decimal(10,2) NOT NULL,
   `description` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `Membership_Type`
+--
+
+INSERT INTO `Membership_Type` (`membership_type`, `monthly_price`, `description`) VALUES
+('Basic', 14.99, '\"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...\"\r\n\"There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain...\"'),
+('PREMIUM', 99.99, '\"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...\"\r\n\"There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain...\"'),
+('VIP', 24.99, '\"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...\"\r\n\"There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain...\"');
 
 -- --------------------------------------------------------
 
@@ -210,13 +262,14 @@ CREATE TABLE `User` (
 
 INSERT INTO `User` (`user_id`, `email`, `password_hash`, `active`, `reset_token_hash`, `reset_token_expires_at`) VALUES
 (1, 'hussain@gmail.com', '123', 0, '818dc2d58d4cb8ed221147009cfd49c9b79732c2b258364476004cceaa6d5ba5', '2024-05-02 05:27:37'),
-(2, 'test@gmail.com', '123', 0, NULL, NULL),
+(2, 'test@gmail.com', '123', 0, '154f06f8e89f0a87f7ec22a7508ac836d01bb79fb09690d799906a0e467cd655', '2024-05-05 09:01:41'),
 (3, 'test1@gmail.com', '345', 1, NULL, NULL),
 (4, 'michelle.paquette@gmail.com', 'svsvsv', 1, NULL, NULL),
 (5, 'jack@gmail.com', 'swvdsdsbdbd', 1, NULL, NULL),
 (6, 'kevin@gmail.com', 'dvdvdsvs', 1, NULL, NULL),
 (7, 'kevin1@gmail.com', 'sgvfsgs', 1, NULL, NULL),
-(8, 'michelle.paquette@gmail.com', 'svsvsv', 1, NULL, NULL);
+(8, 'michelle.paquette@gmail.com', 'svsvsv', 1, NULL, NULL),
+(9, 'hussainamin285@gmail.com', '123', 1, 'b3f6322a83754a74b636fbd32a038445578630186e6039b0751d1731ec0b5a9c', '2024-05-07 02:53:25');
 
 --
 -- Indexes for dumped tables
@@ -318,13 +371,13 @@ ALTER TABLE `Administrator`
 -- AUTO_INCREMENT for table `Booking`
 --
 ALTER TABLE `Booking`
-  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `Camp`
 --
 ALTER TABLE `Camp`
-  MODIFY `camp_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `camp_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `Guest`
@@ -336,7 +389,7 @@ ALTER TABLE `Guest`
 -- AUTO_INCREMENT for table `Membership`
 --
 ALTER TABLE `Membership`
-  MODIFY `membership_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `membership_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `Profile`
@@ -360,7 +413,7 @@ ALTER TABLE `Review`
 -- AUTO_INCREMENT for table `User`
 --
 ALTER TABLE `User`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- Constraints for dumped tables

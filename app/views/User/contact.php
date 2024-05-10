@@ -1,3 +1,48 @@
+<?php
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name = $_POST["name"];
+    
+    $subject = $_POST["subject"];
+    $message = $_POST["message"];
+
+    $mail = new PHPMailer(true);
+
+    try {
+        // Server settings
+        $mail->isSMTP();
+        $mail->Host = 'smtp.gmail.com'; // Your SMTP server
+        $mail->SMTPAuth = true;
+        $mail->Username = "hoopville10@gmail.com";
+        $mail->Password = "xynqbjmtibkahokh";
+        $mail->SMTPSecure = 'ssl';
+        $mail->Port = 465;
+
+        // Recipients
+        $mail->setFrom('HoopVille@example.com', 'HoopVille');
+        
+        
+        if(in_array($email,$authorisedEmails)){
+            $mail->addAddress($email);
+        }else{
+            echo 'bad email was: ', $email;
+            $mail->addAddress('hussainamin285@gmail.com');
+        }
+
+        // Content
+        $mail->isHTML(true);
+        $mail->Subject = $subject;
+        $mail->Body = "<p>Name: $name</p><p>Email: $email</p><p>Message: $message</p>";
+
+        $mail->send();
+        echo '<script>alert("Message has been sent");</script>';
+    } catch (Exception $e) {
+        echo "Message could not be sent. !Mailer Error: {$mail->ErrorInfo}";
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +59,7 @@
     <div class="background">
         <div class="content-container">
             <h1>Message Us</h1>
-            <form method="post" enctype="text/plain" action="mailto:jondoe@hoopville.ca">
+            <form method="post" action="">
                 <div class="inputs">
                     <input type="text" id="name" name="name" placeholder="Enter your name" required>
                 </div>
@@ -29,7 +74,6 @@
                             <option value="booking">Booking</option>
                             <option value="membership">Membership</option>
                             <option value="other">Other</option>
-
                         </select>
                     </div>
                 </div>

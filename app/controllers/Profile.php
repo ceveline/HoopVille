@@ -81,4 +81,38 @@ class Profile extends \app\core\Controller {
         }
     }
 
+    public function infoDetails($id)
+    {
+        // Get profile details
+        $profileModel = new \app\models\Profile();
+        $profile = $profileModel->getProfileByIdDetails($id);
+    
+        // Check if profile exists
+        if (!$profile) {
+            header('Location: /Admin/User/view');
+            return;
+        }
+    
+        // Get membership details
+        $membership = $profileModel->getMembershipByUserId($profile->user_id);
+    
+        // Get booking details
+        $bookings = $profileModel->getBookingsByUserId($profile->user_id);
+    
+        // Get camp details
+        $camps = $profileModel->getCampsByUserId($profile->user_id);
+    
+        // Pass data to the view
+        $data = [
+            'profile' => $profile,
+            'membership' => $membership,
+            'bookings' => $bookings,
+            'camps' => $camps
+        ];
+    
+        $this->view('Admin/User/infoDetails', $data, true);
+    }
+    
+
+
 }

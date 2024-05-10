@@ -70,4 +70,48 @@ class Profile extends \app\core\Model
         
         $STMT->execute($data);
     }
+
+    // To display the details about the client from the admin side
+
+    public function getMembershipByUserId($userId)
+{
+    $SQL = 'SELECT * FROM Membership WHERE user_id = :userId';
+    $STMT = self::$_conn->prepare($SQL);
+    $STMT->execute(['userId' => $userId]);
+    return $STMT->fetch(PDO::FETCH_OBJ);
+}
+
+public function getBookingsByUserId($userId)
+{
+    $SQL = 'SELECT * FROM Booking WHERE user_id = :userId';
+    $STMT = self::$_conn->prepare($SQL);
+    $STMT->execute(['userId' => $userId]);
+    return $STMT->fetchAll(PDO::FETCH_OBJ);
+}
+
+public function getCampsByUserId($userId)
+{
+    $SQL = 'SELECT c.*, CONCAT(g.first_name, " ", g.last_name) AS guest_name
+            FROM Camp c
+            LEFT JOIN Guest g ON c.guest_id = g.guest_id
+            WHERE c.user_id = :userId';
+    $STMT = self::$_conn->prepare($SQL);
+    $STMT->execute(['userId' => $userId]);
+    return $STMT->fetchAll(PDO::FETCH_OBJ);
+}
+
+
+public function getProfileByIdDetails($id)
+{
+    $SQL = 'SELECT p.*, u.email 
+            FROM Profile p
+            INNER JOIN User u ON p.user_id = u.user_id
+            WHERE p.profile_id = :id';
+    $STMT = self::$_conn->prepare($SQL);
+    $STMT->execute(['id' => $id]);
+    return $STMT->fetch(PDO::FETCH_OBJ);
+}
+
+
+
 }

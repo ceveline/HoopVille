@@ -33,7 +33,7 @@
                                 </form>
                             </td>
                             <td>
-                                <a href="/Profile/info/<?= $profile->profile_id ?>" class="info-button">Info</a>
+                                <a href="/Profile/infoDetails/<?= $profile->profile_id ?>" class="info-button">Info</a>
                             </td>
                         </tr>
                     <?php endforeach; ?>

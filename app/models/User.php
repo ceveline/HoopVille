@@ -83,7 +83,6 @@ public function updateResetToken($email, $tokenHash, $expiry) {
 }
 
 
-
     //update password for forget password
     // public function updatePassword($email) {
     //     $SQL = 'UPDATE user SET password_hash=:password_hash

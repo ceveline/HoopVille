@@ -40,7 +40,7 @@ class Review extends \app\core\Model
     ORDER BY p.timestamp DESC;';
     $STMT = self::$_conn->prepare($SQL);
     $STMT->execute(['user_id' => $user_id]);
-    $STMT->setFetchMode(PDO::FETCH_CLASS, 'app\models\User\Review');
+    $STMT->setFetchMode(PDO::FETCH_CLASS, 'app\models\Review');
     return $STMT->fetchAll();
   }
 
@@ -58,7 +58,7 @@ class Review extends \app\core\Model
 
     $STMT = self::$_conn->prepare($SQL);
     $STMT->execute();
-    $STMT->setFetchMode(PDO::FETCH_CLASS, 'app\models\User\Review');
+    $STMT->setFetchMode(PDO::FETCH_CLASS, 'app\models\Review');
     return $STMT->fetchAll();
   }
 
@@ -79,14 +79,11 @@ class Review extends \app\core\Model
   }
 
   //Deleting a review by the ID
-  public function delete()
+  public function delete($review_id)
   {
     $SQL = 'DELETE FROM Review WHERE review_id = :review_id';
-
     $STMT = self::$_conn->prepare($SQL);
-    $STMT->execute(['review_id' => $this->review_id]);
+    $STMT->execute(['review_id' => $review_id]);
   }
-
- 
 
 }

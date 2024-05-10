@@ -97,8 +97,13 @@ class User extends \app\core\Controller {
         $this->view('/User/contactChoice', null, true);
     }
 
-    public function contact(){
-        $this->view('/User/contact', null, true);
+    public function contact($email){
+
+        $authorisedEmails = ['john@example.com','jane@example.com', "hussainamin285@gmail.com"];
+
+        $data = ['email'=>$email,'authorisedEmails'=>$authorisedEmails];
+
+        $this->view('/User/contact', $data, true);
     
     }
 
@@ -119,28 +124,30 @@ class User extends \app\core\Controller {
     
                 try {
                     // Server settings
-                    $mail->SMTPDebug = SMTP::DEBUG_SERVER;
+                    //$mail->SMTPDebug = SMTP::DEBUG_SERVER;
                     $mail->isSMTP();
                     $mail->SMTPAuth = true;
-                    $mail->Host = "smtp.example.com";
-                    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-                    $mail->Port = 587;
-                    $mail->Username = "your-user@example.com";
-                    $mail->Password = "your-password";
+                    $mail->Host = "smtp.gmail.com";
+                    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+                    $mail->Port = 465;
+                    $mail->Username = "hoopville10@gmail.com";
+                    $mail->Password = "xynqbjmtibkahokh";
     
                     // Email content
                     $mail->isHTML(true);
                     $mail->setFrom("noreply@example.com");
                     $mail->addAddress($email);
                     $mail->Subject = "Password Reset";
-                    $mail->Body = "Click <a href='http://example.com/reset-password.php?token=$token'>here</a> to reset your password.";
+                    $mail->Body = "Click <a href='http://localhost/reset-Password.php/?token=$token'>here</a> to reset your password.";
     
                     // Send email
                     $mail->send();
 
-                    echo "Message sent, please check your inbox.";
-    
-                    // Redirect user to a success page or display a success message
+                    echo "<script>
+                    window.location.href='/User/forgotPassword';
+                    alert('Message has been sent');
+                    </script>";
+
                 } catch (Exception $e) {
                     // Display an error message to the user
                     echo "Message could not be sent. Mailer error: {$mail->ErrorInfo}";
@@ -149,7 +156,6 @@ class User extends \app\core\Controller {
                 // Display an error message to the user
             }
         } else {
-            // Handle invalid request method (e.g., GET)
         }
     }
 
