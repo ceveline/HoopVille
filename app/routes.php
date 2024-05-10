@@ -12,6 +12,30 @@ $this->addRoute('login', 'User,login');
 $this->addRoute('register', 'User,register');
 $this->addRoute('logout', 'User,logout');
 
+$this->addRoute('Admin/User/view', 'Profile,viewAll');
+$this->addRoute('Admin/Review/list', 'Review,index');
+$this->addRoute('Review/delete/{id}', 'Review,delete');
+
+
+$this->addRoute('User/contact/{email}', 'User,contact');
+$this->addRoute('Profile/search', 'Profile,search');
+$this->addRoute('Profile/delete/{id}', 'Profile,delete');
+$this->addRoute('Profile/infoDetails/{id}', 'Profile,infoDetails');
+
+
+
+$this->addRoute('User/login', 'User,login');
+$this->addRoute('User/forgotPassword', 'User,forgotPassword');
+$this->addRoute('User/sendPasswordReset', 'User,sendPasswordReset');
+$this->addRoute('User/aboutUs', 'User,aboutUs');
+$this->addRoute('User/contactChoice', 'User,contactChoice');
+
+
+
+
+$this->addRoute('User/register', 'User,register');
+$this->addRoute('User/logout', 'User,logout');
+
 //PUBLICATIONS
 $this->addRoute('Admin/Publication/create', 'Publication,create');
 $this->addRoute('Admin/Publication/index', 'Publication,index'); //list publications

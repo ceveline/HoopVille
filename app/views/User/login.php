@@ -24,6 +24,7 @@
                 <div class="inputs">
                     <label for="password" class="form-label"><?= __('Password:') ?></label>
                     <input type="password" class="form-control" id="password_hash" name="password_hash" placeholder="•••••">
+                    <p class="forgot-password"><a href="/User/forgotPassword">Forgot password?</a></p>
                 </div>
                 <button type="submit" class="btn btn-primary" name="action" value="Login"><?= __('Login') ?></button>
                 <div class="register-now">
