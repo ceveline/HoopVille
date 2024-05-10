@@ -83,10 +83,17 @@ class User extends \app\core\Model
             'password_hash' => $this->password_hash,
         ]);
     }
+<<<<<<< HEAD
     // Add a method to the User model to update reset token and expiry
     public function updateResetToken($email, $tokenHash, $expiry)
     {
         $sql = "UPDATE User
+=======
+
+// Add a method to the User model to update reset token and expiry
+public function updateResetToken($email, $tokenHash, $expiry) {
+    $sql = "UPDATE User
+>>>>>>> 3e155791e3b19fd67b27b989e310f4b40d5ad64d
             SET reset_token_hash = :token_hash,
             reset_token_expires_at = :expiry
             WHERE email = :email";
@@ -103,7 +110,6 @@ class User extends \app\core\Model
             return false;
         }
     }
-
 
     //update password for forget password
     // public function updatePassword($email) {
