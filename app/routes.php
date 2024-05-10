@@ -3,14 +3,27 @@ $this->addRoute('Home', 'User,home');
 $this->addRoute('User/payment', 'User,payment');
 $this->addRoute('User/myAccount', 'User,myAccount');
 $this->addRoute('User/services', 'User,services');
-
-
 $this->addRoute('FAQ', 'User,faq');
 
 //defined a few routes "url"=>"controller,method" -> connected to the App.php file in the core folder
 $this->addRoute('login', 'User,login');
 $this->addRoute('register', 'User,register');
 $this->addRoute('logout', 'User,logout');
+
+$this->addRoute('Admin/User/view', 'Profile,viewAll');
+$this->addRoute('Admin/Review/list', 'Review,index');
+$this->addRoute('Review/delete/{id}', 'Review,delete');
+
+$this->addRoute('User/contact/{email}', 'User,contact');
+$this->addRoute('Profile/search', 'Profile,search');
+$this->addRoute('Profile/delete/{id}', 'Profile,delete');
+$this->addRoute('Profile/infoDetails/{id}', 'Profile,infoDetails');
+
+$this->addRoute('User/login', 'User,login');
+$this->addRoute('User/forgotPassword', 'User,forgotPassword');
+$this->addRoute('User/sendPasswordReset', 'User,sendPasswordReset');
+$this->addRoute('User/aboutUs', 'User,aboutUs');
+$this->addRoute('User/contactChoice', 'User,contactChoice');
 
 //PUBLICATIONS
 $this->addRoute('Admin/Publication/create', 'Publication,create');
@@ -44,12 +57,10 @@ $this->addRoute('Admin/membership/delete/{membership_id}', 'Membership,deleteByI
 $this->addRoute('Admin/membership/edit/{membership_id}', 'Membership,editById');
 
 
-
 //REVIEWS
 $this->addRoute('User/review/create', 'Review,create');
 $this->addRoute('User/review/edit', 'Review,edit');
 $this->addRoute('User/review/list', 'Review,list');
-
 
 //CAMPS
 $this->addRoute('User/camp/list', 'CampType,list');

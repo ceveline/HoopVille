@@ -97,14 +97,11 @@ class Review extends \app\core\Model
   }
 
   //Deleting a review by the ID
-  public function delete()
+  public function delete($review_id)
   {
     $SQL = 'DELETE FROM Review WHERE review_id = :review_id';
-
     $STMT = self::$_conn->prepare($SQL);
-    $STMT->execute(['review_id' => $this->review_id]);
+    $STMT->execute(['review_id' => $review_id]);
   }
-
- 
 
 }

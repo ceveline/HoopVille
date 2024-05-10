@@ -1,0 +1,106 @@
+.background {
+    min-height: 100vh; /* Increased height */
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-container {
+    background-color: white;
+    border-radius: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 20px; /* Increased padding */
+    width: 800px; /* Increased width */
+    margin: auto;
+    margin-top: 60px;
+}
+
+h1 {
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+form {
+    margin-bottom: 30px; /* Increased margin */
+    display: flex;
+    justify-content: flex-start;
+}
+
+.search-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 500px;
+}
+
+.search-text {
+    width: calc(100% - 130px); /* Adjusted width */
+    height: 32px;
+    border: none;
+    border-radius: 16px;
+    border-bottom: 1px solid #ccc;
+    padding-left: 10px;
+    margin-right: 10px;
+    background-color: #ddd;
+}
+
+.search-button {
+    height: 32px;
+    width: 100px; /* Adjusted width */
+    border: none;
+    border-radius: 0 4px 4px 0;
+    background-color: #ffda76;
+    color: white;
+    cursor: pointer;
+}
+
+.search-button:hover {
+    background-color: #fbd467;
+}
+
+/* Table styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 15px; /* Increased padding */
+    border-bottom: 1px solid #ccc;
+}
+
+th {
+    text-align: left;
+}
+
+/* Alternating row colors */
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Delete button */
+.delete-button {
+    color: white;
+    background-color: red; /* Grey color */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none; /* Keep as link */
+    padding: 8px 15px; /* Adjust padding */
+}
+
+/* Info button */
+.info-button {
+    color: white;
+    background-color: #bbb; /* Grey color */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none; /* Keep as link */
+    padding: 8px 15px; /* Adjust padding */
+}
+
+.info-button:hover {
+    background-color: #999; /* Darker grey on hover */
+}
