@@ -2,6 +2,11 @@
 
 namespace app\controllers;
 
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
+require_once __DIR__ . '/../../vendor/autoload.php';
 
 class User extends \app\core\Controller {
 
@@ -72,7 +77,6 @@ class User extends \app\core\Controller {
         else {
             $this->view('User/register', null, true);
         }
-        
     }
 
     //logout
@@ -82,9 +86,11 @@ class User extends \app\core\Controller {
 		header('location:/login');
     }
 
-    function forgetPassword($email) {
-        
+    function forgotPassword() {
+        $this->view('/User/forgotPassword', null, true);
     }
+    
+
 
     function home() {
         $this->view('home', null, true);
@@ -93,4 +99,74 @@ class User extends \app\core\Controller {
     function faq(){
         $this->view('faq', null, true);
     }
+    public function contactChoice(){
+        $this->view('/User/contactChoice', null, true);
+    }
+
+    public function contact($email){
+
+        $authorisedEmails = ['john@example.com','jane@example.com', "hussainamin285@gmail.com"];
+
+        $data = ['email'=>$email,'authorisedEmails'=>$authorisedEmails];
+
+        $this->view('/User/contact', $data, true);
+    
+    }
+
+    public function sendPasswordReset() {
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            $email = $_POST["email"];
+    
+            $token = bin2hex(random_bytes(16));
+            $token_hash = hash("sha256", $token);
+            $expiry = date("Y-m-d H:i:s", time() + 60 * 30);
+    
+            $userModel = new \app\models\User();
+            $success = $userModel->updateResetToken($email, $token_hash, $expiry);
+    
+            if ($success) {
+                // Email configuration
+                $mail = new PHPMailer(true);
+    
+                try {
+                    // Server settings
+                    //$mail->SMTPDebug = SMTP::DEBUG_SERVER;
+                    $mail->isSMTP();
+                    $mail->SMTPAuth = true;
+                    $mail->Host = "smtp.gmail.com";
+                    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+                    $mail->Port = 465;
+                    $mail->Username = "hoopville10@gmail.com";
+                    $mail->Password = "xynqbjmtibkahokh";
+    
+                    // Email content
+                    $mail->isHTML(true);
+                    $mail->setFrom("noreply@example.com");
+                    $mail->addAddress($email);
+                    $mail->Subject = "Password Reset";
+                    $mail->Body = "Click <a href='http://localhost/reset-Password.php/?token=$token'>here</a> to reset your password.";
+    
+                    // Send email
+                    $mail->send();
+
+                    echo "<script>
+                    window.location.href='/User/forgotPassword';
+                    alert('Message has been sent');
+                    </script>";
+
+                } catch (Exception $e) {
+                    // Display an error message to the user
+                    echo "Message could not be sent. Mailer error: {$mail->ErrorInfo}";
+                }
+            } else {
+                // Display an error message to the user
+            }
+        } else {
+        }
+    }
+
+public function aboutUs(){
+    $this->view('User/aboutUs', null, true);
+}
+
 }

@@ -12,7 +12,15 @@ class Booking extends \app\core\Controller
     $booking = new \app\models\Booking();
     $bookings = $booking->getBookings();
 
-    $this->view('User/Bookings/list', $bookings, true);
+    $user = new \app\models\User();
+    $profile = new \app\models\Profile();
+
+    foreach ($bookings as $booking) {
+      $booking->user = $user->getById($booking->user_id);
+      $booking->profile = $profile->getByUserId($booking->user_id);
+    }
+
+    $this->view('Admin/Booking/list', $bookings, true);
   }
 
   function listUser()
@@ -21,7 +29,7 @@ class Booking extends \app\core\Controller
     $user_id = $_GET['id'];
     $booking = new \app\models\Booking();
     $userBookings = $booking->getBookingsByUserId($user_id);
-    $this->view('User/Bookings/list', $userBookings, true);
+    $this->view('User/Booking/list', $userBookings, true);
   }
 
   // must be admin or your publication
@@ -33,17 +41,71 @@ class Booking extends \app\core\Controller
 
   function create()
   {
-    $this->view('User/Bookings/create', null, true);
+
+
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+
+      $booking = new \app\models\Booking();
+      $booking->booking_type = $_POST['booking_type'];
+      $booking->date = $_POST['date'];
+      $booking->start_time = $_POST['start_time'];
+      $booking->end_time = $_POST['end_time'];
+      $booking->user_id = 1;
+      $booking->status = 0;
+
+      $booking->insert();
+
+      // redirect handled on the front-end
+
+    } else {
+      $this->view('User/Booking/create', null, true);
+    }
+
   }
 
-  function update()
+  // admin or user's booking
+  function edit()
   {
+    $booking = new \app\models\Booking();
+
+
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+
+      $booking->booking_type = $_POST['booking_type'];
+      $booking->date = $_POST['date'];
+      $booking->start_time = $_POST['start_time'];
+      $booking->end_time = $_POST['end_time'];
+      $booking->status = $_POST['status'];
+      $booking->booking_id = $_POST['id'];
+
+      $booking->update();
+      // redirect in JS
+
+
+    } else {
+
+      $user = new \app\models\User();
+      $profile = new \app\models\Profile();
+
+      $booking = $booking->getBookingById($_GET['id']);
+      $booking->user = $user->getById($booking->user_id);
+      $booking->profile = $profile->getByUserId($booking->user_id);
+      $this->view('Admin/Booking/edit', $booking, true);
+
+    }
 
   }
 
+  // admin or user's booking (cancel booking)
   function delete()
   {
-
+    $booking_id = $_GET['id'];
+    $booking = new \app\models\Booking();
+    $booking = $booking->getBookingById($booking_id);
+    $booking->delete();
+    header("location: /Admin/booking/list");
   }
 
   function getTimeSlotAvailabilities($booking_type, $bookings)
@@ -89,17 +151,6 @@ class Booking extends \app\core\Controller
     }
 
     return $timeSlotAvailabilities;
-
-    // foreach ($timeSlotAvailabilities as $availability) {
-    //   if ($availability == "enabled") {
-    //     // false, date not disabled
-    //     return false;
-    //   }
-    // }
-
-    // // true, date disabled.
-    // return true;
-
   }
 
   function getDisabledDates()
@@ -138,5 +189,69 @@ class Booking extends \app\core\Controller
     echo json_encode($this->getTimeSlotAvailabilities($booking_type, $bookings));
   }
 
+
+  // admin only
+  function filterByStatus()
+  {
+    $status = $_GET['status'];
+    $booking = new \app\models\Booking();
+
+    $bookings = $booking->getBookingsByStatus($status);
+
+    $user = new \app\models\User();
+    $profile = new \app\models\Profile();
+
+    foreach ($bookings as $booking) {
+      $booking->user = $user->getById($booking->user_id);
+      $booking->profile = $profile->getByUserId($booking->user_id);
+    }
+
+    echo json_encode($bookings);
+  }
+
+  // admin only
+  function bookingsList()
+  {
+    $booking = new \app\models\Booking();
+    $bookings = $booking->getBookings();
+
+    $user = new \app\models\User();
+    $profile = new \app\models\Profile();
+
+    foreach ($bookings as $booking) {
+      $booking->user = $user->getById($booking->user_id);
+      $booking->profile = $profile->getByUserId($booking->user_id);
+    }
+
+    echo json_encode($bookings);
+  }
+
+  // admin only
+  function searchBookingsByEmail()
+  {
+    $text = $_GET['email'];
+    $booking = new \app\models\Booking();
+    $bookings = $booking->searchBookingsByEmail($text);
+
+    $user = new \app\models\User();
+    $profile = new \app\models\Profile();
+
+    foreach ($bookings as $booking) {
+      $booking->user = $user->getById($booking->user_id);
+      $booking->profile = $profile->getByUserId($booking->user_id);
+    }
+
+    echo json_encode($bookings);
+  }
+
+  // admin only
+  function updateStatus()
+  {
+    $booking = new \app\models\Booking();
+    $booking = $booking->getBookingById($_GET['id']);
+    $booking->status = $_GET['status'];
+    $booking->update();
+    header("location:/Admin/booking/edit?id=$booking->booking_id");
+  }
 
 }

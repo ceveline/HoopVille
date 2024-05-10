@@ -10,23 +10,32 @@ class User extends \app\core\Model
     public $user_id;
     public $email;
     public $password_hash;
+    public $active;
 
-    public function insert() {
-        //statement
-        $SQL = 'INSERT INTO User (email, password_hash) VALUES (:email, :password_hash)';
+    public function insert()
+    {
+        $SQL = 'INSERT INTO User (email, password_hash, active) VALUES (:email, :password_hash, :active)';
 
-        //prepare statement
+        // prepare statement
         $STMT = self::$_conn->prepare($SQL);
 
-        //execute the statement
-        $data = ['email'=> $this->email, 
-                'password_hash'=> $this->password_hash];
-        
+        // set the value of active to 1
+        $active = 1;
+
+        // execute the statement
+        $data = [
+            'email' => $this->email,
+            'password_hash' => $this->password_hash,
+            'active' => $active
+        ];
+
         $STMT->execute($data);
     }
 
+
     //getById -> Read
-    public function getById($user_id) {
+    public function getById($user_id)
+    {
         //statement
         $SQL = 'SELECT * FROM User WHERE user_id = :user_id';
 
@@ -34,17 +43,18 @@ class User extends \app\core\Model
         $STMT = self::$_conn->prepare($SQL);
 
         //execute the statement
-        $data = ['user_id'=> $user_id];
-        
+        $data = ['user_id' => $user_id];
+
         $STMT->execute($data);
 
         //fetch the data
         $STMT->setFetchMode(PDO::FETCH_CLASS, 'app\models\User');
-        
+
         return $STMT->fetch();
     }
 
-    public function getByEmail($email) {
+    public function getByEmail($email)
+    {
         //statement
         $SQL = 'SELECT * FROM User WHERE email = :email';
 
@@ -52,25 +62,64 @@ class User extends \app\core\Model
         $STMT = self::$_conn->prepare($SQL);
 
         //execute the statement
-        $data = ['email'=> $email];
-        
+        $data = ['email' => $email];
+
         $STMT->execute($data);
 
         //fetch the data
         $STMT->setFetchMode(PDO::FETCH_CLASS, 'app\models\User');
-        
+
         return $STMT->fetch();
     }
 
     //update password for forget password
-    public function updatePassword($email) {
+    public function updatePassword($email)
+    {
         $SQL = 'UPDATE User SET password_hash=:password_hash
                     WHERE email = :email';
         $STMT = self::$_conn->prepare($SQL);
         $STMT->execute([
-            'user_id'=>$user_id,
-            'password_hash'=>$this->password_hash,
+            'email' => $email,
+            'password_hash' => $this->password_hash,
         ]);
     }
+<<<<<<< HEAD
+    // Add a method to the User model to update reset token and expiry
+    public function updateResetToken($email, $tokenHash, $expiry)
+    {
+        $sql = "UPDATE User
+=======
+
+// Add a method to the User model to update reset token and expiry
+public function updateResetToken($email, $tokenHash, $expiry) {
+    $sql = "UPDATE User
+>>>>>>> 3e155791e3b19fd67b27b989e310f4b40d5ad64d
+            SET reset_token_hash = :token_hash,
+            reset_token_expires_at = :expiry
+            WHERE email = :email";
+
+        $STMT = self::$_conn->prepare($sql);
+
+        $STMT->bindParam(":token_hash", $tokenHash, PDO::PARAM_STR);
+        $STMT->bindParam(":expiry", $expiry, PDO::PARAM_STR);
+        $STMT->bindParam(":email", $email, PDO::PARAM_STR);
+
+        if ($STMT->execute()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    //update password for forget password
+    // public function updatePassword($email) {
+    //     $SQL = 'UPDATE user SET password_hash=:password_hash
+    //                 WHERE email = :email';
+    //     $STMT = self::$_conn->prepare($SQL);
+    //     $STMT->execute([
+    //         'user_id'=>$user_id,
+    //         'password_hash'=>$this->password_hash,
+    //     ]);
+    // }
 
 }

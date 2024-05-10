@@ -14,6 +14,7 @@
                 <div class="subtitle">
                     <h3><?= __('Take your game to the next level') ?></h3>
                 </div>
+           
             </div>
             <div class="buttons">
                 <div class="more-info-btn">
