@@ -86,9 +86,25 @@ class Review extends \app\core\Controller
     $reviews = $review->getAll(); //getting all the reviews
 
    //TBD to add logic to show username information
-   echo var_dump($reviews);
+    echo var_dump($reviews);
 
     $this->view('User/review/list', $reviews,true);
   }
   
 }
+
+    //show all the public publications on the main menu
+    function index() {
+        $review = new \app\models\Review();
+        $reviews = $review->getAll();
+        
+        $this->view('/Admin/Review/list', ['review' => $reviews], true);
+    }
+    
+    function delete($id) {
+        $review = new \app\models\Review();
+		$review->delete($id);
+
+        header('location:/Admin/Review/list'); //change this
+    }
+
