@@ -2,7 +2,7 @@
 
 namespace app\controllers;
 
-#[\app\filters\Admin\IsAdmin]
+
 class Administrator extends \app\core\Controller {
 
     function login() {

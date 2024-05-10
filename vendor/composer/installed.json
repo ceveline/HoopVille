@@ -1184,6 +1184,7 @@
             "install-path": "../phar-io/version"
         },
         {
+<<<<<<< HEAD
             "name": "phpmailer/phpmailer",
             "version": "v6.9.1",
             "version_normalized": "6.9.1.0",
@@ -1268,6 +1269,8 @@
             "install-path": "../phpmailer/phpmailer"
         },
         {
+=======
+>>>>>>> parent of 5346cfa (Merge branch 'CevelineBranch')
             "name": "phpunit/php-code-coverage",
             "version": "11.0.3",
             "version_normalized": "11.0.3.0",

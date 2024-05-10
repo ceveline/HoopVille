@@ -81,6 +81,7 @@ class Profile extends \app\core\Controller
       $this->view('User/profile/create', null, true); 
       
     }
+<<<<<<< HEAD
 
     public function infoDetails($id)
     {
@@ -117,3 +118,7 @@ class Profile extends \app\core\Controller
 
 
 }
+=======
+  }
+}
+>>>>>>> parent of 5346cfa (Merge branch 'CevelineBranch')

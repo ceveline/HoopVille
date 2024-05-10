@@ -24,12 +24,12 @@
                         <input type="text" name="query" class="form-control" placeholder="Search by title or content" aria-label="Search query">
                     </div>
                     <div class="search-btn">
-                        <button type="submit"><?= __('Search') ?></button>
+                        <button type="submit">Search</button>
                     </div>
                 </form>
                 <form action="/Publication" method="POST" class="mb-3">
                     <div class="view-all-btn">
-                        <button type="submit"><?= __('View all') ?></button>
+                        <button type="submit">View all</button>
                     </div>
                 </form>
             </div>
@@ -53,7 +53,7 @@
                                 <?php endif; ?>
                             </div>
                             <div class="timestamp">
-                                <p><?= __('Created on') ?> <?= $pub->timestamp?></p>
+                                <p>Created on <?= $pub->timestamp?></p>
                             </div>
                         </div>
                     <?php endforeach; ?>

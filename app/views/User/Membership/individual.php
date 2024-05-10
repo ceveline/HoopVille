@@ -164,20 +164,20 @@
 
             <!-- modify membership -->
             <div class="page2">
-                <div class="title"><?= __('Modify Membership') ?></div>
+                <div class="title">Modify Membership</div>
                 <div class="current">
-                    <p><?= __('Current membership plan:') ?> <?= __('$membership->membership_type')?></p>
+                    <p>Current membership plan: <?= $membership->membership_type?></p>
                 </div>
 
                 <form method='POST' action='/User/membership/edit'>
                     <div class="dropdown-menu">
                         <div class="subtitle">
-                            <p><?= __('Select a new membership:') ?></p>
+                            <p>Select a new membership:</p>
                         </div>
                         <select name="membership_type">
                         <!-- Option for Base Training (outside the loop) -->
                         <?php if ($membership->membership_type == 'Base Training') : ?>
-                            <option name='membership_type' id='membership_type' value="Base Training" selected><? __('Base Training') ?></option>
+                            <option name='membership_type' id='membership_type' value="Base Training" selected>Base Training</option>
                         <?php endif; ?>
 
                         <!-- Loop through other membership types -->
@@ -199,13 +199,13 @@
             </div>
 
             <div class="cancel-page">
-                <div class="title"><?= __('Confirm Membership Cancellation') ?></div>
-                <p><?= __('Type') ?> "<?=$membership->membership_type?>" <?= __('in the box below to cancel your membership:') ?> </p>
+                <div class="title">Confirm Membership Cancellation</div>
+                <p>Type "<?=$membership->membership_type?>" in the box below to cancel your membership: </p>
                 <input type="text" id="confirmationInput" placeholder="<?=$membership->membership_type?>"/>
                 <div class="button">
 
-                    <a id="cancelLink" href="/User/membership/delete"><?= __('Cancel membership') ?></a>
-                    <a id="goBackLink" href="#"><?= __('Back') ?></a>
+                    <a id="cancelLink" href="/User/membership/delete">Cancel membership</a>
+                    <a id="goBackLink" href="#">Back</a>
                 </div>
             </div>
 

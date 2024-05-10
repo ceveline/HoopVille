@@ -10,7 +10,6 @@ require_once __DIR__ . '/../../vendor/autoload.php';
 
 class User extends \app\core\Controller {
 
-    #[\app\filters\Logout]
     function login() {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $admin = new \app\models\Administrator();
@@ -48,7 +47,6 @@ class User extends \app\core\Controller {
         }
     }
 
-    #[\app\filters\Logout]
     function register() {
         if($_SERVER['REQUEST_METHOD'] === 'POST') {
             $user = new \app\models\User();
@@ -96,8 +94,47 @@ class User extends \app\core\Controller {
         $this->view('home', null, true);
     }
 
-    function faq(){
-        $this->view('faq', null, true);
+    function payment(){
+        $this->view('User/payment', null, true);
+
+    }
+
+    function services(){
+        $this->view('User/services',null,true);
+    }
+
+
+    //to replace by user id
+    function myAccount(){
+        $user = new \app\models\User();
+        $userid = 1; //set to session
+        $user = $user->getById(1);
+        $booking = new \app\models\Booking();
+        $bookings = $booking->getBookingsByUserId($userid);
+        $profile = new \app\models\Profile();
+        $profile = $profile->getByUserId($userid);
+        $camp = new \app\models\Camp();
+        $camps = $camp->listAllCamps();
+        $review = new \app\models\Review();
+        $reviews = $review->getUserReviews($userid);
+
+        $membership = new \app\models\Membership();
+        $memberships =$membership->getMembershipById($userid);
+
+
+
+
+        $data = [
+            'user' => $user,
+            'bookings' => $bookings,
+            'profile' => $profile,
+            'camps' => $camps,
+            'membership' => $memberships,
+            'reviews' =>  $reviews
+        ];
+
+        $this->view('User/myAccount', $data, true);
+
     }
     public function contactChoice(){
         $this->view('/User/contactChoice', null, true);

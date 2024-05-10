@@ -169,6 +169,7 @@
             'aliases' => array(),
             'dev_requirement' => true,
         ),
+<<<<<<< HEAD
         'phpmailer/phpmailer' => array(
             'pretty_version' => 'v6.9.1',
             'version' => '6.9.1.0',
@@ -178,6 +179,8 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
+=======
+>>>>>>> parent of 5346cfa (Merge branch 'CevelineBranch')
         'phpunit/php-code-coverage' => array(
             'pretty_version' => '11.0.3',
             'version' => '11.0.3.0',
