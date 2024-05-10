@@ -4,7 +4,6 @@ namespace app\models;
 
 use PDO;
 
-
 class Booking extends \app\core\Model
 {
 
@@ -15,6 +14,15 @@ class Booking extends \app\core\Model
   public $start_time; // HH:MM:SS
   public $end_time; // HH:MM:SS
   public $status; // 1 app, 0 pending, 2 declined
+  public $timestamp;
+
+  // not from db 
+  public $user;
+
+  public $profile;
+  public $first_name;
+  public $last_name;
+  public $email;
 
 
   public function insert()
@@ -39,6 +47,7 @@ class Booking extends \app\core\Model
     $STMT->execute(
       [
         'booking_type' => $this->booking_type,
+        'booking_id' => $this->booking_id,
         'date' => $this->date,
         'start_time' => $this->start_time,
         'end_time' => $this->end_time,
@@ -53,16 +62,6 @@ class Booking extends \app\core\Model
 
     $STMT = self::$_conn->prepare($SQL);
     $STMT->execute(['booking_id' => $this->booking_id]);
-  }
-
-  public function getBookingsByDate($date) // passed in as '2024-04-21'
-  {
-    $SQL = 'SELECT * FROM Booking WHERE date = :date';
-
-    $STMT = self::$_conn->prepare($SQL);
-    $STMT->execute(['date' => $date]);
-    $STMT->setFetchMode(PDO::FETCH_CLASS, 'app\models\Booking');
-    return $STMT->fetchAll();
   }
 
   public function getBookingsByUserId(int $user_id)
@@ -87,8 +86,19 @@ class Booking extends \app\core\Model
     return $STMT->fetchAll();
   }
 
+  public function getBookingById($booking_id)
+  {
+    $SQL = 'SELECT * FROM Booking WHERE booking_id = :booking_id';
+    $STMT = self::$_conn->prepare($SQL);
+    $STMT->execute(['booking_id' => $booking_id]);
+    $STMT->setFetchMode(PDO::FETCH_CLASS, 'app\models\Booking');
+    return $STMT->fetch();
+  }
+
   public function getBookingsByStatus($status)
   {
+
+    // JOIN WITH USER AND PROFILE
     $SQL = 'SELECT * FROM Booking WHERE status = :status ORDER BY date DESC';
     $STMT = self::$_conn->prepare($SQL);
     $STMT->execute(['status' => $status]);
@@ -97,15 +107,31 @@ class Booking extends \app\core\Model
     return $STMT->fetchAll();
   }
 
-  public function getBookingsByEmail($email)
+  public function getBookingsByDate($date) // passed in as '2024-04-21'
   {
-    $SQL = 'SELECT b.* FROM booking b JOIN user u ON b.user_id = u.user_id WHERE u.email = :email';
+    $SQL = 'SELECT * FROM Booking WHERE date = :date';
+
     $STMT = self::$_conn->prepare($SQL);
-    $STMT->execute(['email' => $email]);
+    $STMT->execute(['date' => $date]);
     $STMT->setFetchMode(PDO::FETCH_CLASS, 'app\models\Booking');
     return $STMT->fetchAll();
   }
 
 
+  public function searchBookingsByEmail($email)
+  {
+    $SQL = 'SELECT 
+      *
+    FROM Booking 
+    JOIN Profile ON Booking.user_id = Profile.user_id
+    JOIN User ON Profile.user_id = User.user_id
+    WHERE 
+       User.email LIKE :textSearch';
+
+    $STMT = self::$_conn->prepare($SQL);
+    $STMT->execute(['textSearch' => "%" . $email . "%"]);
+    $STMT->setFetchMode(PDO::FETCH_CLASS, 'app\models\Booking');
+    return $STMT->fetchAll();
+  }
 
 }

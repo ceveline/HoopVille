@@ -28,10 +28,10 @@ $this->addRoute('User/contactChoice', 'User,contactChoice');
 $this->addRoute('Admin/Publication/create', 'Publication,create');
 $this->addRoute('Admin/Publication/index', 'Publication,index'); //list publications
 $this->addRoute('Publication/view/{id}', 'Publication,viewPublication'); //list publications
-$this->addRoute('Publication/delete/{id}', 'Publication,delete'); 
-$this->addRoute('Publication/edit/{id}', 'Publication,edit'); 
+$this->addRoute('Publication/delete/{id}', 'Publication,delete');
+$this->addRoute('Publication/edit/{id}', 'Publication,edit');
 $this->addRoute('Publication', 'Publication,list'); //for user not admin
-$this->addRoute('Publication/search','Publication,search');
+$this->addRoute('Publication/search', 'Publication,search');
 
 //ADMINS
 // $this->addRoute('Admin/login', 'Administrator,login'); -> can use /User/login to login as an admin
@@ -44,6 +44,21 @@ $this->addRoute('Publication/search','Publication,search');
 $this->addRoute('User/booking/create', 'Booking,create');
 $this->addRoute('User/booking/disabledDates', 'Booking,getDisabledDates');
 $this->addRoute('User/booking/getTimeSlotsByDate', 'Booking,getTimeSlotsByDate');
+
+$this->addRoute('User/booking/create', 'Booking,create');
+$this->addRoute('User/booking/disabledDates', 'Booking,getDisabledDates');
+$this->addRoute('User/booking/getTimeSlotsByDate', 'Booking,getTimeSlotsByDate');
+
+$this->addRoute('Admin/booking/list', 'Booking,listAdmin');
+$this->addRoute('Admin/booking/edit', 'Booking,edit');
+$this->addRoute('Admin/booking/delete', 'Booking,delete');
+$this->addRoute('Admin/booking/filterByStatus', 'Booking,filterByStatus');
+$this->addRoute('Admin/booking/bookingsList', 'Booking,bookingsList');
+$this->addRoute('Admin/booking/searchBookingsByEmail', 'Booking,searchBookingsByEmail');
+
+$this->addRoute('Admin/booking/getBookingTypes', 'Booking_type,getBookingTypes');
+
+$this->addRoute('Admin/booking/updateStatus', 'Booking,updateStatus');
 
 //MEMBERSHIP
 $this->addRoute('Membership', 'Membership,list');
@@ -67,4 +82,4 @@ $this->addRoute('User/camp/buy', 'Camp,buy');
 
 //PROFILE
 $this->addRoute('User/Profile/create', 'Profile,create');
-$this->addRoute('User/profile/edit','Profile,edit');
+$this->addRoute('User/profile/edit', 'Profile,edit');
