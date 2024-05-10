@@ -36,14 +36,6 @@ class Profile extends \app\core\Model
         $STMT->execute($data);
     }
 
-    public function getAll() {
-        $SQL = 'SELECT * FROM Profile';
-        $STMT = self::$_conn->prepare($SQL);
-        $STMT->execute();
-
-        $STMT->setFetchMode(PDO::FETCH_CLASS,'app\models\Profile');//set the type of data returned by fetches
-		return $STMT->fetchAll();
-    }
 
     public function getByUserId($user_id) {
         $SQL = 'SELECT * FROM Profile WHERE user_id = :user_id';

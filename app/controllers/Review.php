@@ -14,7 +14,7 @@ class Review extends \app\core\Controller
       $review = new \app\models\Review(); //instance of review class
 
       //!!!!!!! change to session id when branches are merged
-      $review->user_id = 1; //user_id in the instace
+      $review->user_id = $_SESSION['user_id']; //user_id in the instace
       $review->review_text = $_POST['review_text']; //post to grab text and rating
       $review->rating = $_POST['rating'];
       $review->type = $_POST['purchase_type'];

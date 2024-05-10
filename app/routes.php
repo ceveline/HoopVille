@@ -55,5 +55,5 @@ $this->addRoute('User/camp/list', 'CampType,list');
 $this->addRoute('User/camp/buy', 'Camp,buy');
 
 //PROFILE
-$this->addRoute('User/Profile/create', 'Profile,create');
+$this->addRoute('User/profile/create', 'Profile,create');
 $this->addRoute('User/profile/edit','Profile,edit');
