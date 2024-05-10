@@ -78,6 +78,8 @@ class User extends \app\core\Model
             'email'=>$email,
             'password_hash'=>$this->password_hash,
         ]);
+    }
+
 // Add a method to the User model to update reset token and expiry
 public function updateResetToken($email, $tokenHash, $expiry) {
     $sql = "UPDATE User
@@ -97,7 +99,6 @@ public function updateResetToken($email, $tokenHash, $expiry) {
         return false;
     }
 }
-
 
     //update password for forget password
     // public function updatePassword($email) {
