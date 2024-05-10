@@ -2,7 +2,11 @@
 <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 <html lang="en">
 
+<link rel="stylesheet" href="/assets/styles/booking/booking.css">
+
+
 <head>
+
   <title>Rent a gym</title>
 
 
@@ -192,8 +196,7 @@
 
 
 <body>
-  <div style='height: 200px'>
-  </div>
+
 
 
 

@@ -83,8 +83,7 @@
 
 
 <body>
-  <div style='height: 200px'>
-  </div>
+
 
   <h1>UPDATE BOOKING</h1>
   <div class="container">

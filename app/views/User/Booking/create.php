@@ -111,8 +111,6 @@
 
 
 <body>
-  <div style='height: 200px'>
-  </div>
 
   <h1>COURT RENTAL</h1>
   <div class="container">
