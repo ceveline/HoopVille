@@ -273,7 +273,7 @@
             
             <form action="" method="post">
                 <div class="btn">
-                    <a href="/User/booking/list">Learn more!</a>
+                    <a href="/User/booking/create">Learn more!</a>
                 </div>
             </form>
         </div>

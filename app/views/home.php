@@ -20,7 +20,7 @@
             </div>
             <div class="buttons">
                 <div class="more-info-btn">
-                    <form action="/Services">
+                    <form action="User/services">
                         <button type='submit'>More info</button>
                     </form>                 
                 </div>

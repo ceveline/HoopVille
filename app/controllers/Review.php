@@ -86,7 +86,6 @@ class Review extends \app\core\Controller
     $reviews = $review->getAll(); //getting all the reviews
 
    //TBD to add logic to show username information
-    echo var_dump($reviews);
 
     $this->view('User/review/list', $reviews,true);
   }

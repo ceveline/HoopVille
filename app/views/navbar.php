@@ -23,13 +23,13 @@
                 <a class="nav-link" href="/Home">Home</a>
             </li>
             <li>
-                <a class="nav-link" href="#">Services</a>
+                <a class="nav-link" href="/User/services">Services</a>
             </li>
             <li>
-                <a class="nav-link" href="#">About</a>
+                <a class="nav-link" href="/User/aboutUs">About</a>
             </li>
             <li>
-                <a class="nav-link" href="#">Contact</a>
+                <a class="nav-link" href="/User/contact">Contact</a>
             </li>
             <li>
                 <a class="nav-link" href="#">FAQ</a>
@@ -38,7 +38,7 @@
                 <a class="nav-link" href="/Publication">News & Updates</a>
             </li>
             <li>
-                <a class="nav-link" href="#">Reviews</a>
+                <a class="nav-link" href="/User/review/list">Reviews</a>
             </li>
 
             <?php if (isset($_SESSION['user_id']) || isset($_SESSION['admin_id'])) : ?>

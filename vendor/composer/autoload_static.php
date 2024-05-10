@@ -49,10 +49,7 @@ class ComposerStaticInit3aa8807de7f4f7e79d809f17e0f890b4
             'Psr\\EventDispatcher\\' => 20,
             'Psr\\Container\\' => 14,
             'PhpParser\\' => 10,
-<<<<<<< HEAD
             'PHPMailer\\PHPMailer\\' => 20,
-=======
->>>>>>> parent of 5346cfa (Merge branch 'CevelineBranch')
         ),
         'M' => 
         array (
@@ -142,13 +139,8 @@ class ComposerStaticInit3aa8807de7f4f7e79d809f17e0f890b4
         ),
         'Psr\\Http\\Message\\' => 
         array (
-<<<<<<< HEAD
             0 => __DIR__ . '/..' . '/psr/http-factory/src',
             1 => __DIR__ . '/..' . '/psr/http-message/src',
-=======
-            0 => __DIR__ . '/..' . '/psr/http-message/src',
-            1 => __DIR__ . '/..' . '/psr/http-factory/src',
->>>>>>> parent of 5346cfa (Merge branch 'CevelineBranch')
         ),
         'Psr\\Http\\Client\\' => 
         array (
@@ -166,13 +158,10 @@ class ComposerStaticInit3aa8807de7f4f7e79d809f17e0f890b4
         array (
             0 => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser',
         ),
-<<<<<<< HEAD
         'PHPMailer\\PHPMailer\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpmailer/phpmailer/src',
         ),
-=======
->>>>>>> parent of 5346cfa (Merge branch 'CevelineBranch')
         'Masterminds\\' => 
         array (
             0 => __DIR__ . '/..' . '/masterminds/html5/src',

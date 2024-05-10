@@ -31,7 +31,7 @@ class Camp extends \app\core\Controller {
         $camp = new \app\models\Camp(); 
   
       
-        $camp->user_id = 1; 
+        $camp->user_id = $_SESSION['user_id']; 
         $camp->camp_type =  $type;
         $camp->guest_id = $guest->guest_id;
         $camp->timestamp = date('Y-m-d H:i:s');
@@ -64,8 +64,8 @@ class Camp extends \app\core\Controller {
     function listCamps(){
 
 
-      $userid = 1;
-      //$userid = $_SESSION['user_id'];
+      
+      $userid = $_SESSION['user_id'];
       $camp = new \app\models\Camp();
       $camp = $camp->listUserCamps($userid);
     }
