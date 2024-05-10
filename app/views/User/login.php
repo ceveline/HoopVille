@@ -21,9 +21,11 @@
                     <label for="email" class="form-label"><?= __('Email:') ?></label>
                     <input type="text" class="form-control" id="email" name="email" placeholder="Jon123@gmail.com">
                 </div>
-                <div class="inputs">
+                <div class="inputs input2">
                     <label for="password" class="form-label"><?= __('Password:') ?></label>
                     <input type="password" class="form-control" id="password_hash" name="password_hash" placeholder="•••••">
+                </div>
+                <div class="forgot">
                     <p class="forgot-password"><a href="/User/forgotPassword">Forgot password?</a></p>
                 </div>
                 <button type="submit" class="btn btn-primary" name="action" value="Login"><?= __('Login') ?></button>

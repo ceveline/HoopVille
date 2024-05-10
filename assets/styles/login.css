@@ -46,7 +46,7 @@ h1 {
 }
 
 .register-now{
-    margin-top: 73px;
+    margin-top: 5%;
     text-align: center;
     display: flex;
 }
@@ -100,8 +100,11 @@ button:hover{
 }
 
 .forgot-password {
-    position: absolute;
+    /* position: absolute; */
     bottom: -10px;
+    display: flex;
+    justify-content: flex-end;
+    width: 360px;
 }
 
 .forgot-password a {
