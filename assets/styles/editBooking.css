@@ -1,0 +1,60 @@
+.container {
+  height: 520px;
+  padding: 50px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.slide1 p {
+  font-size: 20px;
+  margin-bottom: 30px;
+  margin-top: 20px;
+}
+
+.slide1 {
+  margin-top: 15px;
+}
+
+.slide3 p {
+  text-align: center;
+}
+
+label {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+h2 {
+  text-align: center;
+}
+
+button {
+  margin-right: 10px;
+}
+
+.status {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.btnApprove {
+  background-color: lightgreen;
+}
+
+.btnDecline {
+  background-color: gray;
+}
+
+.btns {
+  display: none;
+  justify-content: space-between;
+  margin-top: 30px;
+}

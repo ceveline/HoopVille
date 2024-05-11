@@ -7,7 +7,8 @@ class Membership extends \app\core\Controller
 {
 
     // view for membership page
-    function list() {
+    function list()
+    {
         $membership_types = new \app\models\Membership_type();
         $membership_types = $membership_types->getAll();
 
@@ -16,10 +17,11 @@ class Membership extends \app\core\Controller
 
     //show client's membership on their profile
     #[\app\filters\Login]
-    function list_user(){
+    function list_user()
+    {
         $membership_model = new \app\models\Membership();
         $membership_model = $membership_model->getMembershipByUserId($_SESSION['user_id']);
-    
+
         $membership_types_mdl = new \app\models\Membership_type();
         $membership_types = $membership_types_mdl->getAll();
 
@@ -30,7 +32,8 @@ class Membership extends \app\core\Controller
 
     //list all user memberships
     #[\app\filters\Admin\IsAdmin]
-    function list_admin() {
+    function list_admin()
+    {
         $membership_model = new \app\models\Membership();
         $membership_model = $membership_model->getAll();
 
@@ -44,7 +47,8 @@ class Membership extends \app\core\Controller
     #[\app\filters\User\HasProfile]
     //user has to register first before creating a membership
     #[\app\filters\User\HasMembership]
-    function create() {
+    function create()
+    {
         date_default_timezone_set('America/New_York'); // Set the timezone
 
         // Create a new instance of the Membership model
@@ -85,12 +89,13 @@ class Membership extends \app\core\Controller
             $this->view('User/Membership/list', null, true);
         }
     }
-    
+
     #[\app\filters\Login]
-    function edit() {
+    function edit()
+    {
 
         date_default_timezone_set('America/New_York'); // Set the timezone
-        
+
         $membership_model = new \app\models\Membership();
         $membership_model = $membership_model->getMembershipByUserId($_SESSION['user_id']);
         $membership_id = $membership_model->membership_id;
@@ -104,7 +109,7 @@ class Membership extends \app\core\Controller
 
         // Calculate the future timestamp (1 year from now)
         $future_timestamp = strtotime('+1 year', $current_timestamp);
-        
+
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $membership_model->membership_type = $_POST['membership_type'];
             $membership_model->start_date = date('Y-m-d H:i:s', $current_timestamp);
@@ -119,7 +124,8 @@ class Membership extends \app\core\Controller
 
     //for admin
     #[\app\filters\Admin\IsAdmin]
-    function editById($membership_id) {
+    function editById($membership_id)
+    {
         date_default_timezone_set('America/New_York'); // Set the timezone
 
         $membership_model = new \app\models\Membership();
@@ -137,26 +143,28 @@ class Membership extends \app\core\Controller
     }
 
     #[\app\filters\Login]
-    function delete() {
+    function delete()
+    {
         $membership_model = new \app\models\Membership();
-		$membership = $membership_model->getMembershipByUserId($_SESSION['user_id']);
+        $membership = $membership_model->getMembershipByUserId($_SESSION['user_id']);
 
         $membership_model->delete($membership->membership_id);
-        header('location:/Home'); 
+        header('location:/Home');
     }
 
     #[\app\filters\Admin\IsAdmin]
-    function deleteById($membership_id) {
+    function deleteById($membership_id)
+    {
         $membership_model = new \app\models\Membership();
 
         $membership_model->deleteById($membership_id);
-        header('location:/Admin/membership/list'); 
+        header('location:/Admin/membership/list');
     }
 
-    
-    
-    
 
-    
+
+
+
+
 
 }

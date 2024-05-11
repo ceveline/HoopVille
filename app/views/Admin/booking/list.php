@@ -7,7 +7,7 @@
 
 <head>
 
-  <title>Rent a gym</title>
+  <title><?= __('Rent a gym') ?></title>
 
   <style>
     .container {
@@ -184,11 +184,7 @@
 
 <body>
 
-
-
-
-
-  <h1>BOOKINGS</h1>
+  <h1><?= __('BOOKINGS') ?></h1>
   <div class="container">
 
 
@@ -196,23 +192,23 @@
       <div class="search">
 
 
-        <p>Sort by date: </p>
+        <p><?= __('Sort by date') ?>: </p>
         <select class="sortBy">
-          <option value="DESC">Recent first</option>
-          <option value="ASC">Oldest first</option>
+          <option value="DESC"><?= __('Recent first') ?></option>
+          <option value="ASC"><?= __('Oldest first') ?></option>
         </select>
-        <input type="text" class="searchBar" placeholder="Search by email"></input>
-        <button class="searchBtn">Search</button>
+        <input type="text" class="searchBar" placeholder="<?= __('Search by email') ?>"></input>
+        <button class="searchBtn"><?= __('Search') ?></button>
       </div>
 
 
       <div class="filterBox">
-        <p>Filter by status: </p>
+        <p><?= __('Filter by status') ?>: </p>
         <select class="filter">
-          <option value="all">all</option>
-          <option value="0">pending</option>
-          <option value="1">approved</option>
-          <option value="2">declined</option>
+          <option value="all"><?= __('all') ?></option>
+          <option value="0"><?= __('pending') ?></option>
+          <option value="1"><?= __('approved') ?></option>
+          <option value="2"><?= __('declined') ?></option>
         </select>
       </div>
 
@@ -221,10 +217,10 @@
     <div class="titleBar">
 
 
-      <p>Booking type</p>
+      <p><?= __('Booking type') ?></p>
       <p>Email</p>
-      <p>Full name</p>
-      <p>Booked on</p>
+      <p><?= __('Full name') ?></p>
+      <p><?= __('Booked on') ?></p>
       <p>Status</p>
       <p>Actions</p>
 
@@ -239,7 +235,7 @@
         $date = $booking->timestamp;
         $date = explode(" ", $date)[0];
 
-        $status = $booking->status == "0" ? "pending" : ($booking->status == "1" ? "approved" : "declined");
+        $status = $booking->status == "0" ? __('pending') : ($booking->status == "1" ? __('approved') : __('declined'));
         $user = $booking->user;
         $profile = $booking->profile;
 
@@ -252,8 +248,8 @@
                 <div class='icons'>
                 
                 
-                <a href='/Admin/booking/edit?id=$booking->booking_id'><i class='fas'>&#xf044;</i></a>
-                <a href='/Admin/booking/delete?id=$booking->booking_id'><i  class='fas del'>&#xf2ed;</i></a>
+                <a href='/Booking/edit?id=$booking->booking_id'><i class='fas'>&#xf044;</i></a>
+                <a href='/Booking/delete?id=$booking->booking_id'><i  class='fas del'>&#xf2ed;</i></a>
                 </div>
             </div>";
       }
@@ -331,8 +327,8 @@
           <p>${date}</p>
           <p>${status}</p>
           <div class='icons'>
-          <a href='/Admin/booking/edit?id=${b.booking_id}'><i class='fas'>&#xf044;</i></a>
-          <a href='/Admin/booking/delete?id=${b.booking_id}'><i  class='fas del'>&#xf2ed;</i></a>
+          <a href='/Booking/edit?id=${b.booking_id}'><i class='fas'>&#xf044;</i></a>
+          <a href='/Booking/delete?id=${b.booking_id}'><i  class='fas del'>&#xf2ed;</i></a>
           </div>
       </div>
         

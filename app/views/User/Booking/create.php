@@ -5,7 +5,7 @@
   <script src="/assets/js/booking/booking.js"></script>
 
   <link rel="stylesheet" href="/assets/styles/booking.css">
-  <title>Rent a gym</title>
+  <title><?= __('Rent a gym') ?></title>
 
   <style>
     .container {
@@ -112,14 +112,14 @@
 
 <body>
 
-  <h1>COURT RENTAL</h1>
+  <h1><?= __('COURT RENTAL') ?></h1>
   <div class="container">
 
 
     <div class="slides">
 
       <div class="slide slide1">
-        <h2>Select an option</h2>
+        <h2><?= __('Select an option') ?></h2>
         <div class="courts">
 
         </div>
@@ -160,18 +160,18 @@
 
           <div class="containerPayment">
             <form>
-              <label for="name" style='margin-top: 14px'>Name on Card:</label>
+              <label for="name" style='margin-top: 14px'><?= __('Name on Card:') ?></label>
               <input type="text" id="name" name="name" required>
-              <label for="card-number">Card Number:</label>
+              <label for="card-number"><?= __('Card Number') ?>:</label>
               <input type="text" id="card-number" name="card-number" required>
-              <label for="exp-date">Expiration Date:</label>
+              <label for="exp-date"><?= __('Expiration Date') ?>:</label>
               <input type="text" id="exp-date" name="exp-date" placeholder="MM/YYYY" required>
-              <label for="cvv">CVV:</label>
+              <label for="cvv"><?= __('CVV') ?>:</label>
               <input type="number" id="cvv" name="cvv" required>
               <p style='margin-top: 25px' class="paySummary">
                 <!-- 40.00$ - full court on 2024-04-30 4:00 to 6:00 (PM) -->
               </p>
-              <button type="button" style='margin-top: 15px' class="btn btnPay">Pay Now</button>
+              <button type="button" style='margin-top: 15px' class="btn btnPay"><?= __('Pay Now') ?></button>
             </form>
           </div>
 
@@ -182,8 +182,8 @@
     </div>
 
     <div class="btns">
-      <button onclick="prevSlide()" class="prev" disabled>Back</button>
-      <button onclick="nextSlide()" class="next" disabled>Next</button>
+      <button onclick="prevSlide()" class="prev" disabled><?= __('Back') ?></button>
+      <button onclick="nextSlide()" class="next" disabled><?= __('Next') ?></button>
     </div>
 
 
@@ -249,21 +249,27 @@
     }
 
     const monthNames = [
-      "January",
-      "February",
-      "March",
-      "April",
-      "May",
-      "June",
-      "July",
-      "August",
-      "September",
-      "October",
-      "November",
-      "December",
+      "<?= __('January') ?>",
+      "<?= __('February') ?>",
+      "<?= __('March') ?>",
+      "<?= __('April') ?>",
+      "<?= __('May') ?>",
+      "<?= __('June') ?>",
+      "<?= __('July') ?>",
+      "<?= __('August') ?>",
+      "<?= __('September') ?>",
+      "<?= __('October') ?>",
+      "<?= __('November') ?>",
+      "<?= __('December') ?>",
     ];
 
-    const daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+    const daysOfWeek = ["<?= __('Sun') ?>", 
+      "<?= __('Mon') ?>", 
+      "<?= __('Tue') ?>", 
+      "<?= __('Wed') ?>", 
+      "<?= __('Thu') ?>", 
+      "<?= __('Fri') ?>", 
+      "<?= __('Sat') ?>"];
 
     const prevMonthBtn = document.getElementById("prevMonthBtn");
     const nextMonthBtn = document.getElementById("nextMonthBtn");
@@ -326,11 +332,7 @@
             selectedDate = d.toISOString().split("T")[0];
 
             $(".dateAvailabilities").html(
-              `Availabilities for ${d.toLocaleDateString("en-US", {
-                weekday: "long",
-                month: "long",
-                day: "numeric",
-              })}`
+              `<?= __('Availabilities for') ?> ${d.toLocaleDateString()}`
             );
             $(".next").attr("disabled", false);
           }
@@ -437,19 +439,20 @@
     }
 
     function setPaySummary() {
-      $(".paySummary").html(`Total payment of ${(
+
+      $(".paySummary").html(`<?= __('Total payment of') ?> ${(
         bookingTypes[selectedCourt - 1].price * 2
       ).toFixed(2)}$ - ${bookingTypes[selectedCourt - 1].booking_type
-        } court on ${selectedDate}<br>${selectedTimeSlot === 10
-          ? "10:00 to 12:00"
+        } court <?= __('on') ?> ${selectedDate}<br>${selectedTimeSlot === 10
+          ? "10:00 - 12:00"
           : selectedTimeSlot === 12
-            ? "12:00 to 2:00"
+            ? "12:00 - 2:00"
             : selectedTimeSlot === 14
-              ? "2:00 to 4:00"
-              : "4:00 to 6:00"
+              ? "2:00 - 4:00"
+              : "4:00 - 6:00"
         } (PM)
 
-   `);
+    `);
     }
 
     function prevSlide() {
