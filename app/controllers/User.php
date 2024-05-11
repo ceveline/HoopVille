@@ -208,4 +208,10 @@ class User extends \app\core\Controller
         $this->view('User/aboutUs', null, true);
     }
 
+    
+    public function services()
+    {
+        $this->view('User/services', null, true);
+    }
+
 }
