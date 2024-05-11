@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Profile</title>
+    <title>Edit Profile</title>
    <style>
     .background {
     min-height: 100%;
@@ -130,39 +130,32 @@ button:hover{
 
 </head>
 <body>
-    <div class="background">
+<div class="background">
         <div class="content">
-            <h1>Create Profile</h1>
+            <h1>Edit Profile</h1>
             <form class='register-form' method="post" action="" id="profileForm">
-               
-                    
-                    <div class="inputs">
-                        <label for="fname" class="form-label">First Name</label>
-                        <input type="text" class="form-control" id="fname" name="fname" placeholder="Jon" required>
-                    </div>
-                    <div class="inputs">
-                        <label for="lname" class="form-label">Last Name</label>
-                        <input type="text" class="form-control" id="lname" name="lname" placeholder="Doe" required>
-                    </div>
-                    <div class="inputs">
-                        <label for="phoneNumber" class="form-label">Phone Number</label>
-                        <input type="text" class="form-control" id="phoneNumber" name="phoneNumber" placeholder="5141231234" required>
-                    </div>
-                    
-                    <div class="inputs">
-                        <label for="dob" class="form-label">Date Of Birth</label>
-                        <input type="date" class="form-control" id="dob" name="dob" required>
-                    </div>
-                    
-                    <div class="btn">
-                        <button type="button" onclick="validateForm()">Create Profile</button>
-                    </div>
+                <div class="inputs">
+                    <label for="fname" class="form-label">First Name</label>
+                    <input type="text" class="form-control" id="fname" name="fname" placeholder="Jon" value="<?php echo $data->first_name; ?>" required>
                 </div>
-                
+                <div class="inputs">
+                    <label for="lname" class="form-label">Last Name</label>
+                    <input type="text" class="form-control" id="lname" name="lname" placeholder="Doe" value="<?php echo $data->last_name; ?>" required>
+                </div>
+                <div class="inputs">
+                    <label for="phoneNumber" class="form-label">Phone Number</label>
+                    <input type="text" class="form-control" id="phoneNumber" name="phoneNumber" placeholder="5141231234" value="<?php echo $data->phone; ?>" required>
+                </div>
+                <div class="inputs">
+                    <label for="dob" class="form-label">Date Of Birth</label>
+                    <input type="date" class="form-control" id="dob" name="dob" value="<?php echo $data->date_of_birth; ?>" required>
+                </div>
+                <div class="btn">
+                    <button type="button" onclick="validateForm()">Edit Profile</button>
+                </div>
             </form>
         </div>
     </div>
-
     <script>
         function validateForm() {
             // Get form input values

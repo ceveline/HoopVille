@@ -7,29 +7,30 @@ class Review extends \app\core\Controller
 
   
     //creating a review on the user end
-  public function create()
-  {
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
-      $review = new \app\models\Review(); //instance of review class
-
-      //!!!!!!! change to session id when branches are merged
-      $review->user_id = 1; //user_id in the instace
-      $review->review_text = $_POST['review_text']; //post to grab text and rating
-      $review->rating = $_POST['rating'];
-      $review->type = $_POST['purchase_type'];
-
-
-      $review->insert(); //inserting into db
-
-
-
-    //  header('location:/User/review/list'); //redirecting user to the general review page
-    } else {
-      $this->view('User/review/create', null, true); 
-      
+    public function create()
+    {
+      if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+  
+        $review = new \app\models\Review(); //instance of review class
+  
+        //!!!!!!! change to session id when branches are merged
+        $review->user_id = $_SESSION['user_id']; //user_id in the instace
+        $review->review_text = $_POST['review_text']; //post to grab text and rating
+        $review->rating = $_POST['rating'];
+        $review->type = $_POST['purchase_type'];
+  
+  
+        $review->insert(); //inserting into db
+  
+  
+  
+      //  header('location:/User/review/list'); //redirecting user to the general review page
+      } else {
+        $this->view('User/review/create', null, true); 
+        
+      }
     }
-  }
+  
 
   //Showing all reviews to the user
   public function listAllReviewsUser()
@@ -93,13 +94,7 @@ class Review extends \app\core\Controller
   
 }
 
-    //show all the public publications on the main menu
-    function index() {
-        $review = new \app\models\Review();
-        $reviews = $review->getAll();
-        
-        $this->view('/Admin/Review/list', ['review' => $reviews], true);
-    }
+
     
     function delete($id) {
         $review = new \app\models\Review();
