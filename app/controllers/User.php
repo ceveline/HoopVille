@@ -214,4 +214,9 @@ class User extends \app\core\Controller
         $this->view('User/services', null, true);
     }
 
+    public function payment()
+    {
+        $this->view('User/payment', null, true);
+    }
+
 }

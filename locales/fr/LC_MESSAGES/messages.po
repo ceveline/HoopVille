@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-11 18:20+0000\n"
-"PO-Revision-Date: 2024-05-11 18:22+0000\n"
+"POT-Creation-Date: 2024-05-12 02:17+0000\n"
+"PO-Revision-Date: 2024-05-12 02:35+0000\n"
 "Last-Translator: root <EMAIL@ADDRESS>\n"
 "Language-Team: French\n"
 "Language: fr\n"
@@ -36,6 +36,10 @@ msgstr "Recent en premier"
 #: app/views/Admin/booking/list.php:198
 msgid "Oldest first"
 msgstr "Ancien en premier"
+
+#: app/views/Admin/booking/list.php:200
+msgid "Search by email"
+msgstr "Chercher par couriel"
 
 #: app/views/Admin/booking/list.php:201 app/views/User/Publication/list.php:27
 msgid "Search"
@@ -73,233 +77,62 @@ msgstr "Nom complet"
 msgid "Booked on"
 msgstr "Reserver le"
 
-#: app/views/User/Booking/create.php:115
-msgid "COURT RENTAL"
-msgstr "RESERVER UN GYMNASE"
-
-#: app/views/User/Booking/create.php:122
-msgid "Select an option"
-msgstr "Selectionnez une option"
-
-#: app/views/User/Booking/create.php:163
-msgid "Name on Card:"
-msgstr "Nom sur la carte"
-
-#: app/views/User/Booking/create.php:165
-msgid "Card Number"
-msgstr "Numero de carte"
-
-#: app/views/User/Booking/create.php:167
-msgid "Expiration Date"
-msgstr "Date d'expiration"
-
-#: app/views/User/Booking/create.php:169
-msgid "CVV"
-msgstr "CVV"
-
-#: app/views/User/Booking/create.php:174
-msgid "Pay Now"
-msgstr "Payer"
-
-#: app/views/Booking/edit.php:194 app/views/User/Booking/create.php:252
-msgid "January"
-msgstr "Janvier"
-
-#: app/views/Booking/edit.php:195 app/views/User/Booking/create.php:253
-msgid "February"
-msgstr "Fevrier"
-
-#: app/views/Booking/edit.php:196 app/views/User/Booking/create.php:254
-msgid "March"
-msgstr "Mars"
-
-#: app/views/Booking/edit.php:197 app/views/User/Booking/create.php:255
-msgid "April"
-msgstr "Avril"
-
-#: app/views/Booking/edit.php:198 app/views/User/Booking/create.php:256
-msgid "May"
-msgstr "Mai"
-
-#: app/views/Booking/edit.php:199 app/views/User/Booking/create.php:257
-msgid "June"
-msgstr "Juin"
-
-#: app/views/Booking/edit.php:200 app/views/User/Booking/create.php:258
-msgid "July"
-msgstr "Juillet"
-
-#: app/views/Booking/edit.php:201 app/views/User/Booking/create.php:259
-msgid "August"
-msgstr "Aout"
-
-#: app/views/Booking/edit.php:202 app/views/User/Booking/create.php:260
-msgid "September"
-msgstr "Septembre"
-
-#: app/views/Booking/edit.php:203 app/views/User/Booking/create.php:261
-msgid "October"
-msgstr "Octobre"
-
-#: app/views/Booking/edit.php:204 app/views/User/Booking/create.php:262
-msgid "November"
-msgstr "Novembre"
-
-#: app/views/Booking/edit.php:205 app/views/User/Booking/create.php:263
-msgid "December"
-msgstr "Decembre"
-
-#: app/views/Booking/edit.php:208 app/views/User/Booking/create.php:266
-msgid "Sun"
-msgstr "Dim"
-
-#: app/views/Booking/edit.php:209 app/views/User/Booking/create.php:267
-msgid "Mon"
-msgstr "Lun"
-
-#: app/views/Booking/edit.php:210 app/views/User/Booking/create.php:268
-msgid "Tue"
-msgstr "Mar"
-
-#: app/views/Booking/edit.php:211 app/views/User/Booking/create.php:269
-msgid "Wed"
-msgstr "Mer"
-
-#: app/views/Booking/edit.php:212 app/views/User/Booking/create.php:270
-msgid "Thu"
-msgstr "Jeu"
-
-#: app/views/Booking/edit.php:213 app/views/User/Booking/create.php:271
-msgid "Fri"
-msgstr "Ven"
-
-#: app/views/Booking/edit.php:214 app/views/User/Booking/create.php:272
-msgid "Sat"
-msgstr "Sam"
-
-#: app/views/Booking/edit.php:342
-msgid "Update"
-msgstr "Modifier"
-
-#: app/views/Booking/edit.php:277 app/views/User/Booking/create.php:335
-msgid "Availabilities for"
-msgstr "Disponibilites pour le"
-
-#: app/views/User/Booking/create.php:443
-msgid "Total payment of"
-msgstr "Payment total de"
-
-#: app/views/User/Booking/create.php:446
-msgid "on"
-msgstr "le"
-
-#: app/views/Booking/edit.php:8
-msgid "Update booking"
-msgstr "Modifier une reservation"
-
-#: app/views/Booking/edit.php:14
-msgid "UPDATE BOOKING"
-msgstr "MODIFIER UNE RESERVATION"
-
-#: app/views/Booking/edit.php:19
-msgid "Booking list"
-msgstr "Liste de reservations"
-
-#: app/views/Booking/edit.php:20 app/views/navbar.php:45
-msgid "My Account"
-msgstr "Mon compte"
-
-#: app/views/Booking/edit.php:42
-msgid "PENDING"
-msgstr "EN ATTENTE"
-
-#: app/views/Booking/edit.php:42
-msgid "APPROVED"
-msgstr "APPROUVE"
-
-#: app/views/Booking/edit.php:42
-msgid "DECLINED"
-msgstr "REFUSE"
-
-#: app/views/Booking/edit.php:49
-msgid "Update time or date"
-msgstr "Modifer temps ou date"
-
-#: app/views/Booking/edit.php:51
-msgid "Cancel booking"
-msgstr "Annuler la reservation"
-
-#: app/views/Booking/edit.php:66
-msgid "Booking details"
-msgstr "Reservation"
-
-#: app/views/Booking/edit.php:128 app/views/User/Booking/create.php:185
-#: app/views/User/Membership/individual.php:208
-#: app/views/User/Membership/list.php:46
-msgid "Back"
-msgstr "Retour"
-
-#: app/views/Booking/edit.php:129 app/views/User/Booking/create.php:186
-#: app/views/User/Membership/list.php:70
-msgid "Next"
-msgstr "Suivant"
-
 #: app/views/Admin/login.php:3 app/views/Admin/login.php:24
-#: app/views/navbar.php:44 app/views/User/login.php:18
-#: app/views/User/login.php:28
+#: app/views/navbar.php:49 app/views/User/login.php:18
+#: app/views/User/login.php:31
 msgid "Login"
-msgstr "Se connecter"
+msgstr "Connexion"
 
 #: app/views/Admin/login.php:17 app/views/Admin/register.php:18
 #: app/views/User/login.php:21 app/views/User/register.php:37
 msgid "Email:"
-msgstr "Courriel"
+msgstr "Email :"
 
 #: app/views/Admin/login.php:21 app/views/Admin/register.php:22
 #: app/views/User/login.php:25 app/views/User/register.php:41
 msgid "Password:"
-msgstr "Mot de passe"
+msgstr "Mot de passe :"
 
-#: app/views/Admin/login.php:26 app/views/User/login.php:30
+#: app/views/Admin/login.php:26 app/views/User/login.php:33
 msgid "Don't have an account?"
-msgstr "Vous n'avez pas de compte?"
+msgstr "Vous n'avez pas de compte ?"
 
-#: app/views/Admin/login.php:26 app/views/User/login.php:30
+#: app/views/Admin/login.php:26 app/views/User/login.php:33
 msgid "Register now!"
-msgstr "S'inscrire maintenant!"
+msgstr "Inscrivez vous maintenant !"
 
 #: app/views/Admin/Membership/edit.php:77
 msgid "Modify User Membership"
-msgstr "Modifier l'adhesion d'un utilisateur"
+msgstr "Modifier l'adhesion de l'utilisateur"
 
 #: app/views/Admin/Membership/edit.php:81
 msgid "Membership ID:"
-msgstr "Identifiant de membre:"
+msgstr "Identifiant de l'adhesion :"
 
 #: app/views/Admin/Membership/edit.php:84
 msgid "User ID:"
-msgstr "ID de l'utilisateur:"
+msgstr "Identifiant de l'utilisateur :"
 
 #: app/views/Admin/Membership/edit.php:87
 msgid "Membership Type:"
-msgstr "Type d'adhesion:"
+msgstr "Type d'adhesion :"
 
 #: app/views/Admin/Membership/edit.php:95
 msgid "Start Date:"
-msgstr "Date de debut:"
+msgstr "Date de debut :"
 
 #: app/views/Admin/Membership/edit.php:98
 msgid "End Date:"
-msgstr "Date de fin:"
+msgstr "Date de fin :"
 
 #: app/views/Admin/Membership/list.php:4 app/views/Admin/Publication/list.php:5
-#: app/views/Admin/Publication/view.php:8 app/views/navbar.php:34
+#: app/views/Admin/Publication/view.php:8 app/views/navbar.php:39
 msgid "News & Updates"
-msgstr "Nouvelles mise a jour"
+msgstr "Actualites et mises a jour"
 
 #: app/views/Admin/Membership/list.php:18
 msgid "Membership ID"
-msgstr "Identifiant de membre"
+msgstr "Identifiant de l'adhesion"
 
 #: app/views/Admin/Membership/list.php:19
 msgid "User ID"
@@ -382,10 +215,6 @@ msgstr "Sauvegarder"
 msgid "Title"
 msgstr "Titre"
 
-#: app/views/User/Membership/list.php:49
-msgid "Confirm"
-msgstr "Confirmer"
-
 #: app/views/Admin/Publication/list.php:19
 msgid "Date Posted"
 msgstr "Date postee"
@@ -429,6 +258,141 @@ msgstr "Vous devez avoir au moins 17 ans pour vous inscrire"
 #: app/views/Admin/register.php:61
 msgid "Please make sure the passwords are the same"
 msgstr "Veuillez vous assurer que les mots de passe sont les memes"
+
+#: app/views/Booking/edit.php:8
+msgid "Update booking"
+msgstr "Modifier une reservation"
+
+#: app/views/Booking/edit.php:14
+msgid "UPDATE BOOKING"
+msgstr "MODIFIER UNE RESERVATION"
+
+#: app/views/Booking/edit.php:19
+msgid "Booking list"
+msgstr "Liste de reservations"
+
+#: app/views/Booking/edit.php:20 app/views/navbar.php:45
+msgid "My Account"
+msgstr "Mon compte"
+
+#: app/views/Booking/edit.php:42
+msgid "PENDING"
+msgstr "EN ATTENTE"
+
+#: app/views/Booking/edit.php:42
+msgid "APPROVED"
+msgstr "APPROUVE"
+
+#: app/views/Booking/edit.php:42
+msgid "DECLINED"
+msgstr "REFUSE"
+
+#: app/views/Booking/edit.php:49
+msgid "Update time or date"
+msgstr "Modifer temps ou date"
+
+#: app/views/Booking/edit.php:51
+msgid "Cancel booking"
+msgstr "Annuler la reservation"
+
+#: app/views/Booking/edit.php:66
+msgid "Booking details"
+msgstr "Reservation"
+
+#: app/views/Booking/edit.php:128 app/views/User/Booking/create.php:185
+#: app/views/User/Membership/individual.php:208
+#: app/views/User/Membership/list.php:46
+msgid "Back"
+msgstr "Retour"
+
+#: app/views/Booking/edit.php:129 app/views/User/Booking/create.php:186
+#: app/views/User/Membership/list.php:70
+msgid "Next"
+msgstr "Suivant"
+
+#: app/views/Booking/edit.php:194 app/views/User/Booking/create.php:252
+msgid "January"
+msgstr "Janvier"
+
+#: app/views/Booking/edit.php:195 app/views/User/Booking/create.php:253
+msgid "February"
+msgstr "Fevrier"
+
+#: app/views/Booking/edit.php:196 app/views/User/Booking/create.php:254
+msgid "March"
+msgstr "Mars"
+
+#: app/views/Booking/edit.php:197 app/views/User/Booking/create.php:255
+msgid "April"
+msgstr "Avril"
+
+#: app/views/Booking/edit.php:198 app/views/User/Booking/create.php:256
+msgid "May"
+msgstr "Mai"
+
+#: app/views/Booking/edit.php:199 app/views/User/Booking/create.php:257
+msgid "June"
+msgstr "Juin"
+
+#: app/views/Booking/edit.php:200 app/views/User/Booking/create.php:258
+msgid "July"
+msgstr "Juillet"
+
+#: app/views/Booking/edit.php:201 app/views/User/Booking/create.php:259
+msgid "August"
+msgstr "Aout"
+
+#: app/views/Booking/edit.php:202 app/views/User/Booking/create.php:260
+msgid "September"
+msgstr "Septembre"
+
+#: app/views/Booking/edit.php:203 app/views/User/Booking/create.php:261
+msgid "October"
+msgstr "Octobre"
+
+#: app/views/Booking/edit.php:204 app/views/User/Booking/create.php:262
+msgid "November"
+msgstr "Novembre"
+
+#: app/views/Booking/edit.php:205 app/views/User/Booking/create.php:263
+msgid "December"
+msgstr "Decembre"
+
+#: app/views/Booking/edit.php:208 app/views/User/Booking/create.php:266
+msgid "Sun"
+msgstr "Dim"
+
+#: app/views/Booking/edit.php:209 app/views/User/Booking/create.php:267
+msgid "Mon"
+msgstr "Lun"
+
+#: app/views/Booking/edit.php:210 app/views/User/Booking/create.php:268
+msgid "Tue"
+msgstr "Mar"
+
+#: app/views/Booking/edit.php:211 app/views/User/Booking/create.php:269
+msgid "Wed"
+msgstr "Mer"
+
+#: app/views/Booking/edit.php:212 app/views/User/Booking/create.php:270
+msgid "Thu"
+msgstr "Jeu"
+
+#: app/views/Booking/edit.php:213 app/views/User/Booking/create.php:271
+msgid "Fri"
+msgstr "Ven"
+
+#: app/views/Booking/edit.php:214 app/views/User/Booking/create.php:272
+msgid "Sat"
+msgstr "Sam"
+
+#: app/views/Booking/edit.php:277 app/views/User/Booking/create.php:335
+msgid "Availabilities for"
+msgstr "Disponibilites pour le"
+
+#: app/views/Booking/edit.php:342
+msgid "Update"
+msgstr "Modifier"
 
 #: app/views/faq.php:82 app/views/faq.php:90 app/views/faq.php:98
 #: app/views/faq.php:106 app/views/faq.php:115
@@ -484,6 +448,59 @@ msgstr "Commentaires"
 msgid "Logout"
 msgstr "Se deconnecter"
 
+#: app/views/User/Booking/create.php:115
+msgid "COURT RENTAL"
+msgstr "RESERVER UN GYMNASE"
+
+#: app/views/User/Booking/create.php:122
+msgid "Select an option"
+msgstr "Selectionnez une option"
+
+#: app/views/User/Booking/create.php:163
+msgid "Name on Card:"
+msgstr "Nom sur la carte"
+
+#: app/views/User/Booking/create.php:165
+msgid "Card Number"
+msgstr "Numero de carte"
+
+#: app/views/User/Booking/create.php:167
+msgid "Expiration Date"
+msgstr "Date d'expiration"
+
+#: app/views/User/Booking/create.php:169
+msgid "CVV"
+msgstr "CVV"
+
+#: app/views/User/Booking/create.php:174
+msgid "Pay Now"
+msgstr "Payer"
+
+
+#: app/views/User/Booking/create.php:443
+msgid "Total payment of"
+msgstr "Payment total de"
+
+#: app/views/User/Booking/create.php:446
+msgid "on"
+msgstr "le"
+
+#: app/views/User/Camp/list.php:209
+msgid "CAMPS"
+msgstr "CAMPS"
+
+#: app/views/User/Camp/list.php:217
+msgid "Camp Days"
+msgstr "Jours de camp"
+
+#: app/views/User/Camp/list.php:221
+msgid "Registration period:"
+msgstr "Periode d'inscription"
+
+#: app/views/User/Camp/list.php:226
+msgid "Join Now for"
+msgstr "Inscrivez-vous maintenant pour"
+
 #: app/views/User/Membership/individual.php:167
 msgid "Modify Membership"
 msgstr "Modifier l'adhesion"
@@ -505,6 +522,8 @@ msgid "Confirm Membership Cancellation"
 msgstr "Confirmer l'annulation de l'adhesion"
 
 #: app/views/User/Membership/individual.php:203
+#: app/views/User/myAccount.php:308 app/views/User/myAccount.php:334
+#: app/views/User/myAccount.php:354
 msgid "Type"
 msgstr "Type"
 
@@ -529,39 +548,265 @@ msgstr "/mois"
 msgid "Review Your Order"
 msgstr "Verifiez votre commande"
 
+#: app/views/User/Membership/list.php:49
+#: app/views/User/Membership/list.php:50
+msgid "Confirm"
+msgstr "Confirmez"
 
-#: app/views/User/Publication/list.php:32
-msgid "View all"
-msgstr "Voir tour"
+#: app/views/User/Membership/list.php:162
+msgid "Membership type:"
+msgstr "Type"
 
-#: app/views/User/Publication/list.php:56
-msgid "Created on"
-msgstr "Cree sur"
-
-#: app/views/User/register.php:21
-msgid "First name:"
-msgstr "Prenom:"
-
-#: app/views/User/register.php:25
-msgid "Last name:"
-msgstr "Nom de famille:"
-
-#: app/views/User/register.php:29
-msgid "Phone number:"
-msgstr "Numero de telephone:"
-
-#: app/views/User/register.php:33
-msgid "Date of birth:"
-msgstr "Date de naissance:"
-
-#: app/views/User/Membership/list.php:160
-msgid "Membership type: "
-msgstr "Type d'adhesion: "
-
-#: app/views/User/Membership/list.php:163
+#: app/views/User/Membership/list.php:165
 msgid "Price: "
 msgstr "Prix: "
 
-#: app/views/User/Membership/list.php:166
+#: app/views/User/Membership/list.php:168
 msgid "What's included: "
-msgstr "Ce qui est inclu: "
+msgstr "Ce qui est inclus: "
+
+#: app/views/User/myAccount.php:294
+msgid "Your Profile"
+msgstr "Votre Profile: "
+
+#: app/views/User/myAccount.php:297 app/views/User/Profile/create.php:138
+msgid "First Name"
+msgstr "Prenom"
+
+#: app/views/User/myAccount.php:298 app/views/User/Profile/create.php:142
+msgid "Last Name"
+msgstr "Nom"
+
+#: app/views/User/myAccount.php:299
+msgid "Phone"
+msgstr "Numero de telephone"
+
+#: app/views/User/myAccount.php:300
+msgid "Date of Birth"
+msgstr "Date de naissance"
+
+#: app/views/User/myAccount.php:301
+msgid "Email"
+msgstr "Courriel"
+
+#: app/views/User/myAccount.php:307
+msgid "Your Membership"
+msgstr "Votre abonnement"
+
+#: app/views/User/myAccount.php:309
+msgid "Expires on"
+msgstr "Expire le: "
+
+#: app/views/User/myAccount.php:315
+msgid "Your Bookings"
+msgstr "Vos Reservations"
+
+#: app/views/User/myAccount.php:324
+msgid "Your Camps"
+msgstr "Vos Camps"
+
+#: app/views/User/myAccount.php:331
+msgid "Player Information"
+msgstr "Informations du joueur"
+
+#: app/views/User/myAccount.php:335
+msgid "Registration Date"
+msgstr "Date d'inscription"
+
+#: app/views/User/myAccount.php:346
+msgid "Your Reviews"
+msgstr "Vos Commentaires"
+
+#: app/views/User/myAccount.php:355 app/views/User/Review/list.php:238
+msgid "Rating"
+msgstr "Notation"
+
+#: app/views/User/payment.php:134
+msgid "Payment Information"
+msgstr "Informations de paiement"
+
+#: app/views/User/payment.php:138
+msgid "Full Name"
+msgstr "Nom Complet"
+
+#: app/views/User/payment.php:139 app/views/User/Profile/create.php:139
+msgid "Jon"
+msgstr ""
+
+#: app/views/User/payment.php:143
+msgid "4724090478569843"
+msgstr ""
+
+#: app/views/User/payment.php:147
+msgid "123"
+msgstr ""
+
+#: app/views/User/payment.php:150
+msgid "Expiry Date"
+msgstr "Date d'expiration"
+
+#: app/views/User/payment.php:155
+msgid "Country"
+msgstr "Pays"
+
+#: app/views/User/payment.php:156
+msgid "Canada"
+msgstr ""
+
+#: app/views/User/payment.php:159
+msgid "Province"
+msgstr ""
+
+#: app/views/User/payment.php:160
+msgid "QC"
+msgstr ""
+
+#: app/views/User/payment.php:163
+msgid "Zip Code"
+msgstr "Code Postal"
+
+#: app/views/User/payment.php:164
+msgid "1X1 X1X"
+msgstr ""
+
+#: app/views/User/payment.php:168
+msgid "Process Payment"
+msgstr "Proceder le paiement"
+
+#: app/views/User/Profile/create.php:135 app/views/User/Profile/create.php:154
+msgid "Create Profile"
+msgstr "Cree votre profile"
+
+#: app/views/User/Profile/create.php:143
+msgid "Doe"
+msgstr ""
+
+#: app/views/User/Profile/create.php:146
+msgid "Phone Number"
+msgstr "Numero de telephone"
+
+#: app/views/User/Profile/create.php:147
+msgid "5141231234"
+msgstr ""
+
+#: app/views/User/Profile/create.php:150
+msgid "Date Of Birth"
+msgstr "Date de naissance"
+
+#: app/views/User/Publication/list.php:32
+msgid "View all"
+msgstr "Tout Voir"
+
+#: app/views/User/Publication/list.php:56
+msgid "Created on"
+msgstr "Cree le:"
+
+#: app/views/User/register.php:21
+msgid "First name:"
+msgstr "Prenom"
+
+#: app/views/User/register.php:25
+msgid "Last name:"
+msgstr "Nom"
+
+#: app/views/User/register.php:29
+msgid "Phone number:"
+msgstr "Numero de telephone"
+
+#: app/views/User/register.php:33
+msgid "Date of birth:"
+msgstr "Date de naissance"
+
+
+#: app/views/User/Review/create.php:179
+msgid "Select Purchase for your review"
+msgstr "Selectionnez l'achat pour votre avis"
+
+#: app/views/User/Review/create.php:181
+msgid "Full Court"
+msgstr "Cour pleniere"
+
+#: app/views/User/Review/create.php:182
+msgid "Half Court"
+msgstr "Demi-terrain"
+
+#: app/views/User/Review/create.php:183 app/views/User/services.php:250
+msgid "Camp"
+msgstr ""
+
+#: app/views/User/Review/create.php:184 app/views/User/services.php:282
+msgid "Membership"
+msgstr "Abonnement"
+
+#: app/views/User/Review/create.php:189
+msgid "Enter your Review"
+msgstr "Entrez votre avis"
+
+#: app/views/User/Review/create.php:194
+msgid "Select Your Rating"
+msgstr "Selectionnez votre note"
+
+#: app/views/User/Review/create.php:210
+msgid "Create Review"
+msgstr "Creer un avis"
+
+#: app/views/User/Review/list.php:7
+msgid "All Reviews"
+msgstr "Tous les avis"
+
+#: app/views/User/Review/list.php:230
+msgid "ALL REVIEWS"
+msgstr "Tous les avis"
+
+#: app/views/User/Review/list.php:236
+msgid "Purchase Type"
+msgstr "type d'achat"
+
+#: app/views/User/Review/list.php:237
+msgid "Review Text"
+msgstr "Texte de revision"
+
+#: app/views/User/services.php:251
+msgid "camp"
+msgstr ""
+
+#: app/views/User/services.php:254
+msgid "Ultimate Training Camp"
+msgstr "Camp d'entrainement ultime"
+
+#: app/views/User/services.php:256
+msgid "Exclusive Camp league to achieve better basketball skills!"
+msgstr "Ligue de camp exclusive pour ameliorer vos competences en basket-ball !"
+
+#: app/views/User/services.php:260 app/views/User/services.php:276
+#: app/views/User/services.php:292
+msgid "Learn more!"
+msgstr "Apprendre encore plus!"
+
+#: app/views/User/services.php:266
+msgid "Booking"
+msgstr "Reservation"
+
+#: app/views/User/services.php:267
+msgid "booking"
+msgstr "Reservation"
+
+#: app/views/User/services.php:270
+msgid "Booking system"
+msgstr "System de Reservation"
+
+#: app/views/User/services.php:272
+msgid "Flexible booking system to have an open court for you and your friends!"
+msgstr "Systeme de reservation flexible pour avoir un terrain ouvert pour vous et vos amis !"
+
+#: app/views/User/services.php:283
+msgid "membership"
+msgstr "Abonnement"
+
+#: app/views/User/services.php:286
+msgid "Innovative membership plan!"
+msgstr "Plan d'adhesion innovant!"
+
+#: app/views/User/services.php:288
+msgid "Register for an effective membership plan to help you achieve your athletic goals"
+msgstr "Inscrivez-vous a un plan d'adhesion efficace pour vous aider a atteindre vos objectifs de remise en forme"

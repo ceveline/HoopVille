@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-11 19:35+0000\n"
+"POT-Creation-Date: 2024-05-12 04:07+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -157,7 +157,7 @@ msgstr ""
 
 #: app/views/Admin/Membership/list.php:40
 #: app/views/Admin/Publication/list.php:34
-#: app/views/Admin/Publication/view.php:37
+#: app/views/Admin/Publication/view.php:37 app/views/User/myAccount.php:358
 msgid "Edit"
 msgstr ""
 
@@ -428,7 +428,7 @@ msgstr ""
 msgid "Home"
 msgstr ""
 
-#: app/views/navbar.php:27
+#: app/views/navbar.php:27 app/views/User/services.php:246
 msgid "Services"
 msgstr ""
 
@@ -460,7 +460,7 @@ msgstr ""
 msgid "Name on Card:"
 msgstr ""
 
-#: app/views/User/Booking/create.php:165
+#: app/views/User/Booking/create.php:165 app/views/User/payment.php:142
 msgid "Card Number"
 msgstr ""
 
@@ -468,7 +468,7 @@ msgstr ""
 msgid "Expiration Date"
 msgstr ""
 
-#: app/views/User/Booking/create.php:169
+#: app/views/User/Booking/create.php:169 app/views/User/payment.php:146
 msgid "CVV"
 msgstr ""
 
@@ -482,6 +482,22 @@ msgstr ""
 
 #: app/views/User/Booking/create.php:446
 msgid "on"
+msgstr ""
+
+#: app/views/User/Camp/list.php:209
+msgid "CAMPS"
+msgstr ""
+
+#: app/views/User/Camp/list.php:217
+msgid "Camp Days"
+msgstr ""
+
+#: app/views/User/Camp/list.php:221
+msgid "Registration period:"
+msgstr ""
+
+#: app/views/User/Camp/list.php:226
+msgid "Join Now for"
 msgstr ""
 
 #: app/views/User/Membership/individual.php:167
@@ -509,6 +525,8 @@ msgid "Confirm Membership Cancellation"
 msgstr ""
 
 #: app/views/User/Membership/individual.php:203
+#: app/views/User/myAccount.php:308 app/views/User/myAccount.php:334
+#: app/views/User/myAccount.php:354
 msgid "Type"
 msgstr ""
 
@@ -548,6 +566,134 @@ msgstr ""
 msgid "What's included: "
 msgstr ""
 
+#: app/views/User/myAccount.php:294
+msgid "Your Profile"
+msgstr ""
+
+#: app/views/User/myAccount.php:297 app/views/User/Profile/create.php:138
+msgid "First Name"
+msgstr ""
+
+#: app/views/User/myAccount.php:298 app/views/User/Profile/create.php:142
+msgid "Last Name"
+msgstr ""
+
+#: app/views/User/myAccount.php:299
+msgid "Phone"
+msgstr ""
+
+#: app/views/User/myAccount.php:300
+msgid "Date of Birth"
+msgstr ""
+
+#: app/views/User/myAccount.php:301
+msgid "Email"
+msgstr ""
+
+#: app/views/User/myAccount.php:307
+msgid "Your Membership"
+msgstr ""
+
+#: app/views/User/myAccount.php:309
+msgid "Expires on"
+msgstr ""
+
+#: app/views/User/myAccount.php:315
+msgid "Your Bookings"
+msgstr ""
+
+#: app/views/User/myAccount.php:324
+msgid "Your Camps"
+msgstr ""
+
+#: app/views/User/myAccount.php:331
+msgid "Player Information"
+msgstr ""
+
+#: app/views/User/myAccount.php:335
+msgid "Registration Date"
+msgstr ""
+
+#: app/views/User/myAccount.php:346
+msgid "Your Reviews"
+msgstr ""
+
+#: app/views/User/myAccount.php:355 app/views/User/Review/list.php:238
+msgid "Rating"
+msgstr ""
+
+#: app/views/User/payment.php:134
+msgid "Payment Information"
+msgstr ""
+
+#: app/views/User/payment.php:138
+msgid "Full Name"
+msgstr ""
+
+#: app/views/User/payment.php:139 app/views/User/Profile/create.php:139
+msgid "Jon"
+msgstr ""
+
+#: app/views/User/payment.php:143
+msgid "4724090478569843"
+msgstr ""
+
+#: app/views/User/payment.php:147
+msgid "123"
+msgstr ""
+
+#: app/views/User/payment.php:150
+msgid "Expiry Date"
+msgstr ""
+
+#: app/views/User/payment.php:155
+msgid "Country"
+msgstr ""
+
+#: app/views/User/payment.php:156
+msgid "Canada"
+msgstr ""
+
+#: app/views/User/payment.php:159
+msgid "Province"
+msgstr ""
+
+#: app/views/User/payment.php:160
+msgid "QC"
+msgstr ""
+
+#: app/views/User/payment.php:163
+msgid "Zip Code"
+msgstr ""
+
+#: app/views/User/payment.php:164
+msgid "1X1 X1X"
+msgstr ""
+
+#: app/views/User/payment.php:168
+msgid "Process Payment"
+msgstr ""
+
+#: app/views/User/Profile/create.php:135 app/views/User/Profile/create.php:154
+msgid "Create Profile"
+msgstr ""
+
+#: app/views/User/Profile/create.php:143
+msgid "Doe"
+msgstr ""
+
+#: app/views/User/Profile/create.php:146
+msgid "Phone Number"
+msgstr ""
+
+#: app/views/User/Profile/create.php:147
+msgid "5141231234"
+msgstr ""
+
+#: app/views/User/Profile/create.php:150
+msgid "Date Of Birth"
+msgstr ""
+
 #: app/views/User/Publication/list.php:32
 msgid "View all"
 msgstr ""
@@ -570,4 +716,103 @@ msgstr ""
 
 #: app/views/User/register.php:33
 msgid "Date of birth:"
+msgstr ""
+
+#: app/views/User/Review/create.php:178
+msgid "form-section"
+msgstr ""
+
+#: app/views/User/Review/create.php:179
+msgid "Select Purchase for your review"
+msgstr ""
+
+#: app/views/User/Review/create.php:181
+msgid "Full Court"
+msgstr ""
+
+#: app/views/User/Review/create.php:182
+msgid "Half Court"
+msgstr ""
+
+#: app/views/User/Review/create.php:183 app/views/User/services.php:250
+msgid "Camp"
+msgstr ""
+
+#: app/views/User/Review/create.php:184 app/views/User/services.php:282
+msgid "Membership"
+msgstr ""
+
+#: app/views/User/Review/create.php:189
+msgid "Enter your Review"
+msgstr ""
+
+#: app/views/User/Review/create.php:194
+msgid "Select Your Rating"
+msgstr ""
+
+#: app/views/User/Review/create.php:210
+msgid "Create Review"
+msgstr ""
+
+#: app/views/User/Review/list.php:7
+msgid "All Reviews"
+msgstr ""
+
+#: app/views/User/Review/list.php:230
+msgid "ALL REVIEWS"
+msgstr ""
+
+#: app/views/User/Review/list.php:236
+msgid "Purchase Type"
+msgstr ""
+
+#: app/views/User/Review/list.php:237
+msgid "Review Text"
+msgstr ""
+
+#: app/views/User/services.php:251
+msgid "camp"
+msgstr ""
+
+#: app/views/User/services.php:254
+msgid "Ultimate Training Camp"
+msgstr ""
+
+#: app/views/User/services.php:256
+msgid "Exclusive Camp league to achieve better basketball skills!"
+msgstr ""
+
+#: app/views/User/services.php:260 app/views/User/services.php:276
+#: app/views/User/services.php:292
+msgid "Learn more!"
+msgstr ""
+
+#: app/views/User/services.php:266
+msgid "Booking"
+msgstr ""
+
+#: app/views/User/services.php:267
+msgid "booking"
+msgstr ""
+
+#: app/views/User/services.php:270
+msgid "Booking system"
+msgstr ""
+
+#: app/views/User/services.php:272
+msgid "Flexible booking system to have an open court for you and your friends!"
+msgstr ""
+
+#: app/views/User/services.php:283
+msgid "membership"
+msgstr ""
+
+#: app/views/User/services.php:286
+msgid "Innovative membership plan!"
+msgstr ""
+
+#: app/views/User/services.php:288
+msgid ""
+"Register for an effective membership plan to help you achieve your athletic "
+"goals!"
 msgstr ""
