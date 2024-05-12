@@ -92,40 +92,39 @@ button:hover{
 <body>
     <div class="background">
         <div class="content">
-            <h1>Enrol in <?php echo "$data->camp_type!"?></h1>
+            <h1><?=__('Enrol in ')?><?php echo "$data->camp_type!" ?></h1>
             <form class='register-form' method="post" action="">
-                <!-- Existing input fields -->
                 <div class="inputs">
-                    <label for="self">Registering for:</label>
+                    <label for="self"><?=__('Registering for: ')?></label>
                     <input type="radio" id="self" name="register_for" value="self" checked>
-                    <label for="self">Myself</label>
+                    <label for="self"><?=__('Myself')?></label>
                     <input type="radio" id="someone_else" name="register_for" value="someone_else">
-                    <label for="someone_else">A guest</label>
+                    <label for="someone_else"><?=__('A guest')?></label>
                 </div>
                 
-                    
-                    <div class="inputs">
-                    <label for="guest_fname" class="form-label">Guest's First Name</label>
-                    <input type="text" class="form-control" id="guest_fname" name="guest_fname" placeholder="Jon">
+                <div class="inputs">
+                    <label for="guest_fname" class="form-label"><?=__('Guest\'s First Name')?></label>
+                    <input type="text" class="form-control" id="guest_fname" name="guest_fname" placeholder="<?=__('Jon')?>">
                 </div>
                 <div class="inputs">
-                    <label for="guest_lname" class="form-label">Guest's Last Name</label>
-                    <input type="text" class="form-control" id="guest_lname" name="guest_lname" placeholder="Doe">
+                    <label for="guest_lname" class="form-label"><?=__('Guest\'s Last Name')?></label>
+                    <input type="text" class="form-control" id="guest_lname" name="guest_lname" placeholder="<?=__('Doe')?>">
                 </div>
                 <div class="inputs">
-                    <label for="guest_dob" class="form-label">Guest's Date of Birth</label>
+                    <label for="guest_dob" class="form-label"><?=__('Guest\'s Date of Birth')?></label>
                     <input type="date" class="form-control" id="guest_dob" name="guest_dob" placeholder="">
                 </div>
               
                 <div class="cost">
-                <label for="self">Total cost: <?php echo "$data->price"?></label>
+                    <label><?=__('Total cost: ')?><?php echo "$data->price"?></label>
                 </div>
+                
                 <form class='register-form' method="post" action="/User/payment">
-                <button type="submit" class="btn" name="action" value="Register">Register</button>
+                    <button type="submit" class="btn" name="action" value="Register"><?=__('Register')?></button>
                 </form>
             </form>
         </div>
     </div>
-
 </body>
+
 </html>

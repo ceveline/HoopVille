@@ -1,3 +1,0 @@
-touch messages.po
-find ./app/views -type f -name "*.php" -exec xgettext --keyword=__ -j {} \;
-mv messages.po messages.pot
