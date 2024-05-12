@@ -54,11 +54,6 @@
       padding-left: 10px;
     }
 
-
-
-
-
-
     button {
       background-color: #FFDE59;
       cursor: pointer;

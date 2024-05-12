@@ -11,6 +11,19 @@ class Administrator extends \app\core\Model
   public $email;
   public $password_hash;
 
+  public $secret;
+
+  public function add2FA()
+  {
+    //change anything but the PK
+    $SQL = 'UPDATE Administrator SET secret = :secret WHERE admin_id = :admin_id';
+    $STMT = self::$_conn->prepare($SQL);
+    $STMT->execute([
+      'admin_id' => $this->admin_id,
+      'secret' => $this->secret
+    ]);
+  }
+
   public function insert()
   {
     //statement

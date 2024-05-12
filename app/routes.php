@@ -1,4 +1,10 @@
 <?php
+
+// 2FA
+$this->addRoute('User/2FA/setup2fa', 'User,setup2fa');
+$this->addRoute('User/2FA/check2fa', 'User,check2fa');
+
+// USER
 $this->addRoute('', 'User,home');
 $this->addRoute('Home', 'User,home');
 $this->addRoute('User/payment', 'User,payment');

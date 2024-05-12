@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: May 07, 2024 at 02:48 AM
+-- Generation Time: May 12, 2024 at 09:11 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `hoopville`
 --
+CREATE DATABASE IF NOT EXISTS `hoopville` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `hoopville`;
 
 -- --------------------------------------------------------
 
@@ -27,11 +29,20 @@ SET time_zone = "+00:00";
 -- Table structure for table `Administrator`
 --
 
+DROP TABLE IF EXISTS `Administrator`;
 CREATE TABLE `Administrator` (
   `admin_id` int(11) NOT NULL,
   `email` varchar(50) NOT NULL,
-  `password_hash` varchar(60) NOT NULL
+  `password_hash` varchar(60) NOT NULL,
+  `secret` varchar(32) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `Administrator`
+--
+
+INSERT INTO `Administrator` (`admin_id`, `email`, `password_hash`, `secret`) VALUES
+(1, 'admin@gmail.com', '$2y$10$Vmi0Z/sV6JrEjIxYKnsH4OwqD/qw89cFQKwzodZhHL4h3yXhOOvdq', 'K5XUU3JGKBGCJNEKS4EBLTMTPTISG4VF');
 
 -- --------------------------------------------------------
 
@@ -39,6 +50,7 @@ CREATE TABLE `Administrator` (
 -- Table structure for table `Booking`
 --
 
+DROP TABLE IF EXISTS `Booking`;
 CREATE TABLE `Booking` (
   `booking_id` int(11) NOT NULL,
   `booking_type` varchar(50) NOT NULL,
@@ -50,20 +62,13 @@ CREATE TABLE `Booking` (
   `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `Booking`
---
-
-INSERT INTO `Booking` (`booking_id`, `booking_type`, `user_id`, `date`, `start_time`, `end_time`, `status`, `timestamp`) VALUES
-(1, 'Court', 7, '2024-05-04', '12:42:54', '16:42:54', 1, '2024-05-07 00:47:08'),
-(2, 'Fitness', 8, '2024-05-09', '09:47:11', '12:47:11', 1, '2024-05-07 00:47:47');
-
 -- --------------------------------------------------------
 
 --
 -- Table structure for table `Booking_Type`
 --
 
+DROP TABLE IF EXISTS `Booking_Type`;
 CREATE TABLE `Booking_Type` (
   `booking_type` varchar(50) NOT NULL,
   `price` decimal(10,2) NOT NULL,
@@ -75,8 +80,8 @@ CREATE TABLE `Booking_Type` (
 --
 
 INSERT INTO `Booking_Type` (`booking_type`, `price`, `description`) VALUES
-('Court', 45.00, '\"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...\"\r\n\"There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain...\"'),
-('Fitness', 30.00, '\"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...\"\r\n\"There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain...\"');
+('full', 45.00, '\"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...\"\r\n\"There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain...\"'),
+('half', 30.00, '\"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...\"\r\n\"There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain...\"');
 
 -- --------------------------------------------------------
 
@@ -84,6 +89,7 @@ INSERT INTO `Booking_Type` (`booking_type`, `price`, `description`) VALUES
 -- Table structure for table `Camp`
 --
 
+DROP TABLE IF EXISTS `Camp`;
 CREATE TABLE `Camp` (
   `camp_id` int(11) NOT NULL,
   `camp_type` varchar(50) NOT NULL,
@@ -107,6 +113,7 @@ INSERT INTO `Camp` (`camp_id`, `camp_type`, `user_id`, `guest_id`, `timestamp`) 
 -- Table structure for table `Camp_Type`
 --
 
+DROP TABLE IF EXISTS `Camp_Type`;
 CREATE TABLE `Camp_Type` (
   `camp_type` varchar(50) NOT NULL,
   `price` decimal(10,2) NOT NULL,
@@ -132,6 +139,7 @@ INSERT INTO `Camp_Type` (`camp_type`, `price`, `description`, `start_date`, `end
 -- Table structure for table `Guest`
 --
 
+DROP TABLE IF EXISTS `Guest`;
 CREATE TABLE `Guest` (
   `guest_id` int(11) NOT NULL,
   `first_name` varchar(50) NOT NULL,
@@ -145,6 +153,7 @@ CREATE TABLE `Guest` (
 -- Table structure for table `Membership`
 --
 
+DROP TABLE IF EXISTS `Membership`;
 CREATE TABLE `Membership` (
   `membership_id` int(11) NOT NULL,
   `membership_type` varchar(50) NOT NULL,
@@ -169,6 +178,7 @@ INSERT INTO `Membership` (`membership_id`, `membership_type`, `user_id`, `start_
 -- Table structure for table `Membership_Type`
 --
 
+DROP TABLE IF EXISTS `Membership_Type`;
 CREATE TABLE `Membership_Type` (
   `membership_type` varchar(50) NOT NULL,
   `monthly_price` decimal(10,2) NOT NULL,
@@ -190,6 +200,7 @@ INSERT INTO `Membership_Type` (`membership_type`, `monthly_price`, `description`
 -- Table structure for table `Profile`
 --
 
+DROP TABLE IF EXISTS `Profile`;
 CREATE TABLE `Profile` (
   `profile_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
@@ -211,7 +222,9 @@ INSERT INTO `Profile` (`profile_id`, `user_id`, `first_name`, `last_name`, `phon
 (5, 5, 'Jack', 'Daniel', '4334554321', '2024-05-30'),
 (6, 6, 'Kevin', 'Mark', '5445455656', '2024-06-06'),
 (7, 7, 'Kebvin', 'Von', '4334432321', '2024-05-01'),
-(8, 8, 'sfgs', 'svsv', '43433443434', '2024-05-21');
+(8, 8, 'sfgs', 'svsv', '43433443434', '2024-05-21'),
+(9, 11, 'Denis', 'Voronov', '1231231234', '2000-02-08'),
+(10, 12, 'LeBron', 'Pejman', '5141231234', '1999-06-08');
 
 -- --------------------------------------------------------
 
@@ -219,6 +232,7 @@ INSERT INTO `Profile` (`profile_id`, `user_id`, `first_name`, `last_name`, `phon
 -- Table structure for table `Publication`
 --
 
+DROP TABLE IF EXISTS `Publication`;
 CREATE TABLE `Publication` (
   `publication_id` int(11) NOT NULL,
   `admin_id` int(11) NOT NULL,
@@ -233,6 +247,7 @@ CREATE TABLE `Publication` (
 -- Table structure for table `Review`
 --
 
+DROP TABLE IF EXISTS `Review`;
 CREATE TABLE `Review` (
   `review_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
@@ -248,29 +263,33 @@ CREATE TABLE `Review` (
 -- Table structure for table `User`
 --
 
+DROP TABLE IF EXISTS `User`;
 CREATE TABLE `User` (
   `user_id` int(11) NOT NULL,
   `email` varchar(50) NOT NULL,
   `password_hash` varchar(60) NOT NULL,
   `active` tinyint(4) NOT NULL DEFAULT 1,
   `reset_token_hash` varchar(64) DEFAULT NULL,
-  `reset_token_expires_at` datetime DEFAULT NULL
+  `reset_token_expires_at` datetime DEFAULT NULL,
+  `secret` varchar(32) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `User`
 --
 
-INSERT INTO `User` (`user_id`, `email`, `password_hash`, `active`, `reset_token_hash`, `reset_token_expires_at`) VALUES
-(1, 'hussain@gmail.com', '123', 0, '818dc2d58d4cb8ed221147009cfd49c9b79732c2b258364476004cceaa6d5ba5', '2024-05-02 05:27:37'),
-(2, 'test@gmail.com', '123', 0, '154f06f8e89f0a87f7ec22a7508ac836d01bb79fb09690d799906a0e467cd655', '2024-05-05 09:01:41'),
-(3, 'test1@gmail.com', '345', 1, NULL, NULL),
-(4, 'michelle.paquette@gmail.com', 'svsvsv', 1, NULL, NULL),
-(5, 'jack@gmail.com', 'swvdsdsbdbd', 1, NULL, NULL),
-(6, 'kevin@gmail.com', 'dvdvdsvs', 1, NULL, NULL),
-(7, 'kevin1@gmail.com', 'sgvfsgs', 1, NULL, NULL),
-(8, 'michelle.paquette@gmail.com', 'svsvsv', 1, NULL, NULL),
-(9, 'hussainamin285@gmail.com', '123', 1, 'b3f6322a83754a74b636fbd32a038445578630186e6039b0751d1731ec0b5a9c', '2024-05-07 02:53:25');
+INSERT INTO `User` (`user_id`, `email`, `password_hash`, `active`, `reset_token_hash`, `reset_token_expires_at`, `secret`) VALUES
+(1, 'hussain@gmail.com', '123', 0, '818dc2d58d4cb8ed221147009cfd49c9b79732c2b258364476004cceaa6d5ba5', '2024-05-02 05:27:37', NULL),
+(2, 'test@gmail.com', '123', 0, '154f06f8e89f0a87f7ec22a7508ac836d01bb79fb09690d799906a0e467cd655', '2024-05-05 09:01:41', NULL),
+(3, 'test1@gmail.com', '345', 1, NULL, NULL, NULL),
+(4, 'michelle.paquette@gmail.com', 'svsvsv', 1, NULL, NULL, NULL),
+(5, 'jack@gmail.com', 'swvdsdsbdbd', 1, NULL, NULL, NULL),
+(6, 'kevin@gmail.com', 'dvdvdsvs', 1, NULL, NULL, NULL),
+(7, 'kevin1@gmail.com', 'sgvfsgs', 1, NULL, NULL, NULL),
+(8, 'michelle.paquette@gmail.com', 'svsvsv', 1, NULL, NULL, NULL),
+(9, 'hussainamin285@gmail.com', '123', 1, 'b3f6322a83754a74b636fbd32a038445578630186e6039b0751d1731ec0b5a9c', '2024-05-07 02:53:25', NULL),
+(11, 'test@test.com', '$2y$10$txyrJrbFXxTT8K95ySmlx.acWX41kbxHaN.k1Ite7pmTz6GUiAOu6', 1, NULL, NULL, '3XNUOEHJXZJOS5G3TOX5HLFMIZXUIZDY'),
+(12, 'pejman@test.com', '$2y$10$Vmi0Z/sV6JrEjIxYKnsH4OwqD/qw89cFQKwzodZhHL4h3yXhOOvdq', 1, NULL, NULL, 'LPT6DER6N52TLFMICSXNZZVWKMTL44O6');
 
 --
 -- Indexes for dumped tables
@@ -366,7 +385,7 @@ ALTER TABLE `User`
 -- AUTO_INCREMENT for table `Administrator`
 --
 ALTER TABLE `Administrator`
-  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `Booking`
@@ -396,7 +415,7 @@ ALTER TABLE `Membership`
 -- AUTO_INCREMENT for table `Profile`
 --
 ALTER TABLE `Profile`
-  MODIFY `profile_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `profile_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `Publication`
@@ -414,7 +433,7 @@ ALTER TABLE `Review`
 -- AUTO_INCREMENT for table `User`
 --
 ALTER TABLE `User`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- Constraints for dumped tables

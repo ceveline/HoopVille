@@ -6,10 +6,99 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
+use chillerlan\Authenticator\{Authenticator, AuthenticatorOptions};
+use chillerlan\QRCode\QRCode;
+
 require_once __DIR__ . '/../../vendor/autoload.php';
 
 class User extends \app\core\Controller
 {
+
+    // if user isn't logged-in go to login, else if user already has a secret go to check2fa
+    #[\app\filters\Setup2FA]
+    function setup2fa()
+    {
+        $options = new AuthenticatorOptions();
+        $authenticator = new Authenticator($options);
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            if (isset($_SESSION['secret_setup'])) {
+                $authenticator->setSecret($_SESSION['secret_setup']);
+            } else {
+                header('location:/User/2FA/setup2fa');
+            }
+            //was submitted, check the TOTP
+            $totp = $_POST['totp'];
+            if ($authenticator->verify($totp)) {
+                //record to the user record
+
+                // success = remove temp and set ACTUAL user_id or admin_id
+
+                // if user login
+                if (isset($_SESSION['temp_user_id'])) {
+                    // success = remove temp and set ACTUAL user_id
+                    $_SESSION['user_id'] = $_SESSION['temp_user_id'];
+                    unset($_SESSION['temp_user_id']);
+
+                    $user = new \app\models\User();
+                    $user = $user->getById($_SESSION['user_id']);
+                    $user->secret = $_SESSION['secret_setup'];
+                    $user->add2FA();
+                    // if admin login
+                } else if (isset($_SESSION['temp_admin_id'])) {
+                    $_SESSION['admin_id'] = $_SESSION['temp_admin_id'];
+                    unset($_SESSION['temp_admin_id']);
+
+                    $admin = new \app\models\Administrator();
+                    $admin = $admin->getById($_SESSION['admin_id']);
+                    $admin->secret = $_SESSION['secret_setup'];
+                    $admin->add2FA();
+                }
+
+                header('location:/Home');
+            } else {
+                header('location:/User/2FA/setup2fa');
+            }
+        } else {
+            $_SESSION['secret_setup'] = $authenticator->createSecret();
+            //generate the URI with the secret for the user
+            $uri = $authenticator->getUri('Superb application', 'localhost');
+            $QRCode = (new QRCode)->render($uri);
+            $this->view('User/2FA/setup2fa', ['QRCode' => $QRCode]);
+        }
+    }
+
+    // if user isn't logged-in go to login, else if user does NOT have a secret go to setup2fa
+    #[\app\filters\Check2FA]
+    function check2fa()
+    {
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $options = new AuthenticatorOptions();
+            $authenticator = new Authenticator($options);
+            $authenticator->setSecret($_SESSION['secret']);
+            if ($authenticator->verify($_POST['totp'])) {
+                unset($_SESSION['secret']);
+
+
+                if (isset($_SESSION['temp_user_id'])) {
+                    // success = remove temp and set ACTUAL user_id
+                    $_SESSION['user_id'] = $_SESSION['temp_user_id'];
+                    unset($_SESSION['temp_user_id']);
+                } else if (isset($_SESSION['temp_admin_id'])) {
+                    $_SESSION['admin_id'] = $_SESSION['temp_admin_id'];
+                    unset($_SESSION['temp_admin_id']);
+                }
+
+                header('location:/Home');//the good place
+            } else {
+                session_destroy();
+                header('location:/login');
+            }
+        } else {
+            $this->view('User/2FA/check2fa');
+        }
+    }
 
     #[\app\filters\Logout]
     function login()
@@ -23,8 +112,14 @@ class User extends \app\core\Controller
                 $admin = $admin->getByEmail($email);
 
                 if ($admin && password_verify($password, $admin->password_hash)) {
-                    $_SESSION['admin_id'] = $admin->admin_id;
-                    header('location:/Home');
+                    // $_SESSION['admin_id'] = $admin->admin_id;
+                    $_SESSION['temp_admin_id'] = $admin->admin_id;
+                    $_SESSION['secret'] = $admin->secret;
+
+
+
+                    header('location:/User/2FA/setup2fa');
+
                 } else {
                     header('location:/login');
                 }
@@ -35,10 +130,13 @@ class User extends \app\core\Controller
 
             $user = $user->getByEmail($email);
 
-
             if ($user && password_verify($password, $user->password_hash) && $user->active == 1) {
-                $_SESSION['user_id'] = $user->user_id;
-                header('location:/Home');
+
+                // temp_user_id --> ONLY when the user does 2FA we set the actual user_id
+                $_SESSION['temp_user_id'] = $user->user_id;
+                $_SESSION['secret'] = $user->secret;
+
+                header('location:/User/2FA/setup2fa');
             } else {
                 header('location:/login');
             }
@@ -208,7 +306,7 @@ class User extends \app\core\Controller
         $this->view('User/aboutUs', null, true);
     }
 
-    
+
     public function services()
     {
         $this->view('User/services', null, true);

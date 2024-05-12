@@ -12,6 +12,19 @@ class User extends \app\core\Model
     public $password_hash;
     public $active;
 
+    public $secret;
+
+    public function add2FA()
+    {
+        //change anything but the PK
+        $SQL = 'UPDATE User SET secret = :secret WHERE user_id = :user_id';
+        $STMT = self::$_conn->prepare($SQL);
+        $STMT->execute([
+            'user_id' => $this->user_id,
+            'secret' => $this->secret
+        ]);
+    }
+
     public function insert()
     {
         $SQL = 'INSERT INTO User (email, password_hash, active) VALUES (:email, :password_hash, :active)';
