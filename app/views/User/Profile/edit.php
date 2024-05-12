@@ -93,7 +93,7 @@ button:hover{
 .btn a {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #FFDE59; /* Orange background color */
+    background-color: #FFDE59; 
     color: white;
     text-decoration: none;
     border-radius: 5px;
@@ -101,29 +101,28 @@ button:hover{
 }
 
 .btn a:hover {
-    background-color: #F44336; /* Darker orange on hover */
+    background-color: #F44336; 
 }
 
 .inline-inputs {
-    display: flex; /* Use flexbox */
-    align-items: center; /* Align items vertically */
-    gap: 10px; /* Add some space between inputs */
+    display: flex; 
+    align-items: center; 
+    gap: 10px; 
 }
 
 .inline-inputs label {
-    flex: 1; /* Take up available space */
-    margin-right: 10px; /* Add some space between label and input */
+    flex: 1; 
+    margin-right: 10px; 
 }
 
 .inline-inputs input[type="text"] {
-    flex: 1; /* Take up equal space as label */
-    max-width: 150px; /* Set maximum width for input */
-    height: 32px; /* Set input height */
-    border-radius: 5px; /* Add border radius */
-    border: 1px solid #ccc; /* Add border for visual clarity */
-    padding: 5px; /* Add padding inside input */
+    flex: 1; 
+    max-width: 150px; 
+    height: 32px; 
+    border-radius: 5px; 
+    border: 1px solid #ccc; 
+    padding: 5px; 
 }
-
 
 
     </style>
@@ -158,18 +157,18 @@ button:hover{
     </div>
     <script>
         function validateForm() {
-            // Get form input values
+            // get values
             var phoneNumber = document.getElementById('phoneNumber').value;
             var dob = new Date(document.getElementById('dob').value);
             var today = new Date();
 
-            // Check phone number length
+            // phone length
             if (phoneNumber.length !== 10) {
                 alert('Phone number must be 10 digits long.');
                 return;
             }
 
-            // Check  date of birth is before today
+            // dob today
             if (dob >= today) {
                 alert('Date of birth must be before today.');
                 return;

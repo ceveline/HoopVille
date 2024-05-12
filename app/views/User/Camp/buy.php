@@ -94,6 +94,7 @@ button:hover{
         <div class="content">
             <h1>Enrol in <?php echo "$data->camp_type!"?></h1>
             <form class='register-form' method="post" action="">
+<<<<<<< Updated upstream
                 <!-- Existing input fields -->
                 <div class="inputs">
                     <label for="self">Registering for:</label>
@@ -102,6 +103,9 @@ button:hover{
                     <input type="radio" id="someone_else" name="register_for" value="someone_else">
                     <label for="someone_else">A guest</label>
                 </div>
+=======
+              
+>>>>>>> Stashed changes
                 
                     
                     <div class="inputs">

@@ -206,30 +206,29 @@
 </head>
 <body>
     <div style='height: 10px'></div>
-    <h1>CAMPS</h1>
+    <h1><?= __('CAMPS') ?></h1>
     <div class='container'>
     <?php foreach($data as $camp): ?>
         <div class="form-container">
-            <h3><?php echo $camp->camp_type; ?></h3> 
-            <img src="/assets/images/<?php echo $camp->price; ?>.png" alt="<?php echo $camp->camp_type; ?>" class="camp-image">
-            <p><?php echo $camp->description; ?></p>
+            <h3><?= $camp->camp_type; ?></h3> 
+            <img src="/assets/images/<?= $camp->price; ?>.png" alt="<?= $camp->camp_type; ?>" class="camp-image">
+            <p><?= $camp->description; ?></p>
             <div class="campDays">
-            <p>Camp Days</p>
-    </div>
-            <p><?php echo "$camp->start_date to $camp->end_date"?></p>
+                <p><?= __('Camp Days') ?></p>
+            </div>
+            <p><?= "$camp->start_date to $camp->end_date"?></p>
             <div class="campDays">
-                <p>Registration period:</p>
-    </div>
-            <p><?php echo "$camp->registration_start to $camp->registration_end"; ?></p>
+                <p><?= __('Registration period:') ?></p>
+            </div>
+            <p><?= "$camp->registration_start to $camp->registration_end"; ?></p>
             <form action="" method="post">
                 <div class="btn">
-                    <a href="/User/camp/buy?camp_type=<?php echo $camp->camp_type; ?>">Join Now for <?php echo "$camp->price$"; ?>!</a>
+                    <a href="/User/camp/buy?camp_type=<?= $camp->camp_type; ?>"><?=__('Join Now for')?> <?= "$camp->price$"; ?>!</a>
                 </div>
             </form>
         </div>
-        <?php endforeach; ?>
-        
-       
+    <?php endforeach; ?>
     </div>
 </body>
+
 </html>

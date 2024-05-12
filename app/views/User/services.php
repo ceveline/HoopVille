@@ -242,60 +242,59 @@
     </style>
 </head>
 <body>
-    <div style='height: 10px'></div>
-    <h1>Services</h1>
-    <div class='container'>
+<div style='height: 10px'></div>
+<h1><?=__('Services')?></h1>
+<div class='container'>
 
     <div class="form-container">
-            <h3>Camp</h3> 
-            <img src="/assets/images/servicescamp.jpg" alt="camp" class="images">
-            
-            <div class="subtitle">
-            <p>Ultimate Training Camp</p>
-    </div>
-            <p>Exclusive Camp league to achieve better basketball skills!</p>
-            
-            <form action="" method="post">
-                <div class="btn">
-                    <a href="/User/camp/list">Learn more!</a>
-                </div>
-            </form>
-        </div>
-        <div class="form-container2">
-            <h3>Booking</h3> 
-            <img src="/assets/images/servicesbooking.jpg" alt="booking" class="images">
-            
-            <div class="subtitle">
-            <p>Booking system</p>
-    </div>
-            <p>Flexible booking system to have an open court for you and your friends!</p>
-            
-            <form action="" method="post">
-                <div class="btn">
-                    <a href="/User/booking/list">Learn more!</a>
-                </div>
-            </form>
-        </div>
-        <div class="form-container">
-            <h3>Membership</h3> 
-            <img src="/assets/images/servicesmembership.jpg" alt="membership" class="images">
-            
-            <div class="subtitle">
-            <p>Innovative membership plan!</p>
-    </div>
-            <p>Register for an effective membership plan to help you achieve your athletic goals!</p>
-            
-            <form action="" method="post">
-                <div class="btn">
-                    <a href="/User/membership/list">Learn more!</a>
-                </div>
-            </form>
-        </div>
-    
-    
+        <h3><?=__('Camp')?></h3>
+        <img src="/assets/images/servicescamp.jpg" alt="<?=__('camp')?>" class="images">
         
-       
+        <div class="subtitle">
+            <p><?=__('Ultimate Training Camp')?></p>
+        </div>
+        <p><?=__('Exclusive Camp league to achieve better basketball skills!')?></p>
+        
+        <form action="" method="post">
+            <div class="btn">
+                <a href="/User/camp/list"><?=__('Learn more!')?></a>
+            </div>
+        </form>
     </div>
+
+    <div class="form-container2">
+        <h3><?=__('Booking')?></h3>
+        <img src="/assets/images/servicesbooking.jpg" alt="<?=__('booking')?>" class="images">
+        
+        <div class="subtitle">
+            <p><?=__('Booking system')?></p>
+        </div>
+        <p><?=__('Flexible booking system to have an open court for you and your friends!')?></p>
+        
+        <form action="" method="post">
+            <div class="btn">
+                <a href="/User/booking/list"><?=__('Learn more!')?></a>
+            </div>
+        </form>
+    </div>
+
+    <div class="form-container">
+        <h3><?=__('Membership')?></h3>
+        <img src="/assets/images/servicesmembership.jpg" alt="<?=__('membership')?>" class="images">
+        
+        <div class="subtitle">
+            <p><?=__('Innovative membership plan!')?></p>
+        </div>
+        <p><?=__('Register for an effective membership plan to help you achieve your athletic goals!')?></p>
+        
+        <form action="" method="post">
+            <div class="btn">
+                <a href="/User/membership/list"><?=__('Learn more!')?></a>
+            </div>
+        </form>
+    </div>
+
+</div>
 </div>
 </body>
 </html>

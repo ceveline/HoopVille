@@ -92,7 +92,7 @@ button:hover{
 .btn a {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #FFDE59; /* Orange background color */
+    background-color: #FFDE59; 
     color: white;
     text-decoration: none;
     border-radius: 5px;
@@ -100,27 +100,27 @@ button:hover{
 }
 
 .btn a:hover {
-    background-color: #F44336; /* Darker orange on hover */
+    background-color: #F44336; 
 }
 
 .inline-inputs {
-    display: flex; /* Use flexbox */
-    align-items: center; /* Align items vertically */
-    gap: 10px; /* Add some space between inputs */
+    display: flex; 
+    align-items: center; 
+    gap: 10px; 
 }
 
 .inline-inputs label {
-    flex: 1; /* Take up available space */
-    margin-right: 10px; /* Add some space between label and input */
+    flex: 1; 
+    margin-right: 10px; 
 }
 
 .inline-inputs input[type="text"] {
-    flex: 1; /* Take up equal space as label */
-    max-width: 150px; /* Set maximum width for input */
-    height: 32px; /* Set input height */
-    border-radius: 5px; /* Add border radius */
-    border: 1px solid #ccc; /* Add border for visual clarity */
-    padding: 5px; /* Add padding inside input */
+    flex: 1;
+    max-width: 150px;
+    height: 32px; 
+    border-radius: 5px; 
+    border: 1px solid #ccc; 
+    padding: 5px;
 }
 
 
@@ -129,55 +129,49 @@ button:hover{
 
 </head>
 <body>
-    <div class="background">
-        <div class="content">
-            <h1>Payment Information</h1>
-            <form class='register-form' method="post" action="">
+<div class="background">
+    <div class="content">
+        <h1><?=__('Payment Information')?></h1>
+        <form class='register-form' method="post" action="">
+        
+            <div class="inputs">
+                <label for="fname" class="form-label"><?=__('Full Name')?></label>
+                <input type="text" class="form-control" id="fname" name="fname" placeholder="<?=__('Jon')?>" required>
+            </div>
+            <div class="inputs">
+                <label for="cardNumber" class="form-label"><?=__('Card Number')?></label>
+                <input type="text" class="form-control" id="cardNumber" name="cardNumber" placeholder="<?=__('4724090478569843')?>" required>
+            </div>
+            <div class="inputs">
+                <label for="CVV" class="form-label"><?=__('CVV')?></label>
+                <input type="text" class="form-control" id="CVV" name="CVV" placeholder="<?=__('123')?>" required>
+            </div>
+            <div class="inputs">
+                <label for="expiryDate" class="form-label"><?=__('Expiry Date')?></label>
+                <input type="date" class="form-control" id="expiryDate" name="expiryDate">
+            </div>
             
-               
-                    
-                    <div class="inputs">
-                    <label for="fname" class="form-label">Full Name</label>
-                    <input type="text" class="form-control" id="fname" name="fname" placeholder="Jon" required>
-                </div>
-                <div class="inputs">
-                    <label for="cardNumber" class="form-label">Card Number</label>
-                    <input type="text" class="form-control" id="cardNumber" name="cardNumber" placeholder="4724090478569843" required>
-                </div>
-                <div class="inputs">
-                    <label for="CVV" class="form-label">CVV</label>
-                    <input type="text" class="form-control" id="CVV" name="CVV" placeholder="123" required>
-                </div>
-                <div class="inputs">
-                    <label for="expiryDate" class="form-label">Expiry Date</label>
-                    <input type="date" class="form-control" id="expiryDate" name="expiryDate">
-                </div>
-                
-                <div class="inputs">
-                    <label for="Country" class="form-label">Country</label>
-                    <input type="text" class="form-control" id="Country" name="expiryDate" placeholder="Canada" required>
-                    </div>
-                    <div class="inputs">
-                    <label for="Province" class="form-label">Province</label>
-                    <input type="text" class="form-control" id="Province" name="expiryDate" placeholder="QC" required>
-                    </div>
-                    <div class="inputs">
-                    <label for="Code" class="form-label">Zip Code</label>
-                    <input type="text" class="form-control" id="Code" name="expiryDate" placeholder="1X1 X1X" required>
-                    </div>
-                
-                <form action="" method="post">
-                <div class="btn">
-                <button type="button" onclick="validatePayment()">Process Payment</button>
-                </div>
-</form>
-                </div>
-                
-                
+            <div class="inputs">
+                <label for="Country" class="form-label"><?=__('Country')?></label>
+                <input type="text" class="form-control" id="Country" name="expiryDate" placeholder="<?=__('Canada')?>" required>
+            </div>
+            <div class="inputs">
+                <label for="Province" class="form-label"><?=__('Province')?></label>
+                <input type="text" class="form-control" id="Province" name="expiryDate" placeholder="<?=__('QC')?>" required>
+            </div>
+            <div class="inputs">
+                <label for="Code" class="form-label"><?=__('Zip Code')?></label>
+                <input type="text" class="form-control" id="Code" name="expiryDate" placeholder="<?=__('1X1 X1X')?>" required>
+            </div>
             
-            </form>
-        </div>
+            <div class="btn">
+                <button type="button" onclick="validatePayment()"><?=__('Process Payment')?></button>
+            </div>
+        
+        </form>
     </div>
+</div>
+
 
     <script>
         function validatePayment() {
