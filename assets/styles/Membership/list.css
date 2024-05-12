@@ -1,0 +1,158 @@
+.content{
+    padding: 20px;
+}
+.card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 200px;
+}
+
+.card:hover{
+    background-color: #f0f0f0;
+
+}
+
+.title{
+    font-size: 1.1rem;
+    text-transform: uppercase;
+}
+
+.subtitle {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.price {
+    font-weight: bold;
+    text-align: center;
+}
+
+.desc {
+    color: #666;
+    text-align: center;
+}
+
+.desc2 {
+    color: rgb(0, 0, 0);
+    text-align: center;
+}
+
+.background {
+    min-height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+}
+
+.content {
+    height: auto; /* Changed to auto */
+    width: 850px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    padding-top: 38px;
+    margin: auto;
+    margin-top: 74px;
+    border-radius: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+}
+
+.membership-types {
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap; 
+}
+
+.price, .desc, .desc2{
+    margin-top: 15px;
+}
+
+.next-btn-div{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.nextButton{
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    width: 96px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1rem;
+    margin-top: 2%;
+}
+
+.nextButton:hover{
+    background-color: #f0f0f0;
+}
+
+.page2 .title{
+    margin-bottom: 5%;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+}
+
+.confirmation{
+    background-color: #ffda76;
+    border-radius: 1rem;
+    width: 500px;
+    padding: 3%;
+    margin: auto;
+    word-wrap: break-word;
+}
+
+.page2 .price {
+    font-weight: normal; /* Reset font-weight to normal */
+}
+
+.page2 .subtitle, .page2 .price, .page2 .desc2 {
+    line-height: 1.5;
+}
+
+input.membership_type{
+    text-align: center;
+    background-color: transparent;
+    border: none;
+    font-size: 1rem;
+}
+
+.buttons-p2{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 37px;
+}
+
+.confirm-btn .btn, .back-btn .btn2{
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    width: 96px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1rem;
+    margin-top: 2%;
+    border: none;
+    font-size: 1rem;
+}
+
+.confirm-btn .btn:hover, .back-btn .btn2:hover{
+    background-color: #f0f0f0;
+}
+
+.p2-buttons{
+    display: flex;
+    justify-content: space-between;
+}

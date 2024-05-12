@@ -1,0 +1,103 @@
+.background {
+    min-height: 100%;
+    min-width: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    /* margin: 0; */
+    /* padding: 0; */
+    position: absolute;
+}
+.content{
+    margin-top: 4.7%;
+}
+.title, .subtitle{
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    /* color: white; */
+    text-shadow: 0.2px 2px 8px #00000082;
+
+}
+.title{
+    font-size: 2rem;
+    text-transform: uppercase;
+    word-wrap: break-word;
+    color: white;
+}
+.subtitle{
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    /* margin-top: 2%; */
+    color: #ffd257;
+}
+.text{
+    line-height: 92px;
+}
+.buttons{
+    display: flex;
+    justify-content: center;
+    margin-top: 6%;
+}
+
+.join-now-btn button, .more-info-btn button {
+    background-color: #ffd257;
+    border: none;
+    color: #fff;
+    padding: 14px 64px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 20px; /* Rounded corners */
+    transition: background-color 0.3s ease; /* Smooth transition on hover */
+    text-transform: uppercase;
+    font-weight: bold;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+.join-now-btn button:hover, .more-info-btn button:hover {
+    background-color: #f9c80e; /* Darker green on hover */
+}
+
+.more-info-btn {
+    margin-right: 20px;
+}
+
+
+@keyframes fadeInUp {
+    from {
+        transform: translate3d(0,40px,0)
+    }
+
+    to {
+        transform: translate3d(0,0,0);
+        opacity: 1
+    }
+}
+
+@-webkit-keyframes fadeInUp {
+    from {
+        transform: translate3d(0,40px,0)
+    }
+
+    to {
+        transform: translate3d(0,0,0);
+        opacity: 1
+    }
+}
+
+.animated {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-fill-mode: both
+}
+
+.animatedFadeInUp {
+    opacity: 0
+}
+
+.fadeInUp {
+    opacity: 0;
+    animation-name: fadeInUp;
+    -webkit-animation-name: fadeInUp;
+}

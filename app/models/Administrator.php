@@ -7,59 +7,77 @@ use PDO;
 
 class Administrator extends \app\core\Model
 {
-    public $admin_id;
-    public $email;
-    public $password_hash;
+  public $admin_id;
+  public $email;
+  public $password_hash;
 
-    public function insert() {
-        //statement
-        $SQL = 'INSERT INTO Administrator (email, password_hash) VALUES (:email, :password_hash)';
+  public $secret;
 
-        //prepare statement
-        $STMT = self::$_conn->prepare($SQL);
+  public function add2FA()
+  {
+    //change anything but the PK
+    $SQL = 'UPDATE Administrator SET secret = :secret WHERE admin_id = :admin_id';
+    $STMT = self::$_conn->prepare($SQL);
+    $STMT->execute([
+      'admin_id' => $this->admin_id,
+      'secret' => $this->secret
+    ]);
+  }
 
-        //execute the statement
-        $data = ['email'=> $this->email, 
-                'password_hash'=> $this->password_hash];
-        
-        $STMT->execute($data);
-    }
+  public function insert()
+  {
+    //statement
+    $SQL = 'INSERT INTO Administrator (email, password_hash) VALUES (:email, :password_hash)';
 
-    //getById -> Read
-    public function getById($admin_id) {
-        //statement
-        $SQL = 'SELECT * FROM Administrator WHERE admin_id = :admin_id';
+    //prepare statement
+    $STMT = self::$_conn->prepare($SQL);
 
-        //prepare statement
-        $STMT = self::$_conn->prepare($SQL);
+    //execute the statement
+    $data = [
+      'email' => $this->email,
+      'password_hash' => $this->password_hash
+    ];
 
-        //execute the statement
-        $data = ['admin_id'=> $admin_id];
-        
-        $STMT->execute($data);
+    $STMT->execute($data);
+  }
 
-        //fetch the data
-        $STMT->setFetchMode(PDO::FETCH_CLASS, 'app\models\Administrator');
-        
-        return $STMT->fetch();
-    }
+  //getById -> Read
+  public function getById($admin_id)
+  {
+    //statement
+    $SQL = 'SELECT * FROM Administrator WHERE admin_id = :admin_id';
 
-    public function getByEmail($email) {
-        //statement
-        $SQL = 'SELECT * FROM Administrator WHERE email = :email';
+    //prepare statement
+    $STMT = self::$_conn->prepare($SQL);
 
-        //prepare statement
-        $STMT = self::$_conn->prepare($SQL);
+    //execute the statement
+    $data = ['admin_id' => $admin_id];
 
-        //execute the statement
-        $data = ['email'=> $email];
-        
-        $STMT->execute($data);
+    $STMT->execute($data);
 
-        //fetch the data
-        $STMT->setFetchMode(PDO::FETCH_CLASS, 'app\models\Administrator');
-        
-        return $STMT->fetch();
-    }
+    //fetch the data
+    $STMT->setFetchMode(PDO::FETCH_CLASS, 'app\models\Administrator');
+
+    return $STMT->fetch();
+  }
+
+  public function getByEmail($email)
+  {
+    //statement
+    $SQL = 'SELECT * FROM Administrator WHERE email = :email';
+
+    //prepare statement
+    $STMT = self::$_conn->prepare($SQL);
+
+    //execute the statement
+    $data = ['email' => $email];
+
+    $STMT->execute($data);
+
+    //fetch the data
+    $STMT->setFetchMode(PDO::FETCH_CLASS, 'app\models\Administrator');
+
+    return $STMT->fetch();
+  }
 
 }

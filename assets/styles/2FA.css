@@ -1,0 +1,47 @@
+div {
+  width: 600px;
+
+  margin: 100px auto;
+  border-radius: 10px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  padding: 100px;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+img {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+body {
+  font-family: arial;
+}
+
+p {
+  line-height: 25px;
+  margin-bottom: 50px;
+  text-align: justify;
+}
+
+input {
+  height: 30px;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  padding-left: 10px;
+}
+
+button {
+  background-color: #ffde59;
+  height: 30px;
+  width: 80px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+}
