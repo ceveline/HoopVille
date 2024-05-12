@@ -21,7 +21,7 @@
     flex-direction: column;
     padding-top: 38px;
     margin: auto;
-    margin-top: 204px;
+
     border-radius: 1rem;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
@@ -227,7 +227,7 @@ button:hover {
     </style>
 </head>
 <body>
-<div style='height: 200px'>
+<div style='height: 10px'>
   </div>
     <h1>ALL REVIEWS</h1>
     <div class='container'> 

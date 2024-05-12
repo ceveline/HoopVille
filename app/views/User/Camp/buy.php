@@ -21,7 +21,6 @@
     flex-direction: column;
     padding-top: 38px;
     margin: auto;
-    margin-top: 204px;
     border-radius: 1rem;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
@@ -103,7 +102,7 @@ button:hover{
                     <input type="radio" id="someone_else" name="register_for" value="someone_else">
                     <label for="someone_else">A guest</label>
                 </div>
-                <div class="inputs" id="someone_else_fields" style="display:none;">
+                
                     
                     <div class="inputs">
                     <label for="guest_fname" class="form-label">Guest's First Name</label>
@@ -117,7 +116,7 @@ button:hover{
                     <label for="guest_dob" class="form-label">Guest's Date of Birth</label>
                     <input type="date" class="form-control" id="guest_dob" name="guest_dob" placeholder="">
                 </div>
-                </div>
+              
                 <div class="cost">
                 <label for="self">Total cost: <?php echo "$data->price"?></label>
                 </div>
@@ -128,15 +127,5 @@ button:hover{
         </div>
     </div>
 
-    <script>
-      
-
-        document.getElementById('self').addEventListener('change', function() {
-            document.getElementById('someone_else_fields').style.display = 'none';
-        });
-        document.getElementById('someone_else').addEventListener('change', function() {
-            document.getElementById('someone_else_fields').style.display = 'block';
-        });
-    </script>
 </body>
 </html>

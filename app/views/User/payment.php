@@ -21,7 +21,6 @@
     flex-direction: column;
     padding-top: 38px;
     margin: auto;
-    margin-top: 204px;
     border-radius: 1rem;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
@@ -134,7 +133,7 @@ button:hover{
         <div class="content">
             <h1>Payment Information</h1>
             <form class='register-form' method="post" action="">
-                <!-- Existing input fields -->
+            
                
                     
                     <div class="inputs">
@@ -195,7 +194,7 @@ button:hover{
                 return;
             }
 
-            // submit if everything passes
+            // submit if everythingh passes
             window.location.href = "/Home";
         }
     </script>
