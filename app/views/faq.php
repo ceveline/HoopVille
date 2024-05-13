@@ -73,7 +73,7 @@
     <div class="background">
         <div class="content">
             <div class="title">
-                <h1>Frequently Asked Question</h1>
+                <h1>FAQs</h1>
             </div>
             <hr class="solid">
             <div class="questions">
