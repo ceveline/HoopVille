@@ -41,6 +41,10 @@ msgstr "Recent first"
 msgid "Forgot password?"
 msgstr "Forgot password?"
 
+#: app/views/User/Publication/list.php
+msgid "Search by title or content"
+msgstr "Search by title or content"
+
 #: app/views/Admin/booking/list.php:198
 msgid "Oldest first"
 msgstr "Oldest first"

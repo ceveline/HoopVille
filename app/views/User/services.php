@@ -38,11 +38,6 @@
             justify-content: center; 
         }
 
-        /* p{
-            text-align: center;
-            color: white;
-        } */
-
         .form-container2 {
             height:400px;
             width: 350px;
@@ -57,7 +52,6 @@
             flex-direction: column; /* Added */
             justify-content: center; /* Added */
         }
-
         
         .form-container2:hover {
             background-color: #F4F4F4;
@@ -100,8 +94,12 @@
             background-color: #FFCE00;
         }
 
-        h1 {
+        .title h1 {
             text-align: center;
+            font-size: 2rem;
+            text-transform: uppercase;
+            text-shadow: 0.2px 2px 8px #00000082;
+            color: white;
         }
 
         h2 {
@@ -202,55 +200,57 @@
             line-height: 1.5;
         }
 
-.description {
-    font-weight: bold;
-}
+        .description {
+            font-weight: bold;
+        }
 
-.price {
-    color: #FF5722; 
-}
+        .price {
+            color: #FF5722; 
+        }
 
-.date {
-    font-style: italic;
-}
+        .date {
+            font-style: italic;
+        }
 
-.registration-period {
-    font-size: 14px;
-    color: #777;
-}
+        .registration-period {
+            font-size: 14px;
+            color: #777;
+        }
 
-.btn {
-    margin-top: 20px;
-    text-align: center;
-}
+        .btn {
+            margin-top: 20px;
+            text-align: center;
+        }
 
-.btn a {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #FFDE59; 
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
+        .btn a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #FFDE59; 
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
 
-.btn a:hover {
-    background-color: #F44336; 
-}
+        .btn a:hover {
+            background-color: #F44336; 
+        }
 
 
-.training p {
-    color: black;
-    text-align: center;
-}
+        .training p {
+            color: black;
+            text-align: center;
+        }
 
 
     </style>
 </head>
 <body>
 <div class="background">
-    <div style='height: 10px'></div>
-    <h1><?=__('Services')?></h1>
+    <div style='height: 30px'></div>
+    <div class="title">
+        <h1><?=__('Services')?></h1>
+    </div>
     <div class='container'>
 
         <div class="form-container">
