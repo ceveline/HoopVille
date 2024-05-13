@@ -7,6 +7,7 @@ class Membership extends \app\core\Controller
 {
 
     // view for membership page
+    #[\app\filters\Login]
     function list()
     {
         $membership_types = new \app\models\Membership_type();
@@ -44,7 +45,7 @@ class Membership extends \app\core\Controller
         $this->view('Admin/Membership/list', ['memberships' => $membership_model, 'profiles' => $profile_model], true);
     }
 
-    #[\app\filters\User\HasProfile]
+
     //user has to register first before creating a membership
     #[\app\filters\User\HasMembership]
     function create()

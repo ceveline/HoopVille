@@ -273,7 +273,7 @@
         
         <form action="" method="post">
             <div class="btn">
-                <a href="/User/booking/list"><?=__('Learn more!')?></a>
+                <a href="/User/booking/create"><?=__('Learn more!')?></a>
             </div>
         </form>
     </div>
@@ -289,7 +289,7 @@
         
         <form action="" method="post">
             <div class="btn">
-                <a href="/User/membership/list"><?=__('Learn more!')?></a>
+                <a href="/Membership"><?=__('Learn more!')?></a>
             </div>
         </form>
     </div>

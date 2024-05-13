@@ -239,30 +239,30 @@ button:hover {
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach ($data as $review): ?>
-                        <tr>
-                            <td><?= $review->type ?></td>
-                            <td><?= $review->review_text ?></td>
-                            <td>
-                                <div class="rating">
-                                    <input type="radio" id="star5" name="rating" value="5" <?php echo ($review->rating == 5) ? 'checked' : ''; ?>>
-                                    <label for="star5"></label>
+                <?php foreach ($data as $review): ?>
+    <tr>
+        <td><?= $review->type ?></td>
+        <td><?= $review->review_text ?></td>
+        <td>
+            <div class="rating">
+                <input type="radio" id="star5" name="rating" value="5" <?php echo ($review->rating == 5) ? 'checked' : ''; ?> disabled>
+                <label for="star5"></label>
 
-                                    <input type="radio" id="star4" name="rating" value="4" <?php echo ($review->rating == 4) ? 'checked' : ''; ?>>
-                                    <label for="star4"></label>
+                <input type="radio" id="star4" name="rating" value="4" <?php echo ($review->rating == 4) ? 'checked' : ''; ?> disabled>
+                <label for="star4"></label>
 
-                                    <input type="radio" id="star3" name="rating" value="3" <?php echo ($review->rating == 3) ? 'checked' : ''; ?>>
-                                    <label for="star3"></label>
+                <input type="radio" id="star3" name="rating" value="3" <?php echo ($review->rating == 3) ? 'checked' : ''; ?> disabled>
+                <label for="star3"></label>
 
-                                    <input type="radio" id="star2" name="rating" value="2" <?php echo ($review->rating == 2) ? 'checked' : ''; ?>>
-                                    <label for="star2"></label>
+                <input type="radio" id="star2" name="rating" value="2" <?php echo ($review->rating == 2) ? 'checked' : ''; ?> disabled>
+                <label for="star2"></label>
 
-                                    <input type="radio" id="star1" name="rating" value="1" <?php echo ($review->rating == 1) ? 'checked' : ''; ?>>
-                                    <label for="star1"></label>
-                                </div>
-                            </td>
-                        </tr>
-                    <?php endforeach; ?>
+                <input type="radio" id="star1" name="rating" value="1" <?php echo ($review->rating == 1) ? 'checked' : ''; ?> disabled>
+                <label for="star1"></label>
+            </div>
+        </td>
+    </tr>
+<?php endforeach; ?>
                 </tbody>
             </table>
         </form>

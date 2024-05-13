@@ -7,6 +7,8 @@ class Camp extends \app\core\Controller {
     
 
 
+  #[\app\filters\User\HasProfile]
+  #[\app\filters\Login]
     function buy(){
       if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
@@ -53,7 +55,9 @@ class Camp extends \app\core\Controller {
     }
 
 
-  
+  //admin side
+  #[\app\filters\Login]
+  #[\app\filters\Admin\IsAdmin]
     function listAll(){
       $camp = new \app\models\Camp();
       $camp = $camp->listAllCamps();
@@ -61,6 +65,7 @@ class Camp extends \app\core\Controller {
     }
 
     //user side
+    #[\app\filters\Login]
     function listCamps(){
 
 
