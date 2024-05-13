@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Review</title>
+    <title><?="New Review"?></title>
     <style>
 
 .background {
@@ -151,7 +151,7 @@ button{
     display: inline-block;
     padding: 10px 20px;
     width: 200px;
-    background-color: #FFDE59; /* Orange background color */
+    background-color: #FFDE59; 
     color: white;
     text-decoration: none;
     border-radius: 5px;
@@ -159,7 +159,7 @@ button{
 }
 
 button:hover {
-    background-color: #F44336; /* Darker orange on hover */
+    background-color: #F44336; 
 }
 
 
@@ -172,49 +172,45 @@ button:hover {
     </style>
 </head>
 <body>
-<div style='height: 200px'>
-  </div>
+    <div style='height: 200px'></div>
     <div class='container'> 
-    <form class="form-container">
-    <div class="form-section">
-      <h2>Select Purchase for your review</h2>
-      <select id="purchaseType" name="purchase_type">
-    <option value="fullCourt">Full Court</option>
-    <option value="halfCourt">Half Court</option>
-    <option value="Camp">Camp</option>
-    <option value="Membership">Membership</option>
-</select>
+        <form class="form-container">
+            <div class="<?=__('form-section')?>">
+                <h2><?=__('Select Purchase for your review')?></h2>
+                <select id="purchaseType" name="purchase_type">
+                    <option value="fullCourt"><?=__('Full Court')?></option>
+                    <option value="halfCourt"><?=__('Half Court')?></option>
+                    <option value="Camp"><?=__('Camp')?></option>
+                    <option value="Membership"><?=__('Membership')?></option>
+                </select>
+            </div>
 
-    </div>
+            <div class="form-section">
+                <h2><?=__('Enter your Review')?></h2>
+                <textarea name="review_text" class="black-text" rows="5" cols="50" required></textarea>
+            </div>
 
-    <div class="form-section">
-      <h2>Enter your Review</h2>
-      <textarea name="review_text" class="black-text" rows="5" cols="50" required></textarea>
-    </div>
+            <div class="form-section">
+                <h2><?=__('Select Your Rating')?></h2>
+                <div class="rating">
+                    <input type="radio" id="star5" name="rating" value="5">
+                    <label for="star5"></label>
+                    <input type="radio" id="star4" name="rating" value="4">
+                    <label for="star4"></label>
+                    <input type="radio" id="star3" name="rating" value="3">
+                    <label for="star3"></label>
+                    <input type="radio" id="star2" name="rating" value="2">
+                    <label for="star2"></label>
+                    <input type="radio" id="star1" name="rating" value="1">
+                    <label for="star1"></label>
+                </div>
+            </div>
 
-    <div class="form-section">
-      <h2>Select Your Rating</h2>
-      <div class="rating">
-        <input type="radio" id="star5" name="rating" value="5">
-        <label for="star5"></label>
-        <input type="radio" id="star4" name="rating" value="4">
-        <label for="star4"></label>
-        <input type="radio" id="star3" name="rating" value="3">
-        <label for="star3"></label>
-        <input type="radio" id="star2" name="rating" value="2">
-        <label for="star2"></label>
-        <input type="radio" id="star1" name="rating" value="1">
-        <label for="star1"></label>
-      </div>
+            <div class="btn">
+                <button type="submit"><?=__('Create Review')?></button>
+            </div>
+        </form>
     </div>
-
-    <div class="btn">
-    <button type="submit">Create Review</button>
-    </div>
-  </form>
-    </div>
-    
-
-    
 </body>
+
 </html>

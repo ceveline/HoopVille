@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Review</title>
+    <title>Services</title>
     <style>
         * {
             margin: 0;
@@ -155,26 +155,26 @@
     margin-right: 45px;
     border-radius: 20px;
     margin-bottom: 10px;
-    object-fit: cover; /* Changed from 'contain' to 'cover' for a better fit */
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 8px 0px; /* Added a subtle shadow */
-    transition: transform 0.3s ease; /* Added a transition for a hover effect */
+    margin-left: 30px;
+    object-fit: cover; 
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 8px 0px; 
+    transition: transform 0.3s ease; 
 }
 
         .form-container:hover {
-    background-color: #F4F4F4; /* Light gray background on hover */
-    transform: scale(1.03); /* Scale up by 5% */
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for background color and scale */
+    background-color: #F4F4F4; 
+    transform: scale(1.03); 
+    transition: background-color 0.3s ease, transform 0.3s ease; 
 }
 .form-container h3 {
-            margin-top: -20px; /* Adjust to position the heading above the container */
+            margin-top: -20px; 
             padding: 5px;
             border-radius: 10px;
-            background-color: black; /* Yellow background color */
+            background-color: black; 
             text-align: center;
             width: 100%;
             color: white;
             margin-bottom: 10px;
-            font-size: 18px; /* Adjust font size as needed */
         }
 .subtitle{
     font-weight: bolder;
@@ -208,7 +208,7 @@
 }
 
 .price {
-    color: #FF5722; /* Orange color for price */
+    color: #FF5722; 
 }
 
 .date {
@@ -217,10 +217,9 @@
 
 .registration-period {
     font-size: 14px;
-    color: #777; /* Light gray color for registration period */
+    color: #777;
 }
 
-/* Button styles */
 .btn {
     margin-top: 20px;
     text-align: center;
@@ -229,7 +228,7 @@
 .btn a {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #FFDE59; /* Orange background color */
+    background-color: #FFDE59; 
     color: white;
     text-decoration: none;
     border-radius: 5px;
@@ -237,66 +236,65 @@
 }
 
 .btn a:hover {
-    background-color: #F44336; /* Darker orange on hover */
+    background-color: #F44336; 
 }
 
     </style>
 </head>
 <body>
-    <div style='height: 200px'></div>
-    <h1>Services</h1>
-    <div class='container'>
+<div style='height: 10px'></div>
+<h1><?=__('Services')?></h1>
+<div class='container'>
 
     <div class="form-container">
-            <h3>Camp</h3> 
-            <img src="/assets/images/servicescamp.jpg" alt="camp" class="images">
-            
-            <div class="subtitle">
-            <p>Ultimate Training Camp</p>
-    </div>
-            <p>Exclusive Camp league to achieve better basketball skills!</p>
-            
-            <form action="" method="post">
-                <div class="btn">
-                    <a href="/User/camp/list">Learn more!</a>
-                </div>
-            </form>
-        </div>
-        <div class="form-container2">
-            <h3>Booking</h3> 
-            <img src="/assets/images/servicesbooking.jpg" alt="booking" class="images">
-            
-            <div class="subtitle">
-            <p>Booking system</p>
-    </div>
-            <p>Flexible booking system to have an open court for you and your friends!</p>
-            
-            <form action="" method="post">
-                <div class="btn">
-                    <a href="/User/booking/list">Learn more!</a>
-                </div>
-            </form>
-        </div>
-        <div class="form-container">
-            <h3>Membership</h3> 
-            <img src="/assets/images/servicesmembership.jpg" alt="membership" class="images">
-            
-            <div class="subtitle">
-            <p>Innovative membership plan!</p>
-    </div>
-            <p>Register for an effective membership plan to help you achieve your athletic goals!</p>
-            
-            <form action="" method="post">
-                <div class="btn">
-                    <a href="/User/membership/list">Learn more!</a>
-                </div>
-            </form>
-        </div>
-    
-    
+        <h3><?=__('Camp')?></h3>
+        <img src="/assets/images/servicescamp.jpg" alt="<?=__('camp')?>" class="images">
         
-       
+        <div class="subtitle">
+            <p><?=__('Ultimate Training Camp')?></p>
+        </div>
+        <p><?=__('Exclusive Camp league to achieve better basketball skills!')?></p>
+        
+        <form action="" method="post">
+            <div class="btn">
+                <a href="/User/camp/list"><?=__('Learn more!')?></a>
+            </div>
+        </form>
     </div>
+
+    <div class="form-container2">
+        <h3><?=__('Booking')?></h3>
+        <img src="/assets/images/servicesbooking.jpg" alt="<?=__('booking')?>" class="images">
+        
+        <div class="subtitle">
+            <p><?=__('Booking system')?></p>
+        </div>
+        <p><?=__('Flexible booking system to have an open court for you and your friends!')?></p>
+        
+        <form action="" method="post">
+            <div class="btn">
+                <a href="/User/booking/create"><?=__('Learn more!')?></a>
+            </div>
+        </form>
+    </div>
+
+    <div class="form-container">
+        <h3><?=__('Membership')?></h3>
+        <img src="/assets/images/servicesmembership.jpg" alt="<?=__('membership')?>" class="images">
+        
+        <div class="subtitle">
+            <p><?=__('Innovative membership plan!')?></p>
+        </div>
+        <p><?=__('Register for an effective membership plan to help you achieve your athletic goals!')?></p>
+        
+        <form action="" method="post">
+            <div class="btn">
+                <a href="/Membership"><?=__('Learn more!')?></a>
+            </div>
+        </form>
+    </div>
+
+</div>
 </div>
 </body>
 </html>

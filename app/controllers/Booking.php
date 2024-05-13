@@ -6,7 +6,7 @@ namespace app\controllers;
 class Booking extends \app\core\Controller
 {
 
-  // only for admin
+  #[\app\filters\Admin\IsAdmin]
   function listAdmin()
   {
     $booking = new \app\models\Booking();
@@ -23,25 +23,10 @@ class Booking extends \app\core\Controller
     $this->view('Admin/Booking/list', $bookings, true);
   }
 
-  function listUser()
-  {
-    // *****************************************
-    $user_id = $_GET['id'];
-    $booking = new \app\models\Booking();
-    $userBookings = $booking->getBookingsByUserId($user_id);
-    $this->view('User/Booking/list', $userBookings, true);
-  }
 
-  // must be admin or your publication
-  function index()
-  {
-    // get id = params *********************
-
-  }
-
+  #[\app\filters\Login]
   function create()
   {
-
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
@@ -51,7 +36,7 @@ class Booking extends \app\core\Controller
       $booking->date = $_POST['date'];
       $booking->start_time = $_POST['start_time'];
       $booking->end_time = $_POST['end_time'];
-      $booking->user_id = 1;
+      $booking->user_id = $_SESSION['user_id'];
       $booking->status = 0;
 
       $booking->insert();
@@ -65,6 +50,7 @@ class Booking extends \app\core\Controller
   }
 
   // admin or user's booking
+  #[\app\filters\Booking\AdminUsersBooking]
   function edit()
   {
     $booking = new \app\models\Booking();
@@ -92,13 +78,14 @@ class Booking extends \app\core\Controller
       $booking = $booking->getBookingById($_GET['id']);
       $booking->user = $user->getById($booking->user_id);
       $booking->profile = $profile->getByUserId($booking->user_id);
-      $this->view('Admin/Booking/edit', $booking, true);
 
+      $this->view('Booking/edit', $booking, true);
     }
 
   }
 
   // admin or user's booking (cancel booking)
+  #[\app\filters\Booking\AdminUsersBooking]
   function delete()
   {
     $booking_id = $_GET['id'];
@@ -191,6 +178,7 @@ class Booking extends \app\core\Controller
 
 
   // admin only
+  #[\app\filters\Admin\IsAdmin]
   function filterByStatus()
   {
     $status = $_GET['status'];
@@ -210,6 +198,7 @@ class Booking extends \app\core\Controller
   }
 
   // admin only
+  #[\app\filters\Admin\IsAdmin]
   function bookingsList()
   {
     $booking = new \app\models\Booking();
@@ -227,6 +216,7 @@ class Booking extends \app\core\Controller
   }
 
   // admin only
+  #[\app\filters\Admin\IsAdmin]
   function searchBookingsByEmail()
   {
     $text = $_GET['email'];
@@ -245,6 +235,7 @@ class Booking extends \app\core\Controller
   }
 
   // admin only
+  #[\app\filters\Admin\IsAdmin]
   function updateStatus()
   {
     $booking = new \app\models\Booking();

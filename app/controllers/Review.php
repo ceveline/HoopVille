@@ -7,29 +7,33 @@ class Review extends \app\core\Controller
 
   
     //creating a review on the user end
-  public function create()
-  {
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    #[\app\filters\Login]
+    #[\app\filters\User\HasPurchase]
 
-      $review = new \app\models\Review(); //instance of review class
-
-      //!!!!!!! change to session id when branches are merged
-      $review->user_id = 1; //user_id in the instace
-      $review->review_text = $_POST['review_text']; //post to grab text and rating
-      $review->rating = $_POST['rating'];
-      $review->type = $_POST['purchase_type'];
-
-
-      $review->insert(); //inserting into db
-
-
-
-    //  header('location:/User/review/list'); //redirecting user to the general review page
-    } else {
-      $this->view('User/review/create', null, true); 
-      
+    public function create()
+    {
+      if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+  
+        $review = new \app\models\Review(); //instance of review class
+  
+        //!!!!!!! change to session id when branches are merged
+        $review->user_id = $_SESSION['user_id']; //user_id in the instace
+        $review->review_text = $_POST['review_text']; //post to grab text and rating
+        $review->rating = $_POST['rating'];
+        $review->type = $_POST['purchase_type'];
+  
+  
+        $review->insert(); //inserting into db
+  
+  
+  
+      //  header('location:/User/review/list'); //redirecting user to the general review page
+      } else {
+        $this->view('User/review/create', null, true); 
+        
+      }
     }
-  }
+  
 
   //Showing all reviews to the user
   public function listAllReviewsUser()
@@ -45,6 +49,7 @@ class Review extends \app\core\Controller
   }
 
 //Edit a review
+#[\app\filters\Login]
   public function edit()
   {
     $review = new \app\models\Review();
@@ -65,6 +70,8 @@ class Review extends \app\core\Controller
 
 
   }
+
+  #[\app\filters\Login]
   public function delete()
   {
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -81,25 +88,19 @@ class Review extends \app\core\Controller
   }
 
   //Shows all Reviews that belong to one user
+
+  #[\app\filters\Login]
   public function list(){
     $review = new \app\models\Review(); //instance of review class
     $reviews = $review->getAll(); //getting all the reviews
 
-   //TBD to add logic to show username information
-   echo var_dump($reviews);
 
     $this->view('User/review/list', $reviews,true);
   }
   
 }
 
-    //show all the public publications on the main menu
-    function index() {
-        $review = new \app\models\Review();
-        $reviews = $review->getAll();
-        
-        $this->view('/Admin/Review/list', ['review' => $reviews], true);
-    }
+
     
     function delete($id) {
         $review = new \app\models\Review();

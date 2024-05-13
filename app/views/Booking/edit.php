@@ -4,85 +4,30 @@
 
 <head>
   <link rel="stylesheet" href="/assets/styles/booking.css">
-  <title>Update booking</title>
-
-  <style>
-    .container {
-      height: 520px;
-      padding: 50px;
-    }
-
-    h1 {
-      text-align: center;
-    }
-
-    .slide1 p {
-      font-size: 20px;
-      margin-bottom: 30px;
-      margin-top: 20px;
-    }
-
-    .slide1 {
-      margin-top: 15px;
-    }
-
-    .slide3 p {
-      text-align: center;
-    }
-
-    label {
-      font-size: 25px;
-      font-weight: bold;
-    }
-
-    a:link {
-      text-decoration: none;
-    }
-
-
-
-    h2 {
-      text-align: center;
-    }
-
-    button {
-      margin-right: 10px;
-    }
-
-    .status {
-      display: flex;
-      gap: 10px;
-      align-items: center;
-      margin-bottom: 40px;
-    }
-
-    .btnApprove {
-      background-color: lightgreen;
-    }
-
-    .btnDecline {
-      background-color: gray;
-    }
-
-    .btns {
-      display: none;
-      justify-content: space-between;
-      margin-top: 30px;
-    }
-  </style>
-
-
+  <link rel="stylesheet" href="/assets/styles/editBooking.css">
+  <title><?= __('Update booking') ?></title>
 </head>
-
 
 <body>
 
 
-  <h1>UPDATE BOOKING</h1>
+  <h1><?= __('UPDATE BOOKING') ?></h1>
   <div class="container">
 
+    <?php
 
-    <a style="margin-bottom: 20px" href="/Admin/booking/list">◀ Booking list</a>
+    $bookingList = __('Booking list');
+    $myAcc = __('My Account');
+
+    if (isset($_SESSION['admin_id'])) {
+      echo "<a style='margin-bottom: 20px' href='/Admin/booking/list'>◀ $bookingList</a>";
+    } else {
+      echo "<a style='margin-bottom: 20px' href='/User/myAccount'>◀ $myAcc</a>";
+    }
+
+    ?>
+
+
     <div class='slides'>
       <div class='slide slide1'>
 
@@ -94,22 +39,35 @@
         $profile = $booking->profile;
 
         $booking_type = ucfirst($booking->booking_type);
-        $status = $booking->status === 0 ? "PENDING" : ($booking->status === 1 ? "APPROVED" : "DECLINED");
+        $status = $booking->status === 0 ? __('PENDING') : ($booking->status === 1 ? __('APPROVED') : __('DECLINED'));
 
         $requestString = "id=$booking->booking_id";
 
         $date = new DateTime($booking->date);
         $today = new DateTime();
 
-        $updateBtn = $date < $today ? "" : "<button style='padding: 5px; width: 150px' class='updateBtn'>Update time or date</button>";
+        $updateBtnText = __('Update time or date');
 
-        $changeStatus = $booking->status === 0 ? "
-      <button class='btnApprove'><a style='color:black' href='/Admin/booking/updateStatus?$requestString&status=1'>Approve</a></button>
-      <button class='btnDecline'><a style='color:black' href='/Admin/booking/updateStatus?$requestString&status=2'>Decline</a></button>" : "";
+        $cancel = __('Cancel booking');
 
-        echo " <label>User info</label>
-      <p><a href='/Admin/user/view?id=$user->user_id'>$profile->first_name $profile->last_name - $user->email</a></p>
-      <label>Booking details</label>
+        $updateBtn = $date < $today ? "" : "<button style='padding: 5px; width: 150px' class='updateBtn'>
+        $updateBtnText</button>";
+
+        $changeStatus = $booking->status === 0 && isset($_SESSION['admin_id']) ? "
+      <button class='btnApprove'><a style='color:black' href='/Admin/booking/updateStatus?$requestString&status=1'>
+      <?= __('Approve') ?></a></button>
+      <button class='btnDecline'><a style='color:black' href='/Admin/booking/updateStatus?$requestString&status=2'>
+      <?= __('Decline') ?></a></button>" : "";
+
+
+        $userInfo = isset($_SESSION['admin_id']) ? "<label><?= __('User info') ?></label>
+        <p><a href='/Admin/user/view?id=$user->user_id'>$profile->first_name $profile->last_name - $user->email</a></p>" : "";
+
+        $bookingDetails = __('Booking details');
+
+        echo " 
+        $userInfo
+      <label>$bookingDetails</label>
       <p>$booking_type court</p>
       <p>$booking->date</p>
       <p>$booking->start_time to $booking->end_time P.M.</p>
@@ -120,7 +78,8 @@
 
       
       $updateBtn
-      <a href='/Admin/booking/delete?id=$booking->booking_id' style='color: #dc3545'>Delete</a>
+      <a href='/Booking/delete?id=$booking->booking_id' style='color: #dc3545'>
+      $cancel</a>
       ";
 
         ?>
@@ -166,8 +125,8 @@
     </div>
 
     <div class="btns">
-      <button onclick="prevSlide()" class="prev">Back</button>
-      <button onclick="nextSlide()" class="next" disabled>Next</button>
+      <button onclick="prevSlide()" class="prev"><?= __('Back') ?></button>
+      <button onclick="nextSlide()" class="next" disabled><?= __('Next') ?></button>
     </div>
   </div>
 
@@ -232,21 +191,27 @@
     }
 
     const monthNames = [
-      "January",
-      "February",
-      "March",
-      "April",
-      "May",
-      "June",
-      "July",
-      "August",
-      "September",
-      "October",
-      "November",
-      "December",
+      "<?= __('January') ?>",
+      "<?= __('February') ?>",
+      "<?= __('March') ?>",
+      "<?= __('April') ?>",
+      "<?= __('May') ?>",
+      "<?= __('June') ?>",
+      "<?= __('July') ?>",
+      "<?= __('August') ?>",
+      "<?= __('September') ?>",
+      "<?= __('October') ?>",
+      "<?= __('November') ?>",
+      "<?= __('December') ?>",
     ];
 
-    const daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+    const daysOfWeek = ["<?= __('Sun') ?>", 
+      "<?= __('Mon') ?>", 
+      "<?= __('Tue') ?>", 
+      "<?= __('Wed') ?>", 
+      "<?= __('Thu') ?>", 
+      "<?= __('Fri') ?>", 
+      "<?= __('Sat') ?>"];
 
     const prevMonthBtn = document.getElementById("prevMonthBtn");
     const nextMonthBtn = document.getElementById("nextMonthBtn");
@@ -309,11 +274,7 @@
             selectedDate = d.toISOString().split("T")[0];
 
             $(".dateAvailabilities").html(
-              `Availabilities for ${d.toLocaleDateString("en-US", {
-                weekday: "long",
-                month: "long",
-                day: "numeric",
-              })}`
+              `<?= __('Availabilities for') ?> ${d.toLocaleDateString()}`
             );
             $(".next").attr("disabled", false);
           }
@@ -378,14 +339,14 @@
       if (currentSlide == 3) {
         setTimeSlots();
         $(".next").attr('disabled', true);
-        $(".next").html("Update");
+        $(".next").html("<?= __('Update') ?>");
       }
 
       if (currentSlide == 4) {
         $(".spinner").css('display', 'block');
         $.ajax({
           type: "POST",
-          url: '/Admin/booking/edit',
+          url: '/Booking/edit',
           data: {
             booking_type: "<?php echo $booking->booking_type ?>",
             date: selectedDate,
@@ -395,7 +356,7 @@
             id: <?php echo $booking->booking_id ?>
           },
           success: () => {
-            window.location.href = '/Admin/booking/edit?id=<?php echo $booking->booking_id ?>';
+            window.location.href = '/Booking/edit?id=<?php echo $booking->booking_id ?>';
           },
         })
       }

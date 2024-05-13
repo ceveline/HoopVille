@@ -12,6 +12,19 @@ class User extends \app\core\Model
     public $password_hash;
     public $active;
 
+    public $secret;
+
+    public function add2FA()
+    {
+        //change anything but the PK
+        $SQL = 'UPDATE User SET secret = :secret WHERE user_id = :user_id';
+        $STMT = self::$_conn->prepare($SQL);
+        $STMT->execute([
+            'user_id' => $this->user_id,
+            'secret' => $this->secret
+        ]);
+    }
+
     public function insert()
     {
         $SQL = 'INSERT INTO User (email, password_hash, active) VALUES (:email, :password_hash, :active)';
@@ -83,17 +96,18 @@ class User extends \app\core\Model
             'password_hash' => $this->password_hash,
         ]);
     }
-<<<<<<< HEAD
+    // <<<<<<< HEAD
+    // Add a method to the User model to update reset token and expiry
+//     public function updateResetToken($email, $tokenHash, $expiry)
+//     {
+//         $sql = "UPDATE User
+// =======
+
     // Add a method to the User model to update reset token and expiry
     public function updateResetToken($email, $tokenHash, $expiry)
     {
         $sql = "UPDATE User
-=======
-
-// Add a method to the User model to update reset token and expiry
-public function updateResetToken($email, $tokenHash, $expiry) {
-    $sql = "UPDATE User
->>>>>>> 3e155791e3b19fd67b27b989e310f4b40d5ad64d
+-- >>>>>>> 3e155791e3b19fd67b27b989e310f4b40d5ad64d
             SET reset_token_hash = :token_hash,
             reset_token_expires_at = :expiry
             WHERE email = :email";

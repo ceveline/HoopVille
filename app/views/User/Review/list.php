@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Reviews</title>
+    <title><?= __('All Reviews')?></title>
     <style>
        .background {
     min-height: 100%;
@@ -21,7 +21,7 @@
     flex-direction: column;
     padding-top: 38px;
     margin: auto;
-    margin-top: 204px;
+
     border-radius: 1rem;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
@@ -155,15 +155,14 @@ button{
     display: inline-block;
     padding: 10px 20px;
     width: 200px;
-    background-color: #FFDE59; /* Orange background color */
-    color: white;
+    background-color: #FFDE59; 
     text-decoration: none;
     border-radius: 5px;
     transition: background-color 0.3s ease;
 }
 
 button:hover {
-    background-color: #F44336; /* Darker orange on hover */
+    background-color: #F44336; 
 }
 
 
@@ -227,54 +226,46 @@ button:hover {
     </style>
 </head>
 <body>
-<div style='height: 200px'>
-  </div>
-    <h1>ALL REVIEWS</h1>
+    <div style='height: 10px'></div>
+    <h1><?=__('ALL REVIEWS')?></h1>
     <div class='container'> 
-    <form class="form-container">
-    
-        <table border="1" cellspacing="0" cellpadding="5" width="100%">
-            <thead>
-                <tr>
-                  <th>Purchase Type</th>
-                    <th>Review Text</th>
-                    <th>Rating</th>
-                </tr>
-            </thead>
-            <tbody>
-            
-                <?php foreach ($data as $review): ?>
+        <form class="form-container">
+            <table border="1" cellspacing="0" cellpadding="5" width="100%">
+                <thead>
                     <tr>
-                    <td><?php echo $review->type; ?></td>
-                        <td><?php echo $review->review_text; ?></td>
-                        <td><div class="rating">
-    <input type="radio" id="star5" name="rating" value="5" <?php echo ($review->rating == 5) ? 'checked' : ''; ?>>
-    <label for="star5"></label>
-
-    <input type="radio" id="star4" name="rating" value="4" <?php echo ($review->rating == 4) ? 'checked' : ''; ?>>
-    <label for="star4"></label>
-
-    <input type="radio" id="star3" name="rating" value="3" <?php echo ($review->rating == 3) ? 'checked' : ''; ?>>
-    <label for="star3"></label>
-
-    <input type="radio" id="star2" name="rating" value="2" <?php echo ($review->rating == 2) ? 'checked' : ''; ?>>
-    <label for="star2"></label>
-
-    <input type="radio" id="star1" name="rating" value="1" <?php echo ($review->rating == 1) ? 'checked' : ''; ?>>
-    <label for="star1"></label>
-</div> </td>
+                        <th><?=__('Purchase Type')?></th>
+                        <th><?=__('Review Text')?></th>
+                        <th><?=__('Rating')?></th>
                     </tr>
-                <?php endforeach; ?>
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                <?php foreach ($data as $review): ?>
+    <tr>
+        <td><?= $review->type ?></td>
+        <td><?= $review->review_text ?></td>
+        <td>
+            <div class="rating">
+                <input type="radio" id="star5" name="rating" value="5" <?php echo ($review->rating == 5) ? 'checked' : ''; ?> disabled>
+                <label for="star5"></label>
 
-   
+                <input type="radio" id="star4" name="rating" value="4" <?php echo ($review->rating == 4) ? 'checked' : ''; ?> disabled>
+                <label for="star4"></label>
 
-  
-  </form>
+                <input type="radio" id="star3" name="rating" value="3" <?php echo ($review->rating == 3) ? 'checked' : ''; ?> disabled>
+                <label for="star3"></label>
+
+                <input type="radio" id="star2" name="rating" value="2" <?php echo ($review->rating == 2) ? 'checked' : ''; ?> disabled>
+                <label for="star2"></label>
+
+                <input type="radio" id="star1" name="rating" value="1" <?php echo ($review->rating == 1) ? 'checked' : ''; ?> disabled>
+                <label for="star1"></label>
+            </div>
+        </td>
+    </tr>
+<?php endforeach; ?>
+                </tbody>
+            </table>
+        </form>
     </div>
-    
-
-    
 </body>
 </html>

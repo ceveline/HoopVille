@@ -25,9 +25,9 @@
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     padding: 10px;
     align-items: center;
-    display: flex; /* Added */
-    flex-direction: column; /* Added */
-    justify-content: center; /* Added */
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
         }
 
         h1 {
@@ -113,30 +113,31 @@
 
         .camp-image {
     width: 250px;
-    height: 150px;
+    height: 200px;
     margin-right: 45px;
     border-radius: 20px;
     margin-bottom: 10px;
-    object-fit: cover; /* Changed from 'contain' to 'cover' for a better fit */
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 8px 0px; /* Added a subtle shadow */
-    transition: transform 0.3s ease; /* Added a transition for a hover effect */
+    margin-left: 35px;
+    object-fit: cover; 
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 8px 0px; 
+    transition: transform 0.3s ease; 
 }
 
         .form-container:hover {
-    background-color: #F4F4F4; /* Light gray background on hover */
-    transform: scale(1.03); /* Scale up by 5% */
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for background color and scale */
+    background-color: #F4F4F4; 
+    transform: scale(1.03); 
+    transition: background-color 0.3s ease, transform 0.3s ease; 
 }
 .form-container h3 {
-            margin-top: -20px; /* Adjust to position the heading above the container */
+            margin-top: -20px; 
             padding: 5px;
             border-radius: 10px;
-            background-color: black; /* Yellow background color */
+            background-color: black; 
             text-align: center;
             width: 100%;
             color: white;
             margin-bottom: 10px;
-            font-size: 18px; /* Adjust font size as needed */
+            font-size: 18px; 
         }
 .campDays{
     font-weight: bolder;
@@ -170,7 +171,7 @@
 }
 
 .price {
-    color: #FF5722; /* Orange color for price */
+    color: #FF5722; 
 }
 
 .date {
@@ -179,10 +180,9 @@
 
 .registration-period {
     font-size: 14px;
-    color: #777; /* Light gray color for registration period */
+    color: #777; 
 }
 
-/* Button styles */
 .btn {
     margin-top: 20px;
     text-align: center;
@@ -191,7 +191,7 @@
 .btn a {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #FFDE59; /* Orange background color */
+    background-color: #FFDE59; 
     color: white;
     text-decoration: none;
     border-radius: 5px;
@@ -199,37 +199,36 @@
 }
 
 .btn a:hover {
-    background-color: #F44336; /* Darker orange on hover */
+    background-color: #F44336; 
 }
 
     </style>
 </head>
 <body>
-    <div style='height: 200px'></div>
-    <h1>CAMPS</h1>
+    <div style='height: 10px'></div>
+    <h1><?= __('CAMPS') ?></h1>
     <div class='container'>
     <?php foreach($data as $camp): ?>
         <div class="form-container">
-            <h3><?php echo $camp->camp_type; ?></h3> 
-            <img src="/assets/images/<?php echo $camp->price; ?>.png" alt="<?php echo $camp->camp_type; ?>" class="camp-image">
-            <p><?php echo $camp->description; ?></p>
+            <h3><?= $camp->camp_type; ?></h3> 
+            <img src="/assets/images/<?= $camp->price; ?>.png" alt="<?= $camp->camp_type; ?>" class="camp-image">
+            <p><?= $camp->description; ?></p>
             <div class="campDays">
-            <p>Camp Days</p>
-    </div>
-            <p><?php echo "$camp->start_date to $camp->end_date"?></p>
+                <p><?= __('Camp Days') ?></p>
+            </div>
+            <p><?= "$camp->start_date to $camp->end_date"?></p>
             <div class="campDays">
-                <p>Registration period:</p>
-    </div>
-            <p><?php echo "$camp->registration_start to $camp->registration_end"; ?></p>
+                <p><?= __('Registration period:') ?></p>
+            </div>
+            <p><?= "$camp->registration_start to $camp->registration_end"; ?></p>
             <form action="" method="post">
                 <div class="btn">
-                    <a href="/User/camp/buy?camp_type=<?php echo $camp->camp_type; ?>">Join Now for <?php echo "$camp->price$"; ?>!</a>
+                    <a href="/User/camp/buy?camp_type=<?= $camp->camp_type; ?>"><?=__('Join Now for')?> <?= "$camp->price$"; ?>!</a>
                 </div>
             </form>
         </div>
-        <?php endforeach; ?>
-        
-       
+    <?php endforeach; ?>
     </div>
 </body>
+
 </html>

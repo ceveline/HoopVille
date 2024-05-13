@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Payment information</title>
+    <title>Create Profile</title>
    <style>
     .background {
     min-height: 100%;
@@ -116,12 +116,12 @@ button:hover{
 }
 
 .inline-inputs input[type="text"] {
-    flex: 1; /* Take up equal space as label */
-    max-width: 150px; /* Set maximum width for input */
-    height: 32px; /* Set input height */
-    border-radius: 5px; /* Add border radius */
-    border: 1px solid #ccc; /* Add border for visual clarity */
-    padding: 5px; /* Add padding inside input */
+    flex: 1; 
+    max-width: 150px; 
+    height: 32px; 
+    border-radius: 5px; 
+    border: 1px solid #ccc; 
+    padding: 5px;
 }
 
 
@@ -130,53 +130,49 @@ button:hover{
 
 </head>
 <body>
-    <div class="background">
-        <div class="content">
-            <h1>Create Profile</h1>
-            <form class='register-form' method="post" action="" id="profileForm">
-               
-                    
-                    <div class="inputs">
-                        <label for="fname" class="form-label">First Name</label>
-                        <input type="text" class="form-control" id="fname" name="fname" placeholder="Jon" required>
-                    </div>
-                    <div class="inputs">
-                        <label for="lname" class="form-label">Last Name</label>
-                        <input type="text" class="form-control" id="lname" name="lname" placeholder="Doe" required>
-                    </div>
-                    <div class="inputs">
-                        <label for="phoneNumber" class="form-label">Phone Number</label>
-                        <input type="text" class="form-control" id="phoneNumber" name="phoneNumber" placeholder="5141231234" required>
-                    </div>
-                    
-                    <div class="inputs">
-                        <label for="dob" class="form-label">Date Of Birth</label>
-                        <input type="date" class="form-control" id="dob" name="dob" required>
-                    </div>
-                    
-                    <div class="btn">
-                        <button type="button" onclick="validateForm()">Process Payment</button>
-                    </div>
-                </div>
-                
-            </form>
-        </div>
+<div class="background">
+    <div class="content">
+        <h1><?= __('Create Profile') ?></h1>
+        <form class='register-form' method="post" action="" id="profileForm">
+            <div class="inputs">
+                <label for="fname" class="form-label"><?= __('First Name') ?></label>
+                <input type="text" class="form-control" id="fname" name="fname" placeholder="<?= __('Jon') ?>" required>
+            </div>
+            <div class="inputs">
+                <label for="lname" class="form-label"><?= __('Last Name') ?></label>
+                <input type="text" class="form-control" id="lname" name="lname" placeholder="<?= __('Doe') ?>" required>
+            </div>
+            <div class="inputs">
+                <label for="phoneNumber" class="form-label"><?= __('Phone Number') ?></label>
+                <input type="text" class="form-control" id="phoneNumber" name="phoneNumber" placeholder="<?= __('5141231234') ?>" required>
+            </div>
+            <div class="inputs">
+                <label for="dob" class="form-label"><?= __('Date Of Birth') ?></label>
+                <input type="date" class="form-control" id="dob" name="dob" required>
+            </div>
+            <div class="btn">
+                <button type="button" onclick="validateForm()"><?= __('Create Profile') ?></button>
+            </div>
+        </form>
     </div>
+</div>
+
+    
 
     <script>
         function validateForm() {
-            // Get form input values
+            //getting all of it
             var phoneNumber = document.getElementById('phoneNumber').value;
             var dob = new Date(document.getElementById('dob').value);
             var today = new Date();
 
-            // Check phone number length
+            // phne number
             if (phoneNumber.length !== 10) {
                 alert('Phone number must be 10 digits long.');
                 return;
             }
 
-            // Check  date of birth is before today
+            // Check dob
             if (dob >= today) {
                 alert('Date of birth must be before today.');
                 return;

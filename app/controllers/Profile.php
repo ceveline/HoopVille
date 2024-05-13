@@ -59,6 +59,8 @@ class Profile extends \app\core\Controller
     }
 
     //create a profile, insertion to the database
+    #[\app\filters\Login]
+  #[\app\filters\User\HasProfile]
     public function create() {
         if($_SERVER['REQUEST_METHOD'] === 'POST') {
             $profile = new \app\models\Profile();
@@ -66,19 +68,48 @@ class Profile extends \app\core\Controller
       $profile= new \app\models\profile(); //instance of profile class
 
       //!!!!!!! change to session id when branches are merged
-      $profile->user_id = 1; //user_id in the instace
-      $profile->profile_text = $_POST['fname']; //post to grab text and rating
-      $profile->rating = $_POST['lname'];
-      $profile->type = $_POST['dob'];
+      $profile->user_id = $_SESSION['user_id'];
+      $profile->first_name = $_POST['fname']; 
+      $profile->last_name = $_POST['lname'];
+      $profile->date_of_birth = $_POST['dob'];
+      $profile->phone = $_POST['phoneNumber'];
+
 
 
       $profile->insert(); //inserting into db
+
+
 
     } else {
       $this->view('User/profile/create', null, true); 
       
     }
+
+  }
+
+  #[\app\filters\Login]
+  #[\app\filters\User\HasProfile]
+  public function edit()
+  {
+    $profile = new \app\models\Profile();
+    $profile = $profile->getByUserId($_GET['id']);
+   
+
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+      $profile->first_name = $_POST['fname'];
+      $profile->last_name = $_POST['lname'];
+      $profile->phoneNumber = $_POST['phoneNumber'];
+
+      
+      $profile->update();
+
+      header('location:/User/profile/create');
+    } else {
+      $this->view('User/profile/edit', $profile, true);
+    }
 }
+
     public function infoDetails($id)
     {
         // Get profile details

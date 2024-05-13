@@ -1,4 +1,11 @@
 <?php
+
+// 2FA
+$this->addRoute('User/2FA/setup2fa', 'User,setup2fa');
+$this->addRoute('User/2FA/check2fa', 'User,check2fa');
+
+// USER
+$this->addRoute('', 'User,home');
 $this->addRoute('Home', 'User,home');
 $this->addRoute('User/payment', 'User,payment');
 $this->addRoute('User/myAccount', 'User,myAccount');
@@ -44,14 +51,14 @@ $this->addRoute('Publication/search', 'Publication,search');
 $this->addRoute('User/booking/create', 'Booking,create');
 $this->addRoute('User/booking/disabledDates', 'Booking,getDisabledDates');
 $this->addRoute('User/booking/getTimeSlotsByDate', 'Booking,getTimeSlotsByDate');
+$this->addRoute('Booking/edit', 'Booking,edit');
+$this->addRoute('Booking/delete', 'Booking,delete');
 
 $this->addRoute('User/booking/create', 'Booking,create');
 $this->addRoute('User/booking/disabledDates', 'Booking,getDisabledDates');
 $this->addRoute('User/booking/getTimeSlotsByDate', 'Booking,getTimeSlotsByDate');
 
 $this->addRoute('Admin/booking/list', 'Booking,listAdmin');
-$this->addRoute('Admin/booking/edit', 'Booking,edit');
-$this->addRoute('Admin/booking/delete', 'Booking,delete');
 $this->addRoute('Admin/booking/filterByStatus', 'Booking,filterByStatus');
 $this->addRoute('Admin/booking/bookingsList', 'Booking,bookingsList');
 $this->addRoute('Admin/booking/searchBookingsByEmail', 'Booking,searchBookingsByEmail');
@@ -83,3 +90,5 @@ $this->addRoute('User/camp/buy', 'Camp,buy');
 //PROFILE
 $this->addRoute('User/Profile/create', 'Profile,create');
 $this->addRoute('User/profile/edit', 'Profile,edit');
+
+
