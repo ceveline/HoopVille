@@ -21,6 +21,10 @@ msgstr ""
 msgid "Rent a gym"
 msgstr "Rent a gym"
 
+#: app/views/footer.php:44
+msgid "2024 Hoopville. Made by Ceveline, Sereen, Hussain, and Denis. All rights reserved."
+msgstr "2024 Hoopville. Made by Ceveline, Sereen, Hussain, and Denis. All rights reserved."
+
 #: app/views/Admin/booking/list.php:187
 msgid "BOOKINGS"
 msgstr "BOOKINGS"
@@ -32,6 +36,10 @@ msgstr "Sort by date"
 #: app/views/Admin/booking/list.php:197
 msgid "Recent first"
 msgstr "Recent first"
+
+#: app/views/User/login.php:31
+msgid "Forgot password?"
+msgstr "Forgot password?"
 
 #: app/views/Admin/booking/list.php:198
 msgid "Oldest first"

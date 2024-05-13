@@ -21,6 +21,14 @@ msgstr ""
 msgid "Rent a gym"
 msgstr "Reserver un gymnase"
 
+#: app/views/footer.php:44
+msgid "2024 Hoopville. Made by Ceveline, Sereen, Hussain, and Denis. All rights reserved."
+msgstr "2024 Hoopville. Realise par Ceveline, Sereen, Hussain et Denis. Tous droits reserves."
+
+#: app/views/User/login.php
+msgid "Forgot password?"
+msgstr "Mot de passe oublie?"
+
 #: app/views/Admin/booking/list.php:187
 msgid "BOOKINGS"
 msgstr "Reservations"

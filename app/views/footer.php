@@ -3,7 +3,7 @@
 
 <head>
     <style>
-       
+
         body {
             margin: 0;
             padding: 0;
@@ -21,6 +21,9 @@
             width: 100%;
             box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.5); 
             height: 5%;
+            display: flex;
+            align-items: center;
+            background-color: #333;
         }
 
         .footer-content {
@@ -36,11 +39,10 @@
 </head>
 
 <body>
-   
 
     <footer class="footer">
         <div class="footer-content">
-            <p>&copy; 2024 Hoopville. Made by Ceveline, Sereen, Hussain, and Denis. All rights reserved.</p>
+            <p>&copy; <?= __('2024 Hoopville. Made by Ceveline, Sereen, Hussain, and Denis. All rights reserved.') ?></p>
     
         </div>
     </footer>
