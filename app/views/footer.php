@@ -3,12 +3,11 @@
 
 <head>
     <style>
-
         body {
             margin: 0;
             padding: 0;
             position: relative;
-            min-height: 100vh; 
+            min-height: 100vh;
         }
 
         .footer {
@@ -19,21 +18,24 @@
             bottom: 0;
             left: 0;
             width: 100%;
-            box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.5); 
+            box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.5);
             height: 5%;
             display: flex;
-            align-items: center;
-            background-color: #333;
+            justify-content: center; /* Align items horizontally */
+            align-items: center; /* Align items vertically */
+            background-color: #FFDE59;
         }
 
         .footer-content {
-            max-width: 1200px; 
-            margin: 0 auto; 
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
-        p {
-            margin-bottom: 10px;
+        .footer p {
+            margin: 0; /* Remove default margin */
+            color: black;
         }
+
 
     </style>
 </head>
