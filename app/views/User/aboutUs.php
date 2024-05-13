@@ -38,7 +38,7 @@
         }
 
         .about-section img {
-            height: 450px;
+            height: 400px;
         }
 
         .title {
