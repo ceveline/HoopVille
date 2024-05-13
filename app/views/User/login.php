@@ -15,8 +15,10 @@
 <body>
     <div class="background">
         <div class="content">
+
             <h1><?= __('Login') ?></h1>
             <form class='login-form' method="post" action="">
+            <h2><?=$data?></h2>
                 <div class="inputs">
                     <label for="email" class="form-label"><?= __('Email:') ?></label>
                     <input type="text" class="form-control" id="email" name="email" placeholder="Jon123@gmail.com">

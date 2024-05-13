@@ -149,30 +149,47 @@ class User extends \app\core\Controller
     function register()
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            
             $user = new \app\models\User();
-            $profile = new \app\models\Profile();
+            //getting a user instance with the email
+            $existing_user = $user->getByEmail($_POST['email']);
 
-            //for user table
-            $user->email = $_POST['email'];
-            $user->password_hash = password_hash($_POST['password_hash'], PASSWORD_DEFAULT);
+            //if something is in the user instace, show an error message to the view
+            if ($existing_user->email !== null) {
+                
+                $error_message = 'Email already exists. Please choose a different email address.';
+                $this->view('User/login', $error_message, true);
+                return;
 
-            $user->insert();
-            $user_model = $user->getByEmail($_POST['email']);
-            //for profile table
-            $profile->user_id = $user_model->user_id;
-            $profile->first_name = $_POST['first_name'];
-            $profile->last_name = $_POST['last_name'];
-            $profile->phone = $_POST['phone'];
-            $profile->date_of_birth = $_POST['date_of_birth'];
+                //if it doesnt exist, proceed with register
+            } else {
+                $profile = new \app\models\Profile();
 
-            //insert to database
-            $profile->insert();
+                //for user table
+                $user->email = $_POST['email'];
+                $user->password_hash = password_hash($_POST['password_hash'], PASSWORD_DEFAULT);
+    
+                $user->insert();
+                $user_model = $user->getByEmail($_POST['email']);
+                //for profile table
+                $profile->user_id = $user_model->user_id;
+                $profile->first_name = $_POST['first_name'];
+                $profile->last_name = $_POST['last_name'];
+                $profile->phone = $_POST['phone'];
+                $profile->date_of_birth = $_POST['date_of_birth'];
+    
+                //insert to database
+                $profile->insert();
+    
+                header('location:/login');
+            }
 
-            header('location:/login');
+          
         } else {
             $this->view('User/register', null, true);
         }
     }
+
 
     //logout
     function logout()

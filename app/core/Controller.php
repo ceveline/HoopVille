@@ -12,8 +12,11 @@ class Controller
 
 		if ($navbar == true) {
 			include ('app/views/navbar.php');
+
 		}
 
 		include ('app/views/' . $name . '.php');
+		include ('app/views/footer.php');
+
 	}
 }

@@ -21,6 +21,7 @@
                     <label for="password" class="form-label"><?= __('Password:') ?></label>
                     <input type="password" class="form-control" id="password_hash" name="password_hash" placeholder="•••••">
                 </div>
+                 <p class="error-message"><?= $error_message ?></p>
                 <button type="submit" class="btn btn-primary" name="action" value="Login"><?= __('Login') ?></button>
                 <div class="register-now">
                     <p><?= __('Don\'t have an account?') ?> <a href="/User/register"><?= __('Register now!') ?></a></p>

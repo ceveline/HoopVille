@@ -34,6 +34,9 @@
                     <input type="date" id="date_of_birth" name="date_of_birth">
                 </div>
                 <div class="inputs">
+                <?php if(isset($error_message)): ?>
+                 <p class="error-message"><?= $error_message ?></p>
+                <?php endif; ?>
                     <label for="email" class="form-label"><?= __('Email:') ?></label>
                     <input type="text" class="form-control" id="email" name="email" placeholder="Jon123@gmail.com">
                 </div>
@@ -50,6 +53,8 @@
                 <div class="login-now">
                     <p><?= __('Already have an account?') ?> <a href="/login"><?= __('Login now!') ?></a></p>
                 </div>
+
+                
 
                 <script>
                     function validateInput(event) {
