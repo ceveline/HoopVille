@@ -20,6 +20,7 @@
             left: 0;
             width: 100%;
             box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.5); 
+            height: 5%;
         }
 
         .footer-content {

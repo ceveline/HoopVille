@@ -116,8 +116,6 @@ class User extends \app\core\Controller
                     $_SESSION['temp_admin_id'] = $admin->admin_id;
                     $_SESSION['secret'] = $admin->secret;
 
-
-
                     header('location:/User/2FA/setup2fa');
 
                 } else {

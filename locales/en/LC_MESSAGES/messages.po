@@ -235,9 +235,25 @@ msgstr "Registration"
 msgid "Re-type password:"
 msgstr "Re-type password:"
 
+#: app/views/User/register.php:51
 #: app/views/Admin/register.php:29
 msgid "Register"
 msgstr "Register"
+
+#: app/views/User/register.php:81
+#: app/views/Admin/register.php:43 app/views/User/register.php:76
+msgid "Please fill in all fields"
+msgstr "Please fill in all fields"
+
+#: app/views/User/register.php:87
+#: app/views/Admin/register.php:57
+#: app/views/Admin/register.php:61
+msgid "You must be at least 17 years old to register"
+msgstr "You must be at least 17 years old to register"
+
+#: app/views/User/register.php:92
+msgid "Please make sure the passwords are the same"
+msgstr "Please make sure the passwords are the same"
 
 #: app/views/Admin/register.php:32 app/views/User/register.php:51
 msgid "Already have an account?"
@@ -246,18 +262,6 @@ msgstr "Already have an account?"
 #: app/views/Admin/register.php:32 app/views/User/register.php:51
 msgid "Login now!"
 msgstr "Login now!"
-
-#: app/views/Admin/register.php:43 app/views/User/register.php:76
-msgid "Please fill in all fields"
-msgstr "Please fill in all fields"
-
-#: app/views/Admin/register.php:57 app/views/User/register.php:82
-msgid "You must be at least 17 years old to register"
-msgstr "You must be at least 17 years old to register"
-
-#: app/views/Admin/register.php:61 app/views/User/register.php:87
-msgid "Please make sure the passwords are the same"
-msgstr "Please make sure the passwords are the same"
 
 #: app/views/Booking/edit.php:8
 msgid "Update booking"
