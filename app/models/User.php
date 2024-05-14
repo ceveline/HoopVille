@@ -103,7 +103,7 @@ class User extends \app\core\Model
 //         $sql = "UPDATE User
 // =======
 
-    // Add a method to the User model to update reset token and expiry
+    // User side: generate the token
     public function updateResetToken($email, $tokenHash, $expiry)
     {
         $sql = "UPDATE User
@@ -125,15 +125,27 @@ class User extends \app\core\Model
         }
     }
 
-    //update password for forget password
-    // public function updatePassword($email) {
-    //     $SQL = 'UPDATE user SET password_hash=:password_hash
-    //                 WHERE email = :email';
-    //     $STMT = self::$_conn->prepare($SQL);
-    //     $STMT->execute([
-    //         'user_id'=>$user_id,
-    //         'password_hash'=>$this->password_hash,
-    //     ]);
-    // }
+    // User side: will check the if the token matches
+    public function getByResetTokenHash($tokenHash)
+    {
+        $sql = "SELECT * FROM User WHERE reset_token_hash = ?";
+        $stmt = self::$_conn->prepare($sql);
+        $stmt->execute([$tokenHash]);
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+
+    // User side: will make sure to add the new password and set the propreties of token to null
+    public function updatePasswordAndRemoveToken($userId, $passwordHash)
+    {
+        $sql = "UPDATE User
+             SET password_hash = :password_hash,
+                 reset_token_hash = NULL,
+                 reset_token_expires_at = NULL
+             WHERE user_id = :user_id";
+
+        $stmt = self::$_conn->prepare($sql);
+
+        return $stmt->execute(['password_hash' => $passwordHash, 'user_id' => $userId]);
+    }
 
 }

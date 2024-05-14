@@ -12,6 +12,9 @@ $this->addRoute('User/myAccount', 'User,myAccount');
 $this->addRoute('User/services', 'User,services');
 $this->addRoute('FAQ', 'User,faq');
 
+$this->addRoute('User/resetPassword', 'User,resetPassword');
+$this->addRoute('User/processResetPassword', 'User,processResetPassword');
+
 //defined a few routes "url"=>"controller,method" -> connected to the App.php file in the core folder
 $this->addRoute('login', 'User,login');
 $this->addRoute('register', 'User,register');
@@ -20,6 +23,10 @@ $this->addRoute('logout', 'User,logout');
 $this->addRoute('Admin/User/view', 'Profile,viewAll');
 $this->addRoute('Admin/Review/list', 'Review,index');
 $this->addRoute('Review/delete/{id}', 'Review,delete');
+$this->addRoute('Review/deleteReview/{id}', 'Review,deleteReview');
+$this->addRoute('Review/search', 'Review,search');
+$this->addRoute('Review/filterByStars', 'Review,filterByStars');
+$this->addRoute('Review/reviewDetails/{id}', 'Review,reviewDetails');
 
 $this->addRoute('User/contact/{email}', 'User,contact');
 $this->addRoute('Profile/search', 'Profile,search');
@@ -30,6 +37,7 @@ $this->addRoute('User/forgotPassword', 'User,forgotPassword');
 $this->addRoute('User/sendPasswordReset', 'User,sendPasswordReset');
 $this->addRoute('User/aboutUs', 'User,aboutUs');
 $this->addRoute('User/contactChoice', 'User,contactChoice');
+$this->addRoute('User/sendMessage','User,sendMessage');
 
 //PUBLICATIONS
 $this->addRoute('Admin/Publication/create', 'Publication,create');
@@ -76,6 +84,9 @@ $this->addRoute('User/membership/delete', 'Membership,delete');
 $this->addRoute('Admin/membership/list', 'Membership,list_admin');
 $this->addRoute('Admin/membership/delete/{membership_id}', 'Membership,deleteById');
 $this->addRoute('Admin/membership/edit/{membership_id}', 'Membership,editById');
+$this->addRoute('Membership/cancelMembership/{profile_id}', 'Membership,cancelMembership');
+$this->addRoute('Booking/cancelBooking/{profile_id}', 'Booking,cancelBooking');
+$this->addRoute('Camp/cancelCamp/{profile_id}', 'Camp,cancelCamp');
 
 
 //REVIEWS

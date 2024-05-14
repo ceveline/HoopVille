@@ -245,4 +245,17 @@ class Booking extends \app\core\Controller
     header("location:/Admin/booking/edit?id=$booking->booking_id");
   }
 
+  // Admin side: it will delete the booking related to the user
+  public function cancelBooking($profile_id)
+  {
+    // Check if the request method is POST
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+      // Get the membership ID from the POST data
+      $booking_id = $_POST['booking_id'];
+      $booking_model = new \app\models\Booking();
+      $booking_model->deleteById($booking_id);
+      header("Location: /Profile/infoDetails/{$profile_id}");
+    }
+  }
+
 }

@@ -150,14 +150,14 @@ class User extends \app\core\Controller
     function register()
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            
+
             $user = new \app\models\User();
             //getting a user instance with the email
             $existing_user = $user->getByEmail($_POST['email']);
 
             //if something is in the user instace, show an error message to the view
             if ($existing_user->email != null) {
-                
+
                 $error_message = __('Email already exists. Please log in.');
                 $this->view('User/login', $error_message, true);
                 exit;
@@ -168,7 +168,7 @@ class User extends \app\core\Controller
                 //for user table
                 $user->email = $_POST['email'];
                 $user->password_hash = password_hash($_POST['password_hash'], PASSWORD_DEFAULT);
-    
+
                 $user->insert();
                 $user_model = $user->getByEmail($_POST['email']);
                 //for profile table
@@ -177,10 +177,10 @@ class User extends \app\core\Controller
                 $profile->last_name = $_POST['last_name'];
                 $profile->phone = $_POST['phone'];
                 $profile->date_of_birth = $_POST['date_of_birth'];
-    
+
                 //insert to database
                 $profile->insert();
-    
+
                 header('location:/login');
             }
         } else {
@@ -229,7 +229,7 @@ class User extends \app\core\Controller
 
     }
 
-    #[\app\filters\Login]
+    // #[\app\filters\Login]
 
     public function sendPasswordReset()
     {
@@ -263,7 +263,7 @@ class User extends \app\core\Controller
                     $mail->setFrom("noreply@example.com");
                     $mail->addAddress($email);
                     $mail->Subject = "Password Reset";
-                    $mail->Body = "Click <a href='http://localhost/reset-Password.php/?token=$token'>here</a> to reset your password.";
+                    $mail->Body = "Click <a href='http://localhost/User/resetPassword?token=$token'>here</a> to reset your password.";
 
                     // Send email
                     $mail->send();
@@ -308,7 +308,7 @@ class User extends \app\core\Controller
         $membership_types_mdl = new \app\models\Membership_type();
 
         $membership_type = $membership_types_mdl->getByType($membership->membership_type);
-        
+
         $membership_types = $membership_types_mdl->getAll();
 
 
@@ -321,7 +321,7 @@ class User extends \app\core\Controller
             'camps' => $camps,
             'membership' => $memberships,
             'reviews' => $reviews,
-            'type' => $membership_type, 
+            'type' => $membership_type,
             'types' => $membership_types
         ];
 
@@ -329,6 +329,7 @@ class User extends \app\core\Controller
 
     }
 
+    // User side: display info about the company
     public function aboutUs()
     {
         $this->view('User/aboutUs', null, true);
@@ -346,5 +347,118 @@ class User extends \app\core\Controller
     {
         $this->view('User/payment', null, true);
     }
+
+    // User side: send a message to the coaches
+    public function sendMessage()
+    {
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            $name = $_POST["name"];
+            $email = $_POST["email"];
+            $subject = $_POST["subject"];
+            $message = $_POST["message"];
+
+            // Check if the email is authorized
+            $authorisedEmails = ['john@example.com', 'jane@example.com', "hussainamin285@gmail.com"];
+
+            $mail = new PHPMailer(true);
+
+            try {
+                // Server settings
+                $mail->isSMTP();
+                $mail->Host = 'smtp.gmail.com'; // Your SMTP server
+                $mail->SMTPAuth = true;
+                $mail->Username = "hoopville10@gmail.com";
+                $mail->Password = "xynqbjmtibkahokh";
+                $mail->SMTPSecure = 'ssl';
+                $mail->Port = 465;
+
+                // Recipients
+                $mail->setFrom('HoopVille@example.com', 'HoopVille');
+
+                if (in_array($email, $authorisedEmails)) {
+                    $mail->addAddress($email);
+                } else {
+                    $mail->addAddress('hussainamin285@gmail.com');
+                }
+
+                // Content
+                $mail->isHTML(true);
+                $mail->Subject = $subject;
+                $mail->Body = "<p>Name: $name</p><p>Email: $email</p><p>Message: $message</p>";
+
+                $mail->send();
+                echo "<script>
+                 window.location.href='/User/contactChoice';
+                 alert('Message has been sent');
+                 </script>";
+            } catch (Exception $e) {
+                echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+            }
+        }
+    }
+
+    // User side: make sure that the token is available
+    public function resetPassword()
+    {
+        $token = $_GET["token"];
+        $tokenHash = hash("sha256", $token);
+
+        try {
+            $userModel = new \app\models\User();
+            $user = $userModel->getByResetTokenHash($tokenHash);
+
+            if ($user === false) {
+                die("Token not found");
+            }
+
+            if (strtotime($user["reset_token_expires_at"]) <= time()) {
+                die("Token has expired");
+            }
+
+            // Token is valid and hasn't expired, proceed to display the reset password form
+            $data = ['token' => $token];
+            $this->view('User/resetPassword', $data, true);
+
+        } catch (PDOException $e) {
+            echo "Database connection failed: " . $e->getMessage();
+        }
+    }
+
+    // User side: will allow to create the new password
+    public function processResetPassword()
+    {
+        $token = $_POST["token"];
+        $password = $_POST["password"];
+        $tokenHash = hash("sha256", $token);
+
+        try {
+            $userModel = new \app\models\User();
+            $user = $userModel->getByResetTokenHash($tokenHash);
+
+            if ($user === false) {
+                die("Token not found");
+            }
+
+            if (strtotime($user["reset_token_expires_at"]) <= time()) {
+                die("Token has expired");
+            }
+
+            // Generate password hash
+            $passwordHash = password_hash($password, PASSWORD_DEFAULT);
+
+            // Update password and remove reset token
+            $success = $userModel->updatePasswordAndRemoveToken($user["user_id"], $passwordHash);
+
+            if ($success) {
+                // Display success message
+                header('location:/login');
+            } else {
+                echo "Password update failed.";
+            }
+        } catch (PDOException $e) {
+            echo "Database connection failed: " . $e->getMessage();
+        }
+    }
+
 
 }

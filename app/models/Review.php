@@ -104,4 +104,65 @@ class Review extends \app\core\Model
     $STMT->execute(['review_id' => $review_id]);
   }
 
+  // Admin side: display info about review and connect the profile to get the first and last name
+  public function getAllUserNames()
+  {
+    $SQL = 'SELECT r.*, p.first_name, p.last_name
+              FROM Review r
+              INNER JOIN User u ON r.user_id = u.user_id
+              INNER JOIN Profile p ON u.user_id = p.user_id';
+
+    $STMT = self::$_conn->prepare($SQL);
+    $STMT->execute();
+    $STMT->setFetchMode(PDO::FETCH_CLASS, 'app\models\Review');
+    return $STMT->fetchAll();
+  }
+
+  // Admin side: searches by first and last name
+  public function searchReviews($query)
+  {
+    $SQL = 'SELECT r.*, p.first_name, p.last_name
+              FROM Review r
+              INNER JOIN User u ON r.user_id = u.user_id
+              INNER JOIN Profile p ON u.user_id = p.user_id
+              WHERE (p.first_name LIKE :query OR p.last_name LIKE :query)';
+
+    $STMT = self::$_conn->prepare($SQL);
+    $STMT->execute(['query' => '%' . $query . '%']);
+    $STMT->setFetchMode(PDO::FETCH_CLASS, 'app\models\Review');
+    return $STMT->fetchAll();
+  }
+
+  // Admin side: will filter by start (most or least rated)
+  public function filterByStars($filter)
+  {
+    $SQL = 'SELECT r.*, p.first_name, p.last_name
+            FROM Review r
+            INNER JOIN User u ON r.user_id = u.user_id
+            INNER JOIN Profile p ON u.user_id = p.user_id
+            ORDER BY rating';
+
+    if ($filter === 'most_stars') {
+      $SQL .= ' DESC';
+    } elseif ($filter === 'least_stars') {
+      $SQL .= ' ASC';
+    }
+
+    $STMT = self::$_conn->prepare($SQL);
+    $STMT->execute();
+    $STMT->setFetchMode(PDO::FETCH_CLASS, 'app\models\Review');
+    return $STMT->fetchAll();
+  }
+
+  // Admin side: display info details about the user who made the review
+  public function getUserDetails($user_id)
+  {
+    $SQL = 'SELECT p.profile_id, p.first_name, p.last_name, p.phone, u.email
+            FROM Profile p
+            INNER JOIN User u ON p.user_id = u.user_id
+            WHERE p.user_id = :user_id';
+    $STMT = self::$_conn->prepare($SQL);
+    $STMT->execute(['user_id' => $user_id]);
+    return $STMT->fetch(PDO::FETCH_ASSOC);
+  }
 }

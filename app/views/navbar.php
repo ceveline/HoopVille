@@ -118,7 +118,7 @@
                             <a class="nav-link" href="/User/aboutUs"><?= __('About') ?></a>
                         </li>
                         <li>
-                            <a class="nav-link" href="/User/contact/contactChoice"><?= __('Contact') ?></a>
+                            <a class="nav-link" href="/User/contactChoice"><?= __('Contact') ?></a>
                         </li>
                         <li>
                             <a class="nav-link" href="/FAQ">FAQ</a>
