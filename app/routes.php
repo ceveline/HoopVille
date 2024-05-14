@@ -82,6 +82,8 @@ $this->addRoute('Admin/membership/edit/{membership_id}', 'Membership,editById');
 $this->addRoute('User/review/create', 'Review,create');
 $this->addRoute('User/review/edit', 'Review,edit');
 $this->addRoute('User/review/list', 'Review,list');
+$this->addRoute('User/review/delete', 'Review,delete');
+
 
 //CAMPS
 $this->addRoute('User/camp/list', 'CampType,list');

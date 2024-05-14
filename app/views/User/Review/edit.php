@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Update Review</title>
+    <title><?=__('Update Review')?></title>
     <style>
      .background {
     min-height: 100%;
@@ -70,7 +70,7 @@ h1 {
     padding-left: 10px;
 }
 
-button {
+button,  {
     height: 34px;
     width: 124px;
     font-size: 0.93rem;
@@ -81,7 +81,7 @@ button {
     background-color: #ffda76;
 }
 
-button:hover{
+button:hover, .btn:hover{
     background-color: #fbd467;
 }
 
@@ -146,19 +146,19 @@ button {
     text-align: center;
 }
 
-button{
+button, .btn{
     display: inline-block;
     padding: 10px 20px;
     width: 200px;
-    background-color: #FFDE59; /* Orange background color */
+    background-color: #FFDE59; 
     color: white;
     text-decoration: none;
     border-radius: 5px;
     transition: background-color 0.3s ease;
 }
 
-button:hover {
-    background-color: #F44336; /* Darker orange on hover */
+button:hover, .btn:hover {
+    background-color: #F44336; 
 }
 
 
@@ -172,46 +172,41 @@ button:hover {
     </style>
 </head>
 <body>
-    <div style='height: 200px'></div>
     
     <div class='container'> 
         <form class="form-container" method="post" action="">
-            
-          
-     
             <div class="form-section">
-                <h2>Enter your Updated Review</h2>
-                <textarea name="review_text" value='<?= $data->review_text ?>' class="black-text" rows="5" cols="50" >'<?= $data->review_text ?>'</textarea>
+                <h2><?=__('Enter your Updated Review')?></h2>
+                <textarea name="review_text" class="black-text" rows="5" cols="50" ><?= $data->review_text ?></textarea>
             </div>
 
-        
-
             <div class="form-section">
-                <h2>Select Your Updated Rating</h2>
+                <h2><?=__('Select Your Updated Rating')?></h2>
                 
                 <div class="rating">
-    <input type="radio" id="star5" name="rating" value="5" <?php echo ($data->rating == 5) ? 'checked' : ''; ?>>
-    <label for="star5"></label>
+                    <input type="radio" id="star5" name="rating" value="5" <?php echo ($data->rating == 5) ? 'checked' : ''; ?>>
+                    <label for="star5"></label>
 
-    <input type="radio" id="star4" name="rating" value="4" <?php echo ($data->rating == 4) ? 'checked' : ''; ?>>
-    <label for="star4"></label>
+                    <input type="radio" id="star4" name="rating" value="4" <?php echo ($data->rating == 4) ? 'checked' : ''; ?>>
+                    <label for="star4"></label>
 
-    <input type="radio" id="star3" name="rating" value="3" <?php echo ($data->rating == 3) ? 'checked' : ''; ?>>
-    <label for="star3"></label>
+                    <input type="radio" id="star3" name="rating" value="3" <?php echo ($data->rating == 3) ? 'checked' : ''; ?>>
+                    <label for="star3"></label>
 
-    <input type="radio" id="star2" name="rating" value="2" <?php echo ($data->rating == 2) ? 'checked' : ''; ?>>
-    <label for="star2"></label>
+                    <input type="radio" id="star2" name="rating" value="2" <?php echo ($data->rating == 2) ? 'checked' : ''; ?>>
+                    <label for="star2"></label>
 
-    <input type="radio" id="star1" name="rating" value="1" <?php echo ($data->rating == 1) ? 'checked' : ''; ?>>
-    <label for="star1"></label>
-</div>
-
-
+                    <input type="radio" id="star1" name="rating" value="1" <?php echo ($data->rating == 1) ? 'checked' : ''; ?>>
+                    <label for="star1"></label>
+                </div>
             </div>
 
             <div class="form-section">
-                <button type="submit" name="action" value="update">Update Review</button>
-            </div>
+                <button type="submit" name="action" value="update"><?=__('Update Review')?></button>
+            </div>  
+            <div class="form-section">
+            <a href="/User/review/delete?id=<?php echo $data->review_id; ?>" class="btn"><?php echo __('Delete'); ?></a>
+            </div>  
         </form>
     </div>
 </body>

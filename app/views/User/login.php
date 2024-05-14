@@ -36,6 +36,17 @@
                 </div>
             </form>
         </div>
+
+        <script>
+        $(document).ready(function() {
+            var dataValue = "<?=$data?>";
+            if (dataValue.trim() !== '') {
+                alert(dataValue);
+            }
+        });
+    </script>
+
+       
     </div>
 </body>
 </html>

@@ -4,6 +4,7 @@
 <head>
     <title>User Account</title>
     <style>
+        /**similar css to everything else */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -40,7 +41,7 @@
         }
 
         p {
-            color: #666;
+            color: black;
         }
 
         ul {
@@ -48,6 +49,8 @@
             padding: 0;
         }
 
+
+       /**organizing classes css to everything else */
         .profile,
         .membership,
         .bookings,
@@ -59,6 +62,52 @@
             background-color: #fff;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
+
+        .bookings {
+    list-style-type: none;
+}
+
+.itemsToList {
+    padding: 10px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Shadow effect */
+    transition: box-shadow 0.3s, transform 0.3s; /* Smooth transition */
+}
+
+.itemsToList:hover {
+    box-shadow: 0px 6px 10px rgba(255, 173, 51, 0.5); /* Slightly yellow-orange shadow on hover */
+    transform: translateY(-2px); /* Move the list slightly up on hover */
+}
+
+
+ 
+  
+
+.bookings li {
+    margin-bottom: 20px;
+    position: relative; 
+}
+
+
+.bookings li a.btn {
+    position: absolute;
+    right: 0;
+    bottom: 20px;
+}
+
+.reviews li {
+    margin-bottom: 20px;
+    position: relative; 
+}
+
+
+.reviews li a.btn {
+    bottom: 12px;
+    position: absolute;
+    right: 0;
+}
+
 
         .camp-item {
             background-color: #fff;
@@ -121,36 +170,56 @@
                     <p><?= __('Phone'); ?>: <?php echo $data['profile']->phone; ?></p>
                     <p><?= __('Date of Birth'); ?>: <?php echo $data['profile']->date_of_birth; ?></p>
                     <p><?= __('Email'); ?>: <?php echo $data['user']->email; ?></p>
+                    <a href="/User/profile/edit?id=<?php echo $data['profile']->profile_id?>" class="btn btn-primary"><?= __('Modify Profile'); ?></a>
+
                 </div>
 
                 <div class="membership">
                     <h2><?= __('Your Membership'); ?></h2>
                     <p><?= __('Type'); ?>: <?php echo $data['membership']->membership_type; ?></p>
-                    <p><?= __('Expires on'); ?>: <?php echo $data['membership']->start_date; ?></p>
+                    <p><?= __('Expires on'); ?> <?php echo $data['membership']->start_date; ?></p>
+                    <a href="/Membership/individual" class="btn btn-primary"><?= __('Modify Membership'); ?></a>
                 </div>
             </div>
 
             <div class="stacked-sections">
                 <div class="bookings">
                     <h2><?=__('Your Bookings'); ?></h2>
-                    <ul>
-                        <?php foreach ($data['bookings'] as $booking): ?>
-                            <li><?php echo $booking->date; ?></li>
-                        <?php endforeach; ?>
+                    <ul class="itemsToList">
+                    <?php foreach ($data['bookings'] as $booking): ?>
+        <li>
+        <span><strong>Date: <?php echo $booking->date; ?></strong></span><br>
+            <span>Type: <?php echo $booking->booking_type ?> court</span><br>
+            <span>Start Time: <?php echo $booking->start_time?> to <?php echo $booking->end_time?></span><br>
+            <span>Status: 
+                <?php if ($booking->status == 1) {
+                    echo 'Accepted';
+                } else if ($booking->status == 0) {
+                    echo 'Pending';
+                } elseif ($booking->status == 2) {
+                    echo 'Declined';
+                }   else {
+                    echo 'Unknown';
+                } ?>
+            </span>
+            <a href="/Booking/edit?id=<?php echo $booking->booking_id?>" class="btn btn-primary"><?= __('Modify'); ?></a>
+        </li>
+    <?php endforeach; ?>
+
                     </ul>
                 </div>
 
                 <div class="camps">
                     <h2><?=__('Your Camps'); ?></h2>
                     <div class="camp-list">
-                        <ul>
+                    <ul class="itemsToList">
                             <?php foreach ($data['camps'] as $camp): ?>
-                                <li class="camp-item">
+                                <li>
                                     <strong><?= __('Player Information'); ?>: <?php echo $camp['first_name'] . ' ' . $camp['last_name']; ?></strong>
-                                    <ul class="player-details">
                                         <li><?= __('Type'); ?>: <?php echo $camp['camp_type']; ?></li>
                                         <li><?= __('Registration Date'); ?>: <?php echo $camp['timestamp']; ?></li>
-                                    </ul>
+                                   
+
                                 </li>
                             <?php endforeach; ?>
                         </ul>
@@ -159,22 +228,27 @@
 
                 <div class="reviews">
                     <h2><?= __('Your Reviews'); ?></h2>
-                    <div class="camp-list">
-                        <ul>
+                    
+                    <ul class="itemsToList">
                             <?php foreach ($data['reviews'] as $review): ?>
-                                <li class="camp-item">
-                                    <strong><?php echo $review->review_text ?></strong>
-                                    <ul class="player-details">
-                                        <li><?= __('Type'); ?>: <?php echo $review->type; ?></li>
-                                        <li><?= __('Rating'); ?>: <?php echo $review->rating; ?></li>
-                                    </ul>
-                                    <div class="btn-container">
+                                <li>
+                                    <span><strong><?php echo $review->review_text ?></strong></span><br>
+                                    
+                                        <span><?= __('Type'); ?>: <?php echo $review->type; ?></span><br>
+                                        <span><?= __('Rating'); ?>: <?php echo $review->rating; ?></span>
+                                   
+                                    
                                         <a href="/User/review/edit?id=<?php echo $review->review_id; ?>" class="btn"><?php echo __('Edit'); ?></a>
-                                    </div>
+
+                                       
+                                  
                                 </li>
                             <?php endforeach; ?>
                         </ul>
-                    </div>
+
+
+                      
+                    
                 </div>
             </div>
         </div>
@@ -183,3 +257,5 @@
 </body>
 
 </html>
+
+

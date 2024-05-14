@@ -60,7 +60,7 @@ class Profile extends \app\core\Controller
 
     //create a profile, insertion to the database
     #[\app\filters\Login]
-  #[\app\filters\User\HasProfile]
+  
     public function create() {
         if($_SERVER['REQUEST_METHOD'] === 'POST') {
             $profile = new \app\models\Profile();
@@ -87,9 +87,7 @@ class Profile extends \app\core\Controller
 
   }
 
-  #[\app\filters\Login]
-  #[\app\filters\User\HasProfile]
-  public function edit()
+   public function edit()
   {
     $profile = new \app\models\Profile();
     $profile = $profile->getByUserId($_GET['id']);

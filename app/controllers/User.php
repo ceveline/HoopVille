@@ -155,7 +155,7 @@ class User extends \app\core\Controller
             //if something is in the user instace, show an error message to the view
             if ($existing_user->email !== null) {
                 
-                $error_message = 'Email already exists. Please choose a different email address.';
+                $error_message = 'Email already exists. Please log in.';
                 $this->view('User/login', $error_message, true);
                 return;
 

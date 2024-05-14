@@ -50,7 +50,7 @@ class Booking extends \app\core\Controller
   }
 
   // admin or user's booking
-  #[\app\filters\Booking\AdminUsersBooking]
+  //#[\app\filters\Booking\AdminUsersBooking]
   function edit()
   {
     $booking = new \app\models\Booking();
@@ -76,7 +76,7 @@ class Booking extends \app\core\Controller
       $profile = new \app\models\Profile();
 
       $booking = $booking->getBookingById($_GET['id']);
-      $booking->user = $user->getById($booking->user_id);
+      $booking->user = $user->getById(1);
       $booking->profile = $profile->getByUserId($booking->user_id);
 
       $this->view('Booking/edit', $booking, true);
