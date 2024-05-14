@@ -32,7 +32,7 @@ class Camp extends \app\core\Controller {
         $camp = new \app\models\Camp(); 
   
       
-        $camp->user_id = 1; 
+        $camp->user_id = $user_id; 
         $camp->camp_type =  $type;
         $camp->guest_id = $guest->guest_id;
         $camp->timestamp = date('Y-m-d H:i:s');

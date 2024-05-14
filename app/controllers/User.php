@@ -290,8 +290,8 @@ class User extends \app\core\Controller
     function myAccount()
     {
         $user = new \app\models\User();
-        $userid = 1; //set to session
-        $user = $user->getById(1);
+        $userid = $_SESSION['user_id']; //set to session
+        $user = $user->getById($userid);
         $booking = new \app\models\Booking();
         $bookings = $booking->getBookingsByUserId($userid);
         $profile = new \app\models\Profile();
