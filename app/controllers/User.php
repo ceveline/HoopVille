@@ -103,6 +103,7 @@ class User extends \app\core\Controller
     #[\app\filters\Logout]
     function login()
     {
+        $error_message = __('Incorrect email/password');
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $admin = new \app\models\Administrator();
             $email = $_POST['email'];
@@ -119,6 +120,7 @@ class User extends \app\core\Controller
                     header('location:/User/2FA/setup2fa');
 
                 } else {
+                    $this->view('User/login', $error_message, true);
                     header('location:/login');
                 }
                 return;
@@ -136,6 +138,7 @@ class User extends \app\core\Controller
 
                 header('location:/User/2FA/setup2fa');
             } else {
+                $this->view('User/login', $error_message, true);
                 header('location:/login');
             }
         } else {

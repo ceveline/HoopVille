@@ -33,6 +33,10 @@
                 <div class="register-now">
                     <p><?= __('Don\'t have an account?') ?> <a href="/register"><?= __('Register now!') ?></a></p>
                 </div>
+                
+                <?php if (isset($data->error_message)): ?>
+                    <script>alert("<?= $data->error_message ?>")</script>
+                <?php endif; ?>
             </form>
         </div>
 
@@ -45,7 +49,6 @@
         });
     </script>
 
-       
     </div>
 </body>
 </html>
