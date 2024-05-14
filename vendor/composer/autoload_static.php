@@ -59,6 +59,7 @@ class ComposerStaticInit1071a1fa47e39d30e154d2ea0128fb27
             'Psr\\Container\\' => 14,
             'PhpParser\\' => 10,
             'ParagonIE\\ConstantTime\\' => 23,
+            'PHPMailer\\PHPMailer\\' => 20,
         ),
         'M' => 
         array (
@@ -190,6 +191,10 @@ class ComposerStaticInit1071a1fa47e39d30e154d2ea0128fb27
         'ParagonIE\\ConstantTime\\' => 
         array (
             0 => __DIR__ . '/..' . '/paragonie/constant_time_encoding/src',
+        ),
+        'PHPMailer\\PHPMailer\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phpmailer/phpmailer/src',
         ),
         'Masterminds\\' => 
         array (

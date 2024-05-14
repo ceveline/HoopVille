@@ -229,7 +229,7 @@ class User extends \app\core\Controller
 
     }
 
-    #[\app\filters\Login]
+    // #[\app\filters\Login]
 
     public function sendPasswordReset()
     {

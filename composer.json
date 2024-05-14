@@ -2,7 +2,9 @@
     "require": {
         "symfony/translation": "^7.0",
         "chillerlan/php-authenticator": "^5.1",
-        "chillerlan/php-qrcode": "^5.0"
+        "chillerlan/php-qrcode": "^5.0",
+        "phpmailer/phpmailer": "^6.5"
+
     },
     "require-dev": {
         "codeception/codeception": "^5.1",
