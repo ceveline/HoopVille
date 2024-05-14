@@ -4,14 +4,14 @@
 
 <link rel="stylesheet" href="/assets/styles/booking.css">
 
-
 <head>
 
   <title><?= __('Rent a gym') ?></title>
 
   <style>
     .container {
-      height: 520px;
+      height: 488px;
+      /* min-height: 100%; */
       width: 1000px;
       margin-left: auto;
       margin-right: auto;
@@ -19,6 +19,7 @@
       background-color: ghostwhite;
       border-radius: 10px;
       box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      overflow-y: scroll;
     }
 
     h1 {
@@ -93,7 +94,6 @@
 
     .bookings {
       height: 340px;
-      overflow-y: scroll;
       /* padding-left: 5px; */
     }
 

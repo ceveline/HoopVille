@@ -77,9 +77,9 @@
                     <li>
                         <a class="nav-link" href="/Admin/booking/list"><?= __('Bookings') ?></a>
                     </li>
-                    <li>
+                    <!-- <li>
                         <a class="nav-link" href="/login"><?= __('Login') ?></a>
-                    </li>
+                    </li> -->
                     <li>
                         <a class="nav-link" href="/logout"><?= __('Logout') ?></a>
                     </li>

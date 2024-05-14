@@ -16,7 +16,10 @@ class Controller
 		}
 
 		include ('app/views/' . $name . '.php');
-		include ('app/views/footer.php');
+
+		if ($_SESSION['admin_id'] == null) {
+			include ('app/views/footer.php');
+		}
 
 	}
 }
