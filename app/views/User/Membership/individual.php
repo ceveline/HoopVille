@@ -7,10 +7,10 @@
     <style>
         .content{
             background-color: white;
-            width: 30%;
-            padding: 15px;
-            border-radius: 1rem;
-            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            width: 100%;
+            /* padding: 15px; */
+            /* border-radius: 1rem; */
+            /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
             line-height: 30px;
         }
         .content .title{
@@ -135,34 +135,48 @@
     <div class="background">
         <div class="content">
             <div class="page1">
-                <div class="title">My Membership</div>
+                <!-- <div class="title">My Membership</div> -->
                 <div class="m-type">
-                    <p id='m-type'><?=$membership->membership_type?></p>
+                    <?php if (isset($membership->membership_type)) :?>
+                        <p id='m-type'><?=$membership->start_date?></p>
+                    <?php else : ?>
+                        <p id='m-type'>No Membership</p>
+                    <?php endif; ?>
                 </div>
                 <div class="start-date">
+                    <?php if (isset($membership->start_date)) :?>
                     <p>Start date:</p><p id='start-date'><?=$membership->start_date?></p>
+                    <?php else : ?>
+                        <p>Start date:</p><p id='m-type'>-</p>
+                    <?php endif; ?>
                 </div>
                 <div class="end-date">
-                    <p>End date:</p><p id='end-date'><?=$membership->end_date?></p>
+                <?php if (isset($membership->end_date)) :?>
+                    <p>End date:</p><p id='start-date'><?=$membership->end_date?></p>
+                    <?php else : ?>
+                        <p>End date:</p><p id='m-type'>-</p>
+                    <?php endif; ?>
+                    <!-- <p>End date:</p><p id='end-date'><?=$membership->end_date?></p> -->
                 </div>
-                <!-- <div class="price">
-                    <p>Price:</p>
-                    <p id='m-price'><?=$type->monthly_price?>/month</p>
-                </div> -->
                 <div class="button">
                     <div class="edit-btn">
-                        <a id='edit-link' href="#">Modify</a>
+                        <?php if (isset($membership->membership_type)) :?>
+                            <a id='edit-link' href="#"><?= __('Modify') ?></a>
+                        <?php endif; ?>
                     </div>
-                    <?php if ($membership->membership_type != 'Base Training') : ?>
-                        <div class="delete-btn">
-                            <a id='cancel-link' href="#">Cancel membership</a>
-                        </div>                        
+                    <?php if (isset($membership->membership_type_date)) :?>
+                        <?php if ($membership->membership_type != 'Base Training') : ?>
+                            <div class="delete-btn">
+                                <a id='cancel-link' href="#">Cancel membership</a>
+                            </div>                        
+                        <?php endif; ?>
                     <?php endif; ?>
                     
                 </div>
             </div>
 
             <!-- modify membership -->
+            
             <div class="page2">
                 <div class="title"><?= __('Modify Membership') ?></div>
                 <div class="current">

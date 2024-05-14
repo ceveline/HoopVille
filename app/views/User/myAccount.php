@@ -12,11 +12,11 @@
         }
 
         .background {
-            min-height: 100vh;
+            min-height: 100%;
             /* background-color: #f2f2f2; */
             background-color: rgba(0, 0, 0, 0.3);
             display: flex;
-            justify-content: center;
+            /* justify-content: center; */
             align-items: center;
         }
 
@@ -29,6 +29,7 @@
             padding: 20px;
             margin-top: 30px;
             margin-bottom: 30px;
+            margin-left: 30px;
             /* min-height: 100%; */
         }
 
@@ -65,6 +66,7 @@
             border-radius: 10px;
             background-color: #fff;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            line-height: 2rem;
         }
 
         .bookings {
@@ -154,6 +156,10 @@
             .reviews {
                 margin-bottom: 20px;
             }
+
+            .membership{
+                display: flex;
+            }
         }
     </style>
 </head>
@@ -164,7 +170,7 @@
         <div class="container">
             <div class="stacked-sections">
                 <div class="profile">
-                    <h2><?= __('Your Profile'); ?></h2>
+                    <h2><?= __('My Profile'); ?></h2>
                     <p><?= __('First Name'); ?>: <?php echo $data['profile']->first_name; ?></p>
                     <p><?= __('Last Name'); ?>: <?php echo $data['profile']->last_name; ?></p>
                     <p><?= __('Phone'); ?>: <?php echo $data['profile']->phone; ?></p>
@@ -176,9 +182,10 @@
 
                 <div class="membership">
                     <h2><?= __('Your Membership'); ?></h2>
-                    <p><?= __('Type'); ?>: <?php echo $data['membership']->membership_type; ?></p>
-                    <p><?= __('Expires on'); ?> <?php echo $data['membership']->start_date; ?></p>
-                    <a href="/Membership/individual" class="btn btn-primary"><?= __('Modify Membership'); ?></a>
+                    <!-- <p><?= __('Type'); ?>: <?php echo $data['membership']->membership_type; ?></p>
+                    <p><?= __('Expires on'); ?> <?php echo $data['membership']->end_date; ?></p>
+                    <a href="/Membership/individual" class="btn btn-primary"><?= __('Modify Membership'); ?></a> -->
+                    <?php include('app/views/User/Membership/individual.php'); ?>
                 </div>
             </div>
 

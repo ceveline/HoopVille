@@ -23,13 +23,37 @@ class Membership extends \app\core\Controller
         $membership_model = new \app\models\Membership();
         $membership_model = $membership_model->getMembershipByUserId($_SESSION['user_id']);
 
-        $membership_types_mdl = new \app\models\Membership_type();
-        $membership_types = $membership_types_mdl->getAll();
+        if ($membership_model) {
+            $membership_types_mdl = new \app\models\Membership_type();
+            $membership_type = $membership_types_mdl->getByType($membership_model->membership_type);
+            $membership_types = $membership_types_mdl->getAll();
+            $this->view('User/Membership/individual', ['membership' => $membership_model, 'type' => $membership_type, 'types' => $membership_types], true);
+        } else
+            $this->view('User/Membership/individual', null, true);
+        }
 
-        $membership_type = $membership_types_mdl->getByType($membership_model->membership_type);
+        
 
-        $this->view('User/Membership/individual', ['membership' => $membership_model, 'type' => $membership_type, 'types' => $membership_types], true);
-    }
+    // function list_user()
+    // {
+    //     $membership_model = new \app\models\Membership();
+    //     $membership_model = $membership_model->getMembershipByUserId($_SESSION['user_id']);
+
+    //     if ($membership_model != null) {
+            
+    //         $membership_types_mdl = new \app\models\Membership_type();
+    //         $membership_type = $membership_types_mdl->getByType($membership_model->membership_type);
+    //         $membership_types = $membership_types_mdl->getAll();
+    //         $this->view('User/Membership/individual', ['membership' => $membership_model, 'type' => $membership_type, 'types' => $membership_types], true);
+    //     }
+    //     else {
+    //         $this->view('User/Membership/individual', null, true);
+    //     }
+
+    //     $this->view('User/Membership/individual', null, true);
+
+
+    // }
 
     //list all user memberships
     #[\app\filters\Admin\IsAdmin]
@@ -102,7 +126,7 @@ class Membership extends \app\core\Controller
         $membership_id = $membership_model->membership_id;
 
         if (!$membership_model) {
-            return false;
+            return;
         }
 
         // Get the current timestamp
