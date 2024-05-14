@@ -4,22 +4,25 @@ Feature: user login
   I need to input correct credentials and get access to my account
 
   Scenario: Successful login with correct credentials
-    Given I am on "/User/login"
-    When I enter "test@test.com" as the email and "testPass123$" as the password
-    And I click the Login button
-    Then I see "Scan the above QR-code"
+    Given I am on "/login"
+    When I enter "test@test.com" in the email field 
+	Then I enter "pass1234" in the password field
+    And I click Login
+    Then I see "Submit the 6-digit code for this site from your Authenticator app."
 
   Scenario: Unsuccessful login with incorrect email
-    Given I am on "/User/login"
-    When I enter "wrong@test.com" as the email and "abc123" as the password
-    And I click the Login button
-    Then I see "Incorrect email or password"
+    Given I am on "/login"
+    When I enter "test@test.com" in the email field 
+	Then I enter "pass1234" in the password field
+    And I click Login
+    Then I see "Incorrect email/password."
 
   Scenario: Unsuccessful login with incorrect password
-    Given I am on "/User/login"
-    When I enter "test@test.com" as the email and "wrongpass123" as the password
-    And I click the Login button
-    Then I see "Incorrect email or password"
+    Given I am on "/login"
+    When I enter "test@test.com" in the email field 
+	Then I enter "pass1234" in the password field
+    And I click Login
+    Then I see "Incorrect email/password."
 
   Scenario: Empty fields
     Given I am on "/User/login"
