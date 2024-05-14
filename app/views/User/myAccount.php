@@ -13,7 +13,8 @@
 
         .background {
             min-height: 100vh;
-            background-color: #f2f2f2;
+            /* background-color: #f2f2f2; */
+            background-color: rgba(0, 0, 0, 0.3);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -26,6 +27,9 @@
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             padding: 20px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            /* min-height: 100%; */
         }
 
         h1,
@@ -40,7 +44,7 @@
             margin-bottom: 20px;
         }
 
-        p {
+        .container p {
             color: black;
         }
 
@@ -79,10 +83,6 @@
     box-shadow: 0px 6px 10px rgba(255, 173, 51, 0.5); /* Slightly yellow-orange shadow on hover */
     transform: translateY(-2px); /* Move the list slightly up on hover */
 }
-
-
- 
-  
 
 .bookings li {
     margin-bottom: 20px;
