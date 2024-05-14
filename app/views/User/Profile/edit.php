@@ -14,15 +14,16 @@
 }
 
 .content {
-    height: 650px;
+    height: 10%;
     width: 850px;
     background-color: white;
     display: flex;
     flex-direction: column;
     padding-top: 38px;
-    margin: auto;
+    /* margin: auto; */
     border-radius: 1rem;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    margin-top: 30px;
 }
 
 .register-form {
