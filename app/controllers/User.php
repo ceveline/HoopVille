@@ -285,12 +285,12 @@ class User extends \app\core\Controller
     }
 
     //to replace by user id
-   // #[\app\filters\Login]
+    #[\app\filters\Login]
 
     function myAccount()
     {
         $user = new \app\models\User();
-        $userid = 1; //set to session
+        $userid = $_SESSION['user_id']; //set to session
 
         $user = $user->getById($userid);
         $booking = new \app\models\Booking();
