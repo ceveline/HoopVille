@@ -21,6 +21,11 @@ msgstr ""
 msgid "Rent a gym"
 msgstr "Reserver un gymnase"
 
+#: app/views/User/register.php
+#: app/views/User/login.php
+msgid "Email already exists. Please log in."
+msgstr "L'email existe deja. Veuillez vous connecter."
+
 #: app/views/User/Publication/list.php
 msgid "Search by title or content"
 msgstr "Recherche par titre ou contenu"
