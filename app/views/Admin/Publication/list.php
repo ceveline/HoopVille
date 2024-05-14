@@ -12,8 +12,10 @@
     <link rel="stylesheet" href="/assets/styles/publication_list.css">
 </head>
 <body>
-    
     <div class="background">
+        <div class="title">
+            <h1><?= __('News & Updates') ?></h1>
+        </div>
         <div class="content">
             <div class="column-name">
                 <h4 id='column-title'><?= __('Title') ?></h4>
