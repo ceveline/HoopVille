@@ -149,7 +149,7 @@ class Membership extends \app\core\Controller
         $membership_model = new \app\models\Membership();
         $membership = $membership_model->getMembershipByUserId($_SESSION['user_id']);
 
-        $membership_model->delete($membership->membership_id);
+        $membership_model->deleteById($membership->membership_id);
         header('location:/Home');
     }
 
