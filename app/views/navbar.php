@@ -31,7 +31,7 @@
                         <a class="nav-link" href="/User/aboutUs"><?= __('About') ?></a>
                     </li>
                     <li>
-                        <a class="nav-link" href="/User/contact"><?= __('Contact') ?></a>
+                        <a class="nav-link" href="/User/contactChoice"><?= __('Contact') ?></a>
                     </li>
                     <li>
                         <a class="nav-link" href="/FAQ">FAQ</a>
@@ -77,9 +77,9 @@
                     <li>
                         <a class="nav-link" href="/Admin/booking/list"><?= __('Bookings') ?></a>
                     </li>
-                    <li>
+                    <!-- <li>
                         <a class="nav-link" href="/login"><?= __('Login') ?></a>
-                    </li>
+                    </li> -->
                     <li>
                         <a class="nav-link" href="/logout"><?= __('Logout') ?></a>
                     </li>
@@ -119,7 +119,7 @@
                             <a class="nav-link" href="/User/aboutUs"><?= __('About') ?></a>
                         </li>
                         <li>
-                            <a class="nav-link" href="/User/contact"><?= __('Contact') ?></a>
+                            <a class="nav-link" href="/User/contact/contactChoice"><?= __('Contact') ?></a>
                         </li>
                         <li>
                             <a class="nav-link" href="/FAQ">FAQ</a>

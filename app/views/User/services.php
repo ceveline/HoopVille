@@ -11,62 +11,63 @@
             color: white;
         }
 
+        .background {
+            min-height: 100%;
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+
         .container {
             display: flex;
             justify-content: space-evenly;
             margin-top: 30px;
+            min-height: 100%;
         }
 
         .form-container {
-          height:400px;
-    width: 350px;
-    background-color: ghostwhite;
-    border-radius: 20px;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    padding: 10px;
-    margin-left: 8cap0px;
-    margin-top: 50px;
-    align-items: center;
-    display: flex; /* Added */
-    flex-direction: column; /* Added */
-    justify-content: center; /* Added */
-        }
-
-        p{
-            text-align: center;
+            height:400px;
+            width: 350px;
+            background-color: ghostwhite;
+            border-radius: 20px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            padding: 10px;
+            margin-left: 8cap0px;
+            margin-top: 50px;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center; 
         }
 
         .form-container2 {
-          height:400px;
-    width: 350px;
-    background-color: ghostwhite;
-    border-radius: 20px;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    padding: 10px;
-    margin-left: 8cap0px;
-    margin-top: 25px;
-    align-items: center;
-    display: flex; /* Added */
-    flex-direction: column; /* Added */
-    justify-content: center; /* Added */
+            height:400px;
+            width: 350px;
+            background-color: ghostwhite;
+            border-radius: 20px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            padding: 10px;
+            margin-left: 8cap0px;
+            margin-top: 25px;
+            align-items: center;
+            display: flex; /* Added */
+            flex-direction: column; /* Added */
+            justify-content: center; /* Added */
         }
-
         
         .form-container2:hover {
-    background-color: #F4F4F4; /* Light gray background on hover */
-    transform: scale(1.03); /* Scale up by 5% */
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for background color and scale */
-}
-.form-container2 h3 {
-            margin-top: -20px; /* Adjust to position the heading above the container */
+            background-color: #F4F4F4;
+            transform: scale(1.03);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .form-container2 h3 {
+            margin-top: -20px;
             padding: 5px;
             border-radius: 10px;
-            background-color: black; /* Yellow background color */
+            background-color: black;
             text-align: center;
             width: 100%;
             color: white;
             margin-bottom: 10px;
-            font-size: 18px; /* Adjust font size as needed */
+            font-size: 18px; 
         }
         h1 {
             padding: 10px;
@@ -93,8 +94,12 @@
             background-color: #FFCE00;
         }
 
-        h1 {
+        .title h1 {
             text-align: center;
+            font-size: 2rem;
+            text-transform: uppercase;
+            text-shadow: 0.2px 2px 8px #00000082;
+            color: white;
         }
 
         h2 {
@@ -102,9 +107,6 @@
             text-align: center;
             margin-bottom: 10px;
         }
-
-        
-
 
         .purchaseType {
             color: black;
@@ -150,23 +152,23 @@
         }
 
         .images {
-    width: 250px;
-    height: 150px;
-    margin-right: 45px;
-    border-radius: 20px;
-    margin-bottom: 10px;
-    margin-left: 30px;
-    object-fit: cover; 
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 8px 0px; 
-    transition: transform 0.3s ease; 
-}
+            width: 250px;
+            height: 150px;
+            margin-right: 45px;
+            border-radius: 20px;
+            margin-bottom: 10px;
+            margin-left: 30px;
+            object-fit: cover; 
+            box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 8px 0px; 
+            transition: transform 0.3s ease; 
+        }
 
         .form-container:hover {
-    background-color: #F4F4F4; 
-    transform: scale(1.03); 
-    transition: background-color 0.3s ease, transform 0.3s ease; 
-}
-.form-container h3 {
+            background-color: #F4F4F4; 
+            transform: scale(1.03); 
+            transition: background-color 0.3s ease, transform 0.3s ease; 
+        }
+        .form-container h3 {
             margin-top: -20px; 
             padding: 5px;
             border-radius: 10px;
@@ -176,21 +178,16 @@
             color: white;
             margin-bottom: 10px;
         }
-.subtitle{
-    font-weight: bolder;
-}
+        .subtitle p{
+            font-weight: bolder;
+            color: black;
+        }
 
         .btn{
-          margin-top: 45px;
-          font-weight: bold;
+            margin-top: 45px;
+            font-weight: bold;
         }
-
-        p{
-          color: black;
-        }
-
         h3{
-          
             color: black;
             background-color: #FFDE59;
             text-align: center;
@@ -198,103 +195,119 @@
         }
 
         .camp-details p {
-    margin-bottom: 10px;
-    font-size: 16px;
-    line-height: 1.5;
-}
+            margin-bottom: 10px;
+            font-size: 16px;
+            line-height: 1.5;
+        }
 
-.description {
-    font-weight: bold;
-}
+        .description {
+            font-weight: bold;
+        }
 
-.price {
-    color: #FF5722; 
-}
+        .price {
+            color: #FF5722; 
+        }
 
-.date {
-    font-style: italic;
-}
+        .date {
+            font-style: italic;
+        }
 
-.registration-period {
-    font-size: 14px;
-    color: #777;
-}
+        .registration-period {
+            font-size: 14px;
+            color: #777;
+        }
 
-.btn {
-    margin-top: 20px;
-    text-align: center;
-}
+        .btn {
+            margin-top: 20px;
+            text-align: center;
+        }
 
-.btn a {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #FFDE59; 
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
+        .btn a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #FFDE59; 
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
 
-.btn a:hover {
-    background-color: #F44336; 
-}
+        .btn a:hover {
+            background-color: #F44336; 
+        }
+
+
+        .training p {
+            color: black;
+            text-align: center;
+        }
+
 
     </style>
 </head>
 <body>
-<div style='height: 10px'></div>
-<h1><?=__('Services')?></h1>
-<div class='container'>
-
-    <div class="form-container">
-        <h3><?=__('Camp')?></h3>
-        <img src="/assets/images/servicescamp.jpg" alt="<?=__('camp')?>" class="images">
-        
-        <div class="subtitle">
-            <p><?=__('Ultimate Training Camp')?></p>
-        </div>
-        <p><?=__('Exclusive Camp league to achieve better basketball skills!')?></p>
-        
-        <form action="" method="post">
-            <div class="btn">
-                <a href="/User/camp/list"><?=__('Learn more!')?></a>
-            </div>
-        </form>
+<div class="background">
+    <div style='height: 30px'></div>
+    <div class="title">
+        <h1><?=__('Services')?></h1>
     </div>
+    <div class='container'>
 
-    <div class="form-container2">
-        <h3><?=__('Booking')?></h3>
-        <img src="/assets/images/servicesbooking.jpg" alt="<?=__('booking')?>" class="images">
-        
-        <div class="subtitle">
-            <p><?=__('Booking system')?></p>
-        </div>
-        <p><?=__('Flexible booking system to have an open court for you and your friends!')?></p>
-        
-        <form action="" method="post">
-            <div class="btn">
-                <a href="/User/booking/create"><?=__('Learn more!')?></a>
+        <div class="form-container">
+            <h3><?=__('Camp')?></h3>
+            <img src="/assets/images/servicescamp.jpg" alt="<?=__('camp')?>" class="images">
+            
+            <div class="subtitle">
+                <p><?=__('Ultimate Training Camp')?></p>
             </div>
-        </form>
-    </div>
-
-    <div class="form-container">
-        <h3><?=__('Membership')?></h3>
-        <img src="/assets/images/servicesmembership.jpg" alt="<?=__('membership')?>" class="images">
-        
-        <div class="subtitle">
-            <p><?=__('Innovative membership plan!')?></p>
-        </div>
-        <p><?=__('Register for an effective membership plan to help you achieve your athletic goals!')?></p>
-        
-        <form action="" method="post">
-            <div class="btn">
-                <a href="/Membership"><?=__('Learn more!')?></a>
+            <div class="training">
+            <p><?=__('Exclusive Camp league to achieve better basketball skills!')?></p>
             </div>
-        </form>
-    </div>
+            
+            <form action="" method="post">
+                <div class="btn">
+                    <a href="/User/camp/list"><?=__('Learn more!')?></a>
+                </div>
+            </form>
+        </div>
 
-</div>
+        <div class="form-container2">
+            <h3><?=__('Booking')?></h3>
+            <img src="/assets/images/servicesbooking.jpg" alt="<?=__('booking')?>" class="images">
+            
+            <div class="subtitle">
+                <p><?=__('Booking system')?></p>
+            </div>
+
+            <div class="training">
+                <p><?=__('Flexible booking system to have an open court for you and your friends!')?></p>
+            </div>
+            <form action="" method="post">
+                <div class="btn">
+                    <a href="/User/booking/create"><?=__('Learn more!')?></a>
+                </div>
+            </form>
+        </div>
+
+        <div class="form-container">
+            <h3><?=__('Membership')?></h3>
+            <img src="/assets/images/servicesmembership.jpg" alt="<?=__('membership')?>" class="images">
+            
+            <div class="subtitle">
+                <p><?=__('Innovative membership plan!')?></p>
+            </div>
+            <div class="training">
+                <p><?=__('Register for an effective membership plan to help you achieve your athletic goals!')?></p>
+            </div>            
+            <form action="" method="post">
+                <div class="btn">
+                    <a href="/Membership"><?=__('Learn more!')?></a>
+                </div>
+            </form>
+        </div>
+
+    </div>
+    </div>
 </div>
 </body>
 </html>

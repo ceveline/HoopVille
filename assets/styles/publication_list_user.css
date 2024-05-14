@@ -1,3 +1,7 @@
+.container{
+    width: 100%;
+}
+
 .background{
     min-height: 100%;
     background-color: rgba(0, 0, 0, 0.3);
@@ -23,18 +27,22 @@
     font-size: 2rem;
     margin-bottom: 12px;
 }
+
 .title h3 a{
     text-decoration: none;
     color: black;
 }
+
 .main-title{
     display: flex;
     justify-content: center;
-    font-size: 2rem;
+    font-size: 1rem;
     /* color: #ffd257; */
     color: white;
     text-transform: uppercase;
     text-shadow: 0.2px 2px 8px #00000082;
+    background-color: #FFDE59;
+    padding: 10px;
 }
 .text {
     font-size: large;

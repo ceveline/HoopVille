@@ -13,7 +13,7 @@
     <div class="background">
         <div class="container">
             <div class="main-title">
-                <h1>News & Updates</h1>
+                <h1><?= __('News & Updates') ?></h1>
             </div>
             
             <!-- Search bars -->
@@ -21,7 +21,7 @@
                 <form action="/Publication/search" method="POST" class="mb-3">
                     <div class="search">
                     <div class="search-bar">
-                        <input type="text" name="query" class="form-control" placeholder="Search by title or content" aria-label="Search query">
+                        <input type="text" name="query" class="form-control" placeholder="<?= __('Search by title or content') ?>" aria-label="Search query">
                     </div>
                     <div class="search-btn">
                         <button type="submit"><?= __('Search') ?></button>
