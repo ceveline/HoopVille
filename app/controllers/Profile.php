@@ -90,7 +90,7 @@ class Profile extends \app\core\Controller
    public function edit()
   {
     $profile = new \app\models\Profile();
-    $profile = $profile->getByUserId($_GET['id']);
+    $profile = $profile->getProfileById($_GET['id']);
    
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
