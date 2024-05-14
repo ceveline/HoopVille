@@ -18,6 +18,10 @@ class ComposerStaticInit1071a1fa47e39d30e154d2ea0128fb27
             'Symfony\\Contracts\\Translation\\' => 30,
             'Symfony\\Component\\Translation\\' => 30,
         ),
+        'P' => 
+        array (
+            'PHPMailer\\PHPMailer\\' => 20,
+        ),
     );
 
     public static $prefixDirsPsr4 = array (
@@ -32,6 +36,10 @@ class ComposerStaticInit1071a1fa47e39d30e154d2ea0128fb27
         'Symfony\\Component\\Translation\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/translation',
+        ),
+        'PHPMailer\\PHPMailer\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phpmailer/phpmailer/src',
         ),
     );
 

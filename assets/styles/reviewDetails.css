@@ -1,0 +1,83 @@
+.background {
+    min-height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+}
+
+.content {
+    width: 850px;
+    min-height: 400px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    margin: auto;
+    margin-top: 74px;
+    border-radius: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.review-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.review-details {
+    padding-top: 20px;
+}
+
+.review-details p {
+    margin-bottom: 10px;
+}
+
+.review-details .rating {
+    font-size: 24px;
+    color: #FFD700;
+}
+
+.review-details .review-text {
+    margin-top: 30px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.button-group {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 150px;
+}
+
+.delete-button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    background-color: #dc3545;
+}
+
+.delete-button:hover {
+    filter: brightness(110%);
+}
+
+.info-details {
+    margin-top: 10px;
+}
+
+.info-details a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.info-details a:hover {
+    filter: brightness(110%);
+}
+
+@media (max-width: 600px) {
+    .content {
+        width: 90%;
+    }
+}

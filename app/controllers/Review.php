@@ -5,8 +5,8 @@ namespace app\controllers;
 class Review extends \app\core\Controller
 {
 
-  
-    //creating a review on the user end
+
+  //creating a review on the user end
   public function create()
   {
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -24,10 +24,10 @@ class Review extends \app\core\Controller
 
 
 
-    //  header('location:/User/review/list'); //redirecting user to the general review page
+      //  header('location:/User/review/list'); //redirecting user to the general review page
     } else {
-      $this->view('User/review/create', null, true); 
-      
+      $this->view('User/review/create', null, true);
+
     }
   }
 
@@ -37,25 +37,25 @@ class Review extends \app\core\Controller
     $review = new \app\models\Review(); //instance of review class
     $reviews = $review->getAll(); //getting all the reviews
 
-    
 
-   //TBD to add logic to show username information
+
+    //TBD to add logic to show username information
 
     $this->view('User/Review/list', $reviews);
   }
 
-//Edit a review
+  //Edit a review
   public function edit()
   {
     $review = new \app\models\Review();
     $review = $review->getReviewById($_GET['id']);
-   
+
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
       $review->review_text = $_POST['review_text'];
       $review->rating = $_POST['rating'];
-      
+
       $review->update();
 
       header('location:/User/review/list');
@@ -71,7 +71,7 @@ class Review extends \app\core\Controller
 
       $review = new \app\models\Review();
       $review = $review->getReviewById($_GET['id']);
-   
+
 
       $review->delete();
     }
@@ -81,30 +81,90 @@ class Review extends \app\core\Controller
   }
 
   //Shows all Reviews that belong to one user
-  public function list(){
+  public function list()
+  {
     $review = new \app\models\Review(); //instance of review class
     $reviews = $review->getAll(); //getting all the reviews
 
-   //TBD to add logic to show username information
-   echo var_dump($reviews);
+    //TBD to add logic to show username information
+    echo var_dump($reviews);
 
-    $this->view('User/review/list', $reviews,true);
+    $this->view('User/review/list', $reviews, true);
   }
-  
+
+  // Admin side: display general info about a review
+  function index()
+  {
+    $reviewModel = new \app\models\Review();
+    $reviews = $reviewModel->getAllUserNames();
+
+    $this->view('/Admin/Review/list', ['reviews' => $reviews], true);
+  }
+
+  // Admin side: delete a specific review
+  function deleteReview($id)
+  {
+    $review = new \app\models\Review();
+    $review->delete($id);
+
+    header('location:/Admin/Review/list'); //change this
+  }
+
+  // Admin side: search by name
+  public function search()
+  {
+    if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['query'])) {
+      $query = $_GET['query'];
+
+      $reviewModel = new \app\models\Review();
+      $reviews = $reviewModel->searchReviews($query);
+
+      $data = ['reviews' => $reviews];
+      $this->view('Admin/Review/list', $data, true);
+    } else {
+      // If no search query provided, redirect to viewAll method
+      header('Location: /Admin/Review/list');
+    }
+  }
+
+  // Admin side: filter by most or least stars
+  public function filterByStars()
+  {
+    if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['filter'])) {
+      $filter = $_GET['filter'];
+
+      $reviewModel = new \app\models\Review();
+      $reviews = $reviewModel->filterByStars($filter);
+
+      $data = ['reviews' => $reviews];
+      $this->view('Admin/Review/list', $data, true);
+    } else {
+      // If no filter provided, redirect to listAllReviewsUser method
+      header('Location: /Admin/Review/list');
+    }
+  }
+
+  // Admin side: will sure to display all info on the user with their review
+  public function reviewDetails($id)
+  {
+    $reviewModel = new \app\models\Review();
+    $review = $reviewModel->getReviewById($id);
+
+    if ($review) {
+      // Get user details
+      $userDetails = $reviewModel->getUserDetails($review->user_id);
+
+      $data = [
+        'review' => $review,
+        'userDetails' => $userDetails
+      ];
+
+      $this->view('Admin/Review/reviewDetails', $data, true);
+    } else {
+      header('Location: /error');
+    }
+  }
+
+
+
 }
-
-    //show all the public publications on the main menu
-    function index() {
-        $review = new \app\models\Review();
-        $reviews = $review->getAll();
-        
-        $this->view('/Admin/Review/list', ['review' => $reviews], true);
-    }
-    
-    function delete($id) {
-        $review = new \app\models\Review();
-		$review->delete($id);
-
-        header('location:/Admin/Review/list'); //change this
-    }
-

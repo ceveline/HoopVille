@@ -4,15 +4,18 @@ namespace app\controllers;
 
 class Profile extends \app\core\Controller
 {
-    public function viewAll(){
+    // Admin side: display general info about the user
+    public function viewAll()
+    {
         $profileModel = new \app\models\Profile();
         $profile = $profileModel->getall();
-        
+
         $data = ['profiles' => $profile];
         $this->view('Admin/User/view', $data, true);
-            
+
     }
 
+    // Admin side: search for specific user
     public function search()
     {
         if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['query'])) {
@@ -28,17 +31,10 @@ class Profile extends \app\core\Controller
             header('Location: /Admin/User/view');
         }
     }
+
+    // Admin side: delete the user by setting the account's active to 0
     public function delete($id)
     {
-
-        // strvl converts the id into a string.
-        // ctype_digit function will check the following string to see if it 
-        // numerical digits or not
-        if (!isset($id) || !ctype_digit(strval($id))) {
-            header('Location: /Admin/User/view');
-            return;
-        }
-
         $profileModel = new \app\models\Profile();
         $profile = $profileModel->getProfileById($id);
 
@@ -59,47 +55,51 @@ class Profile extends \app\core\Controller
     }
 
     //create a profile, insertion to the database
-    public function create() {
-        if($_SERVER['REQUEST_METHOD'] === 'POST') {
+    public function create()
+    {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $profile = new \app\models\Profile();
 
-      $profile= new \app\models\profile(); //instance of profile class
+            $profile = new \app\models\profile(); //instance of profile class
 
-      //!!!!!!! change to session id when branches are merged
-      $profile->user_id = 1; //user_id in the instace
-      $profile->profile_text = $_POST['fname']; //post to grab text and rating
-      $profile->rating = $_POST['lname'];
-      $profile->type = $_POST['dob'];
+            //!!!!!!! change to session id when branches are merged
+            $profile->user_id = 1; //user_id in the instace
+            $profile->profile_text = $_POST['fname']; //post to grab text and rating
+            $profile->rating = $_POST['lname'];
+            $profile->type = $_POST['dob'];
 
 
-      $profile->insert(); //inserting into db
+            $profile->insert(); //inserting into db
 
-    } else {
-      $this->view('User/profile/create', null, true); 
-      
+        } else {
+            $this->view('User/profile/create', null, true);
+
+        }
     }
-}
+
+    // Admin side: display detailed info about the user
     public function infoDetails($id)
     {
-        // Get profile details
         $profileModel = new \app\models\Profile();
         $profile = $profileModel->getProfileByIdDetails($id);
-    
-        // Check if profile exists
+
         if (!$profile) {
             header('Location: /Admin/User/view');
             return;
         }
-    
+
         // Get membership details
-        $membership = $profileModel->getMembershipByUserId($profile->user_id);
-    
+        $membershipModel = new \app\models\Membership();
+        $membership = $membershipModel->getMembershipByUserId($profile->user_id);
+
         // Get booking details
-        $bookings = $profileModel->getBookingsByUserId($profile->user_id);
-    
+        $bookingModel = new \app\models\Booking();
+        $bookings = $bookingModel->getBookingsByUserId($profile->user_id);
+
         // Get camp details
-        $camps = $profileModel->getCampsByUserId($profile->user_id);
-    
+        $campModel = new \app\models\Camp();
+        $camps = $campModel->getCampsByUserId($profile->user_id);
+
         // Pass data to the view
         $data = [
             'profile' => $profile,
@@ -107,10 +107,9 @@ class Profile extends \app\core\Controller
             'bookings' => $bookings,
             'camps' => $camps
         ];
-    
+
         $this->view('Admin/User/infoDetails', $data, true);
     }
-    
 
 
 }
