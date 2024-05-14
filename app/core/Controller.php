@@ -17,15 +17,10 @@ class Controller
 
 		include ('app/views/' . $name . '.php');
 
-		// Check if 'admin_id' key exists in the $_SESSION array
-        if (isset($_SESSION['admin_id']) && $_SESSION['admin_id'] == null) {
-            include ('app/views/footer.php');
-        }
-
-        // Check if 'temp_admin_id' key exists in the $_SESSION array
-        if (isset($_SESSION['temp_admin_id']) && $_SESSION['temp_admin_id'] == null) {
-            include ('app/views/footer.php');
-        }
-
+		if (isset($_SESSION['admin_id'])) {
+			return;
+		}else {
+			include ('app/views/footer.php');
+		}
 	}
 }
