@@ -17,6 +17,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+#: app/views/User/login.php
+msgid "Incorrect email/password."
+msgstr "Incorrect email/password."
+
 #: app/views/User/register.php #: app/views/User/login.php
 msgid "Email already exists. Please log in."
 msgstr "Email already exists. Please log in."

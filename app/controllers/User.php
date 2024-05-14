@@ -103,7 +103,7 @@ class User extends \app\core\Controller
     #[\app\filters\Logout]
     function login()
     {
-        $error_message = __('Incorrect email/password');
+        $error_message = __('Incorrect email/password.');
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $admin = new \app\models\Administrator();
             $email = $_POST['email'];
