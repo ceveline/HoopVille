@@ -23,9 +23,20 @@
     }
 
     h1 {
-      padding: 10px;
+      /* padding: 10px;
       color: black;
+      background-color: #FFDE59; */
+      display: flex;
       background-color: #FFDE59;
+      justify-content: center;
+      margin-top: 30px;
+      padding: 10px;
+      text-transform: uppercase;
+      font-size: 1.7rem;
+      color: white;
+      text-transform: uppercase;
+      text-shadow: 0.2px 2px 8px #00000082;
+
     }
 
 
