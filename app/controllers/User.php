@@ -229,6 +229,8 @@ class User extends \app\core\Controller
 
     }
 
+    #[\app\filters\Login]
+
     public function sendPasswordReset()
     {
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -283,6 +285,8 @@ class User extends \app\core\Controller
     }
 
     //to replace by user id
+    #[\app\filters\Login]
+
     function myAccount()
     {
         $user = new \app\models\User();
@@ -326,6 +330,8 @@ class User extends \app\core\Controller
     {
         $this->view('User/services', null, true);
     }
+
+    #[\app\filters\Login]
 
     public function payment()
     {

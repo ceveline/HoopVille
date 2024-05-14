@@ -7,8 +7,7 @@ class Review extends \app\core\Controller
 
   
     //creating a review on the user end
-    //#[\app\filters\Login]
-    //#[\app\filters\User\HasPurchase]
+    #[\app\filters\User\HasPurchase]
 
     public function create()
     {
@@ -49,7 +48,7 @@ class Review extends \app\core\Controller
   }
 
 //Edit a review
-//#[\app\filters\Login]
+#[\app\filters\Login]
   public function edit()
   {
     $review = new \app\models\Review();
@@ -71,7 +70,7 @@ class Review extends \app\core\Controller
 
   }
 
-  //#[\app\filters\Login]
+  #[\app\filters\Login]
 
   
   public function delete()
@@ -89,7 +88,6 @@ class Review extends \app\core\Controller
 
   //Shows all Reviews that belong to one user
 
-  #[\app\filters\Login]
   public function list(){
     $review = new \app\models\Review(); //instance of review class
     $reviews = $review->getAll(); //getting all the reviews
