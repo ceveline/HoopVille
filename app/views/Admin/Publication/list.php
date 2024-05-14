@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="/assets/styles/publication_list.css">
 </head>
 <body>
+    
     <div class="background">
         <div class="content">
             <div class="column-name">
@@ -41,6 +42,9 @@
                 </table>
             </div>
         </div>
+        <a href="/Admin/Publication/create" class="float">
+        <i class="fa fa-plus my-float"></i>
+        </a>
     </div>
 </body>
 </html>

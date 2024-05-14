@@ -77,9 +77,9 @@
                     <li>
                         <a class="nav-link" href="/Admin/booking/list"><?= __('Bookings') ?></a>
                     </li>
-                    <!-- <li>
-                        <a class="nav-link" href="/login"><?= __('Login') ?></a>
-                    </li> -->
+                    <li>
+                        <a class="nav-link" href="/Admin/Publication/index"><?= __('News & Updates') ?></a>
+                    </li>
                     <li>
                         <a class="nav-link" href="/logout"><?= __('Logout') ?></a>
                     </li>
@@ -89,21 +89,20 @@
                     <li>
                         <a class="nav-link" href="/User/aboutUs"><?= __('About') ?></a>
                     </li> -->
-
                 </div>
-                    <div class="lang admin">
-                        <p>
-                            <?php
+                <div class="lang admin">
+                    <p>
+                        <?php
 
 
-                            $idString = isset($_GET['id']) ? "&id={$_GET['id']}" : "";
+                        $idString = isset($_GET['id']) ? "&id={$_GET['id']}" : "";
 
 
-                            echo " <a href='?lang=en$idString'>EN</a> |
-                                <a href='?lang=fr$idString'>FR</a>";
-                            ?>
-                        </p>
-                    </div>
+                        echo " <a href='?lang=en$idString'>EN</a> |
+                            <a href='?lang=fr$idString'>FR</a>";
+                        ?>
+                    </p>
+                </div>
             </div>  
             <?php else: ?>
                 <div class="main">

@@ -23,7 +23,7 @@
                 </div>
                 <div class="inputs">
                     <label for="text" class="form-label"><?= __('Text:') ?></label>
-                    <textarea form="main" id="text" class="text" name="text" rows="6" maxlength="1500" placeholder="<?= __('Type your content here') ?>"></textarea>
+                    <textarea form="main" id="text" class="text" name="text" rows="6" maxlength="3000" placeholder="<?= __('Type your content here') ?>"></textarea>
                 </div>
                 <div class="button-post">
                     <button type="submit" class="btn" name="action" value="Post" onclick=""><?= __('Post') ?></button>
