@@ -52,6 +52,7 @@ header ul li a {
     width: auto; /* Allow the width to adjust based on content */
     display: inline-block;
     text-align: center; /* Center-align the text */
+    border-bottom: 2px solid transparent;
 }
 
 header ul li a:hover{
@@ -70,6 +71,7 @@ header ul li a:hover{
     /* margin-top: 20px; */
     margin-right: 20px;
     color: white;
+    margin-bottom: 20px;
 }
 
 .lang a {
