@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="/assets/styles/view_publication.css">
     <title><?= __('News & Updates') ?></title>
 </head>
-
 <body>
     <div class="background">
         <div class="content">

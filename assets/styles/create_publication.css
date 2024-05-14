@@ -1,7 +1,20 @@
+header {
+    background-color: black;
+    box-shadow: 0 0 10px #000;
+}
+
+header .main {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 42px;
+    margin-left: 43px;
+}
+
 .background {
     min-height: 100%;
-    background-color: rgba(0, 0, 0, 0.3);
+    /* background-color: rgba(0, 0, 0, 0.3); */
     display: flex;
+    background-color: #dadada;
     justify-content: center;
 }
 
