@@ -99,10 +99,9 @@ class Profile extends \app\core\Controller
       $profile->last_name = $_POST['lname'];
       $profile->phoneNumber = $_POST['phoneNumber'];
 
-      
-      $profile->update();
+      $profile->update($_GET['id']);
 
-      header('location:/User/profile/create');
+      header('location:/User/myAccount');
     } else {
       $this->view('User/profile/edit', $profile, true);
     }

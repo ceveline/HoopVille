@@ -25,6 +25,19 @@ class Profile extends \app\core\Model
         return $STMT->fetchAll();
     }
 
+    public function update($profile_id) {
+        $SQL = 'UPDATE Profile SET first_name=:first_name, last_name=:last_name, phone=:phone, date_of_birth=:date_of_birth
+                WHERE profile_id = :profile_id';
+        $STMT = self::$_conn->prepare($SQL);
+        $STMT->execute([
+            'profile_id'=>$profile_id,
+            'first_name'=>$this->first_name,
+            'last_name'=>$this->last_name,
+            'phone'=>$this->phone,
+            'date_of_birth'=>$this->date_of_birth
+        ]);
+    }
+
     public function searchProfiles($query)
     {
         $SQL = 'SELECT p.*, u.email FROM Profile p
@@ -42,8 +55,10 @@ class Profile extends \app\core\Model
         $SQL = 'SELECT * FROM Profile WHERE profile_id = :id';
         $STMT = self::$_conn->prepare($SQL);
         $STMT->execute(['id' => $id]);
-        return $STMT->fetch(PDO::FETCH_OBJ);
+        $STMT->setFetchMode(PDO::FETCH_CLASS, 'app\models\Profile');
+        return $STMT->fetch(); // Fetch as an instance of Profile class
     }
+
 
     public function updateActiveStatus($id, $active)
     {
