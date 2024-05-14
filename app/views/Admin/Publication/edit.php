@@ -23,7 +23,7 @@
                 <div class="inputs">
                     <label for="text" class="form-label"><?= __('Text:') ?></label>
                     <textarea form="main" id="text" class="text" name="text" rows="6" 
-                    maxlength="500" placeholder="<?= __('Type your content here') ?>"><?=$publication->text?></textarea>
+                    maxlength="3000" placeholder="<?= __('Type your content here') ?>"><?=$publication->text?></textarea>
                 </div>
                 <div class="button-post">
                     <button type="submit" class="btn" name="action" value="Post" onclick=""><?= __('Save Changes') ?></button>
