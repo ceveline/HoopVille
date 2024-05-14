@@ -7,7 +7,6 @@ class Camp extends \app\core\Controller {
     
 
 
-  #[\app\filters\User\HasProfile]
   #[\app\filters\Login]
     function buy(){
       if ($_SERVER['REQUEST_METHOD'] === 'POST') {
