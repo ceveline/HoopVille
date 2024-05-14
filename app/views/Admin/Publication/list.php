@@ -13,6 +13,9 @@
 </head>
 <body>
     <div class="background">
+        <div class="title">
+            <h1><?= __('News & Updates') ?></h1>
+        </div>
         <div class="content">
             <div class="column-name">
                 <h4 id='column-title'><?= __('Title') ?></h4>
@@ -41,6 +44,9 @@
                 </table>
             </div>
         </div>
+        <a href="/Admin/Publication/create" class="float">
+        <i class="fa fa-plus my-float"></i>
+        </a>
     </div>
 </body>
 </html>
