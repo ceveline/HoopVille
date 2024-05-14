@@ -291,6 +291,7 @@ class User extends \app\core\Controller
     {
         $user = new \app\models\User();
         $userid = $_SESSION['user_id']; //set to session
+
         $user = $user->getById($userid);
         $booking = new \app\models\Booking();
         $bookings = $booking->getBookingsByUserId($userid);
@@ -302,7 +303,13 @@ class User extends \app\core\Controller
         $reviews = $review->getUserReviews($userid);
 
         $membership = new \app\models\Membership();
-        $memberships = $membership->getMembershipById($userid);
+        $memberships = $membership->getMembershipByUserId($userid);
+
+        $membership_types_mdl = new \app\models\Membership_type();
+
+        $membership_type = $membership_types_mdl->getByType($membership->membership_type);
+        
+        $membership_types = $membership_types_mdl->getAll();
 
 
 
@@ -313,7 +320,9 @@ class User extends \app\core\Controller
             'profile' => $profile,
             'camps' => $camps,
             'membership' => $memberships,
-            'reviews' => $reviews
+            'reviews' => $reviews,
+            'type' => $membership_type, 
+            'types' => $membership_types
         ];
 
         $this->view('User/myAccount', $data, true);

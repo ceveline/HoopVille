@@ -138,23 +138,23 @@
                 <!-- <div class="title">My Membership</div> -->
                 <div class="m-type">
                     <?php if (isset($membership->membership_type)) :?>
-                        <p id='m-type'><?=$membership->start_date?></p>
+                        <p id='m-type'><?=$membership->membership_type?></p>
                     <?php else : ?>
-                        <p id='m-type'>No Membership</p>
+                        <p id='m-type'>None</p>
                     <?php endif; ?>
                 </div>
                 <div class="start-date">
                     <?php if (isset($membership->start_date)) :?>
-                    <p>Start date:</p><p id='start-date'><?=$membership->start_date?></p>
+                    <p><?= __('Start date:') ?></p><p id='start-date'><?=$membership->start_date?></p>
                     <?php else : ?>
-                        <p>Start date:</p><p id='m-type'>-</p>
+                        <p><?= __('Start date:') ?></p><p id='m-type'>-</p>
                     <?php endif; ?>
                 </div>
                 <div class="end-date">
                 <?php if (isset($membership->end_date)) :?>
-                    <p>End date:</p><p id='start-date'><?=$membership->end_date?></p>
+                    <p><?= __('End date:') ?></p><p id='start-date'><?=$membership->end_date?></p>
                     <?php else : ?>
-                        <p>End date:</p><p id='m-type'>-</p>
+                        <p><?= __('End date:') ?></p><p id='m-type'>-</p>
                     <?php endif; ?>
                     <!-- <p>End date:</p><p id='end-date'><?=$membership->end_date?></p> -->
                 </div>
@@ -164,10 +164,10 @@
                             <a id='edit-link' href="#"><?= __('Modify') ?></a>
                         <?php endif; ?>
                     </div>
-                    <?php if (isset($membership->membership_type_date)) :?>
+                    <?php if (isset($membership->membership_type)) :?>
                         <?php if ($membership->membership_type != 'Base Training') : ?>
                             <div class="delete-btn">
-                                <a id='cancel-link' href="#">Cancel membership</a>
+                                <a id='cancel-link' href="#"><?= __('Cancel membership') ?></a>
                             </div>                        
                         <?php endif; ?>
                     <?php endif; ?>
@@ -180,7 +180,7 @@
             <div class="page2">
                 <div class="title"><?= __('Modify Membership') ?></div>
                 <div class="current">
-                    <p><?= __('Current membership plan:') ?> <?= __('$membership->membership_type')?></p>
+                    <p><?= __('Current membership plan:') ?>: <?= $membership->membership_type?></p>
                 </div>
 
                 <form method='POST' action='/User/membership/edit'>

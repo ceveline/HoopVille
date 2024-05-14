@@ -23,14 +23,17 @@ class Membership extends \app\core\Controller
         $membership_model = new \app\models\Membership();
         $membership_model = $membership_model->getMembershipByUserId($_SESSION['user_id']);
 
+        $membership_types_mdl = new \app\models\Membership_type();
+        $membership_type = $membership_types_mdl->getByType($membership_model->membership_type);
+        $membership_types = $membership_types_mdl->getAll();
+        
         if ($membership_model) {
-            $membership_types_mdl = new \app\models\Membership_type();
-            $membership_type = $membership_types_mdl->getByType($membership_model->membership_type);
-            $membership_types = $membership_types_mdl->getAll();
             $this->view('User/Membership/individual', ['membership' => $membership_model, 'type' => $membership_type, 'types' => $membership_types], true);
-        } else
+        } else {
+            var_dump('no data');
             $this->view('User/Membership/individual', null, true);
         }
+    }
 
         
 
@@ -93,7 +96,7 @@ class Membership extends \app\core\Controller
 
         if ($existing_membership) {
             // If the user already has a membership, redirect to the home page
-            header("location:/User/membership");
+            header("location:/User/myAccount");
             return;
         }
 
@@ -108,7 +111,7 @@ class Membership extends \app\core\Controller
             $membership_model->insert();
 
             // Redirect to the menu page
-            header("location:/User/membership");
+            header("location:/User/myAccount");
         } else {
             // If it's not a POST request, display the membership list page
             $this->view('User/Membership/list', null, true);
@@ -141,7 +144,7 @@ class Membership extends \app\core\Controller
 
             $membership_model->update($membership_id);
 
-            header("location:/User/membership");
+            header("location:/User/myAccount");
         } else {
             $this->view('User/Membership', ['membership' => $membership_model], true);
         }
@@ -185,11 +188,6 @@ class Membership extends \app\core\Controller
         $membership_model->deleteById($membership_id);
         header('location:/Admin/membership/list');
     }
-
-
-
-
-
 
 
 }

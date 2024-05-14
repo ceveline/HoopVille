@@ -182,9 +182,9 @@
 
                 <div class="membership">
                     <h2><?= __('Your Membership'); ?></h2>
-                    <!-- <p><?= __('Type'); ?>: <?php echo $data['membership']->membership_type; ?></p>
-                    <p><?= __('Expires on'); ?> <?php echo $data['membership']->end_date; ?></p>
-                    <a href="/Membership/individual" class="btn btn-primary"><?= __('Modify Membership'); ?></a> -->
+                    <!-- <p><?= __('Type'); ?>: <?php $membership->membership_type; ?></p> -->
+                    <!-- <p><?= __('Expires on'); ?> <?php echo $data['membership']->end_date; ?></p> -->
+                    <!-- <a href="/Membership/individual" class="btn btn-primary"><?= __('Modify Membership'); ?></a> -->
                     <?php include('app/views/User/Membership/individual.php'); ?>
                 </div>
             </div>
@@ -225,7 +225,6 @@
                                     <strong><?= __('Player Information'); ?>: <?php echo $camp['first_name'] . ' ' . $camp['last_name']; ?></strong>
                                         <li><?= __('Type'); ?>: <?php echo $camp['camp_type']; ?></li>
                                         <li><?= __('Registration Date'); ?>: <?php echo $camp['timestamp']; ?></li>
-                                   
 
                                 </li>
                             <?php endforeach; ?>
