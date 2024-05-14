@@ -26,4 +26,59 @@ class AcceptanceTester extends \Codeception\Actor
     /**
      * Define custom actions here
      */
+/**
+     * @Given I am on :arg1
+     */
+     public function iAmOn($url)
+     {
+         $this->amOnPage($url);
+     }
+
+    /**
+     * @When I add :arg1 in the table Camp
+     */
+     public function iAddInTheTableCamp($term)
+     {
+         $this->add($term);
+     }
+
+    /**
+     * @Then I see :arg1 in the table Camp
+     */
+     public function iSeeInTheTableCamp($arg1)
+     {
+         $this->see($arg1);
+     }
+
+    /**
+     * @When I add :arg1 in the table Membership
+     */
+     public function iAddInTheTableMembership($term)
+     {
+         $this->add($term);
+     }
+
+    /**
+     * @Then I see :arg1 in the table Membership
+     */
+     public function iSeeInTheTableMembership($arg1)
+     {
+         $this->see($arg1);
+     }
+
+    /**
+     * @When I add :arg1 in the table Booking_Type
+     */
+     public function iAddInTheTableBooking_Type($term)
+     {
+         $this->add($term);
+     }
+
+    /**
+     * @Then I see :arg1 in the table Booking_Type
+     */
+     public function iSeeInTheTableBooking_Type($arg1)
+     {
+         $this->see($arg1);
+     }
 }

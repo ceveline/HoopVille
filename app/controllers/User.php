@@ -153,12 +153,11 @@ class User extends \app\core\Controller
             $existing_user = $user->getByEmail($_POST['email']);
 
             //if something is in the user instace, show an error message to the view
-            if ($existing_user->email !== null) {
+            if ($existing_user->email != null) {
                 
                 $error_message = 'Email already exists. Please log in.';
                 $this->view('User/login', $error_message, true);
-                return;
-
+                exit;
                 //if it doesnt exist, proceed with register
             } else {
                 $profile = new \app\models\Profile();
@@ -181,8 +180,6 @@ class User extends \app\core\Controller
     
                 header('location:/login');
             }
-
-          
         } else {
             $this->view('User/register', null, true);
         }

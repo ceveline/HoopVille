@@ -51,6 +51,9 @@
                     <p><?= __('Already have an account?') ?> <a href="/login"><?= __('Login now!') ?></a></p>
                 </div>
 
+                <?php if (isset($data->error_message)): ?>
+                    <script>alert("<?= $data->error_message ?>")</script>
+                <?php endif; ?>
                 
 
                 <script>
