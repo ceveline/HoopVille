@@ -4,204 +4,55 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= __('All Reviews')?></title>
-    <style>
-       .background {
-    min-height: 100%;
-    background-color: rgba(0, 0, 0, 0.3);
-    display: flex;
-    justify-content: center;
-}
+    <title>Document</title>
+    <link rel="stylesheet" href="/assets/styles/publication_list_user.css">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"> -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script> -->
+</head>
+<style>
+        
 
-.content {
-    height: 550px;
-    width: 850px;
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    padding-top: 38px;
-    margin: auto;
-
-    border-radius: 1rem;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-}
-
-.register-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 34px;
-}
-
-.last-name {
-    display: flex;
-}
-
-h1 {
-    text-align: center;
-}
-
-.register-form label {
-    margin-bottom: 5px; 
-    width: 140px; 
-}
-
-.inputs {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-bottom: 25px;
-}
-
-.cost{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-bottom: 25px;
-    font-weight: bolder;
-}
-
-.register-form input[type="text"],
-
-.register-form input[type="date"] {
-    width: 248px;
-    height: 32px;
-    border-radius: 10px;
-    padding-left: 10px;
-}
-
-button {
-    height: 34px;
-    width: 124px;
-    font-size: 0.93rem;
-    margin-top: 18px;
-    margin-bottom: 45px;
-    border-radius: 0.6rem;
-    border: none;
-    background-color: #ffda76;
-}
-
-button:hover{
-    background-color: #fbd467;
-}
-
-.form-container{
-  width: 1000px;
-            height: auto;
-            background-color: white;
-            margin-top: 20px;
-            padding: 20px;
-            border-radius: 1rem;
-            margin-left: 250px;
-            text-align: center;
-            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-}
-
-    .purchaseType{
-        color:black;
-       
-    }
-
-    h1 {
-            padding: 10px;
-            color: black;
-            background-color: #FFDE59;
-            text-align: center;
+        .container {
+            margin: 0 auto;
+            flex-direction: column;
+            align-items: center;
         }
 
-    .rating {
-  display: inline-flex;
-  flex-direction: row-reverse;
-  align-items: center;
-}
-
-input[type="radio"] {
-  display: none;
-}
-
-label {
-  cursor: pointer;
-  width: 30px;
-  height: 30px;
-  background-image: url('/assets/images/star-empty-icon.webp');
-  background-size: cover;
-}
-
-input[type="radio"]:checked ~ label {
-  background-image: url('/assets/images/star_icon_full.png');
-}
-
-
-
-input[type="text"]{
-    color: black;
-}
-
-option,select{
-    color:black;
-}
-
-textarea{
-    color:black;
-    margin:
-}
-
-button {
-    margin-top: 20px;
-    text-align: center;
-}
-
-button{
-    display: inline-block;
-    padding: 10px 20px;
-    width: 200px;
-    background-color: #FFDE59; 
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-button:hover {
-    background-color: #F44336; 
-}
-
-
-
-.form-section {
-  margin-bottom: 50px;
-}
-    
-
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
+        .main-title {
+            text-align: center;
             margin-bottom: 20px;
         }
 
-        th, td {
+        .reviews {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .review-item {
+            margin-bottom: 20px;
+            width: 1200px;
             padding: 10px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            align-items: center;
+            margin-left: 150px;
+            transition: box-shadow 0.3s ease, transform 0.3s ease; /* Smooth transitions for box-shadow and transform */
+
+
         }
 
-        th {
-            background-color: #FFDE59;
-            color: #333;
-            font-weight: bold;
+        .review-item h3 {
+            margin-bottom: 10px;
         }
 
-        tr:nth-child(even) {
-            background-color: #f9f9f9;
-        }
-
-        tr:hover {
-            background-color: #f1f1f1;
+        .review-text {
+            margin-bottom: 10px;
         }
 
         .rating {
             display: inline-flex;
-            flex-direction: row-reverse;
             align-items: center;
         }
 
@@ -215,57 +66,53 @@ button:hover {
             height: 30px;
             background-image: url('/assets/images/star-empty-icon.webp');
             background-size: cover;
+            margin-right: 5px;
+        }
+
+        .review-item:hover {
+            box-shadow: 8 12px 16px rgba(0, 0, 0, 0.2); 
+            transform: scale(1.05); 
+
         }
 
         input[type="radio"]:checked ~ label {
             background-image: url('/assets/images/star_icon_full.png');
         }
-
-        
-
     </style>
 </head>
 <body>
-    <div style='height: 10px'></div>
-    <h1><?=__('ALL REVIEWS')?></h1>
-    <div class='container'> 
-        <form class="form-container">
-            <table border="1" cellspacing="0" cellpadding="5" width="100%">
-                <thead>
-                    <tr>
-                        <th><?=__('Purchase Type')?></th>
-                        <th><?=__('Review Text')?></th>
-                        <th><?=__('Rating')?></th>
-                    </tr>
-                </thead>
-                <tbody>
-                <?php foreach ($data as $review): ?>
-    <tr>
-        <td><?= $review->type ?></td>
-        <td><?= $review->review_text ?></td>
-        <td>
-            <div class="rating">
-                <input type="radio" id="star5" name="rating" value="5" <?php echo ($review->rating == 5) ? 'checked' : ''; ?> disabled>
-                <label for="star5"></label>
-
-                <input type="radio" id="star4" name="rating" value="4" <?php echo ($review->rating == 4) ? 'checked' : ''; ?> disabled>
-                <label for="star4"></label>
-
-                <input type="radio" id="star3" name="rating" value="3" <?php echo ($review->rating == 3) ? 'checked' : ''; ?> disabled>
-                <label for="star3"></label>
-
-                <input type="radio" id="star2" name="rating" value="2" <?php echo ($review->rating == 2) ? 'checked' : ''; ?> disabled>
-                <label for="star2"></label>
-
-                <input type="radio" id="star1" name="rating" value="1" <?php echo ($review->rating == 1) ? 'checked' : ''; ?> disabled>
-                <label for="star1"></label>
+    <div class="background">
+        <div class="container">
+            <div class="main-title">
+                <h1><?= __('ALL REVIEWS') ?></h1>
             </div>
-        </td>
-    </tr>
-<?php endforeach; ?>
-                </tbody>
-            </table>
-        </form>
+            <?php foreach ($data as $review): ?>
+                <div class="review-item">
+                    <div class="title">
+                        <h3><?= $review->type;?></h3>
+                    </div>
+                    <div class="review-text">
+                        <p><?= $review->review_text; ?></p>
+                    </div>
+                    <div class="rating">
+                        <input type="radio" id="star5" name="rating" value="5" <?php echo ($review->rating == 5) ? 'checked' : ''; ?> disabled>
+                        <label for="star5"></label>
+
+                        <input type="radio" id="star4" name="rating" value="4" <?php echo ($review->rating == 4) ? 'checked' : ''; ?> disabled>
+                        <label for="star4"></label>
+
+                        <input type="radio" id="star3" name="rating" value="3" <?php echo ($review->rating == 3) ? 'checked' : ''; ?> disabled>
+                        <label for="star3"></label>
+
+                        <input type="radio" id="star2" name="rating" value="2" <?php echo ($review->rating == 2) ? 'checked' : ''; ?> disabled>
+                        <label for="star2"></label>
+
+                        <input type="radio" id="star1" name="rating" value="1" <?php echo ($review->rating == 1) ? 'checked' : ''; ?> disabled>
+                        <label for="star1"></label>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        </div>
     </div>
 </body>
 </html>

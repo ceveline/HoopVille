@@ -16,7 +16,7 @@
             /* background-color: #f2f2f2; */
             background-color: rgba(0, 0, 0, 0.3);
             display: flex;
-            /* justify-content: center; */
+            justify-content: center; 
             align-items: center;
         }
 
@@ -67,6 +67,8 @@
             background-color: #fff;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             line-height: 2rem;
+            overflow: auto; /* Enable scrolling if content overflows */
+            max-height: 350px; /* Set a maximum height for overflow */
         }
 
         .bookings {
@@ -234,9 +236,9 @@
 
                 <div class="reviews">
                     <h2><?= __('Your Reviews'); ?></h2>
-                    
-                    <ul class="itemsToList">
-                            <?php foreach ($data['reviews'] as $review): ?>
+                  
+                    <?php foreach ($data['reviews'] as $review): ?>
+                                <ul class="itemsToList">
                                 <li>
                                     <span><strong><?php echo $review->review_text ?></strong></span><br>
                                     
@@ -247,10 +249,11 @@
                                         <a href="/User/review/edit?id=<?php echo $review->review_id; ?>" class="btn"><?php echo __('Edit'); ?></a>
 
                                        
+                                       
                                   
                                 </li>
+                                </ul>
                             <?php endforeach; ?>
-                        </ul>
 
 
                       
