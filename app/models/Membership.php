@@ -15,7 +15,8 @@ class Membership extends \app\core\Model
 
 
     //insert -> Create
-    public function insert() {
+    public function insert()
+    {
         //statement
         $SQL = 'INSERT INTO Membership (membership_type, user_id, start_date, end_date) 
             VALUES (:membership_type, :user_id, :start_date, :end_date)';
@@ -24,76 +25,85 @@ class Membership extends \app\core\Model
         $STMT = self::$_conn->prepare($SQL);
 
         //execute the statement
-        $data = ['membership_type'=> $this->membership_type,
-                'user_id'=> $this->user_id,
-                'start_date'=> $this->start_date, 
-                'end_date'=> $this->end_date
-            ];
-        
+        $data = [
+            'membership_type' => $this->membership_type,
+            'user_id' => $this->user_id,
+            'start_date' => $this->start_date,
+            'end_date' => $this->end_date
+        ];
+
         $STMT->execute($data);
     }
-    public function getAll(){
+    public function getAll()
+    {
         $SQL = 'SELECT * FROM Membership';
         $STMT = self::$_conn->prepare($SQL);
         $STMT->execute();
 
-        $STMT->setFetchMode(PDO::FETCH_CLASS,'app\models\Membership');//set the type of data returned by fetches
-		return $STMT->fetchAll();
+        $STMT->setFetchMode(PDO::FETCH_CLASS, 'app\models\Membership');//set the type of data returned by fetches
+        return $STMT->fetchAll();
     }
     //get by user id
-    public function getMembershipByUserId($user_id){
+    // Admin side: display detailed info about the users's membership based on their user_id.
+    public function getMembershipByUserId($user_id)
+    {
         $SQL = 'SELECT * FROM Membership WHERE user_id = :user_id';
         $STMT = self::$_conn->prepare($SQL);
-        $STMT->execute(['user_id'=>$user_id]);
-        
-        $STMT->setFetchMode(PDO::FETCH_CLASS,'app\models\Membership');
+        $STMT->execute(['user_id' => $user_id]);
+
+        $STMT->setFetchMode(PDO::FETCH_CLASS, 'app\models\Membership');
         return $STMT->fetch();
     }
 
-    public function getMembershipById($membership_id){
+    public function getMembershipById($membership_id)
+    {
         $SQL = 'SELECT * FROM Membership WHERE membership_id = :membership_id';
         $STMT = self::$_conn->prepare($SQL);
-        $STMT->execute(['membership_id'=>$membership_id]);
-        
-        $STMT->setFetchMode(PDO::FETCH_CLASS,'app\models\Membership');
+        $STMT->execute(['membership_id' => $membership_id]);
+
+        $STMT->setFetchMode(PDO::FETCH_CLASS, 'app\models\Membership');
         return $STMT->fetch();
     }
 
-    public function update($membership_id) {
+    public function update($membership_id)
+    {
         $SQL = 'UPDATE Membership 
                 SET membership_type=:membership_type, start_date=:start_date
                 WHERE membership_id = :membership_id';
         $STMT = self::$_conn->prepare($SQL);
         $STMT->execute([
-            'membership_id'=>$membership_id,
-            'membership_type'=>$this->membership_type,
-            'start_date'=>$this->start_date,
+            'membership_id' => $membership_id,
+            'membership_type' => $this->membership_type,
+            'start_date' => $this->start_date,
         ]);
     }
 
-    public function updateAdmin($membership_id) {
+    public function updateAdmin($membership_id)
+    {
         $SQL = 'UPDATE Membership 
                 SET membership_type=:membership_type
                 WHERE membership_id = :membership_id';
         $STMT = self::$_conn->prepare($SQL);
         $STMT->execute([
-            'membership_id'=>$membership_id,
-            'membership_type'=>$this->membership_type
+            'membership_id' => $membership_id,
+            'membership_type' => $this->membership_type
         ]);
     }
 
     //cancel => change status to cancelled => 48 hours before
 
     //delete => admin
-    public function deleteById($membership_id) {
+    // Admin side: it will delete the membership
+    public function deleteById($membership_id)
+    {
         $SQL = 'DELETE FROM Membership WHERE membership_id = :membership_id';
-		$STMT = self::$_conn->prepare($SQL);
-		$STMT->execute(
-			['membership_id'=> $membership_id] //no
-		);
+        $STMT = self::$_conn->prepare($SQL);
+        $STMT->execute(
+            ['membership_id' => $membership_id] //no
+        );
     }
 
-    
-    
+
+
 
 }

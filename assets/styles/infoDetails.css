@@ -56,3 +56,43 @@ h1 {
 .value {
     color: black; /* Green */
 }
+
+.cancel-button-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: -10px; /* Adjust this value to align with the title */
+}
+
+.cancel-button {
+    background-color: #dc3545; /* Red */
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.cancel-button:hover {
+    background-color: #c82333; /* Darker red on hover */
+}
+
+.delete-profile-container {
+    text-align: center;
+    margin-top: 20px; /* Adjust margin as needed */
+}
+
+.delete-button {
+    background-color: #dc3545; /* Red */
+    color: white;
+    border: none;
+    padding: 12px 24px; /* Increased padding for larger size */
+    border-radius: 8px; /* Increased border radius for rounded corners */
+    cursor: pointer;
+    font-size: 18px; /* Increase font size */
+}
+
+.delete-button:hover {
+    background-color: #c82333; /* Darker red on hover */
+}

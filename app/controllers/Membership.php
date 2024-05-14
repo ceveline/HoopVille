@@ -189,5 +189,20 @@ class Membership extends \app\core\Controller
         header('location:/Admin/membership/list');
     }
 
+        // Admin side: it will delete the membership related to the user
+        public function cancelMembership($profile_id)
+        {
+            // Check if the request method is POST
+            if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                // Get the membership ID from the POST data
+                $membership_id = $_POST['membership_id'];
+                $membership_model = new \app\models\Membership();
+                $membership_model->deleteById($membership_id);
+    
+                header("Location: /Profile/infoDetails/{$profile_id}");
+            }
+        }
+    
+
 
 }

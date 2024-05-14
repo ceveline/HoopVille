@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,6 +11,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="/assets/styles/contactChoice.css">
 </head>
+
 <body>
     <div class="background">
         <div class="content">
@@ -20,10 +22,10 @@
                     <div class="info">
                         <p>Feras Saaida</p>
                         <p>123-456-7890</p>
-                        <p><a href="/User/contact/john@example.com">john@example.com</a></p>
+                        <!--<p><a href="/User/contact/john@example.com">john@example.com</a></p>-->
                         <p><a href="/User/contact/hussainamin285@gmail.com"> hussainamin285@gmail.com</a></p>
 
-                       
+
                     </div>
                 </div>
                 <div class="image-column">
@@ -38,4 +40,5 @@
         </div>
     </div>
 </body>
+
 </html>

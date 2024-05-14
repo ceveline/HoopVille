@@ -64,6 +64,7 @@ class Booking extends \app\core\Model
     $STMT->execute(['booking_id' => $this->booking_id]);
   }
 
+  // Admin side: display detailed info about the users's booking based on their user_id.
   public function getBookingsByUserId(int $user_id)
   {
     $SQL = 'SELECT * FROM Booking WHERE user_id = :user_id';
@@ -132,6 +133,16 @@ class Booking extends \app\core\Model
     $STMT->execute(['textSearch' => "%" . $email . "%"]);
     $STMT->setFetchMode(PDO::FETCH_CLASS, 'app\models\Booking');
     return $STMT->fetchAll();
+  }
+
+  // Admin side: it will delete the booking
+  public function deleteById($booking_id)
+  {
+    $SQL = 'DELETE FROM Booking WHERE booking_id = :booking_id';
+    $STMT = self::$_conn->prepare($SQL);
+    $STMT->execute(
+      ['booking_id' => $booking_id] //no
+    );
   }
 
 

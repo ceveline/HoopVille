@@ -14,6 +14,7 @@ class Profile extends \app\core\Model
     public $phone;
     public $date_of_birth;
 
+    // Admin View: display general info about the users as well as connecting with the user table to get the email where the user account has to be active (active = 1)
     public function getall()
     {
         $SQL = 'SELECT p.*, u.email FROM Profile p
@@ -25,19 +26,21 @@ class Profile extends \app\core\Model
         return $STMT->fetchAll();
     }
 
-    public function update($profile_id) {
+    public function update($profile_id)
+    {
         $SQL = 'UPDATE Profile SET first_name=:first_name, last_name=:last_name, phone=:phone, date_of_birth=:date_of_birth
                 WHERE profile_id = :profile_id';
         $STMT = self::$_conn->prepare($SQL);
         $STMT->execute([
-            'profile_id'=>$profile_id,
-            'first_name'=>$this->first_name,
-            'last_name'=>$this->last_name,
-            'phone'=>$this->phone,
-            'date_of_birth'=>$this->date_of_birth
+            'profile_id' => $profile_id,
+            'first_name' => $this->first_name,
+            'last_name' => $this->last_name,
+            'phone' => $this->phone,
+            'date_of_birth' => $this->date_of_birth
         ]);
     }
 
+    // Admin View: to search the users based on their first and last name, phone number and email where the user account has to be active (active = 1)
     public function searchProfiles($query)
     {
         $SQL = 'SELECT p.*, u.email FROM Profile p
@@ -59,7 +62,7 @@ class Profile extends \app\core\Model
         return $STMT->fetch(); // Fetch as an instance of Profile class
     }
 
-
+    // Admin side: delete the user by desactivating the user's account (active = 0)
     public function updateActiveStatus($id, $active)
     {
         $SQL = 'UPDATE User SET active = :active WHERE user_id = :id';
@@ -67,7 +70,8 @@ class Profile extends \app\core\Model
         return $STMT->execute(['active' => $active, 'id' => $id]);
     }
     //insert -> Create
-    public function insert() {
+    public function insert()
+    {
         //statement
         $SQL = 'INSERT INTO Profile (user_id, first_name, last_name, phone, date_of_birth) 
             VALUES (:user_id, :first_name, :last_name, :phone, :date_of_birth)';
@@ -76,13 +80,14 @@ class Profile extends \app\core\Model
         $STMT = self::$_conn->prepare($SQL);
 
         //execute the statement
-        $data = ['user_id'=> $this->user_id,
-                'first_name'=> $this->first_name, 
-                'last_name'=> $this->last_name, 
-                'phone'=> $this->phone, 
-                'date_of_birth'=> $this->date_of_birth
-            ];
-        
+        $data = [
+            'user_id' => $this->user_id,
+            'first_name' => $this->first_name,
+            'last_name' => $this->last_name,
+            'phone' => $this->phone,
+            'date_of_birth' => $this->date_of_birth
+        ];
+
         $STMT->execute($data);
     }
 
@@ -92,57 +97,58 @@ class Profile extends \app\core\Model
     //     $STMT->execute();
 
     //     $STMT->setFetchMode(PDO::FETCH_CLASS,'app\models\Profile');//set the type of data returned by fetches
-	// 	return $STMT->fetchAll();
+    // 	return $STMT->fetchAll();
     // }
 
-    public function getByUserId($user_id) {
+    public function getByUserId($user_id)
+    {
         $SQL = 'SELECT * FROM Profile WHERE user_id = :user_id';
         $STMT = self::$_conn->prepare($SQL);
-        $STMT->execute(['user_id'=>$user_id]);
-        
-        $STMT->setFetchMode(PDO::FETCH_CLASS,'app\models\Profile');
+        $STMT->execute(['user_id' => $user_id]);
+
+        $STMT->setFetchMode(PDO::FETCH_CLASS, 'app\models\Profile');
         return $STMT->fetch();
     }
     // To display the details about the client from the admin side
 
     public function getMembershipByUserId($userId)
-{
-    $SQL = 'SELECT * FROM Membership WHERE user_id = :userId';
-    $STMT = self::$_conn->prepare($SQL);
-    $STMT->execute(['userId' => $userId]);
-    return $STMT->fetch(PDO::FETCH_OBJ);
-}
+    {
+        $SQL = 'SELECT * FROM Membership WHERE user_id = :userId';
+        $STMT = self::$_conn->prepare($SQL);
+        $STMT->execute(['userId' => $userId]);
+        return $STMT->fetch(PDO::FETCH_OBJ);
+    }
 
-public function getBookingsByUserId($userId)
-{
-    $SQL = 'SELECT * FROM Booking WHERE user_id = :userId';
-    $STMT = self::$_conn->prepare($SQL);
-    $STMT->execute(['userId' => $userId]);
-    return $STMT->fetchAll(PDO::FETCH_OBJ);
-}
+    public function getBookingsByUserId($userId)
+    {
+        $SQL = 'SELECT * FROM Booking WHERE user_id = :userId';
+        $STMT = self::$_conn->prepare($SQL);
+        $STMT->execute(['userId' => $userId]);
+        return $STMT->fetchAll(PDO::FETCH_OBJ);
+    }
 
-public function getCampsByUserId($userId)
-{
-    $SQL = 'SELECT c.*, CONCAT(g.first_name, " ", g.last_name) AS guest_name
+    public function getCampsByUserId($userId)
+    {
+        $SQL = 'SELECT c.*, CONCAT(g.first_name, " ", g.last_name) AS guest_name
             FROM Camp c
             LEFT JOIN Guest g ON c.guest_id = g.guest_id
             WHERE c.user_id = :userId';
-    $STMT = self::$_conn->prepare($SQL);
-    $STMT->execute(['userId' => $userId]);
-    return $STMT->fetchAll(PDO::FETCH_OBJ);
-}
+        $STMT = self::$_conn->prepare($SQL);
+        $STMT->execute(['userId' => $userId]);
+        return $STMT->fetchAll(PDO::FETCH_OBJ);
+    }
 
-
-public function getProfileByIdDetails($id)
-{
-    $SQL = 'SELECT p.*, u.email 
+    // Admin View: display detailed info about the users as well as connecting with the user table to get the email.
+    public function getProfileByIdDetails($id)
+    {
+        $SQL = 'SELECT p.*, u.email 
             FROM Profile p
             INNER JOIN User u ON p.user_id = u.user_id
             WHERE p.profile_id = :id';
-    $STMT = self::$_conn->prepare($SQL);
-    $STMT->execute(['id' => $id]);
-    return $STMT->fetch(PDO::FETCH_OBJ);
-}
+        $STMT = self::$_conn->prepare($SQL);
+        $STMT->execute(['id' => $id]);
+        return $STMT->fetch(PDO::FETCH_OBJ);
+    }
 
 
 

@@ -74,6 +74,19 @@ class Camp extends \app\core\Controller {
       $camp = $camp->listUserCamps($userid);
     }
     
+  // Admin side: it will delete the camp related to the user as well as the guest if there is
+  public function cancelCamp($profile_id)
+  {
+    // Check if the request method is POST
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+      // Get the membership ID from the POST data
+      $camp_id = $_POST['camp_id'];
+      $camp_model = new \app\models\Camp();
+      $camp_model->deleteById($camp_id);
+
+      header("Location: /Profile/infoDetails/{$profile_id}");
+    }
+  }
 
 
   
