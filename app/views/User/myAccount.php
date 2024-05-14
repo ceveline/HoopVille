@@ -170,7 +170,7 @@
         <div class="container">
             <div class="stacked-sections">
                 <div class="profile">
-                    <h2><?= __('My Profile'); ?></h2>
+                    <h2><?= __('Your Profile'); ?></h2>
                     <p><?= __('First Name'); ?>: <?php echo $data['profile']->first_name; ?></p>
                     <p><?= __('Last Name'); ?>: <?php echo $data['profile']->last_name; ?></p>
                     <p><?= __('Phone'); ?>: <?php echo $data['profile']->phone; ?></p>
