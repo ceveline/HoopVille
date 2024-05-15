@@ -189,7 +189,7 @@ button:hover{
             }
 
             // submit if everythingh passes
-            window.location.href = "/Home";
+            window.location.href = "/User/myAccount";
         }
     </script>
 </body>

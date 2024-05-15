@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -24,7 +25,7 @@
         }
 
         .form-container {
-            height:400px;
+            height: 400px;
             width: 350px;
             background-color: ghostwhite;
             border-radius: 20px;
@@ -35,11 +36,11 @@
             align-items: center;
             display: flex;
             flex-direction: column;
-            justify-content: center; 
+            justify-content: center;
         }
 
         .form-container2 {
-            height:400px;
+            height: 400px;
             width: 350px;
             background-color: ghostwhite;
             border-radius: 20px;
@@ -48,16 +49,20 @@
             margin-left: 8cap0px;
             margin-top: 25px;
             align-items: center;
-            display: flex; /* Added */
-            flex-direction: column; /* Added */
-            justify-content: center; /* Added */
+            display: flex;
+            /* Added */
+            flex-direction: column;
+            /* Added */
+            justify-content: center;
+            /* Added */
         }
-        
+
         .form-container2:hover {
             background-color: #F4F4F4;
             transform: scale(1.03);
             transition: background-color 0.3s ease, transform 0.3s ease;
         }
+
         .form-container2 h3 {
             margin-top: -20px;
             padding: 5px;
@@ -67,8 +72,9 @@
             width: 100%;
             color: white;
             margin-bottom: 10px;
-            font-size: 18px; 
+            font-size: 18px;
         }
+
         h1 {
             padding: 10px;
             color: black;
@@ -86,7 +92,7 @@
             color: black;
             border-radius: 10px;
             margin-top: auto;
-        
+
         }
 
         button:hover {
@@ -158,36 +164,39 @@
             border-radius: 20px;
             margin-bottom: 10px;
             margin-left: 30px;
-            object-fit: cover; 
-            box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 8px 0px; 
-            transition: transform 0.3s ease; 
+            object-fit: cover;
+            box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 8px 0px;
+            transition: transform 0.3s ease;
         }
 
         .form-container:hover {
-            background-color: #F4F4F4; 
-            transform: scale(1.03); 
-            transition: background-color 0.3s ease, transform 0.3s ease; 
+            background-color: #F4F4F4;
+            transform: scale(1.03);
+            transition: background-color 0.3s ease, transform 0.3s ease;
         }
+
         .form-container h3 {
-            margin-top: -20px; 
+            margin-top: -20px;
             padding: 5px;
             border-radius: 10px;
-            background-color: black; 
+            background-color: black;
             text-align: center;
             width: 100%;
             color: white;
             margin-bottom: 10px;
         }
-        .subtitle p{
+
+        .subtitle p {
             font-weight: bolder;
             color: black;
         }
 
-        .btn{
+        .btn {
             margin-top: 45px;
             font-weight: bold;
         }
-        h3{
+
+        h3 {
             color: black;
             background-color: #FFDE59;
             text-align: center;
@@ -205,7 +214,7 @@
         }
 
         .price {
-            color: #FF5722; 
+            color: #FF5722;
         }
 
         .date {
@@ -225,7 +234,7 @@
         .btn a {
             display: inline-block;
             padding: 10px 20px;
-            background-color: #FFDE59; 
+            background-color: #FFDE59;
             color: white;
             text-decoration: none;
             border-radius: 5px;
@@ -233,7 +242,7 @@
         }
 
         .btn a:hover {
-            background-color: #F44336; 
+            background-color: #F44336;
         }
 
 
@@ -241,73 +250,74 @@
             color: black;
             text-align: center;
         }
-
-
     </style>
 </head>
+
 <body>
-<div class="background">
-    <div style='height: 30px'></div>
-    <div class="title">
-        <h1><?=__('Services')?></h1>
-    </div>
-    <div class='container'>
-
-        <div class="form-container">
-            <h3><?=__('Camp')?></h3>
-            <img src="/assets/images/servicescamp.jpg" alt="<?=__('camp')?>" class="images">
-            
-            <div class="subtitle">
-                <p><?=__('Ultimate Training Camp')?></p>
-            </div>
-            <div class="training">
-            <p><?=__('Exclusive Camp league to achieve better basketball skills!')?></p>
-            </div>
-            
-            <form action="" method="post">
-                <div class="btn">
-                    <a href="/User/camp/list"><?=__('Learn more!')?></a>
-                </div>
-            </form>
+    <div class="background">
+        <div style='height: 30px'></div>
+        <div class="title">
+            <h1><?= __('Services') ?></h1>
         </div>
+        <div class='container'>
 
-        <div class="form-container2">
-            <h3><?=__('Booking')?></h3>
-            <img src="/assets/images/servicesbooking.jpg" alt="<?=__('booking')?>" class="images">
-            
-            <div class="subtitle">
-                <p><?=__('Booking system')?></p>
-            </div>
+            <div class="form-container">
+                <h3><?= __('Camp') ?></h3>
+                <img src="/assets/images/servicescamp.jpg" alt="<?= __('camp') ?>" class="images">
 
-            <div class="training">
-                <p><?=__('Flexible booking system to have an open court for you and your friends!')?></p>
-            </div>
-            <form action="" method="post">
-                <div class="btn">
-                    <a href="/User/booking/create"><?=__('Learn more!')?></a>
+                <div class="subtitle">
+                    <p><?= __('Ultimate Training Camp') ?></p>
                 </div>
-            </form>
-        </div>
-
-        <div class="form-container">
-            <h3><?=__('Membership')?></h3>
-            <img src="/assets/images/servicesmembership.jpg" alt="<?=__('membership')?>" class="images">
-            
-            <div class="subtitle">
-                <p><?=__('Innovative membership plan!')?></p>
-            </div>
-            <div class="training">
-                <p><?=__('Register for an effective membership plan to help you achieve your athletic goals!')?></p>
-            </div>            
-            <form action="" method="post">
-                <div class="btn">
-                    <a href="/Membership"><?=__('Learn more!')?></a>
+                <div class="training">
+                    <p><?= __('Exclusive Camp league to achieve better basketball skills!') ?></p>
                 </div>
-            </form>
-        </div>
 
+                <form action="" method="post">
+                    <div class="btn">
+                        <a href="/User/camp/list"><?= __('Learn more!') ?></a>
+                    </div>
+                </form>
+            </div>
+
+            <div class="form-container2">
+                <h3><?= __('Booking') ?></h3>
+                <img src="/assets/images/servicesbooking.jpg" alt="<?= __('booking') ?>" class="images">
+
+                <div class="subtitle">
+                    <p><?= __('Booking system') ?></p>
+                </div>
+
+                <div class="training">
+                    <p><?= __('Flexible booking system to have an open court for you and your friends!') ?></p>
+                </div>
+                <form action="" method="post">
+                    <div class="btn">
+                        <a href="/User/booking/create"><?= __('Learn more!') ?></a>
+                    </div>
+                </form>
+            </div>
+
+            <div class="form-container">
+                <h3><?= __('Membership') ?></h3>
+                <img src="/assets/images/servicesmembership.jpg" alt="<?= __('membership') ?>" class="images">
+
+                <div class="subtitle">
+                    <p><?= __('Innovative membership plan!') ?></p>
+                </div>
+                <div class="training">
+                    <p><?= __('Register for an effective membership plan to help you achieve your athletic goals!') ?>
+                    </p>
+                </div>
+                <form action="" method="post">
+                    <div class="btn">
+                        <a href="/Membership"><?= __('Learn more!') ?></a>
+                    </div>
+                </form>
+            </div>
+
+        </div>
     </div>
     </div>
-</div>
 </body>
+
 </html>

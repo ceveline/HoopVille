@@ -70,7 +70,6 @@ class Publication extends \app\core\Controller {
         header('location:/Admin/Publication/index'); //change this
     }
 
-    #[\app\filters\Admin\IsAdmin]
     function viewPublication($id) {
         $publication = new \app\models\Publication();
         $publicationData = $publication->getById($id);

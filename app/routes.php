@@ -20,6 +20,7 @@ $this->addRoute('login', 'User,login');
 $this->addRoute('register', 'User,register');
 $this->addRoute('logout', 'User,logout');
 
+$this->addRoute('Admin/dashboard', 'Administrator,dashboard');
 $this->addRoute('Admin/User/view', 'Profile,viewAll');
 $this->addRoute('Admin/Review/list', 'Review,index');
 $this->addRoute('Review/delete/{id}', 'Review,delete');
@@ -37,7 +38,7 @@ $this->addRoute('User/forgotPassword', 'User,forgotPassword');
 $this->addRoute('User/sendPasswordReset', 'User,sendPasswordReset');
 $this->addRoute('User/aboutUs', 'User,aboutUs');
 $this->addRoute('User/contactChoice', 'User,contactChoice');
-$this->addRoute('User/sendMessage','User,sendMessage');
+$this->addRoute('User/sendMessage', 'User,sendMessage');
 
 //PUBLICATIONS
 $this->addRoute('Admin/Publication/create', 'Publication,create');

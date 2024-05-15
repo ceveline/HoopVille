@@ -18,72 +18,75 @@
             <img class='hoopville-logo' src="/assets/images/hoopvilleLogo.png"></img>
         </div>
         <?php if (isset($_SESSION['user_id'])): ?>
-        <div class="main">
-            <div class="list">
-                <ul>
-                    <li>
-                        <a class="nav-link" href="/Home"><?= __('Home') ?></a>
-                    </li>
-                    <li>
-                        <a class="nav-link" href="/User/services"><?= __('Services') ?></a>
-                    </li>
-                    <li>
-                        <a class="nav-link" href="/User/aboutUs"><?= __('About') ?></a>
-                    </li>
-                    <li>
-                        <a class="nav-link" href="/User/contactChoice"><?= __('Contact') ?></a>
-                    </li>
-                    <li>
-                        <a class="nav-link" href="/FAQ">FAQ</a>
-                    </li>
-                    <li>
-                        <a class="nav-link" href="/Publication"><?= __('News & Updates') ?></a>
-                    </li>
-                    <li>
-                        <a class="nav-link" href="/User/review/list"><?= __('Reviews') ?></a>
-                    </li>
+            <div class="main">
+                <div class="list">
+                    <ul>
+                        <li>
+                            <a class="nav-link" href="/Home"><?= __('Home') ?></a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="/User/services"><?= __('Services') ?></a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="/User/aboutUs"><?= __('About') ?></a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="/User/contactChoice"><?= __('Contact') ?></a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="/FAQ">FAQ</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="/Publication"><?= __('News & Updates') ?></a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="/User/review/list"><?= __('Reviews') ?></a>
+                        </li>
 
-                    <?php if (isset($_SESSION['user_id'])): ?>
-                        <li><a class="nav-link" href="/User/myAccount"><?= __('My Account') ?></a></li>
-                        <li><a class="nav-link" href="/logout"><?= __('Logout') ?></a></li>
-                    <?php else: ?>
-                        <li><a class="nav-link" href="/login"><?= __('Login') ?></a></li>
-                    <?php endif; ?>
-                </ul>
-            </div>
-            <div class="lang">
-                <p>
-                    <?php
-
-
-                    $idString = isset($_GET['id']) ? "&id={$_GET['id']}" : "";
+                        <?php if (isset($_SESSION['user_id'])): ?>
+                            <li><a class="nav-link" href="/User/myAccount"><?= __('My Account') ?></a></li>
+                            <li><a class="nav-link" href="/logout"><?= __('Logout') ?></a></li>
+                        <?php else: ?>
+                            <li><a class="nav-link" href="/login"><?= __('Login') ?></a></li>
+                        <?php endif; ?>
+                    </ul>
+                </div>
+                <div class="lang">
+                    <p>
+                        <?php
 
 
-                    echo " <a href='?lang=en$idString'>EN</a> |
+                        $idString = isset($_GET['id']) ? "&id={$_GET['id']}" : "";
+
+
+                        echo " <a href='?lang=en$idString'>EN</a> |
                            <a href='?lang=fr$idString'>FR</a>";
-                    ?>
+                        ?>
 
 
-                </p>
+                    </p>
+                </div>
             </div>
-        </div>
         <?php elseif (isset($_SESSION['admin_id'])): ?>
             <div class="main">
                 <div class="list">
-                <ul>
-                    <li>
-                        <a class="nav-link" href="#"><?= __('My Account') ?></a>
-                    </li>
-                    <li>
-                        <a class="nav-link" href="/Admin/booking/list"><?= __('Bookings') ?></a>
-                    </li>
-                    <li>
-                        <a class="nav-link" href="/Admin/Publication/index"><?= __('News & Updates') ?></a>
-                    </li>
-                    <li>
-                        <a class="nav-link" href="/logout"><?= __('Logout') ?></a>
-                    </li>
-                    <!-- <li>
+                    <ul>
+                        <li>
+                            <a class="nav-link" href="/Admin/dashbaord"><?= __('Dashboard') ?></a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="/Admin/User/view"><?= __('Users') ?></a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="/Admin/booking/list"><?= __('Bookings') ?></a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="/Admin/Publication/index"><?= __('News & Updates') ?></a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="/logout"><?= __('Logout') ?></a>
+                        </li>
+                        <!-- <li>
                         <a class="nav-link" href="/User/services"><?= __('Services') ?></a>
                     </li>
                     <li>
@@ -103,9 +106,9 @@
                         ?>
                     </p>
                 </div>
-            </div>  
-            <?php else: ?>
-                <div class="main">
+            </div>
+        <?php else: ?>
+            <div class="main">
                 <div class="list">
                     <ul>
                         <li>
@@ -137,7 +140,7 @@
                             <li><a class="nav-link" href="/login"><?= __('Login') ?></a></li>
                         <?php endif; ?>
 
-                        
+
 
                         <!-- || isset($_SESSION['admin_id']) -->
                     </ul>
@@ -157,7 +160,7 @@
 
                     </p>
                 </div>
-        <?php endif; ?>
+            <?php endif; ?>
 
 
 

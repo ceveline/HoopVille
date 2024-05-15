@@ -1,114 +1,115 @@
-.background{
-    min-height: 100%;
-    background-color: rgba(0, 0, 0, 0.3);
-    display: flex;
-    justify-content: center;
+.background {
+  height: calc(100% - 108px);
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
 }
 
 .content {
-    height: 421px;
-    width: 850px;
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    padding-top: 38px;
-    margin: auto;
-    margin-top: 74px;
-    border-radius: 1rem;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  height: 421px;
+  width: 850px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  padding-top: 38px;
+  margin: auto;
+  margin-top: 74px;
+  border-radius: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .login-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 42px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 42px;
 }
 
 h1 {
-    text-align: center; 
+  text-align: center;
 }
 
 .login-form input {
-    margin-bottom: 26px;
-    margin-left: 10px;
-    /* width: 118px; */
+  margin-bottom: 26px;
+  margin-left: 10px;
+  /* width: 118px; */
 }
 
 .login-form label {
-    margin-bottom: 5px;
+  margin-bottom: 5px;
 }
 
 .inputs {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-.register-now{
-    margin-top: 5%;
-    text-align: center;
-    display: flex;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .register-now {
-    text-align: center;
-    display: flex;
+  margin-top: 5%;
+  text-align: center;
+  display: flex;
+}
+
+.register-now {
+  text-align: center;
+  display: flex;
 }
 
 .register-now a {
-    font-style: italic;
+  font-style: italic;
 }
 
-.login-form label, .login-form input{
-    margin-bottom: 25px;
-    width: 132px;
+.login-form label,
+.login-form input {
+  margin-bottom: 25px;
+  width: 132px;
 }
 
-
-#password_hash, #email {
-    border-radius: 10px;
-    height: 32px;
-    width: 248px;
-    padding-left: 10px;
+#password_hash,
+#email {
+  border-radius: 10px;
+  height: 32px;
+  width: 248px;
+  padding-left: 10px;
 }
 
 .login-form input[type="text"],
 .login-form input[type="password"] {
-    width: 248px;
-    height: 32px;
-    border-radius: 10px;
-    padding-left: 10px;
+  width: 248px;
+  height: 32px;
+  border-radius: 10px;
+  padding-left: 10px;
 }
 
 button {
-    height: 34px;
-    width: 124px;
-    font-size: 0.93rem;
-    margin-top: 25px;
-    margin-bottom: 19px;
-    border-radius: 0.6rem;
-    border: none;
-    background-color: #ffda76;
+  height: 34px;
+  width: 124px;
+  font-size: 0.93rem;
+  margin-top: 25px;
+  margin-bottom: 19px;
+  border-radius: 0.6rem;
+  border: none;
+  background-color: #ffda76;
 }
 
-button:hover{
-    background-color: #fbd467;
+button:hover {
+  background-color: #fbd467;
 }
 
 .inputs {
-    position: relative;
+  position: relative;
 }
 
 .forgot-password {
-    /* position: absolute; */
-    bottom: -10px;
-    display: flex;
-    justify-content: flex-end;
-    width: 360px;
+  /* position: absolute; */
+  bottom: -10px;
+  display: flex;
+  justify-content: flex-end;
+  width: 360px;
 }
 
 .forgot-password a {
-    font-style: italic;
-    font-size: 15px;
+  font-style: italic;
+  font-size: 15px;
 }

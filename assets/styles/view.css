@@ -1,106 +1,121 @@
+/* Background styling */
 .background {
-    min-height: 100vh; /* Increased height */
-    background-color: rgba(0, 0, 0, 0.3);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  height: calc(100vh - 108px);
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+/* Content container styling */
 .content-container {
     background-color: white;
     border-radius: 1rem;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     padding: 20px; /* Increased padding */
-    width: 800px; /* Increased width */
+    width: 850px; /* Increased width */
     margin: auto;
     margin-top: 60px;
 }
 
+/* Heading styling */
 h1 {
-    text-align: center;
-    padding-bottom: 30px;
+  text-align: center;
+  padding-bottom: 30px;
 }
 
+/* Form styling */
 form {
-    margin-bottom: 30px; /* Increased margin */
-    display: flex;
-    justify-content: flex-start;
+  margin-bottom: 30px; /* Increased margin */
+  display: flex;
+  justify-content: flex-start;
 }
 
+/* Search container styling */
 .search-container {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    width: 500px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 500px;
 }
 
+/* Search text input styling */
 .search-text {
-    width: calc(100% - 130px); /* Adjusted width */
-    height: 32px;
-    border: none;
-    border-radius: 16px;
-    border-bottom: 1px solid #ccc;
-    padding-left: 10px;
-    margin-right: 10px;
-    background-color: #ddd;
+  width: calc(100% - 130px); /* Adjusted width */
+  height: 32px;
+  border: none;
+  border-radius: 16px;
+  border-bottom: 1px solid #ccc;
+  padding-left: 10px;
+  margin-right: 10px;
+  background-color: #ddd;
 }
 
+/* Search button styling */
 .search-button {
-    height: 32px;
-    width: 100px; /* Adjusted width */
-    border: none;
-    border-radius: 0 4px 4px 0;
-    background-color: #ffda76;
-    color: white;
-    cursor: pointer;
+  height: 32px;
+  width: 100px; /* Adjusted width */
+  border: none;
+  border-radius: 0 4px 4px 0;
+  background-color: #ffda76;
+  color: white;
+  cursor: pointer;
 }
 
 .search-button:hover {
-    background-color: #fbd467;
+  background-color: #fbd467;
 }
 
 /* Table styling */
 table {
     width: 100%;
     border-collapse: collapse;
+    overflow: hidden; /* Hide overflow from the container */
+}
+
+tbody {
+    max-height: 400px; /* Adjust the maximum height for scrolling */
+    overflow-y: scroll; /* Add vertical scroll */
+    display: block; /* Required for overflow-y to work */
 }
 
 th, td {
     padding: 15px; /* Increased padding */
     border-bottom: 1px solid #ccc;
+    white-space: nowrap; /* Prevent text wrapping */
 }
 
 th {
-    text-align: left;
+  text-align: left;
 }
 
 /* Alternating row colors */
 tbody tr:nth-child(even) {
-    background-color: #f9f9f9;
+  background-color: #f9f9f9;
 }
 
-/* Delete button */
+/* Delete button styling */
 .delete-button {
-    color: white;
-    background-color: red; /* Grey color */
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    text-decoration: none; /* Keep as link */
-    padding: 8px 15px; /* Adjust padding */
+  color: white;
+  background-color: red; /* Grey color */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none; /* Keep as link */
+  padding: 8px 15px; /* Adjust padding */
 }
 
-/* Info button */
+/* Info button styling */
 .info-button {
-    color: white;
-    background-color: #bbb; /* Grey color */
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    text-decoration: none; /* Keep as link */
-    padding: 8px 15px; /* Adjust padding */
+  color: white;
+  background-color: #bbb; /* Grey color */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none; /* Keep as link */
+  padding: 8px 15px; /* Adjust padding */
 }
 
 .info-button:hover {
-    background-color: #999; /* Darker grey on hover */
+  background-color: #999; /* Darker grey on hover */
 }

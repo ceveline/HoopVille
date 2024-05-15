@@ -1,14 +1,6 @@
-
-/* bb  */
-body {
-  display: flex;
-  justify-content: center; /* Center content horizontally */
-  align-items: center; /* Center content vertically */
-  height: 100vh; /* Ensure the body fills the viewport height */
-}
-
-.main {
+.container {
   width: 600px;
+  margin: 60px auto;
   border-radius: 10px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   padding: 100px;
@@ -17,17 +9,18 @@ body {
 
 form {
   display: flex;
-  flex-direction: column;
   gap: 10px;
+  justify-content: center;
   align-items: center;
 }
 
 img {
-  margin: auto; /* Center image horizontally */
+  margin-left: auto;
+  margin-right: auto;
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: arial;
 }
 
 p {

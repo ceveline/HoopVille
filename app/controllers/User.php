@@ -44,6 +44,8 @@ class User extends \app\core\Controller
                     $user = $user->getById($_SESSION['user_id']);
                     $user->secret = $_SESSION['secret_setup'];
                     $user->add2FA();
+                    header('location:/Home');
+
                     // if admin login
                 } else if (isset($_SESSION['temp_admin_id'])) {
                     $_SESSION['admin_id'] = $_SESSION['temp_admin_id'];
@@ -53,9 +55,10 @@ class User extends \app\core\Controller
                     $admin = $admin->getById($_SESSION['admin_id']);
                     $admin->secret = $_SESSION['secret_setup'];
                     $admin->add2FA();
+                    header('location:/Admin/dashboard');
+
                 }
 
-                header('location:/Home');
             } else {
                 header('location:/User/2FA/setup2fa');
             }
@@ -85,9 +88,11 @@ class User extends \app\core\Controller
                     // success = remove temp and set ACTUAL user_id
                     $_SESSION['user_id'] = $_SESSION['temp_user_id'];
                     unset($_SESSION['temp_user_id']);
+                    header('location:/Home');
                 } else if (isset($_SESSION['temp_admin_id'])) {
                     $_SESSION['admin_id'] = $_SESSION['temp_admin_id'];
                     unset($_SESSION['temp_admin_id']);
+                    header('location:/Admin/dashboard');
                 }
 
                 header('location:/Home');//the good place
@@ -118,7 +123,6 @@ class User extends \app\core\Controller
                     $_SESSION['secret'] = $admin->secret;
 
                     header('location:/User/2FA/setup2fa');
-
                 } else {
                     $this->view('User/login', $error_message, true);
                     header('location:/login');
