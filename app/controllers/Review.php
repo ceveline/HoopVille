@@ -86,6 +86,8 @@ class Review extends \app\core\Controller
     header('location:/User/myAccount');
   }
 
+  
+
   //Shows all Reviews that belong to one user
 
   public function list(){
@@ -173,11 +175,6 @@ class Review extends \app\core\Controller
 }
 
 
-    
-    function delete($id) {
-        $review = new \app\models\Review();
-		$review->delete($id);
 
-        header('location:/Admin/Review/list'); //change this
-    }
+    
 
