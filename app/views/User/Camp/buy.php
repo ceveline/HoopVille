@@ -105,15 +105,15 @@ button:hover{
                 
                     
                     <div class="inputs">
-                    <label for="guest_fname" class="form-label">Guest's First Name</label>
+                    <label for="guest_fname" class="form-label">irst Name</label>
                     <input type="text" class="form-control" id="guest_fname" name="guest_fname" placeholder="Jon">
                 </div>
                 <div class="inputs">
-                    <label for="guest_lname" class="form-label">Guest's Last Name</label>
+                    <label for="guest_lname" class="form-label">Last Name</label>
                     <input type="text" class="form-control" id="guest_lname" name="guest_lname" placeholder="Doe">
                 </div>
                 <div class="inputs">
-                    <label for="guest_dob" class="form-label">Guest's Date of Birth</label>
+                    <label for="guest_dob" class="form-label">Date of Birth</label>
                     <input type="date" class="form-control" id="guest_dob" name="guest_dob" placeholder="">
                 </div>
               
