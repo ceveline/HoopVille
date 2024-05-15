@@ -1,126 +1,103 @@
-# French translations for PACKAGE package.
-# Copyright (C) 2024 THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# root <EMAIL@ADDRESS>, 2024.
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-12 02:17+0000\n"
-"PO-Revision-Date: 2024-05-12 02:35+0000\n"
+"POT-Creation-Date: 2024-05-15 02:15+0000\n"
+"PO-Revision-Date: 2024-05-15 02:23+0000\n"
 "Last-Translator: root <EMAIL@ADDRESS>\n"
-"Language-Team: French\n"
-"Language: fr\n"
+"Language-Team: English\n"
+"Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=ASCII\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: app/views/Admin/booking/list.php:10 app/views/User/Booking/create.php:8
+#: app/views/Admin/booking/list.php:9 app/views/User/Booking/create.php:8
 msgid "Rent a gym"
 msgstr "Reserver un gymnase"
 
-#: app/views/User/login.php
-msgid "Incorrect email/password."
-msgstr "E-mail/mot de passe incorrect."
-
-#: app/views/User/register.php
-#: app/views/User/login.php
-msgid "Email already exists. Please log in."
-msgstr "L'email existe deja. Veuillez vous connecter."
-
-#: app/views/User/Publication/list.php
-msgid "Search by title or content"
-msgstr "Recherche par titre ou contenu"
-
-#: app/views/footer.php:44
-msgid "2024 Hoopville. Made by Ceveline, Sereen, Hussain, and Denis. All rights reserved."
-msgstr "2024 Hoopville. Realise par Ceveline, Sereen, Hussain et Denis. Tous droits reserves."
-
-#: app/views/User/login.php
-msgid "Forgot password?"
-msgstr "Mot de passe oublie?"
-
-#: app/views/Admin/booking/list.php:187
+#: app/views/Admin/booking/list.php:193
 msgid "BOOKINGS"
-msgstr "Reservations"
+msgstr "RESERVATIONS"
 
-#: app/views/Admin/booking/list.php:195
+#: app/views/Admin/booking/list.php:201
 msgid "Sort by date"
 msgstr "Trier par date"
 
-#: app/views/Admin/booking/list.php:197
+#: app/views/Admin/booking/list.php:203
 msgid "Recent first"
 msgstr "Recent en premier"
 
-#: app/views/Admin/booking/list.php:198
+#: app/views/Admin/booking/list.php:204
 msgid "Oldest first"
 msgstr "Ancien en premier"
 
-#: app/views/Admin/booking/list.php:200
+#: app/views/Admin/booking/list.php:206
 msgid "Search by email"
-msgstr "Chercher par couriel"
+msgstr "Rechercher par couriel"
 
-#: app/views/Admin/booking/list.php:201 app/views/User/Publication/list.php:27
+#: app/views/Admin/booking/list.php:207 app/views/Admin/Review/list.php:17
+#: app/views/Admin/Review/list.php:18 app/views/Admin/User/view.php:17
+#: app/views/Admin/User/view.php:18 app/views/User/Publication/list.php:27
 msgid "Search"
 msgstr "Chercher"
 
-#: app/views/Admin/booking/list.php:206
+#: app/views/Admin/booking/list.php:212
 msgid "Filter by status"
 msgstr "Filtrer par statut"
 
-#: app/views/Admin/booking/list.php:208
+#: app/views/Admin/booking/list.php:214
 msgid "all"
 msgstr "tous"
 
-#: app/views/Admin/booking/list.php:209 app/views/Admin/booking/list.php:238
+#: app/views/Admin/booking/list.php:215 app/views/Admin/booking/list.php:244
 msgid "pending"
 msgstr "en attente"
 
-#: app/views/Admin/booking/list.php:210 app/views/Admin/booking/list.php:238
+#: app/views/Admin/booking/list.php:216 app/views/Admin/booking/list.php:244
 msgid "approved"
 msgstr "approuve"
 
-#: app/views/Admin/booking/list.php:211 app/views/Admin/booking/list.php:238
+#: app/views/Admin/booking/list.php:217 app/views/Admin/booking/list.php:244
 msgid "declined"
 msgstr "refuse"
 
-#: app/views/Admin/booking/list.php:220
+#: app/views/Admin/booking/list.php:226
 msgid "Booking type"
 msgstr "Type de reservation"
 
-#: app/views/Admin/booking/list.php:222
+#: app/views/Admin/booking/list.php:228
 msgid "Full name"
 msgstr "Nom complet"
 
-#: app/views/Admin/booking/list.php:223
+#: app/views/Admin/booking/list.php:229
 msgid "Booked on"
-msgstr "Reserver le"
+msgstr "Reserve le"
 
-#: app/views/Admin/login.php:3 app/views/Admin/login.php:24
-#: app/views/navbar.php:49 app/views/User/login.php:18
-#: app/views/User/login.php:31
+#: app/views/Admin/login.php:3 app/views/Admin/login.php:25
+#: app/views/navbar.php:50 app/views/navbar.php:137 app/views/User/login.php:19
+#: app/views/User/login.php:32
 msgid "Login"
 msgstr "Connexion"
 
 #: app/views/Admin/login.php:17 app/views/Admin/register.php:18
-#: app/views/User/login.php:21 app/views/User/register.php:37
+#: app/views/Admin/User/infoDetails.php:18 app/views/User/forgotPassword.php:21
+#: app/views/User/login.php:22 app/views/User/register.php:37
 msgid "Email:"
-msgstr "Email :"
+msgstr "Email:"
 
 #: app/views/Admin/login.php:21 app/views/Admin/register.php:22
-#: app/views/User/login.php:25 app/views/User/register.php:41
+#: app/views/User/login.php:26 app/views/User/register.php:41
 msgid "Password:"
-msgstr "Mot de passe :"
+msgstr "Mot de passe:"
 
-#: app/views/Admin/login.php:26 app/views/User/login.php:33
+#: app/views/Admin/login.php:27 app/views/User/login.php:34
 msgid "Don't have an account?"
 msgstr "Vous n'avez pas de compte ?"
 
-#: app/views/Admin/login.php:26 app/views/User/login.php:33
+#: app/views/Admin/login.php:27 app/views/User/login.php:34
 msgid "Register now!"
-msgstr "Inscrivez vous maintenant !"
+msgstr "Inscrivez-vous maintenant !"
 
 #: app/views/Admin/Membership/edit.php:77
 msgid "Modify User Membership"
@@ -128,26 +105,29 @@ msgstr "Modifier l'adhesion de l'utilisateur"
 
 #: app/views/Admin/Membership/edit.php:81
 msgid "Membership ID:"
-msgstr "Identifiant de l'adhesion :"
+msgstr "Identifiant de l'adhesion:"
 
 #: app/views/Admin/Membership/edit.php:84
 msgid "User ID:"
-msgstr "Identifiant de l'utilisateur :"
+msgstr "Identifiant utilisateur:"
 
 #: app/views/Admin/Membership/edit.php:87
 msgid "Membership Type:"
-msgstr "Type d'adhesion :"
+msgstr "Type d'adhesion:"
 
 #: app/views/Admin/Membership/edit.php:95
 msgid "Start Date:"
-msgstr "Date de debut :"
+msgstr "Date de debut:"
 
 #: app/views/Admin/Membership/edit.php:98
 msgid "End Date:"
-msgstr "Date de fin :"
+msgstr "Date de fin:"
 
 #: app/views/Admin/Membership/list.php:4 app/views/Admin/Publication/list.php:5
-#: app/views/Admin/Publication/view.php:8 app/views/navbar.php:39
+#: app/views/Admin/Publication/list.php:17
+#: app/views/Admin/Publication/view.php:8 app/views/navbar.php:40
+#: app/views/navbar.php:81 app/views/navbar.php:127
+#: app/views/User/Publication/list.php:16
 msgid "News & Updates"
 msgstr "Actualites et mises a jour"
 
@@ -157,11 +137,11 @@ msgstr "Identifiant de l'adhesion"
 
 #: app/views/Admin/Membership/list.php:19
 msgid "User ID"
-msgstr "ID de l'utilisateur"
+msgstr "ID utilisateur"
 
 #: app/views/Admin/Membership/list.php:20
 msgid "Membership Type"
-msgstr "Type"
+msgstr "Type d'adhesion"
 
 #: app/views/Admin/Membership/list.php:21
 msgid "Start Date"
@@ -172,19 +152,20 @@ msgid "End Date"
 msgstr "Date de fin"
 
 #: app/views/Admin/Membership/list.php:23
-#: app/views/Admin/Publication/list.php:20
+#: app/views/Admin/Publication/list.php:23
 msgid "Actions"
 msgstr "Actions"
 
 #: app/views/Admin/Membership/list.php:40
-#: app/views/Admin/Publication/list.php:34
-#: app/views/Admin/Publication/view.php:37
+#: app/views/Admin/Publication/list.php:37
+#: app/views/Admin/Publication/view.php:36 app/views/User/myAccount.php:249
 msgid "Edit"
 msgstr "Modifier"
 
 #: app/views/Admin/Membership/list.php:41
-#: app/views/Admin/Publication/list.php:35
-#: app/views/Admin/Publication/view.php:38
+#: app/views/Admin/Publication/list.php:38
+#: app/views/Admin/Publication/view.php:37 app/views/Admin/Review/list.php:54
+#: app/views/Admin/User/view.php:32 app/views/User/Review/edit.php:208
 msgid "Delete"
 msgstr "Supprimer"
 
@@ -194,7 +175,7 @@ msgstr "Creer une publication"
 
 #: app/views/Admin/Publication/create.php:17
 msgid "Create A Post"
-msgstr "Creer un message"
+msgstr "Creer un article"
 
 #: app/views/Admin/Publication/create.php:21
 #: app/views/Admin/Publication/edit.php:20
@@ -214,7 +195,7 @@ msgstr "Texte:"
 #: app/views/Admin/Publication/create.php:26
 #: app/views/Admin/Publication/edit.php:26
 msgid "Type your content here"
-msgstr "Le texte"
+msgstr "Saisissez votre contenu ici"
 
 #: app/views/Admin/Publication/create.php:29
 msgid "Post"
@@ -230,69 +211,198 @@ msgstr "Modifier le texte"
 
 #: app/views/Admin/Publication/edit.php:29
 msgid "Save Changes"
-msgstr "Sauvegarder"
+msgstr "Sauvegarder les modifications"
 
-#: app/views/Admin/Publication/list.php:18
+#: app/views/Admin/Publication/list.php:21
 msgid "Title"
 msgstr "Titre"
 
-#: app/views/Admin/Publication/list.php:19
+#: app/views/Admin/Publication/list.php:22
 msgid "Date Posted"
-msgstr "Date postee"
+msgstr "Date de publication"
 
-#: app/views/Admin/Publication/list.php:33
+#: app/views/Admin/Publication/list.php:36
 msgid "View"
 msgstr "Voir"
 
-#: app/views/Admin/Publication/view.php:27
+#: app/views/Admin/Publication/view.php:26
 msgid "Posted on"
-msgstr "Poste sur"
+msgstr "Poste le"
 
 #: app/views/Admin/register.php:4 app/views/Admin/register.php:15
 msgid "Registration"
-msgstr "Registration"
+msgstr "Inscription"
 
 #: app/views/Admin/register.php:26 app/views/User/register.php:45
 msgid "Re-type password:"
-msgstr "Retaper le mot de passe"
+msgstr "Retapez le mot de passe:"
 
-#: app/views/Admin/register.php:29
+#: app/views/Admin/register.php:29 app/views/User/register.php:48
 msgid "Register"
-msgstr "Inscrivez-Vous"
+msgstr "S'inscrire"
 
 #: app/views/Admin/register.php:32 app/views/User/register.php:51
 msgid "Already have an account?"
-msgstr "Vous avez deja un compte?"
+msgstr "Vous avez deja un compte ?"
 
 #: app/views/Admin/register.php:32 app/views/User/register.php:51
 msgid "Login now!"
-msgstr "Se connectez-vous maintenant!"
+msgstr "Connectez-vous maintenant !"
 
-#: app/views/Admin/register.php:43
+#: app/views/Admin/register.php:43 app/views/User/register.php:81
 msgid "Please fill in all fields"
-msgstr "Veuillez remplir tout les champs"
+msgstr "Veuillez remplir tous les champs"
 
-#: app/views/Admin/register.php:57
+#: app/views/Admin/register.php:57 app/views/User/register.php:87
 msgid "You must be at least 17 years old to register"
 msgstr "Vous devez avoir au moins 17 ans pour vous inscrire"
 
-#: app/views/Admin/register.php:61
+#: app/views/Admin/register.php:61 app/views/User/register.php:92
 msgid "Please make sure the passwords are the same"
-msgstr "Veuillez vous assurer que les mots de passe sont les memes"
+msgstr "Veuillez vous assurer que les mots de passe sont identiques"
+
+#: app/views/Admin/Review/list.php:7 app/views/Admin/Review/list.php:14
+msgid "All Reviews"
+msgstr "Toutes les critiques"
+
+#: app/views/Admin/Review/list.php:23
+msgid "Filter:"
+msgstr "Filtre:"
+
+#: app/views/Admin/Review/list.php:25
+msgid "Most Stars"
+msgstr "Plus d'etoiles"
+
+#: app/views/Admin/Review/list.php:26
+msgid "Least Stars"
+msgstr "Moins d'etoiles"
+
+#: app/views/Admin/Review/list.php:28
+msgid "Apply"
+msgstr "Appliquer"
+
+#: app/views/Admin/Review/list.php:58 app/views/Admin/User/view.php:36
+msgid "Info"
+msgstr "Info"
+
+#: app/views/Admin/Review/list.php:64
+msgid "No reviews found."
+msgstr "Aucune critique trouvee."
+
+#: app/views/Admin/Review/reviewDetails.php:7
+#: app/views/Admin/Review/reviewDetails.php:17
+msgid "Review"
+msgstr "Critique"
+
+
+#: app/views/Admin/Review/reviewDetails.php:19
+msgid "Written by:"
+msgstr "Ecrit par:"
+
+#: app/views/Admin/Review/reviewDetails.php:26
+msgid "View Profile"
+msgstr "Voir le profil"
+
+#: app/views/Admin/Review/reviewDetails.php:47
+msgid "Delete Review"
+msgstr "Supprimer la critique"
+
+#: app/views/Admin/User/infoDetails.php:7
+#: app/views/Admin/User/infoDetails.php:14
+msgid "Profile Information"
+msgstr "Informations de profil"
+
+#: app/views/Admin/User/infoDetails.php:16
+msgid "Name:"
+msgstr "Nom:"
+
+#: app/views/Admin/User/infoDetails.php:19
+#: app/views/Admin/User/infoDetails.php:21
+msgid "N/A"
+msgstr "N/A"
+
+#: app/views/Admin/User/infoDetails.php:20
+msgid "Phone:"
+msgstr "Telephone:"
+
+#: app/views/Admin/User/infoDetails.php:24
+msgid "Membership Information"
+msgstr "Informations d'adhesion"
+
+#: app/views/Admin/User/infoDetails.php:26
+msgid "Type:"
+msgstr "Type:"
+
+#: app/views/Admin/User/infoDetails.php:27
+msgid "Register Date:"
+msgstr "Date d'inscription:"
+
+#: app/views/Admin/User/infoDetails.php:28
+msgid "Expiry Date:"
+msgstr "Date d'expiration:"
+
+#: app/views/Admin/User/infoDetails.php:33
+msgid "Cancel Membership"
+msgstr "Annuler l'adhesion"
+
+#: app/views/Admin/User/infoDetails.php:40
+msgid "Booking Information"
+msgstr "Informations de reservation"
+
+#: app/views/Admin/User/infoDetails.php:45
+msgid "Date:"
+msgstr "Date:"
+
+#: app/views/Admin/User/infoDetails.php:45
+msgid "Time:"
+msgstr "Heure:"
+
+#: app/views/Admin/User/infoDetails.php:45
+msgid "to"
+msgstr "a"
+
+#: app/views/Admin/User/infoDetails.php:51
+msgid "Cancel Booking"
+msgstr "Annuler la reservation"
+
+#: app/views/Admin/User/infoDetails.php:60
+msgid "Camp Information"
+msgstr "Informations sur le camp"
+
+#: app/views/Admin/User/infoDetails.php:65
+msgid "Guest:"
+msgstr "Invite:"
+
+#: app/views/Admin/User/infoDetails.php:72
+msgid "Cancel Camp"
+msgstr "Annuler le camp"
+
+#: app/views/Admin/User/infoDetails.php:84
+msgid "Delete Profile"
+msgstr "Supprimer le profil"
+
+#: app/views/Admin/User/view.php:7
+msgid "User Profiles"
+msgstr "Profils d'utilisateurs"
+
+#: app/views/Admin/User/view.php:14
+msgid "Users"
+msgstr "Utilisateurs"
 
 #: app/views/Booking/edit.php:8
 msgid "Update booking"
-msgstr "Modifier une reservation"
+msgstr "Mettre a jour la reservation"
 
 #: app/views/Booking/edit.php:14
 msgid "UPDATE BOOKING"
-msgstr "MODIFIER UNE RESERVATION"
+msgstr "MODIFIER LA RESERVATION"
 
 #: app/views/Booking/edit.php:19
 msgid "Booking list"
-msgstr "Liste de reservations"
+msgstr "Liste de reservationS"
 
-#: app/views/Booking/edit.php:20 app/views/navbar.php:45
+#: app/views/Booking/edit.php:20 app/views/navbar.php:47
+#: app/views/navbar.php:75 app/views/navbar.php:134
 msgid "My Account"
 msgstr "Mon compte"
 
@@ -310,7 +420,7 @@ msgstr "REFUSE"
 
 #: app/views/Booking/edit.php:49
 msgid "Update time or date"
-msgstr "Modifer temps ou date"
+msgstr "Mettre a jour l'heure ou la date"
 
 #: app/views/Booking/edit.php:51
 msgid "Cancel booking"
@@ -318,10 +428,10 @@ msgstr "Annuler la reservation"
 
 #: app/views/Booking/edit.php:66
 msgid "Booking details"
-msgstr "Reservation"
+msgstr "Details de la reservation"
 
 #: app/views/Booking/edit.php:128 app/views/User/Booking/create.php:185
-#: app/views/User/Membership/individual.php:208
+#: app/views/User/Membership/individual.php:222
 #: app/views/User/Membership/list.php:46
 msgid "Back"
 msgstr "Retour"
@@ -409,11 +519,11 @@ msgstr "Sam"
 
 #: app/views/Booking/edit.php:277 app/views/User/Booking/create.php:335
 msgid "Availabilities for"
-msgstr "Disponibilites pour le"
+msgstr "Disponibilites pour"
 
 #: app/views/Booking/edit.php:342
 msgid "Update"
-msgstr "Modifier"
+msgstr "Mettre a jour"
 
 #: app/views/faq.php:82 app/views/faq.php:90 app/views/faq.php:98
 #: app/views/faq.php:106 app/views/faq.php:115
@@ -421,6 +531,8 @@ msgid ""
 "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum "
 "malesuada nunc vel quam dignissim, ac ullamcorper turpis dictum?"
 msgstr ""
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum "
+"malesuada nunc vel quam dignissim, ac ullamcorper turpis dictum?"
 
 #: app/views/faq.php:85 app/views/faq.php:93 app/views/faq.php:101
 #: app/views/faq.php:110 app/views/faq.php:119
@@ -428,50 +540,103 @@ msgid ""
 "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum "
 "malesuada nunc vel quam dignissim, ac ullamcorper turpis dictum."
 msgstr ""
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum "
+"malesuada nunc vel quam dignissim, ac ullamcorper turpis dictum."
+
+#: app/views/footer.php:47
+msgid ""
+"2024 Hoopville. Made by Ceveline, Sereen, Hussain, and Denis. All rights "
+"reserved."
+msgstr ""
+"2024 Hoopville. Realisee par Ceveline, Sereen, Hussain et Denis. Tous droits "
+"reserves."
 
 #: app/views/home.php:12
 msgid "HoopVille Performance Centre"
-msgstr "Centre de performances HoopVille"
+msgstr "Centre de Performance HoopVille"
 
 #: app/views/home.php:15
 msgid "Take your game to the next level"
-msgstr "Faites passer votre jeu au niveau superieur"
+msgstr "Elevez votre jeu au niveau superieur"
 
-#: app/views/home.php:21
+#: app/views/home.php:22
 msgid "More info"
-msgstr "Plus d'informations"
+msgstr "Plus d'infos"
 
-#: app/views/home.php:25
+#: app/views/home.php:26
 msgid "Join now"
-msgstr "Adherer maintenant!"
+msgstr "Rejoignez maintenant"
 
-#: app/views/navbar.php:19
+#: app/views/navbar.php:25 app/views/navbar.php:112
 msgid "Home"
-msgstr "Menu principal"
+msgstr "Accueil"
 
-#: app/views/navbar.php:22
+#: app/views/navbar.php:28 app/views/navbar.php:87 app/views/navbar.php:115
+#: app/views/User/services.php:252
 msgid "Services"
 msgstr "Services"
 
-#: app/views/navbar.php:25
+#: app/views/navbar.php:31 app/views/navbar.php:90 app/views/navbar.php:118
 msgid "About"
-msgstr "A propos de nous"
+msgstr "A propos"
 
-#: app/views/navbar.php:28
+#: app/views/navbar.php:34 app/views/navbar.php:121
 msgid "Contact"
 msgstr "Contact"
 
-#: app/views/navbar.php:37
+#: app/views/navbar.php:43 app/views/navbar.php:130
 msgid "Reviews"
-msgstr "Commentaires"
+msgstr "Avis"
 
-#: app/views/navbar.php:42
+#: app/views/navbar.php:48 app/views/navbar.php:84 app/views/navbar.php:135
 msgid "Logout"
-msgstr "Se deconnecter"
+msgstr "Deconnexion"
+
+#: app/views/navbar.php:78
+msgid "Bookings"
+msgstr "Reservations"
+
+#: app/views/User/aboutUs.php:7 app/views/User/aboutUs.php:82
+msgid "About Us"
+msgstr "A propos de nous"
+
+#: app/views/User/aboutUs.php:86
+msgid "About Us Image"
+msgstr "Image A propos de nous"
+
+#: app/views/User/aboutUs.php:90
+msgid "HoopVille"
+msgstr "HoopVille"
+
+#: app/views/User/aboutUs.php:95
+msgid ""
+"Hoopville is a private multi-sport performance center that is focused on the "
+"sport of basketball. \r\n"
+" The facility will be located in Montreal, Quebec "
+"catering to athletes of all sports, all levels and all ages.\r\n"
+" Our mission is to provide a welcoming and "
+"supportive environment where athletes can develop their craft without "
+"limitations/restrictions.\r\n"
+" With experienced and proven coaches/ownership, "
+"state-of-the art equipment and a variety of services tailored to the "
+"community of Montreal, we aim to become the go-to basketball facility in the "
+"area."
+msgstr ""
+"Hoopville est un centre de performance sportive prive qui se concentre sur le "
+"sport du basketball. \r\n"
+" L'installation sera situee a Montreal, au Quebec, "
+"et accueillera des athletes de tous les sports, de tous niveaux et de tous ages.\r\n"
+" Notre mission est de fournir un environnement accueillant et "
+"favorable ou les athletes peuvent developper leur art sans "
+"limites/restrictions.\r\n"
+" Avec des entraineurs/proprietaires experimentes et eprouves, "
+"des equipements a la pointe de la technologie et une variete de services adaptes a la "
+"communaute de Montreal, nous visons a devenir l'installation de basketball de reference "
+"dans la region."
 
 #: app/views/User/Booking/create.php:115
 msgid "COURT RENTAL"
-msgstr "RESERVER UN GYMNASE"
+msgstr "LOCATION DE TERRAIN"
 
 #: app/views/User/Booking/create.php:122
 msgid "Select an option"
@@ -479,9 +644,9 @@ msgstr "Selectionnez une option"
 
 #: app/views/User/Booking/create.php:163
 msgid "Name on Card:"
-msgstr "Nom sur la carte"
+msgstr "Nom sur la carte :"
 
-#: app/views/User/Booking/create.php:165
+#: app/views/User/Booking/create.php:165 app/views/User/payment.php:142
 msgid "Card Number"
 msgstr "Numero de carte"
 
@@ -489,26 +654,25 @@ msgstr "Numero de carte"
 msgid "Expiration Date"
 msgstr "Date d'expiration"
 
-#: app/views/User/Booking/create.php:169
+#: app/views/User/Booking/create.php:169 app/views/User/payment.php:146
 msgid "CVV"
 msgstr "CVV"
 
 #: app/views/User/Booking/create.php:174
 msgid "Pay Now"
-msgstr "Payer"
-
+msgstr "Payer maintenant"
 
 #: app/views/User/Booking/create.php:443
 msgid "Total payment of"
-msgstr "Payment total de"
+msgstr "Paiement total de"
 
 #: app/views/User/Booking/create.php:446
 msgid "on"
-msgstr "le"
+msgstr "sur"
 
 #: app/views/User/Camp/list.php:209
 msgid "CAMPS"
-msgstr "CAMPS"
+msgstr "CAMP"
 
 #: app/views/User/Camp/list.php:217
 msgid "Camp Days"
@@ -516,48 +680,150 @@ msgstr "Jours de camp"
 
 #: app/views/User/Camp/list.php:221
 msgid "Registration period:"
-msgstr "Periode d'inscription"
+msgstr "Periode d'inscription :"
 
 #: app/views/User/Camp/list.php:226
 msgid "Join Now for"
-msgstr "Inscrivez-vous maintenant pour"
+msgstr "Rejoignez maintenant pour"
 
-#: app/views/User/Membership/individual.php:167
+#: app/views/User/contact.php:7
+msgid "Contact Form"
+msgstr "Formulaire de contact"
+
+#: app/views/User/contact.php:16
+msgid "Message Us"
+msgstr "Envoyez-nous un message"
+
+#: app/views/User/contact.php:19
+msgid "Enter your name"
+msgstr "Entrez votre nom"
+
+#: app/views/User/contact.php:22
+msgid "Enter your email"
+msgstr "Entrez votre adresse e-mail"
+
+#: app/views/User/contact.php:27
+msgid "Select subject"
+msgstr "Selectionnez le sujet"
+
+#: app/views/User/contact.php:28 app/views/User/Review/create.php:183
+#: app/views/User/services.php:257
+msgid "Camp"
+msgstr "Camp"
+
+#: app/views/User/contact.php:29 app/views/User/services.php:275
+msgid "Booking"
+msgstr "Reservation"
+
+#: app/views/User/contact.php:30 app/views/User/Review/create.php:184
+#: app/views/User/services.php:293
+msgid "Membership"
+msgstr "Adhesion"
+
+#: app/views/User/contact.php:31
+msgid "Other"
+msgstr "Autre"
+
+#: app/views/User/contact.php:36
+msgid "Enter your message"
+msgstr "Entrez votre message"
+
+#: app/views/User/contact.php:38 app/views/User/forgotPassword.php:24
+msgid "Submit"
+msgstr "Soumettre"
+
+#: app/views/User/contactChoice.php:8 app/views/User/contactChoice.php:18
+msgid "Contact Us"
+msgstr "Contactez-nous"
+
+#: app/views/User/contactChoice.php:21
+msgid "Person 1"
+msgstr "Personne 1"
+
+#: app/views/User/contactChoice.php:23
+msgid "Feras Saaida"
+msgstr "Feras Saaida"
+
+#: app/views/User/contactChoice.php:26
+msgid "hussainamin285@gmail.com"
+msgstr "hussainamin285@gmail.com"
+
+#: app/views/User/contactChoice.php:32
+msgid "Person 2"
+msgstr "Personne 2"
+
+#: app/views/User/contactChoice.php:34
+msgid "Mikee Dosado"
+msgstr "Mikee Dosado"
+
+#: app/views/User/forgotPassword.php:7
+msgid "Document"
+msgstr "Document"
+
+#: app/views/User/forgotPassword.php:18
+msgid "Forgot Password"
+msgstr "Mot de passe oublie"
+
+#: app/views/User/forgotPassword.php:22
+msgid "Jon123@gmail.com"
+msgstr "Jon123@gmail.com"
+
+#: app/views/User/login.php:30
+msgid "Forgot password?"
+msgstr "Mot de passe oublie ?"
+
+#: app/views/User/Membership/individual.php:148
+#: app/views/User/Membership/individual.php:150
+msgid "Start date:"
+msgstr "Date de debut :"
+
+#: app/views/User/Membership/individual.php:155
+#: app/views/User/Membership/individual.php:157
+msgid "End date:"
+msgstr "Date de fin :"
+
+#: app/views/User/Membership/individual.php:164
+#: app/views/User/myAccount.php:214
+msgid "Modify"
+msgstr "Modifier"
+
+#: app/views/User/Membership/individual.php:170
+#: app/views/User/Membership/individual.php:221
+msgid "Cancel membership"
+msgstr "Annuler l'adhesion"
+
+#: app/views/User/Membership/individual.php:181
+#: app/views/User/myAccount.php:189
 msgid "Modify Membership"
 msgstr "Modifier l'adhesion"
 
-#: app/views/User/Membership/individual.php:169
+#: app/views/User/Membership/individual.php:183
 msgid "Current membership plan:"
-msgstr "Mon plan d'adhesion"
+msgstr "Plan d'adhesion actuel :"
 
-#: app/views/User/Membership/individual.php:175
+#: app/views/User/Membership/individual.php:189
 msgid "Select a new membership:"
-msgstr "Selectionner un nouvel abonnement"
+msgstr "Selectionnez une nouvelle adhesion :"
 
-#: app/views/User/Membership/individual.php:180
+#: app/views/User/Membership/individual.php:194
 msgid "Base Training"
-msgstr "Formation de base"
+msgstr "Entrainement de base"
 
-#: app/views/User/Membership/individual.php:202
+#: app/views/User/Membership/individual.php:216
 msgid "Confirm Membership Cancellation"
 msgstr "Confirmer l'annulation de l'adhesion"
 
-#: app/views/User/Membership/individual.php:203
-#: app/views/User/myAccount.php:308 app/views/User/myAccount.php:334
-#: app/views/User/myAccount.php:354
+#: app/views/User/Membership/individual.php:217
+#: app/views/User/myAccount.php:187 app/views/User/myAccount.php:228
+#: app/views/User/myAccount.php:245
 msgid "Type"
 msgstr "Type"
 
-#: app/views/User/Membership/individual.php:203
+#: app/views/User/Membership/individual.php:217
 msgid "in the box below to cancel your membership:"
-msgstr "dans la casse ci-dessous pour annuler votre adhesion"
+msgstr "dans la case ci-dessous pour annuler votre adhesion :"
 
-#: app/views/User/Membership/individual.php:207
-msgid "Cancel membership"
-msgstr "Annuler"
-
-#: app/views/User/Membership/list.php:14
-#: app/views/User/Membership/list.php:7
+#: app/views/User/Membership/list.php:7 app/views/User/Membership/list.php:14
 msgid "Memberships"
 msgstr "Adhesions"
 
@@ -567,80 +833,83 @@ msgstr "/mois"
 
 #: app/views/User/Membership/list.php:33
 msgid "Review Your Order"
-msgstr "Verifiez votre commande"
+msgstr "Verifier votre commande"
 
-#: app/views/User/Membership/list.php:49
 #: app/views/User/Membership/list.php:50
 msgid "Confirm"
-msgstr "Confirmez"
+msgstr "Confirmer"
 
 #: app/views/User/Membership/list.php:162
 msgid "Membership type:"
-msgstr "Type"
+msgstr "Type d'adhesion :"
 
 #: app/views/User/Membership/list.php:165
 msgid "Price: "
-msgstr "Prix: "
+msgstr "Prix :"
 
 #: app/views/User/Membership/list.php:168
 msgid "What's included: "
-msgstr "Ce qui est inclus: "
+msgstr "Ce qui est inclus :"
 
-#: app/views/User/myAccount.php:294
+#: app/views/User/myAccount.php:175
 msgid "Your Profile"
-msgstr "Votre Profile: "
+msgstr "Votre profil"
 
-#: app/views/User/myAccount.php:297 app/views/User/Profile/create.php:138
+#: app/views/User/myAccount.php:176 app/views/User/Profile/create.php:138
 msgid "First Name"
 msgstr "Prenom"
 
-#: app/views/User/myAccount.php:298 app/views/User/Profile/create.php:142
+#: app/views/User/myAccount.php:177 app/views/User/Profile/create.php:142
 msgid "Last Name"
-msgstr "Nom"
+msgstr "Nom de famille"
 
-#: app/views/User/myAccount.php:299
+#: app/views/User/myAccount.php:178
 msgid "Phone"
-msgstr "Numero de telephone"
+msgstr "Telephone"
 
-#: app/views/User/myAccount.php:300
+#: app/views/User/myAccount.php:179
 msgid "Date of Birth"
 msgstr "Date de naissance"
 
-#: app/views/User/myAccount.php:301
+#: app/views/User/myAccount.php:180
 msgid "Email"
-msgstr "Courriel"
+msgstr "E-mail"
 
-#: app/views/User/myAccount.php:307
+#: app/views/User/myAccount.php:181
+msgid "Modify Profile"
+msgstr "Modifier le profil"
+
+#: app/views/User/myAccount.php:186
 msgid "Your Membership"
-msgstr "Votre abonnement"
+msgstr "Votre adhesion"
 
-#: app/views/User/myAccount.php:309
+#: app/views/User/myAccount.php:188
 msgid "Expires on"
-msgstr "Expire le: "
+msgstr "Expire le"
 
-#: app/views/User/myAccount.php:315
+#: app/views/User/myAccount.php:196
 msgid "Your Bookings"
-msgstr "Vos Reservations"
+msgstr "Vos reservations"
 
-#: app/views/User/myAccount.php:324
+#: app/views/User/myAccount.php:222
 msgid "Your Camps"
-msgstr "Vos Camps"
+msgstr "Vos camps"
 
-#: app/views/User/myAccount.php:331
+#: app/views/User/myAccount.php:227
 msgid "Player Information"
-msgstr "Informations du joueur"
+msgstr "Informations sur le joueur"
 
-#: app/views/User/myAccount.php:335
+#: app/views/User/myAccount.php:229
 msgid "Registration Date"
 msgstr "Date d'inscription"
 
-#: app/views/User/myAccount.php:346
+#: app/views/User/myAccount.php:238
 msgid "Your Reviews"
-msgstr "Vos Commentaires"
+msgstr "Vos avis"
 
-#: app/views/User/myAccount.php:355 app/views/User/Review/list.php:238
+#: app/views/User/myAccount.php:246
 msgid "Rating"
-msgstr "Notation"
+msgstr "Note"
 
 #: app/views/User/payment.php:134
 msgid "Payment Information"
@@ -648,19 +917,19 @@ msgstr "Informations de paiement"
 
 #: app/views/User/payment.php:138
 msgid "Full Name"
-msgstr "Nom Complet"
+msgstr "Nom complet"
 
 #: app/views/User/payment.php:139 app/views/User/Profile/create.php:139
 msgid "Jon"
-msgstr ""
+msgstr "Jon"
 
 #: app/views/User/payment.php:143
 msgid "4724090478569843"
-msgstr ""
+msgstr "4724090478569843"
 
 #: app/views/User/payment.php:147
 msgid "123"
-msgstr ""
+msgstr "123"
 
 #: app/views/User/payment.php:150
 msgid "Expiry Date"
@@ -672,35 +941,35 @@ msgstr "Pays"
 
 #: app/views/User/payment.php:156
 msgid "Canada"
-msgstr ""
+msgstr "Canada"
 
 #: app/views/User/payment.php:159
 msgid "Province"
-msgstr ""
+msgstr "Province"
 
 #: app/views/User/payment.php:160
 msgid "QC"
-msgstr ""
+msgstr "QC"
 
 #: app/views/User/payment.php:163
 msgid "Zip Code"
-msgstr "Code Postal"
+msgstr "Code postal"
 
 #: app/views/User/payment.php:164
 msgid "1X1 X1X"
-msgstr ""
+msgstr "1X1 X1X"
 
 #: app/views/User/payment.php:168
 msgid "Process Payment"
-msgstr "Proceder le paiement"
+msgstr "Proceder au paiement"
 
 #: app/views/User/Profile/create.php:135 app/views/User/Profile/create.php:154
 msgid "Create Profile"
-msgstr "Cree votre profile"
+msgstr "Creer un profil"
 
 #: app/views/User/Profile/create.php:143
 msgid "Doe"
-msgstr ""
+msgstr "Doe"
 
 #: app/views/User/Profile/create.php:146
 msgid "Phone Number"
@@ -708,56 +977,68 @@ msgstr "Numero de telephone"
 
 #: app/views/User/Profile/create.php:147
 msgid "5141231234"
-msgstr ""
+msgstr "5141231234"
 
 #: app/views/User/Profile/create.php:150
 msgid "Date Of Birth"
 msgstr "Date de naissance"
 
+#: app/views/User/Publication/list.php:24
+msgid "Search by title or content"
+msgstr "Rechercher par titre ou contenu"
+
 #: app/views/User/Publication/list.php:32
 msgid "View all"
-msgstr "Tout Voir"
+msgstr "Voir tout"
 
 #: app/views/User/Publication/list.php:56
 msgid "Created on"
-msgstr "Cree le:"
+msgstr "Cree le"
 
 #: app/views/User/register.php:21
 msgid "First name:"
-msgstr "Prenom"
+msgstr "Prenom :"
 
 #: app/views/User/register.php:25
 msgid "Last name:"
-msgstr "Nom"
+msgstr "Nom de famille :"
 
 #: app/views/User/register.php:29
 msgid "Phone number:"
-msgstr "Numero de telephone"
+msgstr "Numero de telephone :"
 
 #: app/views/User/register.php:33
 msgid "Date of birth:"
-msgstr "Date de naissance"
+msgstr "Date de naissance :"
 
+#: app/views/User/resetPassword.php:8 app/views/User/resetPassword.php:19
+#: app/views/User/resetPassword.php:34
+msgid "Reset Password"
+msgstr "Reinitialiser le mot de passe"
+
+#: app/views/User/resetPassword.php:25
+msgid "New password:"
+msgstr "Nouveau mot de passe :"
+
+#: app/views/User/resetPassword.php:30
+msgid "Repeat password:"
+msgstr "Repeter le mot de passe :"
+
+#: app/views/User/Review/create.php:178
+msgid "form-section"
+msgstr "section-de-formulaire"
 
 #: app/views/User/Review/create.php:179
 msgid "Select Purchase for your review"
-msgstr "Selectionnez l'achat pour votre avis"
+msgstr "Selectionnez un achat pour votre avis"
 
 #: app/views/User/Review/create.php:181
 msgid "Full Court"
-msgstr "Cour pleniere"
+msgstr "Terrain complet"
 
 #: app/views/User/Review/create.php:182
 msgid "Half Court"
 msgstr "Demi-terrain"
-
-#: app/views/User/Review/create.php:183 app/views/User/services.php:250
-msgid "Camp"
-msgstr ""
-
-#: app/views/User/Review/create.php:184 app/views/User/services.php:282
-msgid "Membership"
-msgstr "Abonnement"
 
 #: app/views/User/Review/create.php:189
 msgid "Enter your Review"
@@ -771,63 +1052,65 @@ msgstr "Selectionnez votre note"
 msgid "Create Review"
 msgstr "Creer un avis"
 
-#: app/views/User/Review/list.php:7
-msgid "All Reviews"
-msgstr "Tous les avis"
+#: app/views/User/Review/edit.php:7 app/views/User/Review/edit.php:205
+msgid "Update Review"
+msgstr "Mettre a jour l'avis"
 
-#: app/views/User/Review/list.php:230
+#: app/views/User/Review/edit.php:179
+msgid "Enter your Updated Review"
+msgstr "Entrez votre avis mis a jour"
+
+#: app/views/User/Review/edit.php:184
+msgid "Select Your Updated Rating"
+msgstr "Selectionnez votre nouvelle note"
+
+#: app/views/User/Review/list.php:87
 msgid "ALL REVIEWS"
-msgstr "Tous les avis"
+msgstr "TOUS LES AVIS"
 
-#: app/views/User/Review/list.php:236
-msgid "Purchase Type"
-msgstr "type d'achat"
-
-#: app/views/User/Review/list.php:237
-msgid "Review Text"
-msgstr "Texte de revision"
-
-#: app/views/User/services.php:251
+#: app/views/User/services.php:258
 msgid "camp"
-msgstr ""
+msgstr "camp"
 
-#: app/views/User/services.php:254
+#: app/views/User/services.php:261
 msgid "Ultimate Training Camp"
 msgstr "Camp d'entrainement ultime"
 
-#: app/views/User/services.php:256
+#: app/views/User/services.php:264
 msgid "Exclusive Camp league to achieve better basketball skills!"
-msgstr "Ligue de camp exclusive pour ameliorer vos competences en basket-ball !"
+msgstr "Ligue de camps exclusive pour ameliorer vos competences en basketball !"
 
-#: app/views/User/services.php:260 app/views/User/services.php:276
-#: app/views/User/services.php:292
+#: app/views/User/services.php:269 app/views/User/services.php:287
+#: app/views/User/services.php:304
 msgid "Learn more!"
-msgstr "Apprendre encore plus!"
+msgstr "En savoir plus !"
 
-#: app/views/User/services.php:266
-msgid "Booking"
-msgstr "Reservation"
-
-#: app/views/User/services.php:267
+#: app/views/User/services.php:276
 msgid "booking"
-msgstr "Reservation"
+msgstr "reservation"
 
-#: app/views/User/services.php:270
+#: app/views/User/services.php:279
 msgid "Booking system"
-msgstr "System de Reservation"
-
-#: app/views/User/services.php:272
-msgid "Flexible booking system to have an open court for you and your friends!"
-msgstr "Systeme de reservation flexible pour avoir un terrain ouvert pour vous et vos amis !"
+msgstr "Systeme de reservation"
 
 #: app/views/User/services.php:283
+msgid "Flexible booking system to have an open court for you and your friends!"
+msgstr ""
+"Systeme de reservation flexible pour avoir un terrain ouvert pour vous et "
+"vos amis !"
+
+#: app/views/User/services.php:294
 msgid "membership"
-msgstr "Abonnement"
+msgstr "adhesion"
 
-#: app/views/User/services.php:286
+#: app/views/User/services.php:297
 msgid "Innovative membership plan!"
-msgstr "Plan d'adhesion innovant!"
+msgstr "Plan d'adhesion innovant !"
 
-#: app/views/User/services.php:288
-msgid "Register for an effective membership plan to help you achieve your athletic goals"
-msgstr "Inscrivez-vous a un plan d'adhesion efficace pour vous aider a atteindre vos objectifs de remise en forme"
+#: app/views/User/services.php:300
+msgid ""
+"Register for an effective membership plan to help you achieve your athletic "
+"goals!"
+msgstr ""
+"Inscrivez-vous a un plan d'adhesion efficace pour vous aider a atteindre "
+"vos objectifs sportifs !"
