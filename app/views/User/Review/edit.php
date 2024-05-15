@@ -81,7 +81,7 @@ button,  {
     background-color: #ffda76;
 }
 
-button:hover, .btn:hover{
+button:hover, .delete:hover{
     background-color: #fbd467;
 }
 
@@ -146,7 +146,7 @@ button {
     text-align: center;
 }
 
-button, .btn{
+button, .delete{
     display: inline-block;
     padding: 10px 20px;
     width: 200px;
@@ -157,7 +157,7 @@ button, .btn{
     transition: background-color 0.3s ease;
 }
 
-button:hover, .btn:hover {
+button:hover, .delete:hover {
     background-color: #F44336; 
 }
 
@@ -202,10 +202,10 @@ button:hover, .btn:hover {
             </div>
 
             <div class="form-section">
-                <button type="submit" name="action" value="update"><?=__('Update Review')?></button>
+                <button type="submit" name="update" id="update" value="update"><?=__('Update Review')?></button>
             </div>  
             <div class="form-section">
-            <a href="/User/review/delete?id=<?php echo $data->review_id; ?>" class="btn"><?php echo __('Delete'); ?></a>
+            <a href="/User/review/delete?id=<?php echo $data->review_id; ?>" class="delete" name="delete" id="delete"><?= __('Delete'); ?></a>
             </div>  
         </form>
     </div>

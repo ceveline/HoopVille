@@ -7,7 +7,7 @@ class Membership extends \app\core\Controller
 {
 
     // view for membership page
-   // #[\app\filters\Login]
+    #[\app\filters\Login]
     function list()
     {
         $membership_types = new \app\models\Membership_type();
@@ -111,7 +111,7 @@ class Membership extends \app\core\Controller
             $membership_model->insert();
 
             // Redirect to the menu page
-            header("location:/User/myAccount");
+            header("location:/User/payment");
         } else {
             // If it's not a POST request, display the membership list page
             $this->view('User/Membership/list', null, true);

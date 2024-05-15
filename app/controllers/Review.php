@@ -26,7 +26,7 @@ class Review extends \app\core\Controller
   
   
   
-      //  header('location:/User/review/list'); //redirecting user to the general review page
+        header('location:/User/myAccount'); //redirecting user to the general review page
       } else {
         $this->view('User/review/create', null, true); 
         

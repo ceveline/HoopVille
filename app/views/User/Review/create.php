@@ -207,7 +207,7 @@ button:hover {
             </div>
 
             <div class="btn">
-                <button type="submit"><?=__('Create Review')?></button>
+                <button type="submit" name="create"><?=__('Create Review')?></button>
             </div>
         </form>
     </div>

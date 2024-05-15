@@ -24,7 +24,7 @@
                         <input type="text" name="query" class="form-control" placeholder="<?= __('Search by title or content') ?>" aria-label="Search query">
                     </div>
                     <div class="search-btn">
-                        <button type="submit"><?= __('Search') ?></button>
+                        <button type="submit" class="search" id="search" name="search"><?= __('Search') ?></button>
                     </div>
                 </form>
                 <form action="/Publication" method="POST" class="mb-3">
