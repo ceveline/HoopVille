@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-    <!-- <script type="text/javascript" src="/app/views/User/Membership/list.js"></script> -->
+    <script type="text/javascript" src="/app/views/User/Membership/list.js"></script>
     <link rel="stylesheet" href="/assets/styles/Membership/list.css">
     <title><?= __('Memberships') ?></title>
 </head>

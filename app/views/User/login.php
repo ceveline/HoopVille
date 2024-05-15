@@ -22,7 +22,7 @@
             <form class='login-form' method="post" action="">
                 <div class="inputs">
                     <label for="email" class="form-label"><?= __('Email:') ?></label>
-                    <input type="text" class="form-control" id="email" name="email" placeholder="Jon123@gmail.com">
+                    <input type="text" class="email" id="email" name="email" placeholder="Jon123@gmail.com">
                 </div>
                 <div class="inputs input2">
                     <label for="password" class="form-label"><?= __('Password:') ?></label>
@@ -32,7 +32,7 @@
                 <div class="forgot">
                     <p class="forgot-password"><a href="/User/forgotPassword"><?= __('Forgot password?') ?></a></p>
                 </div>
-                <button type="submit" class="btn btn-primary" name="action" value="Login"><?= __('Login') ?></button>
+                <button class='login-button' type="submit" name="action" value="Login"><?= __('Login') ?></button>
                 <div class="register-now">
                     <p><?= __('Don\'t have an account?') ?> <a href="/register"><?= __('Register now!') ?></a></p>
                 </div>

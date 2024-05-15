@@ -45,7 +45,7 @@
                     <label for="retype-password" class="form-label"><?= __('Re-type password:') ?></label>
                     <input type="password" class="form-control" id="retype-password" name="retype-password" placeholder="•••••">
                 </div>
-                <button type="submit" class="btn" name="action" value="Register" onclick="validateInput(event)"><?= __('Register') ?></button> 
+                <button id="register-btn" type="submit" class="btn" name="action" value="Register" onclick="validateInput(event)"><?= __('Register') ?></button> 
 
                 <div class="login-now">
                     <p><?= __('Already have an account?') ?> <a href="/login"><?= __('Login now!') ?></a></p>
