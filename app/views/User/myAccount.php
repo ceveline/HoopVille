@@ -170,13 +170,13 @@
         <div class="container">
             <div class="stacked-sections">
                 <div class="profile">
-                    <h2><?= __('Your Profile'); ?></h2>
+                    <h2 id='your-profile'><?= __('Your Profile'); ?></h2>
                     <p><?= __('First Name'); ?>: <?php echo $data['profile']->first_name; ?></p>
                     <p><?= __('Last Name'); ?>: <?php echo $data['profile']->last_name; ?></p>
                     <p><?= __('Phone'); ?>: <?php echo $data['profile']->phone; ?></p>
                     <p><?= __('Date of Birth'); ?>: <?php echo $data['profile']->date_of_birth; ?></p>
                     <p><?= __('Email'); ?>: <?php echo $data['user']->email; ?></p>
-                    <a href="/User/profile/edit?id=<?php echo $data['profile']->profile_id?>" class="btn btn-primary"><?= __('Modify Profile'); ?></a>
+                    <a id='edit-profile-btn' href="/User/profile/edit?id=<?php echo $data['profile']->profile_id?>" class="btn btn-primary"><?= __('Modify Profile'); ?></a>
 
                 </div>
 

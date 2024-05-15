@@ -121,4 +121,72 @@ class AcceptanceTester extends \Codeception\Actor
      {
          $this->amOnPage($arg1);
      }
+	 
+	 /**
+     * @Then I click Login
+     */
+     public function iClickLogin()
+     {
+         $this->click('.login-button');
+     }
+
+    /**
+     * @Then I navigate to :arg1
+     */
+     public function iNavigateTo($arg1)
+     {
+          $this->amOnPage($arg1);
+     }
+
+    /**
+     * @Given I successfully registered
+     */
+     public function iSuccessfullyRegistered()
+     {
+         
+     }
+
+    /**
+     * @Then I see :arg1
+     */
+     public function iSeeYourProfile()
+     {
+         $this->see('your-profile');
+     }
+
+    /**
+     * @When click Edit Profile
+     */
+     public function clickEditProfile()
+     {
+         $this->click('edit-profile-btn');
+     }
+
+    /**
+     * @Then I see :arg1 on my profile
+     */
+     public function iSeeOnMyProfile($arg1)
+     {
+         $this->see($arg1);
+     }
+
+    /**
+     * @When I leave the text fields empty
+     */
+     public function iLeaveTheTextFieldsEmpty()
+     {
+         
+     }
+
+    /**
+     * @Then I should see an alert with text :arg1
+     */
+     public function iShouldSeeAnAlertWithText($arg1)
+     {
+         if ($this->tryToSeeElement('.alert')) {
+			$this->waitForText($arg1);
+			$this->click('OK');
+		}
+     }
+
 }
