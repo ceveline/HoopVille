@@ -186,6 +186,24 @@
       <div class="btns">
         <button onclick="prevSlide()" class="prev" disabled><?= __('Back') ?></button>
         <button onclick="nextSlide()" class="next" disabled><?= __('Next') ?></button>
+          <div class="containerPayment">
+            <form>
+              <label for="name" style='margin-top: 14px'><?= __('Name on Card:') ?></label>
+              <input type="text" id="name" name="name" required>
+              <label for="card-number"><?= __('Card Number') ?>:</label>
+              <input type="text" id="card-number" name="card-number" required>
+              <label for="exp-date"><?= __('Expiration Date') ?>:</label>
+              <input type="text" id="exp-date" name="exp-date" placeholder="MM/YYYY" required>
+              <label for="cvv"><?= __('CVV') ?>:</label>
+              <input type="number" id="cvv" name="cvv" required>
+              <p style='margin-top: 25px' class="paySummary">
+                <!-- 40.00$ - full court on 2024-04-30 4:00 to 6:00 (PM) -->
+              </p>
+              <button id='pay-now-btn' type="button" style='margin-top: 15px' class="btn btnPay"><?= __('Pay Now') ?></button>
+            </form>
+          </div>
+
+        </div>
       </div>
 
 
