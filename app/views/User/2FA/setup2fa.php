@@ -6,7 +6,7 @@
 </head>
 
 <body>
-  <div>
+  <div class="container">
 
     <img height=300 width=300 src="<?= $QRCode ?>">
     <p><strong>Scan the above QR-code</strong> with your mobile Authenticator app, such as Google Authenticator. The

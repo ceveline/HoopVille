@@ -14,7 +14,7 @@
 </head>
 
 <body>
-  <div class='main'>
+  <div class='container'>
 
     <p style="text-align: center;">Submit the <strong>6-digit code</strong> for this site from your Authenticator app.
     </p>

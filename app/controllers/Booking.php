@@ -242,7 +242,7 @@ class Booking extends \app\core\Controller
     $booking = $booking->getBookingById($_GET['id']);
     $booking->status = $_GET['status'];
     $booking->update();
-    header("location:/Admin/booking/edit?id=$booking->booking_id");
+    header("location:/Booking/edit?id=$booking->booking_id");
   }
 
   // Admin side: it will delete the booking related to the user

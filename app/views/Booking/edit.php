@@ -9,63 +9,67 @@
 </head>
 
 <body>
+  <div class="background">
 
 
-  <h1><?= __('UPDATE BOOKING') ?></h1>
-  <div class="container">
+    <h1><?= __('UPDATE BOOKING') ?></h1>
+    <div class="container">
 
-    <?php
+      <?php
 
-    $bookingList = __('Booking list');
-    $myAcc = __('My Account');
+      $bookingList = __('Booking list');
+      $myAcc = __('My Account');
 
-    if (isset($_SESSION['admin_id'])) {
-      echo "<a style='margin-bottom: 20px' href='/Admin/booking/list'>◀ $bookingList</a>";
-    } else {
-      echo "<a style='margin-bottom: 20px' href='/User/myAccount'>◀ $myAcc</a>";
-    }
+      if (isset($_SESSION['admin_id'])) {
+        echo "<a style='margin-bottom: 20px' href='/Admin/booking/list'>◀ $bookingList</a>";
+      } else {
+        echo "<a style='margin-bottom: 20px' href='/User/myAccount'>◀ $myAcc</a>";
+      }
 
-    ?>
-
-
-    <div class='slides'>
-      <div class='slide slide1'>
+      ?>
 
 
+      <div class='slides'>
+        <div class='slide slide1'>
 
-        <?php
-        $booking = $data;
-        $user = $booking->user;
-        $profile = $booking->profile;
 
-        $booking_type = ucfirst($booking->booking_type);
-        $status = $booking->status === 0 ? __('PENDING') : ($booking->status === 1 ? __('APPROVED') : __('DECLINED'));
 
-        $requestString = "id=$booking->booking_id";
+          <?php
+          $booking = $data;
+          $user = $booking->user;
+          $profile = $booking->profile;
 
-        $date = new DateTime($booking->date);
-        $today = new DateTime();
+          $booking_type = ucfirst($booking->booking_type);
+          $status = $booking->status === 0 ? __('PENDING') : ($booking->status === 1 ? __('APPROVED') : __('DECLINED'));
 
-        $updateBtnText = __('Update time or date');
+          $requestString = "id=$booking->booking_id";
 
-        $cancel = __('Cancel booking');
+          $date = new DateTime($booking->date);
+          $today = new DateTime();
 
-        $updateBtn = $date < $today ? "" : "<button style='padding: 5px; width: 150px' class='updateBtn'>
+          $updateBtnText = __('Update time or date');
+
+          $cancel = __('Cancel booking');
+
+          $updateBtn = $date < $today ? "" : "<button style='padding: 10px; width: 250px' class='updateBtn'>
         $updateBtnText</button>";
 
-        $changeStatus = $booking->status === 0 && isset($_SESSION['admin_id']) ? "
+          $approve = __('Approve');
+          $decline = __('Decline');
+
+          $changeStatus = $booking->status === 0 && isset($_SESSION['admin_id']) ? "
       <button class='btnApprove'><a style='color:black' href='/Admin/booking/updateStatus?$requestString&status=1'>
-      <?= __('Approve') ?></a></button>
+      $approve</a></button>
       <button class='btnDecline'><a style='color:black' href='/Admin/booking/updateStatus?$requestString&status=2'>
-      <?= __('Decline') ?></a></button>" : "";
+      $decline</a></button>" : "";
 
 
-        $userInfo = isset($_SESSION['admin_id']) ? "<label><?= __('User info') ?></label>
-        <p><a href='/Admin/user/view?id=$user->user_id'>$profile->first_name $profile->last_name - $user->email</a></p>" : "";
+          $userInfo = isset($_SESSION['admin_id']) ? "<label><?= __('User info') ?></label>
+        <p><a href='/Profile/infoDetails/$user->user_id'>$profile->first_name $profile->last_name - $user->email</a></p>" : "";
 
-        $bookingDetails = __('Booking details');
+          $bookingDetails = __('Booking details');
 
-        echo " 
+          echo " 
         $userInfo
       <label>$bookingDetails</label>
       <p>$booking_type court</p>
@@ -82,52 +86,54 @@
       $cancel</a>
       ";
 
-        ?>
-      </div>
-
-      <!-- calendar -->
-      <div class="slide slide2">
-        <div class="calendar">
-          <div class="calendar-header">
-            <button id="prevMonthBtn">◀</button>
-            <h2 id="currentMonth"></h2>
-            <button id="nextMonthBtn">▶</button>
-          </div>
-          <div class="calendar-grid" id="calendarGrid"></div>
+          ?>
         </div>
 
-      </div>
+        <!-- calendar -->
+        <div class="slide slide2">
+          <div class="calendar">
+            <div class="calendar-header">
+              <button id="prevMonthBtn">◀</button>
+              <h2 id="currentMonth"></h2>
+              <button id="nextMonthBtn">▶</button>
+            </div>
+            <div class="calendar-grid" id="calendarGrid"></div>
+          </div>
 
-      <!-- Time slot -->
-      <div class="slide slide3">
-        <h2 class="dateAvailabilities"></h2><br>
-        <div class="timeSlots">
+        </div>
+
+        <!-- Time slot -->
+        <div class="slide slide3">
+          <h2 class="dateAvailabilities"></h2><br>
+          <div class="timeSlots">
+            <div class="spinner"></div>
+            <div class="slot slot10 disabled" onclick="slotChosen(10)">
+              <p>10:00 a.m. - 12:00 p.m.</p>
+            </div>
+            <div class="slot slot12 disabled" onclick="slotChosen(12)">
+              <p>12:00 p.m. - 2:00 p.m.</p>
+            </div>
+            <div class="slot slot14 disabled" onclick="slotChosen(14)">
+              <p>2:00 p.m. - 4:00 p.m.</p>
+            </div>
+            <div class="slot slot16 disabled" onclick="slotChosen(16)">
+              <p>4:00 p.m. - 6:00 p.m.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="slide slide4">
           <div class="spinner"></div>
-          <div class="slot slot10 disabled" onclick="slotChosen(10)">
-            <p>10:00 a.m. - 12:00 p.m.</p>
-          </div>
-          <div class="slot slot12 disabled" onclick="slotChosen(12)">
-            <p>12:00 p.m. - 2:00 p.m.</p>
-          </div>
-          <div class="slot slot14 disabled" onclick="slotChosen(14)">
-            <p>2:00 p.m. - 4:00 p.m.</p>
-          </div>
-          <div class="slot slot16 disabled" onclick="slotChosen(16)">
-            <p>4:00 p.m. - 6:00 p.m.</p>
-          </div>
         </div>
+
       </div>
 
-      <div class="slide slide4">
-        <div class="spinner"></div>
+      <div class="btns">
+        <button onclick="prevSlide()" class="prev"><?= __('Back') ?></button>
+        <button onclick="nextSlide()" class="next" disabled><?= __('Next') ?></button>
       </div>
-
     </div>
 
-    <div class="btns">
-      <button onclick="prevSlide()" class="prev"><?= __('Back') ?></button>
-      <button onclick="nextSlide()" class="next" disabled><?= __('Next') ?></button>
-    </div>
   </div>
 
   <script>

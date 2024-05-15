@@ -1,98 +1,98 @@
 .background {
-    min-height: 100%;
-    background-color: rgba(0, 0, 0, 0.3);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  min-height: calc(100vh - 108px);
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .content-container {
-    width: 850px;
-    background-color: #f9f9f9; /* Light gray */
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  width: 850px;
+  background-color: #f9f9f9; /* Light gray */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 h1 {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #333; /* Dark gray */
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333; /* Dark gray */
 }
 
 .profile-info {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .profile-info p {
-    margin: 10px 0;
+  margin: 10px 0;
 }
 
 .profile-info h2.section-title {
-    margin-top: 20px;
-    margin-bottom: 10px;
-    color: #555; /* Medium gray */
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: #555; /* Medium gray */
 }
 
 .profile-info ul {
-    list-style: none;
-    padding-left: 0;
+  list-style: none;
+  padding-left: 0;
 }
 
 .profile-info li {
-    margin-bottom: 5px;
+  margin-bottom: 5px;
 }
 
 .profile-info li:before {
-    content: "•";
-    margin-right: 5px;
-    color: #007bff; /* Blue */
+  content: "•";
+  margin-right: 5px;
+  color: #007bff; /* Blue */
 }
 
 .profile-info strong {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .value {
-    color: black; /* Green */
+  color: black; /* Green */
 }
 
 .cancel-button-container {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    margin-top: -10px; /* Adjust this value to align with the title */
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: -10px; /* Adjust this value to align with the title */
 }
 
 .cancel-button {
-    background-color: #dc3545; /* Red */
-    color: white;
-    border: none;
-    padding: 8px 16px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-left: 10px;
+  background-color: #dc3545; /* Red */
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 10px;
 }
 
 .cancel-button:hover {
-    background-color: #c82333; /* Darker red on hover */
+  background-color: #c82333; /* Darker red on hover */
 }
 
 .delete-profile-container {
-    text-align: center;
-    margin-top: 20px; /* Adjust margin as needed */
+  text-align: center;
+  margin-top: 20px; /* Adjust margin as needed */
 }
 
 .delete-button {
-    background-color: #dc3545; /* Red */
-    color: white;
-    border: none;
-    padding: 12px 24px; /* Increased padding for larger size */
-    border-radius: 8px; /* Increased border radius for rounded corners */
-    cursor: pointer;
-    font-size: 18px; /* Increase font size */
+  background-color: #dc3545; /* Red */
+  color: white;
+  border: none;
+  padding: 12px 24px; /* Increased padding for larger size */
+  border-radius: 8px; /* Increased border radius for rounded corners */
+  cursor: pointer;
+  font-size: 18px; /* Increase font size */
 }
 
 .delete-button:hover {
-    background-color: #c82333; /* Darker red on hover */
+  background-color: #c82333; /* Darker red on hover */
 }

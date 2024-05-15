@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,76 +11,75 @@
     <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script> -->
 </head>
 <style>
-        
+    .container {
+        margin: 0 auto;
+        flex-direction: column;
+        align-items: center;
+    }
 
-        .container {
-            margin: 0 auto;
-            flex-direction: column;
-            align-items: center;
-        }
+    .main-title {
+        text-align: center;
+        margin-bottom: 20px;
+    }
 
-        .main-title {
-            text-align: center;
-            margin-bottom: 20px;
-        }
+    .reviews {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
 
-        .reviews {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-        }
+    .review-item {
+        margin-bottom: 20px;
+        width: 1200px;
+        padding: 10px;
+        background-color: #fff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        align-items: center;
+        margin-left: auto;
+        margin-right: auto;
+        transition: box-shadow 0.3s ease, transform 0.3s ease;
+        /* Smooth transitions for box-shadow and transform */
+    }
 
-        .review-item {
-            margin-bottom: 20px;
-            width: 1200px;
-            padding: 10px;
-            background-color: #fff;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            border-radius: 5px;
-            align-items: center;
-            margin-left: 150px;
-            transition: box-shadow 0.3s ease, transform 0.3s ease; /* Smooth transitions for box-shadow and transform */
+    .review-item h3 {
+        margin-bottom: 10px;
+    }
 
+    .review-text {
+        margin-bottom: 10px;
+    }
 
-        }
+    .rating {
+        display: inline-flex;
+        align-items: center;
+    }
 
-        .review-item h3 {
-            margin-bottom: 10px;
-        }
+    input[type="radio"] {
+        display: none;
+    }
 
-        .review-text {
-            margin-bottom: 10px;
-        }
+    label {
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        background-image: url('/assets/images/star-empty-icon.webp');
+        background-size: cover;
+        margin-right: 5px;
+    }
 
-        .rating {
-            display: inline-flex;
-            align-items: center;
-        }
+    .review-item:hover {
+        box-shadow: 8 12px 16px rgba(0, 0, 0, 0.2);
+        transform: scale(1.05);
 
-        input[type="radio"] {
-            display: none;
-        }
+    }
 
-        label {
-            cursor: pointer;
-            width: 30px;
-            height: 30px;
-            background-image: url('/assets/images/star-empty-icon.webp');
-            background-size: cover;
-            margin-right: 5px;
-        }
-
-        .review-item:hover {
-            box-shadow: 8 12px 16px rgba(0, 0, 0, 0.2); 
-            transform: scale(1.05); 
-
-        }
-
-        input[type="radio"]:checked ~ label {
-            background-image: url('/assets/images/star_icon_full.png');
-        }
-    </style>
+    input[type="radio"]:checked~label {
+        background-image: url('/assets/images/star_icon_full.png');
+    }
+</style>
 </head>
+
 <body>
     <div class="background">
         <div class="container">
@@ -89,7 +89,7 @@
             <?php foreach ($data as $review): ?>
                 <div class="review-item">
                     <div class="title">
-                        <h3><?= $review->type;?></h3>
+                        <h3><?= $review->type; ?></h3>
                     </div>
                     <div class="review-text">
                         <p><?= $review->review_text; ?></p>
@@ -115,4 +115,5 @@
         </div>
     </div>
 </body>
+
 </html>

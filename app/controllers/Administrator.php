@@ -3,31 +3,32 @@
 namespace app\controllers;
 
 #[\app\filters\Admin\IsAdmin]
-class Administrator extends \app\core\Controller {
+class Administrator extends \app\core\Controller
+{
 
-    function login() {
+    function login()
+    {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            
+
             $admin = new \app\models\Administrator();
             $email = $_POST['email'];
             $admin = $admin->getByEmail($email);
 
             $password = $_POST['password_hash'];
-            if($admin && password_verify($password, $admin->password_hash)) {
+            if ($admin && password_verify($password, $admin->password_hash)) {
                 $_SESSION['admin_id'] = $admin->admin_id;
                 header('location:/Main'); //change to dashboard
-            }
-            else {
+            } else {
                 header('location:/User/login');
             }
-        }
-        else {
+        } else {
             $this->view('User/login', null, true); //show the login view if user's input is incorrect/doesn't match
         }
     }
 
-    function register() {
-        if($_SERVER['REQUEST_METHOD'] === 'POST') {
+    function register()
+    {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $admin = new \app\models\Administrator();
 
             $admin->email = $_POST['email'];
@@ -36,20 +37,24 @@ class Administrator extends \app\core\Controller {
             $admin->insert();
 
             header('location:/User/login');
-        }
-
-
-        else {
+        } else {
             $this->view('Admin/register', null, true);
         }
-        
+
     }
 
     //logout
-    function logout() {
+    function logout()
+    {
         session_destroy();
 
-		header('location:/Admin/login');
+        header('location:/Admin/login');
+    }
+
+
+    function dashboard()
+    {
+        $this->view('Admin/dashboard', null, true);
     }
 
 }
