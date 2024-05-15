@@ -37,7 +37,7 @@ class MembershipType extends \app\core\Controller {
   
       //  header('location:/User/review/list'); //redirecting user to the general review page
       } else {
-        $this->view('User/review/create', null, true); 
+        $this->view('User/myAccount', null, true); 
         
       }
 
