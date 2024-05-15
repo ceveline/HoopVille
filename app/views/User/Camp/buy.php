@@ -94,31 +94,20 @@ button:hover{
         <div class="content">
             <h1>Enrol in <?php echo "$data->camp_type!"?></h1>
             <form class='register-form' method="post" action="">
-<<<<<<< Updated upstream
-                <!-- Existing input fields -->
-                <div class="inputs">
-                    <label for="self">Registering for:</label>
-                    <input type="radio" id="self" name="register_for" value="self" checked>
-                    <label for="self">Myself</label>
-                    <input type="radio" id="someone_else" name="register_for" value="someone_else">
-                    <label for="someone_else">A guest</label>
-                </div>
-=======
               
->>>>>>> Stashed changes
                 
                     
                     <div class="inputs">
                     <label for="guest_fname" class="form-label">Guest's First Name</label>
-                    <input type="text" class="form-control" id="guest_fname" name="guest_fname" placeholder="Jon">
+                    <input type="text" class="form-control" id="guest_fname" name="guest_fname" placeholder="Jon" required>
                 </div>
                 <div class="inputs">
                     <label for="guest_lname" class="form-label">Guest's Last Name</label>
-                    <input type="text" class="form-control" id="guest_lname" name="guest_lname" placeholder="Doe">
+                    <input type="text" class="form-control" id="guest_lname" name="guest_lname" placeholder="Doe" required>
                 </div>
                 <div class="inputs">
                     <label for="guest_dob" class="form-label">Guest's Date of Birth</label>
-                    <input type="date" class="form-control" id="guest_dob" name="guest_dob" placeholder="">
+                    <input type="date" class="form-control" id="guest_dob" name="guest_dob" placeholder="" required>
                 </div>
               
                 <div class="cost">
