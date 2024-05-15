@@ -91,17 +91,18 @@ class Profile extends \app\core\Controller
   {
     $profile = new \app\models\Profile();
     $profile = $profile->getProfileById($_GET['id']);
+    $error_message = __('Please fill in all fields');
    
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-      $profile->first_name = $_POST['fname'];
-      $profile->last_name = $_POST['lname'];
-      $profile->phoneNumber = $_POST['phoneNumber'];
-
-      $profile->update($_GET['id']);
-
-      header('location:/User/myAccount');
+            $profile->first_name = $_POST['fname'];
+            $profile->last_name = $_POST['lname'];
+            $profile->phoneNumber = $_POST['phoneNumber'];
+      
+            $profile->update($_GET['id']);
+      
+            header('location:/User/myAccount');
     } else {
       $this->view('User/profile/edit', $profile, true);
     }
