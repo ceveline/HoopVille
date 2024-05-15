@@ -138,7 +138,7 @@ class AcceptanceTester extends \Codeception\Actor
     */
     public function iClickTheRegisterButton()
     {
-        throw new \PHPUnit\Framework\IncompleteTestError("Step `I click the Register button` is not defined");
+        $this->click('Register');
     }
 
    /**
