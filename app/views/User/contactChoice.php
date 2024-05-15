@@ -21,6 +21,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+<<<<<<< HEAD
             width: 90%;
             /* Adjust width as needed */
             max-width: 1400px;
@@ -32,6 +33,15 @@
         .title-container {
             width: 100vw;
             /* Full viewport width */
+=======
+            width: 90%; /* Adjust width as needed */
+            max-width: 1400px; /* Limit maximum width */
+            margin: 0 auto; /* Center content horizontally */
+        }
+
+        .title-container {
+            width: 100vw; /* Full viewport width */
+>>>>>>> 3ba00d9fffb2e480416fb4f40db1aa0839d8f3d2
             background-color: #FFDE59;
             text-align: center;
             padding: 10px 0;
@@ -43,8 +53,12 @@
         }
 
         h1 {
+<<<<<<< HEAD
             font-size: 2rem;
             /* Same size as the title in About Us */
+=======
+            font-size: 2rem; /* Same size as the title in About Us */
+>>>>>>> 3ba00d9fffb2e480416fb4f40db1aa0839d8f3d2
             color: white;
             margin: 0;
         }
@@ -58,6 +72,7 @@
 
         .options-container {
             background-color: ghostwhite;
+<<<<<<< HEAD
             padding: 40px;
             /* Increased padding */
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -90,15 +105,45 @@
             height: 150px;
             border-radius: 10px;
             /* Rounded corners */
+=======
+            padding: 40px; /* Increased padding */
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            border-radius: 10px; /* Slightly increased border radius */
+            text-align: center;
+            width: 900px; /* Adjust width as needed */
+            max-width: 1400px; /* Limit maximum width */
+            display: flex;
+            justify-content: space-around; /* Horizontally distribute options */
+        }
+
+        .option {
+            width: 30%; /* Set width for each option */
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.1);
+        }
+
+        .option .avatar {
+            width: 100%; /* Make avatar fill its container */
+            max-width: 200px; /* Limit maximum width */
+            height: 150px;
+            border-radius: 10px; /* Rounded corners */
+>>>>>>> 3ba00d9fffb2e480416fb4f40db1aa0839d8f3d2
             margin-bottom: 15px;
         }
 
         .info p {
             margin: 5px 0;
+<<<<<<< HEAD
             font-size: 1rem;
             /* Adjust font size */
             color: #333;
             /* Darken the text color */
+=======
+            font-size: 1rem; /* Adjust font size */
+            color: #333; /* Darken the text color */
+>>>>>>> 3ba00d9fffb2e480416fb4f40db1aa0839d8f3d2
         }
     </style>
 </head>
@@ -116,8 +161,12 @@
                         <div class="info">
                             <p><?= __('Feras Saaida') ?></p>
                             <p>123-456-7890</p>
+<<<<<<< HEAD
                             <p><a href="/User/contact/hussainamin285@gmail.com">
                                     <?= __('hussainamin285@gmail.com') ?></a></p>
+=======
+                            <p><a href="/User/contact/hussainamin285@gmail.com"> <?= __('hussainamin285@gmail.com') ?></a></p>
+>>>>>>> 3ba00d9fffb2e480416fb4f40db1aa0839d8f3d2
                         </div>
                     </div>
                     <div class="option">

@@ -7,7 +7,7 @@ class Membership extends \app\core\Controller
 {
 
     // view for membership page
-    #[\app\filters\Login]
+   // #[\app\filters\Login]
     function list()
     {
         $membership_types = new \app\models\Membership_type();

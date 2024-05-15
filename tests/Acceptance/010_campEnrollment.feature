@@ -14,4 +14,8 @@ Feature: 010_campEnrollment
   Scenario: Empty Fields
         Given I am on "/User/camp/buy?camp_type=Winter/"
         When I click Register
+<<<<<<< HEAD
         Then I see an alert with text "Please fill out this field"
+=======
+        Then I see an alert with text "Please fill out this field"
+>>>>>>> 3ba00d9fffb2e480416fb4f40db1aa0839d8f3d2

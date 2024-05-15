@@ -93,6 +93,7 @@
         <div class="content">
             <h1>Enrol in <?php echo "$data->camp_type!" ?></h1>
             <form class='register-form' method="post" action="">
+<<<<<<< HEAD
                 <<<<<<< Updated upstream <!-- Existing input fields -->
                     <div class="inputs">
                         <label for="self">Registering for:</label>
@@ -127,6 +128,30 @@
                     <form class='register-form' method="post" action="/User/payment">
                         <button type="submit" class="btn" name="action" value="Register">Register</button>
                     </form>
+=======
+              
+                
+                    
+                    <div class="inputs">
+                    <label for="guest_fname" class="form-label">Guest's First Name</label>
+                    <input type="text" class="form-control" id="guest_fname" name="guest_fname" placeholder="Jon" required>
+                </div>
+                <div class="inputs">
+                    <label for="guest_lname" class="form-label">Guest's Last Name</label>
+                    <input type="text" class="form-control" id="guest_lname" name="guest_lname" placeholder="Doe" required>
+                </div>
+                <div class="inputs">
+                    <label for="guest_dob" class="form-label">Guest's Date of Birth</label>
+                    <input type="date" class="form-control" id="guest_dob" name="guest_dob" placeholder="" required>
+                </div>
+              
+                <div class="cost">
+                <label for="self">Total cost: <?php echo "$data->price"?></label>
+                </div>
+                <form class='register-form' method="post" action="/User/payment">
+                <button type="submit" class="btn" name="action" value="Register">Register</button>
+                </form>
+>>>>>>> 3ba00d9fffb2e480416fb4f40db1aa0839d8f3d2
             </form>
         </div>
     </div>
