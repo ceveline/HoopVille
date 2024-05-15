@@ -150,7 +150,7 @@ button:hover{
                     <input type="date" class="form-control" id="dob" name="dob" value="<?php echo $data->date_of_birth; ?>" required>
                 </div>
                 <div class="btn">
-                    <button type="button" onclick="validateForm()"><?= __('Edit Profile') ?></button>
+                    <button class='edit-profile-btn' name='edit-profile-btn' type="button" onclick="validateForm()"><?= __('Edit Profile') ?></button>
                 </div>
             </form>
         </div>

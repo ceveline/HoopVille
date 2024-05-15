@@ -171,7 +171,7 @@
               <p style='margin-top: 25px' class="paySummary">
                 <!-- 40.00$ - full court on 2024-04-30 4:00 to 6:00 (PM) -->
               </p>
-              <button type="button" style='margin-top: 15px' class="btn btnPay"><?= __('Pay Now') ?></button>
+              <button id='pay-now-btn' type="button" style='margin-top: 15px' class="btn btnPay"><?= __('Pay Now') ?></button>
             </form>
           </div>
 

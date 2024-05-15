@@ -20,8 +20,8 @@
     </p>
     <form method="post" action="">
       <label>Current code:</label>
-      <input type="text" name="totp" />
-      <button type="submit" name="action">Verify code</button>
+      <input class="totp" id="totp" type="text" name="totp"></input>
+      <button class='verify-code-btn' type="submit" name="action">Verify code</button>
     </form>
   </div>
 </body>

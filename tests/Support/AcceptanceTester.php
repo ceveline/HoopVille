@@ -123,6 +123,30 @@ class AcceptanceTester extends \Codeception\Actor
      }
 	 
 	 /**
+     * @When I set :arg1 as the session named secret
+     */
+     public function iSetAsTheSessionNamedSecret($arg1)
+     {
+          $_SESSION['secret'] = $arg1;
+     }
+	 
+	 /**
+     * @Then I see the Your Profile section
+     */
+     public function iSeeTheYourProfileSection()
+     {
+         $this->see('#your-profile');
+     }
+	 
+	 /**
+     * @When I set :arg1 as the session named :arg2
+     */
+     public function iSetAsTheSessionNamed($arg1, $arg2)
+     {
+          $_SESSION[$arg1] = $arg2;
+     }
+	 
+	 /**
      * @Then I click Login
      */
      public function iClickLogin()
@@ -149,9 +173,9 @@ class AcceptanceTester extends \Codeception\Actor
     /**
      * @Then I see :arg1
      */
-     public function iSeeYourProfile()
+     public function iSee($arg1)
      {
-         $this->see('your-profile');
+         $this->see($arg1);
      }
 
     /**
@@ -167,7 +191,15 @@ class AcceptanceTester extends \Codeception\Actor
      */
      public function iSeeOnMyProfile($arg1)
      {
-         $this->see($arg1);
+         $this->see('#your-profile');
+     }
+	 
+	   /**
+     * @Then I should see the current url :arg1
+     */
+     public function iShouldSeeTheCurrentUrl($arg1)
+     {
+         $this->canSeeInCurrentUrl($arg1);
      }
 
     /**
@@ -187,6 +219,111 @@ class AcceptanceTester extends \Codeception\Actor
 			$this->waitForText($arg1);
 			$this->click('OK');
 		}
+     }
+	 
+	 /**
+     * @When I set cookie :arg1 to :arg2
+     */
+     public function iSetCookieTo($arg1, $arg2)
+     {
+        $this->setCookie($arg1, $arg2);
+     }
+
+	 /**
+     * @Then I enter :arg1 in the totp field
+     */
+     public function iEnterInTheTotpField($arg1)
+     {
+         $this->fillField('totp', $arg1);
+     }
+	 
+
+    /**
+     * @Then I click Verify Code
+     */
+     public function iClickVerifyCode()
+     {
+         $this->click('.verify-code-btn');
+     }
+
+    /**
+     * @Then I redirect to :arg1
+     */
+     public function iRedirectTo($arg1)
+     {
+         $this->amOnPage($arg1);
+     }
+	 
+	  /**
+     * @When I enter :arg1 in the fname field
+     */
+     public function iEnterInTheFnameField($arg1)
+     {
+         $this->fillField('fname', $arg1);
+     }
+
+    /**
+     * @Then I enter :arg1 in the lname field
+     */
+     public function iEnterInTheLnameField($arg1)
+     {
+         $this->fillField('lname', $arg1);
+     }
+
+    /**
+     * @Then I enter :arg1 in the dob field
+     */
+     public function iEnterInTheDobField($arg1)
+     {
+         $this->fillField('dob', $arg1);
+     }
+
+    /**
+     * @Then I navigate :arg1
+     */
+     public function iNavigate($arg1)
+     {
+         $this->amOnPage($arg1);
+     }
+	 
+ /**
+     * @Then I enter :arg1 in the phoneNb field
+     */
+     public function iEnterInThePhoneNbField($arg1)
+     {
+         $this->fillField('phoneNumber', $arg1);
+     }
+
+	/**
+     * @Then I see :arg1 in the first name field
+     */
+     public function iSeeInTheFirstNameField($arg1)
+     {
+         $this->see($arg1);
+     }
+	 
+	  /**
+     * @Then I click :arg1
+     */
+     public function iClick($arg1)
+     {
+         $this->click($arg1);
+     }
+
+    /**
+     * @Then I input :arg1 for :arg2
+     */
+     public function iInputFor($arg1, $arg2)
+     {
+         $this->fillField($arg1, $arg2);
+     }
+
+    /**
+     * @Then I click the :arg1 button
+     */
+     public function iClickTheButton($arg1)
+     {
+         $this->click($arg1);
      }
 
 }
