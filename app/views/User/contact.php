@@ -16,15 +16,10 @@
             background-color: rgba(0, 0, 0, 0.3);
             display: flex;
             justify-content: center;
-<<<<<<< HEAD
             align-items: flex-start;
             /* Adjusted alignment */
             padding-top: 50px;
             /* Adjusted padding */
-=======
-            align-items: flex-start; /* Adjusted alignment */
-            padding-top: 50px; /* Adjusted padding */
->>>>>>> 3ba00d9fffb2e480416fb4f40db1aa0839d8f3d2
         }
 
         .content-container {
@@ -61,12 +56,8 @@
         input[type="email"],
         textarea,
         select {
-<<<<<<< HEAD
             width: 100%;
             /* Adjusted width */
-=======
-            width: 100%; /* Adjusted width */
->>>>>>> 3ba00d9fffb2e480416fb4f40db1aa0839d8f3d2
             height: 32px;
             border: none;
             border-bottom: 1px solid #ccc;
@@ -85,12 +76,8 @@
             border-radius: 0.6rem;
             border: none;
             background-color: #ffda76;
-<<<<<<< HEAD
             margin: auto;
             /* Center the button horizontally */
-=======
-            margin: auto; /* Center the button horizontally */
->>>>>>> 3ba00d9fffb2e480416fb4f40db1aa0839d8f3d2
         }
 
         button:hover {

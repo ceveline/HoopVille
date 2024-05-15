@@ -9,15 +9,6 @@
 
 /* Content container styling */
 .content-container {
-<<<<<<< HEAD
-  background-color: white;
-  border-radius: 1rem;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  padding: 20px; /* Increased padding */
-  width: 850px; /* Increased width */
-  margin: auto;
-  margin-top: 60px;
-=======
     background-color: white;
     border-radius: 1rem;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -25,7 +16,6 @@
     width: 850px; /* Increased width */
     margin: auto;
     margin-top: 60px;
->>>>>>> 3ba00d9fffb2e480416fb4f40db1aa0839d8f3d2
 }
 
 /* Heading styling */
@@ -78,16 +68,6 @@ form {
 
 /* Table styling */
 table {
-<<<<<<< HEAD
-  width: 100%;
-  border-collapse: collapse;
-}
-
-th,
-td {
-  padding: 15px; /* Increased padding */
-  border-bottom: 1px solid #ccc;
-=======
     width: 100%;
     border-collapse: collapse;
     overflow: hidden; /* Hide overflow from the container */
@@ -103,7 +83,6 @@ th, td {
     padding: 15px; /* Increased padding */
     border-bottom: 1px solid #ccc;
     white-space: nowrap; /* Prevent text wrapping */
->>>>>>> 3ba00d9fffb2e480416fb4f40db1aa0839d8f3d2
 }
 
 th {
