@@ -5,24 +5,24 @@ Feature: register
 
    Scenario: Registration with existing email
 	Given I am on "/register"
-    	When I enter "test@test.com" as the email
-    	And click Register
-    	Then I see "Email is already in use"
+    	When I enter "test@test.com" in the email field
+    	And click "Register"
+    	Then I see "Email already exists. Please log in."
 
     Scenario: Successful registration
     	Given I am on "/register"
     	When I enter "test@test.com" in the email field
-    	Then I enter "John" in the first name field
-    	Then I enter "Doe" in the last name field
-    	Then I enter "pass1234" in the password field
-	Then I enter "pass1234" in the re-type password field
-	Then I enter "5141112222" in the phone number field
-	Then I enter "05/02/2005" in the date of birth field
+    	And I enter "John" in the first name field
+    	And I enter "Doe" in the last name field
+    	And I enter "pass1234" in the password field
+	And I enter "pass1234" in the re-type password field
+	And I enter "5141112222" in the phone number field
+	And I enter "05/02/2005" in the date of birth field
     	And I click the Register button
-    	Then I navigate to "/Home"
+    	Then I should be redirected to "/login"
 
     Scenario: Empty fields
     	Given I am on "/register"
-    	And I click Register
+    	And I click "Register"
     	Then I see "Please fill in all fields"
 

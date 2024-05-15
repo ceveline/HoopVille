@@ -5,13 +5,13 @@ Feature: populate
 
   Scenario: Populate table Camp_Type
 	Given I am on "localhost/phpmyadmin"
-	When I add "Winter Camp" in the table Camp
-	Then I see "Winter Camp" in the table Camp
+	When I add "Winter" in the table Camp_Type
+	Then I see "Winter" in the table Camp_Type
 	
   Scenario: Populate table Membership_Type
 	Given I am on "localhost/phpmyadmin"
-	When I add "VIP Training" in the table Membership
-	Then I see "VIP Training" in the table Membership
+	When I add "VIP" in the table Membership_Type
+	Then I see "VIP" in the table Membership_Type
 
   Scenario: Populate table Booking_Type
 	Given I am on "localhost/phpmyadmin"
