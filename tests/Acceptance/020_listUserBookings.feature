@@ -1,6 +1,8 @@
 Feature: 020_listUserBookings.feature
-  In order to ...
-  As a ...
-  I need to ...
+  In order to view bookings
+  As a logged-in administrator
+  I need to view a list of all user bookings
 
-  Scenario: try 020_listUserBookings.feature
+  Scenario: List User Bookings
+	Given I am on "/Admin/dashboard"
+	When I click
