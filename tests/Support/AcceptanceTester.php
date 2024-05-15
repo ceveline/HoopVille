@@ -23,62 +23,102 @@ class AcceptanceTester extends \Codeception\Actor
 {
     use _generated\AcceptanceTesterActions;
 
-    /**
-     * Define custom actions here
+/** 
+     * @Given I am on :arg1 
+     */ 
+     public function iAmOn($url) 
+     { 
+        $this->amOnPage($url);
+     } 
+
+     /**
+     * @When I enter :arg1 in the email field
      */
-/**
-     * @Given I am on :arg1
-     */
-     public function iAmOn($url)
+     public function iEnterInTheEmailField($arg1)
      {
-         $this->amOnPage($url);
+         $this->fillField('email', $arg1);
      }
 
     /**
-     * @When I add :arg1 in the table Camp
+     * @When click Register
      */
-     public function iAddInTheTableCamp($term)
+     public function clickRegister()
      {
-         $this->add($term);
+         $this->click('#register-btn');
      }
 
     /**
-     * @Then I see :arg1 in the table Camp
+     * @Then I see an alert with text :arg1
      */
-     public function iSeeInTheTableCamp($arg1)
+     public function iSeeAnAlertWithText($arg1)
      {
-         $this->see($arg1);
+		if ($this->tryToSeeElement('.alert')) {
+			$this->waitForText($arg1);
+			$this->click('OK');
+		}
      }
 
     /**
-     * @When I add :arg1 in the table Membership
+     * @When I enter :arg1 in the first name field
      */
-     public function iAddInTheTableMembership($term)
+     public function iEnterInTheFirstNameField($arg1)
      {
-         $this->add($term);
+         $this->fillField('first_name', $arg1);
      }
 
     /**
-     * @Then I see :arg1 in the table Membership
+     * @When I enter :arg1 in the last name field
      */
-     public function iSeeInTheTableMembership($arg1)
+     public function iEnterInTheLastNameField($arg1)
      {
-         $this->see($arg1);
+         $this->fillField('last_name', $arg1);
      }
 
     /**
-     * @When I add :arg1 in the table Booking_Type
+     * @When I enter :arg1 in the password field
      */
-     public function iAddInTheTableBooking_Type($term)
+     public function iEnterInThePasswordField($arg1)
      {
-         $this->add($term);
+         $this->fillField('password_hash', $arg1);
      }
 
     /**
-     * @Then I see :arg1 in the table Booking_Type
+     * @When I enter :arg1 in the re-type password field
      */
-     public function iSeeInTheTableBooking_Type($arg1)
+     public function iEnterInTheRetypePasswordField($arg1)
      {
-         $this->see($arg1);
+         $this->fillField('retype-password', $arg1);
+     }
+
+    /**
+     * @When I enter :arg1 in the phone number field
+     */
+     public function iEnterInThePhoneNumberField($arg1)
+     {
+         $this->fillField('phone', $arg1);
+     }
+
+    /**
+     * @When I enter :arg1 in the date of birth field
+     */
+     public function iEnterInTheDateOfBirthField($arg1)
+     {
+         $this->fillField('date_of_birth', $arg1);
+     }
+
+    /**
+     * @When I click Register
+     */
+     public function iClickRegister()
+     {
+         $this->click('register-btn');
+     }
+
+    /**
+     * @Then I should be redirected to :arg1
+     */
+     public function iShouldBeRedirectedTo($arg1)
+     {
+         $this->amOnPage($arg1);
      }
 }

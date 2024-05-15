@@ -6,8 +6,8 @@ Feature: register
    Scenario: Registration with existing email
     Given I am on "/register"
     When I enter "test@test.com" in the email field
-    And click "Register"
-    Then I see "Email already exists. Please log in."
+    And click Register
+	Then I see an alert with text "Email already exists. Please log in."
 
     Scenario: Successful registration
     Given I am on "/register"
@@ -18,10 +18,10 @@ Feature: register
     And I enter "pass1234" in the re-type password field
     And I enter "5141112222" in the phone number field
     And I enter "05/02/2005" in the date of birth field
-    And I click the Register button
+    And I click Register
     Then I should be redirected to "/login"
 
     Scenario: Empty fields
     Given I am on "/register"
-    And I click "Register"
-    Then I see "Please fill in all fields"
+    And I click Register
+	Then I see an alert with text "Please fill in all fields"
