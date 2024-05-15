@@ -9,7 +9,7 @@
 
   <style>
     .container {
-      height: 500px;
+      min-height: 75%;
     }
 
     button {
@@ -111,81 +111,53 @@
 
 
 <body>
-  <div class="background">
+
+  <h1><?= __('COURT RENTAL') ?></h1>
+  <div class="container">
 
 
-    <h1><?= __('COURT RENTAL') ?></h1>
-    <div class="container">
+    <div class="slides">
 
+      <div class="slide slide1">
+        <h2><?= __('Select an option') ?></h2>
+        <div class="courts">
 
-      <div class="slides">
-
-        <div class="slide slide1">
-          <h2><?= __('Select an option') ?></h2>
-          <div class="courts">
-
-          </div>
         </div>
-        <div class="slide slide2">
-          <div class="calendar">
-            <div class="calendar-header">
-              <button id="prevMonthBtn">◀</button>
-              <h2 id="currentMonth"></h2>
-              <button id="nextMonthBtn">▶</button>
-            </div>
-            <div class="calendar-grid" id="calendarGrid"></div>
-          </div>
-        </div>
-        <div class="slide slide3">
-          <h2 class="dateAvailabilities"></h2>
-          <br>
-          <p class="courtChoice"></p>
-          <div class="timeSlots">
-            <div class="spinner"></div>
-            <div class="slot slot10 disabled" onclick="slotChosen(10)">
-              <p>10:00 a.m. - 12:00 p.m.</p>
-            </div>
-            <div class="slot slot12 disabled" onclick="slotChosen(12)">
-              <p>12:00 p.m. - 2:00 p.m.</p>
-            </div>
-            <div class="slot slot14 disabled" onclick="slotChosen(14)">
-              <p>2:00 p.m. - 4:00 p.m.</p>
-            </div>
-            <div class="slot slot16 disabled" onclick="slotChosen(16)">
-              <p>4:00 p.m. - 6:00 p.m.</p>
-            </div>
-          </div>
-        </div>
-        <div class="slide slide4">
-          <div class="spinner"></div>
-          <div class="payment">
-
-            <div class="containerPayment">
-              <form>
-                <label for="name" style='margin-top: 14px'><?= __('Name on Card:') ?></label>
-                <input type="text" id="name" name="name" required>
-                <label for="card-number"><?= __('Card Number') ?>:</label>
-                <input type="text" id="card-number" name="card-number" required>
-                <label for="exp-date"><?= __('Expiration Date') ?>:</label>
-                <input type="text" id="exp-date" name="exp-date" placeholder="MM/YYYY" required>
-                <label for="cvv"><?= __('CVV') ?>:</label>
-                <input type="number" id="cvv" name="cvv" required>
-                <p style='margin-top: 25px' class="paySummary">
-                  <!-- 40.00$ - full court on 2024-04-30 4:00 to 6:00 (PM) -->
-                </p>
-                <button type="button" style='margin-top: 15px' class="btn btnPay"><?= __('Pay Now') ?></button>
-              </form>
-            </div>
-
-          </div>
-        </div>
-
-
       </div>
+      <div class="slide slide2">
+        <div class="calendar">
+          <div class="calendar-header">
+            <button id="prevMonthBtn">◀</button>
+            <h2 id="currentMonth"></h2>
+            <button id="nextMonthBtn">▶</button>
+          </div>
+          <div class="calendar-grid" id="calendarGrid"></div>
+        </div>
+      </div>
+      <div class="slide slide3">
+        <h2 class="dateAvailabilities"></h2>
+        <br>
+        <p class="courtChoice"></p>
+        <div class="timeSlots">
+          <div class="spinner"></div>
+          <div class="slot slot10 disabled" onclick="slotChosen(10)">
+            <p>10:00 a.m. - 12:00 p.m.</p>
+          </div>
+          <div class="slot slot12 disabled" onclick="slotChosen(12)">
+            <p>12:00 p.m. - 2:00 p.m.</p>
+          </div>
+          <div class="slot slot14 disabled" onclick="slotChosen(14)">
+            <p>2:00 p.m. - 4:00 p.m.</p>
+          </div>
+          <div class="slot slot16 disabled" onclick="slotChosen(16)">
+            <p>4:00 p.m. - 6:00 p.m.</p>
+          </div>
+        </div>
+      </div>
+      <div class="slide slide4">
+        <div class="spinner"></div>
+        <div class="payment">
 
-      <div class="btns">
-        <button onclick="prevSlide()" class="prev" disabled><?= __('Back') ?></button>
-        <button onclick="nextSlide()" class="next" disabled><?= __('Next') ?></button>
           <div class="containerPayment">
             <form>
               <label for="name" style='margin-top: 14px'><?= __('Name on Card:') ?></label>
@@ -199,7 +171,7 @@
               <p style='margin-top: 25px' class="paySummary">
                 <!-- 40.00$ - full court on 2024-04-30 4:00 to 6:00 (PM) -->
               </p>
-              <button id='pay-now-btn' type="button" style='margin-top: 15px' class="btn btnPay"><?= __('Pay Now') ?></button>
+              <button type="button" style='margin-top: 15px' class="btn btnPay"><?= __('Pay Now') ?></button>
             </form>
           </div>
 
@@ -208,6 +180,13 @@
 
 
     </div>
+
+    <div class="btns">
+      <button onclick="prevSlide()" class="prev" disabled><?= __('Back') ?></button>
+      <button onclick="nextSlide()" class="next" disabled><?= __('Next') ?></button>
+    </div>
+
+
   </div>
 
   <script>
