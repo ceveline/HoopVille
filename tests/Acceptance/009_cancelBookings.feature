@@ -4,9 +4,9 @@ As a user
 I want to be able to cancel bookings
 
 Scenario: Cancelling a booking
-  Given I am on "/User/Bookings/"
-  Given I have an existing reservation for a “basket” at “2PM on April 11th”
-  When I select "cancel" button
-  Then I will be navigated to "/User/Bookings/delete/1"
-  And I click on "confirm booking cancellation"
-  Then the reservation should be successfully cancelled
+    Given I am on "/User/myAccount/"
+	And I have an existing booking for "2 PM, May 24th 2024"
+	And I click Modify button on "Your Bookings"
+	Then I will be navigated to "/Booking/edit?id=1"
+    And I click Cancel booking
+    Then I will be navigated to "/Home"
