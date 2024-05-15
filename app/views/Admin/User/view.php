@@ -4,18 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Profiles</title>
+    <title><?= __('User Profiles') ?></title>
     <link rel="stylesheet" href="/assets/styles/view.css">
 </head>
 
 <body>
     <div class="background">
         <div class="content-container">
-            <h1>Users</h1>
+            <h1><?= __('Users') ?></h1>
             <form action="/Profile/search" method="GET">
                 <div class="search-container">
-                    <input type="text" id="search" name="query" placeholder="Search" class="search-text">
-                    <button type="submit" class="search-button">Search</button>
+                    <input type="text" id="search" name="query" placeholder="<?= __('Search') ?>" class="search-text">
+                    <button type="submit" class="search-button"><?= __('Search') ?></button>
                 </div>
             </form>
             <table>
@@ -29,11 +29,11 @@
                             <td>
                                 <form action="/Profile/delete/<?= $profile->profile_id ?>" method="post" style="display:inline;">
                                     <input type="hidden" name="profile_id" value="<?= $profile->profile_id ?>">
-                                    <button type="submit" class="delete-button">Delete</button>
+                                    <button type="submit" class="delete-button"><?= __('Delete') ?></button>
                                 </form>
                             </td>
                             <td>
-                                <a href="/Profile/infoDetails/<?= $profile->profile_id ?>" class="info-button">Info</a>
+                                <a href="/Profile/infoDetails/<?= $profile->profile_id ?>" class="info-button"><?= __('Info') ?></a>
                             </td>
                         </tr>
                     <?php endforeach; ?>
