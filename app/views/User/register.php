@@ -87,6 +87,12 @@
                             alert("<?= __('You must be at least 17 years old to register') ?>"); //add to i18n
                             return;
                         }
+
+                        // phone length
+                        if (phone.length !== 10) {
+                            alert(__('Phone number must be 10 digits long.'));
+                            return;
+                        }
                         
                         if (password != retype_password) {
                             alert("<?= __('Please make sure the passwords are the same') ?>"); //add to i18n
@@ -94,8 +100,6 @@
                             document.getElementById("retype_password").style.borderColor = "red";
                             return;
                         }
-
-                        
 
                         // If all fields are filled, submit the form
                         document.querySelector('.register-form').submit();

@@ -177,7 +177,7 @@ class Membership extends \app\core\Controller
         $membership = $membership_model->getMembershipByUserId($_SESSION['user_id']);
 
         $membership_model->deleteById($membership->membership_id);
-        header('location:/Home');
+        header('location:/User/myAccount');
     }
 
     #[\app\filters\Admin\IsAdmin]

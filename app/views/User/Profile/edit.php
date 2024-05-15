@@ -134,23 +134,23 @@ button:hover{
             <h1>Edit Profile</h1>
             <form class='register-form' method="post" action="" id="profileForm">
                 <div class="inputs">
-                    <label for="fname" class="form-label">First Name</label>
+                    <label for="fname" class="form-label"><?= __('First Name') ?></label>
                     <input type="text" class="form-control" id="fname" name="fname" placeholder="Jon" value="<?php echo $data->first_name; ?>" required>
                 </div>
                 <div class="inputs">
-                    <label for="lname" class="form-label">Last Name</label>
+                    <label for="lname" class="form-label"><?= __('Last Name') ?></label>
                     <input type="text" class="form-control" id="lname" name="lname" placeholder="Doe" value="<?php echo $data->last_name; ?>" required>
                 </div>
                 <div class="inputs">
-                    <label for="phoneNumber" class="form-label">Phone Number</label>
+                    <label for="phoneNumber" class="form-label"><?= __('Phone Number') ?></label>
                     <input type="text" class="form-control" id="phoneNumber" name="phoneNumber" placeholder="5141231234" value="<?php echo $data->phone; ?>" required>
                 </div>
                 <div class="inputs">
-                    <label for="dob" class="form-label">Date Of Birth</label>
+                    <label for="dob" class="form-label"><?= __('Date Of Birth') ?></label>
                     <input type="date" class="form-control" id="dob" name="dob" value="<?php echo $data->date_of_birth; ?>" required>
                 </div>
                 <div class="btn">
-                    <button type="button" onclick="validateForm()">Edit Profile</button>
+                    <button type="button" onclick="validateForm()"><?= __('Edit Profile') ?></button>
                 </div>
             </form>
         </div>
@@ -159,21 +159,40 @@ button:hover{
         function validateForm() {
             // get values
             var phoneNumber = document.getElementById('phoneNumber').value;
+            var fname = document.getElementById('fname').value;
+            var lname = document.getElementById('lname').value;
             var dob = new Date(document.getElementById('dob').value);
             var today = new Date();
 
+            var birthDate = new Date(dob);
+            var age = today.getFullYear() - birthDate.getFullYear();
+            var month = today.getMonth() - birthDate.getMonth();
+            if (month < 0 || (month === 0 && today.getDate() < birthDate.getDate())) {
+                age--;
+            }
+
+            if (fname === "" || lname === "" || phoneNumber === "" || dob === "") {
+                alert("<?= __('Please fill in all fields') ?>"); //add to i18n
+                return;
+            }
+            
             // phone length
             if (phoneNumber.length !== 10) {
-                alert('Phone number must be 10 digits long.');
+                alert(__('Phone number must be 10 digits long.'));
                 return;
             }
 
             // dob today
             if (dob >= today) {
-                alert('Date of birth must be before today.');
+                alert(__('Date of birth must be before today.'));
                 return;
             }
-
+            
+            
+            if (age < 17) {
+                alert("<?= __('You must be at least 17 years old to register') ?>"); //add to i18n
+                return;
+            }
             // If everythin passes, submit the form
             document.getElementById('profileForm').submit();
         }

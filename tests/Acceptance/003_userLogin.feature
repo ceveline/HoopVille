@@ -6,22 +6,22 @@ Feature: user login
   Scenario: Successful login with correct credentials
     Given I am on "/login"
     When I enter "test@test.com" in the email field 
-	Then I enter "pass1234" in the password field
-    And I click Login
+    And I enter "pass1234" in the password field
+    And I click "Login"
     Then I see "Submit the 6-digit code for this site from your Authenticator app."
 
   Scenario: Unsuccessful login with incorrect email
     Given I am on "/login"
     When I enter "test@test.com" in the email field 
-	Then I enter "pass1234" in the password field
-    And I click Login
+    And I enter "pass1234" in the password field
+    And I click "Login"
     Then I see "Incorrect email/password."
 
   Scenario: Unsuccessful login with incorrect password
     Given I am on "/login"
     When I enter "test@test.com" in the email field 
-	Then I enter "pass1234" in the password field
-    And I click Login
+    And I enter "pass1234" in the password field
+    And I click "Login"
     Then I see "Incorrect email/password."
 
   Scenario: Empty fields
