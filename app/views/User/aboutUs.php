@@ -92,10 +92,7 @@
                     <div class="desc">
                         <p>
                             <?= __(
-                                'Hoopville is a private multi-sport performance center that is focused on the sport of basketball. 
-                            The facility will be located in Montreal, Quebec catering to athletes of all sports, all levels and all ages.
-                            Our mission is to provide a welcoming and supportive environment where athletes can develop their craft without limitations/restrictions.
-                            With experienced and proven coaches/ownership, state-of-the art equipment and a variety of services tailored to the community of Montreal, we aim to become the go-to basketball facility in the area.'
+                                "Hoopville is a private multi-sport performance center that is focused on the sport of basketball. The facility will be located in Montreal, Quebec catering to athletes of all sports, all levels and all ages. Our mission is to provide a welcoming and supportive environment where athletes can develop their craft without limitations/restrictions. With experienced and proven coaches/ownership, state-of-the art equipment and a variety of services tailored to the community of Montreal, we aim to become the go-to basketball facility in the area."
                             ) ?>
                         </p>
                     </div>
