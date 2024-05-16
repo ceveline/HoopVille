@@ -21,8 +21,6 @@
         still valid to apply the 2-factor authentication protection to your account.</p>
       <form method="post" action="">
         <label>Current code:</label>
-        <!-- for testing -->
-        <input type="text" class="test" name="test"> 
         <input class="totp" id="totp" type="text" name="totp">
         <button class='verify-code-btn' type="submit" name="action">Verify code</button>
       </form>

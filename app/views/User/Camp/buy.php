@@ -94,13 +94,6 @@
             <h1>Enrol in <?php echo "$data->camp_type!" ?></h1>
             <form class='register-form' method="post" action="">
 
-                    <div class="inputs">
-                        <label for="self">Registering for:</label>
-                        <input type="radio" id="self" name="register_for" value="self" checked>
-                        <label for="self">Myself</label>
-                        <input type="radio" id="someone_else" name="register_for" value="someone_else">
-                        <label for="someone_else">A guest</label>
-                    </div>
 
                     <div class="inputs">
                         <label for="guest_fname" class="form-label">Guest's First Name</label>
