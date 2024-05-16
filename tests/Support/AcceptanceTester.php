@@ -877,5 +877,134 @@ public function iShouldSeeAListOfAllPublications()
 {
     $this->assertTrue(true, "I should see a list of all publications");
 }
+
+    /**
+     * @When I enter :arg1 as the email
+     */
+     public function iEnterAsTheEmail($arg1)
+     {
+         $this->fillField('email', $arg1);
+     }
+
+    /**
+     * @When click Send
+     */
+     public function clickSend()
+     {
+         $this->Click('sendBtn');
+     }
+
+
+    /**
+     * @Then I will see :arg1
+     */
+     public function iWillSee($arg1)
+     {
+         $this->see($arg1);
+     }
+
+    /**
+     * @Then I see an existing booking
+     */
+     public function iSeeAnExistingBooking()
+     {
+	   
+	 }
+
+    /**
+     * @Then the start time is :arg1
+     */
+     public function theStartTimeIs($arg1)
+     {
+         $this->see($arg1);
+     }
+
+    /**
+     * @Then the date :arg1
+     */
+     public function theDate($arg1)
+     {
+         $this->see($arg1);
+     }
+
+    /**
+     * @Then I click Modify button on :arg1
+     */
+     public function iClickModifyButtonOn($arg1)
+     {
+         $this->click('modifyBtn');
+     }
+
+    /**
+     * @Then I click Update time or date
+     */
+     public function iClickUpdateTimeOrDate()
+     {
+         $this->click('updateBtn');
+     }
+
+    /**
+     * @When I change the date to 2024-06-23"
+     */
+     public function iChangeTheDateTo()
+     {
+         $this->fillField('date', $arg1);
+     }
+
+    /**
+     * @When I change the start time to :arg1
+     */
+     public function iChangeTheStartTimeTo($arg1)
+     {
+         $this->fillField('start_time', $arg1);
+     }
+
+    /**
+     * @When I click Update
+     */
+     public function iClickUpdate()
+     {
+         $this->click('updateBtn');
+     }
+
+    /**
+     * @Then I click Cancel booking
+     */
+     public function iClickCancelBooking()
+     {
+         $this->click('cancelBtn');
+     }
+
+    /**
+     * @When I select the :arg1 membership option
+     */
+     public function iSelectTheMembershipOption($arg1)
+     {
+         $this->click($arg1);
+     }
+
+    /**
+     * @When I click delete
+     */
+     public function iClickDelete()
+     {
+         $this->click('deleteBtn');
+     }
+
+    /**
+     * @Given I am on :arg1/
+     */
+     public function iAmOn($arg1)
+     {
+         throw new \PHPUnit\Framework\IncompleteTestError("Step `I am on :arg1/` is not defined");
+     }
+
+    /**
+     * @Given I navigate to  :arg1
+     */
+     public function iNavigateTo($arg1)
+     {
+         throw new \PHPUnit\Framework\IncompleteTestError("Step `I navigate to  :arg1` is not defined");
+     }
 }
      
