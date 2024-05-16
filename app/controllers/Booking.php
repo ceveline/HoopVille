@@ -76,7 +76,7 @@ class Booking extends \app\core\Controller
       $profile = new \app\models\Profile();
 
       $booking = $booking->getBookingById($_GET['id']);
-      $booking->user = $user->getById($_SESSION['user_id']);
+      $booking->user = $user->getById($booking->user_id);
       $booking->profile = $profile->getByUserId($booking->user_id);
 
       $this->view('Booking/edit', $booking, true);
