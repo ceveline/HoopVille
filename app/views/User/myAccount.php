@@ -211,7 +211,7 @@
                     echo 'Unknown';
                 } ?>
             </span>
-            <a href="/Booking/edit?id=<?php echo $booking->booking_id?>" class="btn btn-primary"><?= __('Modify'); ?></a>
+            <a href="/Booking/edit?id=<?php echo $booking->booking_id?>" id='mod-btn' class="btn btn-primary"><?= __('Modify'); ?></a>
         </li>
     <?php endforeach; ?>
 
