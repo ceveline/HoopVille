@@ -236,6 +236,8 @@
 
                 <div class="reviews">
                     <h2><?= __('Your Reviews'); ?></h2>
+                    <a href="/User/review/create" class="btn"><?php echo __('Create Review'); ?></a>
+
                   
                     <?php foreach ($data['reviews'] as $review): ?>
                                 <ul class="itemsToList">

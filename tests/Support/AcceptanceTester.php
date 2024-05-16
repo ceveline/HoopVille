@@ -303,6 +303,19 @@ class AcceptanceTester extends \Codeception\Actor
         if ($this->tryToSeeElement('.alert')) {$this->waitForText($arg1);$this->click('OK');}
     }
 
+    /**
+     * TEST 20: VIEW BOOKINGS:
+     * 
+     */
+      /**
+     * @When I click Bookings
+     */
+    public function iClickBookings()
+    {
+        $this->click('bookings');
+    }
+
+
    
 
 

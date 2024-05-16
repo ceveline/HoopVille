@@ -72,7 +72,7 @@
                 <div class="list">
                     <ul>
                         <li>
-                            <a class="nav-link" href="/Admin/dashbaord"><?= __('Dashboard') ?></a>
+                            <a class="nav-link" href="/Admin/dashboard"><?= __('Dashboard') ?></a>
                         </li>
                         <li>
                             <a class="nav-link" href="/Admin/User/view"><?= __('Users') ?></a>

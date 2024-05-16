@@ -15,6 +15,7 @@
       width: 1000px;
       margin-left: auto;
       margin-right: auto;
+      
       margin-top: 30px;
       background-color: ghostwhite;
       border-radius: 10px;
@@ -23,9 +24,6 @@
     }
 
     h1 {
-      /* padding: 10px;
-      color: black;
-      background-color: #FFDE59; */
       display: flex;
       background-color: #FFDE59;
       justify-content: center;
@@ -40,13 +38,11 @@
     }
 
 
-    header {
-      background-color: black;
-    }
-
+  
     body {
-      background: lightgray;
       text-align: center;
+      background-color: rgba(0, 0, 0, 0.3);
+
     }
 
     .topbar {

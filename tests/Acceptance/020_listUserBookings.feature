@@ -5,4 +5,5 @@ Feature: 020_listUserBookings.feature
 
   Scenario: List User Bookings
 	Given I am on "/Admin/dashboard"
-	When I click
+	When I click Bookings
+	Then I should be redirected to "/Admin/booking/list"

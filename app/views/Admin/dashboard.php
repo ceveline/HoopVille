@@ -82,7 +82,7 @@
         <img
           src="https://images.pexels.com/photos/1331750/pexels-photo-1331750.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
           alt="Basketball" width="250">
-        <button style="margin-top: 80px"><a href="/Admin/booking/list"><?= __('Bookings') ?> ▶</a></button>
+        <button style="margin-top: 80px"><a href="/Admin/booking/list" id="bookings" name="bookings"><?= __('Bookings') ?> ▶</a></button>
       </div>
       <div class="news card">
         <h1>New & Updates</h1>
