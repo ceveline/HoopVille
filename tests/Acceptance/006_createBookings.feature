@@ -4,7 +4,7 @@ Feature: Create bookings
 	I want to be able to make bookings
 
 	Scenario: Create a booking
-		Given I am on "/login"
+		Given I am on "http://localhost/login"
 		When I enter "cev@gmail.com" in the email field
 		And I enter "123456" in the password field
 		And I click Login
@@ -28,7 +28,7 @@ Feature: Create bookings
 		And I should see the current url "/login"
 		
 	Scenario: Wrong input data
-		Given I am on "/login"
+		Given I am on "http://localhost/login"
 		When I enter "cev@gmail.com" in the email field
 		And I enter "123456" in the password field
 		And I click Login

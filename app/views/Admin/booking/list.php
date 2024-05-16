@@ -199,20 +199,21 @@
           <option value="DESC"><?= __('Recent first') ?></option>
           <option value="ASC"><?= __('Oldest first') ?></option>
         </select>
-        <input type="text" class="searchBar" placeholder="<?= __('Search by email') ?>"></input>
+        <input id="email" name="email" type="text" class="searchBar" placeholder="<?= __('Search by email') ?>"></input>
         <button class="searchBtn"><?= __('Search') ?></button>
       </div>
 
 
       <div class="filterBox">
         <p><?= __('Filter by status') ?>: </p>
-        <select class="filter">
+        <select class="filter" id="status" name="status">
           <option value="all"><?= __('all') ?></option>
           <option value="0"><?= __('pending') ?></option>
           <option value="1"><?= __('approved') ?></option>
           <option value="2"><?= __('declined') ?></option>
         </select>
       </div>
+      
 
 
     </div>
