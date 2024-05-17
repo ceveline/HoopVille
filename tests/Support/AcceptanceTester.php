@@ -22,9 +22,166 @@ namespace Tests\Support;
 class AcceptanceTester extends \Codeception\Actor
 {
     use _generated\AcceptanceTesterActions;
+	
+	/**
+     * @When I add :arg1 in the table Camp => DATABASE
+     */
+     public function iAddInTheTableCamp($arg1)
+     {
+        
+     }
+
+    /**
+     * @Then I see :arg1 in the table Camp => DATABASE
+     */
+     public function iSeeInTheTableCamp($arg1)
+     {
+     }
+
+    /**
+     * @When I add :arg1 in the table Membership => DATABASE
+     */
+     public function iAddInTheTableMembership($arg1)
+     {
+     }
+
+    /**
+     * @Then I see :arg1 in the table Membership => DATABASE
+     */
+     public function iSeeInTheTableMembership($arg1)
+     {
+     }
+
+    /**
+     * @When I add :arg1 in the table Booking_Type => DATABASE
+     */
+     public function iAddInTheTableBooking_Type($arg1) 
+     {
+     }
+
+    /**
+     * @Then I see :arg1 in the table Booking_Type => DATABASE
+     */
+     public function iSeeInTheTableBooking_Type($arg1) 
+     {
+     }
+
+    /**
+     * @When I enter :arg1 as the email
+     */
+     public function iEnterAsTheEmail($arg1)
+     {
+         $this->fillField('email', $arg1);
+     }
+
+    /**
+     * @When click Send
+     */
+     public function clickSend()
+     {
+         $this->click('send');
+     }
 
 
-    //TESTS FOR 010 camp enrolment 
+    /**
+     * @Then I will see :arg1
+     */
+     public function iWillSee($arg1)
+     {
+        $this->see(@arg1);
+     }
+
+    /**
+     * @Then I see an existing booking
+     */
+     public function iSeeAnExistingBooking()
+     {
+         $this->see(@arg1);
+     }
+
+    /**
+     * @Then the start time is :arg1
+     */
+     public function theStartTimeIs($arg1)
+     {
+         $this->see(@arg1);
+     }
+
+    /**
+     * @Then the date :arg1
+     */
+     public function theDate($arg1)
+     {
+         $this->see(@arg1);
+     }
+
+    /**
+     * @Then I click Modify button on :arg1
+     */
+     public function iClickModifyButtonOn($arg1)
+     {
+         $this->click('#mod-btn');
+     }
+
+    /**
+     * @Then I click Update time or date
+     */
+     public function iClickUpdateTimeOrDate()
+     {
+         $this->click('.updateBtn');
+     }
+
+    /**
+     * @When I change the date to 2024-06-23"
+     */
+     public function iChangeTheDateTo()
+     {
+         $this->fillFied('date', $arg1);
+     }
+
+    /**
+     * @When I change the start time to :arg1
+     */
+     public function iChangeTheStartTimeTo($arg1)
+     {
+         $this->fillFied('startTime', $arg1);
+     }
+
+    /**
+     * @When I click Update
+     */
+     public function iClickUpdate()
+     {
+         $this->click('updateBtn');
+     }
+
+    /**
+     * @Then I click Cancel booking
+     */
+     public function iClickCancelBooking()
+     {
+         $this->click('cancelBtn');
+     }
+
+    /**
+     * @When I select the :arg1 membership option
+     */
+     public function iSelectTheMembershipOption($arg1)
+     {
+         $this->click('membership_type');
+     }
+
+    /**
+     * @When I click delete
+     */
+     public function iClickDelete()
+     {
+			$this->click('deleteBtn');
+
+     }
+
+
+    /**TESTS FOR 010 camp enrolment **/
 
    /**
     * @Given I am on :arg1
@@ -249,6 +406,7 @@ class AcceptanceTester extends \Codeception\Actor
     /**
      * TESTS FOR 17 Filter by keyword
      */
+	 
      /**
      * @Given I am on "/Publication
      */
@@ -536,29 +694,12 @@ class AcceptanceTester extends \Codeception\Actor
         $this->click($arg1);
     }
 
- 
-   /**
-    * @When I click delete
-    */
-    public function iClickDelete()
-    {
-        $this->click('delete');
-    }
-
    /**
     * @Then I should see bookings booked by the email :arg1
     */
     public function iShouldSeeBookingsBookedByTheEmail($arg1)
     {
         $this->assertTrue(true, "Bookings should be listed by the email '$arg1'");
-    }
-
-   /**
-    * @Given I am on :arg1/
-    */
-    public function iAmOn($arg1)
-    {
-        $this->amOnPage($arg1);
     }
 
    /**
@@ -737,11 +878,133 @@ public function iShouldSeeAListOfAllPublications()
     $this->assertTrue(true, "I should see a list of all publications");
 }
 
+    /**
+     * @When I enter :arg1 as the email
+     */
+     public function iEnterAsTheEmail($arg1)
+     {
+         $this->fillField('email', $arg1);
+     }
+
+    /**
+     * @When click Send
+     */
+     public function clickSend()
+     {
+         $this->Click('sendBtn');
+     }
 
 
+    /**
+     * @Then I will see :arg1
+     */
+     public function iWillSee($arg1)
+     {
+         $this->see($arg1);
+     }
 
-         
+    /**
+     * @Then I see an existing booking
+     */
+     public function iSeeAnExistingBooking()
+     {
+	   
+	 }
 
-     
+    /**
+     * @Then the start time is :arg1
+     */
+     public function theStartTimeIs($arg1)
+     {
+         $this->see($arg1);
+     }
+
+    /**
+     * @Then the date :arg1
+     */
+     public function theDate($arg1)
+     {
+         $this->see($arg1);
+     }
+
+    /**
+     * @Then I click Modify button on :arg1
+     */
+     public function iClickModifyButtonOn($arg1)
+     {
+         $this->click('modifyBtn');
+     }
+
+    /**
+     * @Then I click Update time or date
+     */
+     public function iClickUpdateTimeOrDate()
+     {
+         $this->click('updateBtn');
+     }
+
+    /**
+     * @When I change the date to 2024-06-23"
+     */
+     public function iChangeTheDateTo()
+     {
+         $this->fillField('date', $arg1);
+     }
+
+    /**
+     * @When I change the start time to :arg1
+     */
+     public function iChangeTheStartTimeTo($arg1)
+     {
+         $this->fillField('start_time', $arg1);
+     }
+
+    /**
+     * @When I click Update
+     */
+     public function iClickUpdate()
+     {
+         $this->click('updateBtn');
+     }
+
+    /**
+     * @Then I click Cancel booking
+     */
+     public function iClickCancelBooking()
+     {
+         $this->click('cancelBtn');
+     }
+
+    /**
+     * @When I select the :arg1 membership option
+     */
+     public function iSelectTheMembershipOption($arg1)
+     {
+         $this->click($arg1);
+     }
+
+    /**
+     * @When I click delete
+     */
+     public function iClickDelete()
+     {
+         $this->click('deleteBtn');
+     }
+
+    /**
+     * @Given I am on :arg1/
+     */
+     public function iAmOn($arg1)
+     {
+         throw new \PHPUnit\Framework\IncompleteTestError("Step `I am on :arg1/` is not defined");
+     }
+
+    /**
+     * @Given I navigate to  :arg1
+     */
+     public function iNavigateTo($arg1)
+     {
+         throw new \PHPUnit\Framework\IncompleteTestError("Step `I navigate to  :arg1` is not defined");
+     }
 }
      
