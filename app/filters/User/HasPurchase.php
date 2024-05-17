@@ -17,10 +17,10 @@ class HasPurchase implements \app\core\AccessFilter{
 		if(!$membership && !$booking && !$camp){
             // redirect to the services page if the user does not have any purchase
             header('location:/User/Services');
-			return false;
+			return true;
 		}else{
 			// review creation 
-			return true;
+			return false;
 		}
 	}
 

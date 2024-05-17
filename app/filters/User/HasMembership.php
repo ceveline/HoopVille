@@ -11,10 +11,10 @@ class HasMembership implements \app\core\AccessFilter{
 		if(isset($membership)){
             // redirect to the home page if the user already has a membership
             header('location:/Home');
-			return false;
+			return true;
 		}else{
 			// proceed with the membership creation process
-			return true;
+			return false;
 		}
 	}
 

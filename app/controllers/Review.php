@@ -7,7 +7,10 @@ class Review extends \app\core\Controller
 
   
     //creating a review on the user end
+    #[\app\filters\Login]
     #[\app\filters\User\HasPurchase]
+
+
 
     public function create()
     {
