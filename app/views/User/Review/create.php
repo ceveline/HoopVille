@@ -93,7 +93,8 @@ button:hover{
             margin-top: 20px;
             padding: 20px;
             border-radius: 1rem;
-            margin-left: 250px;
+            margin-right: auto;
+            margin-left: auto;
             text-align: center;
             box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
@@ -172,9 +173,8 @@ button:hover {
     </style>
 </head>
 <body>
-    <div style='height: 200px'></div>
     <div class='container'> 
-        <form class="form-container">
+        <form class="form-container" method="post" action="">
             <div class="<?=__('form-section')?>">
                 <h2><?=__('Select Purchase for your review')?></h2>
                 <select id="purchaseType" name="purchase_type">
@@ -207,7 +207,7 @@ button:hover {
             </div>
 
             <div class="btn">
-                <button type="submit" id="create" name="create"><?=__('Create Review')?></button>
+                <button type="submit" id="create" name="action" value="Post"><?=__('Create Review')?></button>
             </div>
         </form>
     </div>

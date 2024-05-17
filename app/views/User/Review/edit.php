@@ -91,10 +91,9 @@ button:hover, .delete:hover{
             width: 1000px;
             height: auto;
             background-color: white;
-            margin-top: 50px;
             padding: 20px;
+            margin-top: 20px;
             border-radius: 1rem;
-            margin-left: 250px;
             text-align: center;
             box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
             margin-left: auto;
@@ -206,9 +205,6 @@ button:hover, .delete:hover {
                     <textarea name="review_text" class="black-text" rows="5"
                         cols="50"><?= $data->review_text ?></textarea>
                 </div>
-
-           
-        </form>
                 <div class="form-section">
                     <h2><?= __('Select Your Updated Rating') ?></h2>
 
@@ -237,6 +233,12 @@ button:hover, .delete:hover {
                     <a href="/User/review/delete?id=<?php echo $data->review_id; ?>"
                         class="btn"><?php echo __('Delete'); ?></a>
                 </div>
+
+
+           
+        </form>
+                
+               
             </form>
         </div>
     </div>

@@ -9,9 +9,6 @@ class Review extends \app\core\Controller
     //creating a review on the user end
     #[\app\filters\Login]
     #[\app\filters\User\HasPurchase]
-
-
-
     public function create()
     {
       if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -73,8 +70,9 @@ class Review extends \app\core\Controller
 
   }
 
-  #[\app\filters\Login]
 
+
+  #[\app\filters\Login]
   
   public function delete()
   {

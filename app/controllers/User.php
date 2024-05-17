@@ -289,7 +289,7 @@ class User extends \app\core\Controller
     }
 
     //to replace by user id
-   // #[\app\filters\Login]
+    #[\app\filters\Login]
 
     function myAccount()
     {

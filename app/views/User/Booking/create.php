@@ -9,7 +9,7 @@
 
   <style>
     .container {
-      min-height: 75%;
+      height: 500px;
     }
 
     button {

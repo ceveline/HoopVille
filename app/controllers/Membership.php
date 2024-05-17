@@ -170,7 +170,7 @@ class Membership extends \app\core\Controller
         }
     }
 
-    #[\app\filters\Login]
+   #[\app\filters\Login]
     function delete()
     {
         $membership_model = new \app\models\Membership();

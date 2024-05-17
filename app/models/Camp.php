@@ -41,14 +41,14 @@ class Camp extends \app\core\Model
 
   public function listUserCamps($user_id)
   {
-    $SQL = 'SELECT * FROM Camp WHERE user_id = :user_id)';
+    $SQL = 'SELECT * FROM Camp WHERE user_id = :user_id';
     $STMT = self::$_conn->prepare($SQL);
     $data = [
 
       'user_id' => $user_id,
 
     ];
-    $STMT->execute();
+    $STMT->execute($data);
     $STMT->setFetchMode(PDO::FETCH_CLASS, 'app\models\Camp');
     return $STMT->fetch();
 
