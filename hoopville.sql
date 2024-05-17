@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: May 14, 2024 at 03:41 AM
+-- Generation Time: May 17, 2024 at 07:18 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -58,6 +58,13 @@ CREATE TABLE `Booking` (
   `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `Booking`
+--
+
+INSERT INTO `Booking` (`booking_id`, `booking_type`, `user_id`, `date`, `start_time`, `end_time`, `status`, `timestamp`) VALUES
+(5, 'full', 14, '2024-05-23', '12:00:00', '02:00:00', 0, '2024-05-15 21:05:33');
+
 -- --------------------------------------------------------
 
 --
@@ -99,7 +106,9 @@ CREATE TABLE `Camp` (
 INSERT INTO `Camp` (`camp_id`, `camp_type`, `user_id`, `guest_id`, `timestamp`) VALUES
 (1, 'Fall', 4, NULL, '2024-05-07 00:38:46'),
 (2, 'Summer', 5, NULL, '2024-05-07 00:38:46'),
-(3, 'Winter', 6, NULL, '2024-05-07 00:40:08');
+(3, 'Winter', 6, NULL, '2024-05-07 00:40:08'),
+(4, 'Summer', 14, 1, '2024-05-14 23:15:55'),
+(5, 'Summer', 14, 2, '2024-05-14 23:23:28');
 
 -- --------------------------------------------------------
 
@@ -139,6 +148,14 @@ CREATE TABLE `Guest` (
   `date_of_birth` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `Guest`
+--
+
+INSERT INTO `Guest` (`guest_id`, `first_name`, `last_name`, `date_of_birth`) VALUES
+(1, 'Ceveline', 'Evangelista', '2006-08-16'),
+(2, 'Ceveline', 'Evangelista', '2002-10-17');
+
 -- --------------------------------------------------------
 
 --
@@ -150,9 +167,16 @@ CREATE TABLE `Membership` (
   `membership_type` varchar(50) NOT NULL,
   `user_id` int(11) NOT NULL,
   `start_date` date NOT NULL,
-  `end_date` date NOT NULL,
-  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `end_date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `Membership`
+--
+
+INSERT INTO `Membership` (`membership_id`, `membership_type`, `user_id`, `start_date`, `end_date`) VALUES
+(5, 'VIP Training', 13, '2024-05-13', '2025-05-13'),
+(7, 'VIP Training', 14, '2024-05-15', '2025-05-15');
 
 -- --------------------------------------------------------
 
@@ -171,7 +195,7 @@ CREATE TABLE `Membership_Type` (
 --
 
 INSERT INTO `Membership_Type` (`membership_type`, `monthly_price`, `description`) VALUES
-('Basic Training', 15.95, '1 group training session per week and one year commitment.'),
+('Base Training', 15.95, '1 group training session per week and one year commitment.'),
 ('Premium Training', 59.95, '4 group training sessions per week, 1 personal training session with a 1 on 1 coach. Weekly consultation with coach. No commitment.'),
 ('VIP Training', 35.95, '3 group training session per week, monthly consultation with a coach. No commitment.');
 
@@ -205,7 +229,10 @@ INSERT INTO `Profile` (`profile_id`, `user_id`, `first_name`, `last_name`, `phon
 (8, 8, 'sfgs', 'svsv', '43433443434', '2024-05-21'),
 (9, 11, 'Denis', 'Voronov', '1231231234', '2000-02-08'),
 (10, 12, 'LeBron', 'Pejman', '5141231234', '1999-06-08'),
-(11, 13, 'Ceveline', 'Nata', '5144312634', '2001-05-13');
+(11, 13, 'Ceveline', 'Nata', '5144315555', '2001-05-13'),
+(12, 14, 'Ceveline', 'Evangelista', '5144354323', '2002-10-23'),
+(13, 25, 'John', 'Doe', '5141112222', '2005-04-02'),
+(14, 41, 'John', 'Doe', '5141112222', '2005-04-02');
 
 -- --------------------------------------------------------
 
@@ -275,7 +302,15 @@ INSERT INTO `User` (`user_id`, `email`, `password_hash`, `active`, `reset_token_
 (9, 'hussainamin285@gmail.com', '123', 1, 'b3f6322a83754a74b636fbd32a038445578630186e6039b0751d1731ec0b5a9c', '2024-05-07 02:53:25', NULL),
 (11, 'test@test.com', '$2y$10$txyrJrbFXxTT8K95ySmlx.acWX41kbxHaN.k1Ite7pmTz6GUiAOu6', 1, NULL, NULL, '3XNUOEHJXZJOS5G3TOX5HLFMIZXUIZDY'),
 (12, 'pejman@test.com', '$2y$10$Vmi0Z/sV6JrEjIxYKnsH4OwqD/qw89cFQKwzodZhHL4h3yXhOOvdq', 1, NULL, NULL, 'LPT6DER6N52TLFMICSXNZZVWKMTL44O6'),
-(13, 'cev@gmail.com', '$2y$10$mqAJfxHMcFDOH.D5XMU6Pe.2TPHJZcPrpuLeYNJEGC6Key11ByDNe', 1, NULL, NULL, 'JYVRYDF6MOY25POSQW3PMELZVY3OSNB2');
+(13, 'cev_test@gmail.com', '$2y$10$mqAJfxHMcFDOH.D5XMU6Pe.2TPHJZcPrpuLeYNJEGC6Key11ByDNe', 0, NULL, NULL, 'JYVRYDF6MOY25POSQW3PMELZVY3OSNB2'),
+(14, 'cev@gmail.com', '$2y$10$0fM/JOMA/5zWz3Zt4N/tZOjRQ4yZkitlTQCamg.pyjufoa99KYa7u', 1, NULL, NULL, 'NKMHCGRDNA3EE7UNNRGKVUV2SQIROTL6'),
+(25, 'test@yahoo.com', '$2y$10$NaJteAuIDiXnj9NreG25GO9H3MufPRkciLlU2/Vw.gRL8riGvE7IC', 1, NULL, NULL, NULL),
+(41, 'codeception@yahoo.com', '$2y$10$kaNEHj90qOKjUjW6bbGwRO9Yes49xnMxGrM1S/8UHsW3xELIPbx/i', 1, NULL, NULL, NULL),
+(42, '', '$2y$10$x0YyxSgZl9iSRt8rLhWEdOKGcst/74ynaaER6w66qQ4S4rmE0tQky', 1, NULL, NULL, NULL),
+(43, '', '$2y$10$z2rsEp6MzY.KUz7R29rufepkz5jVWXIkCApoJQaCpepcX3es.CcuS', 1, NULL, NULL, NULL),
+(44, '', '$2y$10$OVcQOUl.tJ3UlVLwRy1yfOVdtZ3STGli9d8zcWSD6eZUuzfdNdwMy', 1, NULL, NULL, NULL),
+(45, '', '$2y$10$96OKRjzW47ooBiYJPNRQquk1pOr6X0/IcEa57EM6EcGLBgLP7OYk.', 1, NULL, NULL, NULL),
+(46, '', '$2y$10$59pn9s4xEWd7RTzc/U0VUu0GkE7HKEMUhgRCzowD6pNDUUO3IqbZm', 1, NULL, NULL, NULL);
 
 --
 -- Indexes for dumped tables
@@ -377,31 +412,31 @@ ALTER TABLE `Administrator`
 -- AUTO_INCREMENT for table `Booking`
 --
 ALTER TABLE `Booking`
-  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `Camp`
 --
 ALTER TABLE `Camp`
-  MODIFY `camp_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `camp_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `Guest`
 --
 ALTER TABLE `Guest`
-  MODIFY `guest_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `guest_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `Membership`
 --
 ALTER TABLE `Membership`
-  MODIFY `membership_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `membership_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `Profile`
 --
 ALTER TABLE `Profile`
-  MODIFY `profile_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `profile_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `Publication`
@@ -419,7 +454,7 @@ ALTER TABLE `Review`
 -- AUTO_INCREMENT for table `User`
 --
 ALTER TABLE `User`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
 -- Constraints for dumped tables
