@@ -21,9 +21,20 @@
         }
 
         .title{
+            background-color: #FFDE59;
+            width: 100%;
             display: flex;
             justify-content: center;
-            margin-bottom: 15px;
+            margin-top: 30px;
+            padding: 10px;
+            margin-bottom: 30px;
+            font-size: 1rem;
+            color: white;
+            text-transform: uppercase;
+            text-shadow: 0.2px 2px 8px #00000082;
+            /* display: flex;
+            justify-content: center;
+            margin-bottom: 15px; */
         }
         .question1, .question2, .question3, .question4, .question5{
             /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
@@ -71,11 +82,11 @@
 </head>
 <body>
     <div class="background">
+        <div class="title">
+            <h1>FAQs</h1>
+        </div>
         <div class="content">
-            <div class="title">
-                <h1>FAQs</h1>
-            </div>
-            <hr class="solid">
+            <!-- <hr class="solid"> -->
             <div class="questions">
                 <div class="question1">
                     <div class="q1">
