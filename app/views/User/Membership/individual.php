@@ -37,15 +37,24 @@
             /* justify-content: center; */
         }
         .edit-btn, .delete-btn, #cancelLink, #goBackLink, #modify-btn, #cancel-btn{
-            background-color: #ffd257;
+            /* background-color: #ffd257;
             border: none;
             width: 190px;
             display: flex;
             justify-content: center;
             border-radius: 1rem;
             margin-right: 10px;
-            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: #ffda76;
+            color: #fff;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            margin-right: 5px;
         }
+        
 
         #cancel-link, #edit-link, #cancelLink, #goBackLink{
             font-size: 13px;
@@ -75,7 +84,7 @@
 
         .buttons{
             display: flex;
-            justify-content: center;
+            /* justify-content: center; */
         }
 
         #cancel-btn, #modify-btn{
@@ -84,6 +93,11 @@
             font-weight: bold;
             color: white;
             text-transform: uppercase;
+            border: none;
+        }
+
+        #cancel-btn:hover, #modify-btn:hover {
+            cursor: pointer;
         }
     </style>
     <script>
