@@ -34,7 +34,7 @@
         .button, #cancelLink, #goBackLink, #modify-btn, #cancel-btn{
             display: flex;
             margin-top: 12px;
-            justify-content: center;
+            /* justify-content: center; */
         }
         .edit-btn, .delete-btn, #cancelLink, #goBackLink, #modify-btn, #cancel-btn{
             background-color: #ffd257;
