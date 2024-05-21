@@ -9,12 +9,12 @@ class HasMembership implements \app\core\AccessFilter{
 		$membership = $membership->getMembershipByUserId($_SESSION['user_id']);
 
 		if(isset($membership)){
-            // redirect to the home page if the user already has a membership
-            header('location:/Home');
-			return false;
+           		 // redirect to the home page if the user already has a membership
+            		header('location:/Home');
+			return true; // redirected
 		}else{
 			// proceed with the membership creation process
-			return true;
+			return false; // not redirected
 		}
 	}
 
