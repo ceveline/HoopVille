@@ -46,6 +46,10 @@
             
         }
 
+        .q2, .q3, .q4, .q5 {
+            margin-top: 15px; /* Add margin to create space between questions */
+        }
+
         .q1, .q2, .q3, .q4, .q5 {
             background-color: #ffda76;
             min-height: 30px; /* Set a minimum height */
@@ -53,7 +57,6 @@
             align-items: center;
             word-wrap: break-word;
             padding: 10px; /* Add padding to create space inside the box */
-            margin-top: 15px; /* Add margin to create space between questions */
             border-radius: 1rem;
         }
 
@@ -70,6 +73,10 @@
         .q1 a, .q2 a, .q3 a, .q4 a, .q5 a {
             padding-left: 5px; /* Add left padding to the anchor element */
             text-decoration: none;
+        }
+
+        .q5 {
+            margin-bottom: 15px;
         }
 
 
