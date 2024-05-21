@@ -46,7 +46,7 @@
                             </div>
                             <div class="text">
                                 <?php if(strlen($pub->text) > 500) : ?>
-                                    <p><?= substr($pub->text, 0, 500); ?>...<a id='read-more' href="/Publication/view/<?php echo $pub->publication_id;?>">Continue reading.</a></p>
+                                    <p><?= substr($pub->text, 0, 500); ?>...<a id='read-more' href="/Publication/view/<?php echo $pub->publication_id;?>">Continue.</a></p>
                                     
                                 <?php else: ?>
                                     <p><?= $pub->text; ?></p>
